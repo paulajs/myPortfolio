@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bubbles test</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <div id="bubbles-container"></div>
+    <p class="pointsDisplay"></p>
+    <audio id="bubbleSounds" src=""></audio>
+    <video src="" id="full-screen-win" type="video/mp4" preload="auto" loop muted disableRemotePlayback></video>
+    
+    <img class="bubbles-intro-zoom" src="assets/zoom.svg" alt="zoom">
+    <img class="bubbles-intro-pan" src="assets/pan.svg" alt="pan">
+    <img class="bubbles-intro-click2" src="assets/click2.svg" alt="click">
+    
+    <script src="js/three/three.min.js"></script>
+    <script src="js/three/OrbitControls.js"></script>
+    <script src="js/three/FlyControls.js"></script>
+    <script src="js/three/TrackballControls.js"></script>
+    <script src="js/three/Projector.js"></script>
+    <script src="js/three/CanvasRenderer.js"></script>
+    <script src="js/three/tween.min.js"></script>
+    <script src="js/bubbles.js"></script>
+    <script>
+        window.addEventListener('mousemove', (e) => {
+            let canvas = document.querySelector('#bubbles-container');
+
+            let mouseX = ( e.clientX -  window.innerWidth/2 );
+            let mouseY= ( e.clientY - window.innerHeight/2 );
+
+            let targetX = ( 1 - mouseX ) * 0.01;
+            let targetY = ( 1 - mouseY ) * 0.01;
+            console.log(targetX)
+            canvas.style.transform = "translate("+targetX+"px,"+targetY+"px)";
+        });
+        function mouseMoveHandler(){
+           
+        }
+    
+    </script>
+</body>
+
+</html>

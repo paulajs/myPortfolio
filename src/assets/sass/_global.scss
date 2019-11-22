@@ -1,0 +1,65 @@
+$font-primary: "Poppins", sans-serif;
+$font-secundary: "Source Code Pro", monospace;
+
+$color-green: #00ffc8;
+$color-pink: #ff00ff;
+$color-pink-light: #ff90ff;
+$color-green-dark: #00cf78;
+
+$gradient: linear-gradient(#ff90ff, #00ffc8);
+
+@keyframes rumble {
+  0% {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  10% {
+    margin-top: 0.7px;
+    margin-left: 0.7px;
+  }
+  40% {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  60% {
+    margin-top: 0.7px;
+    margin-left: 0.7px;
+  }
+  80% {
+    margin-top: 0%;
+    margin-left: 0.7px;
+  }
+  100% {
+    margin-top: 0.7px;
+    margin-left: 0%;
+  }
+}
+
+@keyframes rumble-menu{
+  0% {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  10% {
+    margin-top: 0.5px;
+    margin-left: 0.5px;
+  }
+  40% {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  60% {
+    margin-top: 0.5px;
+    margin-left: 0.5px;
+  }
+  80% {
+    margin-top: 0%;
+    margin-left: 0.5px;
+  }
+  100% {
+    margin-top: 0.5px;
+    margin-left: 0%;
+  }
+}
+
+
