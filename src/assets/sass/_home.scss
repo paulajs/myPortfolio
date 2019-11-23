@@ -10,17 +10,7 @@ body {
   grid-template-columns: repeat(12, 7.25vw);
   grid-column-gap: 1vw;
   margin: 2vh 1vw;
-  .entertain-element {
-    grid-row-start: 2;
-    grid-row-end: 9;
-    grid-column-start: 2;
-    grid-column-end: 12;
-    overflow: hidden;
-    .case-videos{
-      width: 100%;
-      display: none;
-    }
-}
+
   .menu {
     font-family: $font-primary;
     font-weight: 800;

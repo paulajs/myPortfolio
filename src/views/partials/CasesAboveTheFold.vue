@@ -135,6 +135,6 @@ export default {
     aboutText: String,
     challangeText: String,
     thoughtsText: String
-  }
+  },
 };
 </script>

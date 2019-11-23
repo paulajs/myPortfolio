@@ -9,7 +9,7 @@
       <button class="menu menu-cases menu-button" @click="toggleCaseMenu">
       <p data-text="Cases">Cases</p>
     </button>
-    <ul class="cases-sub-menu">
+    <ul class="cases-sub-menu" ref="casesmenu">
       <li @mouseover="hoverOverLink" @mouseout="leaveLink">
         <router-link to="/hesehus">Hesehus</router-link>
       </li>
@@ -25,13 +25,13 @@
         <img class="icon-linked" alt="icon-linkedein" src="../assets/img/SVG/icon-linked.svg" />
       </a>
       <a href="/">
-        <img class="icon-linked" alt="icon-linkedein" src="../assets/img/SVG/icon-email.svg" />
+        <img class="icon-linked" alt="icon-email" src="../assets/img/SVG/icon-email.svg" />
       </a>
       <a href="/">
-        <img class="icon-linked" alt="icon-linkedein" src="../assets/img/SVG/icon-insta.svg" />
+        <img class="icon-linked" alt="icon-insta" src="../assets/img/SVG/icon-insta.svg" />
       </a>
       <a href="/">
-        <img class="icon-linked" alt="icon-linkedein" src="../assets/img/SVG/icon-pinterest.svg" />
+        <img class="icon-linked" alt="icon-pinterest" src="../assets/img/SVG/icon-pinterest.svg" />
       </a>
     </div>
     <div class="frontpage-label bottom">Web, design, animation</div>
@@ -40,7 +40,7 @@
         <p data-text="Misc">Misc</p>
       </button>
     </router-link>
-    <FrontpageEntertainment />
+    <FrontpageEntertainment v-bind:isVideoShown="isVideoShown" />
   </div>
 </template>
 
@@ -52,27 +52,31 @@ export default {
   components: {
     FrontpageEntertainment
   },
+  data(){
+    return{
+      isVideoShown: false,
+    }
+  },
   methods: {
     toggleCaseMenu: function(e) {
       // @todo refactor thisss
-      var elem = document.querySelector(".cases-sub-menu");
+      var elem = this.$refs.casesmenu;
       if (elem.style.display === "flex") {
         elem.style.display = "none";
       } else {
         elem.style.display = "flex";
       }
     },
+    toggleIsVideoShown(){
+      this.isVideoShown = !this.isVideoShown;
+    },
     hoverOverLink: function(){
-      document.querySelector('.case-videos').style.display = "block";
-      document.querySelector('.entertain-element').style.border = "1px solid black";
-      document.querySelector('#container').style.display = "none";
-      document.querySelector('.page-logo').style.display = "none";
+      this.toggleIsVideoShown();
+      //document.querySelector('.entertain-element').style.border = "1px solid black";
     },
     leaveLink: function(){
-      document.querySelector('.case-videos').style.display = "none";
-      document.querySelector('.entertain-element').style.border = "none";
-      document.querySelector('#container').style.display = "block";
-      document.querySelector('.page-logo').style.display = "block";
+      this.toggleIsVideoShown();
+     // document.querySelector('.entertain-element').style.border = "none";
     },
    }
 };

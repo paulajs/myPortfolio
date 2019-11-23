@@ -1,12 +1,19 @@
 <template>
-  <div class="entertain-element">
-    <video  class="case-videos" muted loop autoplay src="../assets/videos/frontpage-entertain/case-vid-test2.mp4"></video>
-    <img class="page-logo" alt="page logo" src="../assets/img/SVG/logo.svg">
-    <div id="container">
-        <p class="pointsDisplay"></p>
+  <div :class="{'entertain-element': true, 'show-border':isVideoShown}">
+    <video
+      v-show="isVideoShown"
+      class="case-videos"
+      muted
+      loop
+      autoplay
+      src="../assets/videos/frontpage-entertain/case-vid-test2.mp4"
+    ></video>
+    <img class="page-logo" alt="page logo" src="../assets/img/SVG/logo.svg" v-show="!isVideoShown" />
+    <div v-show="!isVideoShown" id="container">
+      <p class="pointsDisplay"></p>
       <audio id="bubbleSounds" src></audio>
       <video
-        src = ""
+        src
         id="full-screen-win"
         type="video/mp4"
         preload="auto"
@@ -22,15 +29,18 @@
 import * as THREE from "three";
 import * as TWEEN from "tween";
 import { ExplodeAnimation } from "../functions/explosion.js";
-import {makeAddSphere} from '../functions/factory.js';
-import {getIntersectingBalls} from '../functions/factory.js';
-import {mouseMoveSetColor} from '../functions/factory.js';
-import {scaleAnimation} from '../functions/factory.js';
-import {getIntersects} from '../functions/factory.js';
+import { makeAddSphere } from "../functions/factory.js";
+import { getIntersectingBalls } from "../functions/factory.js";
+import { mouseMoveSetColor } from "../functions/factory.js";
+import { scaleAnimation } from "../functions/factory.js";
+import { getIntersects } from "../functions/factory.js";
 import { log } from "three";
 
 export default {
   name: "FrontpageEntertainment",
+  props: {
+    isVideoShown: Boolean
+  },
   data() {
     return {
       camera: null,
@@ -104,7 +114,7 @@ export default {
       this.renderer = new THREE.WebGLRenderer({ alpha: true });
       this.renderer.setSize(window.innerWidth, window.innerHeight);
       this.renderer.setPixelRatio(window.devicePixelRatio);
-      this.renderer.domElement.style.position = 'absolute';
+      this.renderer.domElement.style.position = "absolute";
       this.renderer.domElement.style.top = 0;
       this.renderer.domElement.style.left = 0;
       this.renderer.setClearColor(0x000000, 0);
@@ -336,12 +346,28 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  .bubbles{
+  .bubbles {
     position: absolute;
     top: 0;
     left: 0;
   }
 }
+.entertain-element {
+  grid-row-start: 2;
+  grid-row-end: 9;
+  grid-column-start: 2;
+  grid-column-end: 12;
+  overflow: hidden;
+  border: none;
+
+  .case-videos {
+    width: 100%;
+  }
+}
+.show-border{
+  border: 1px solid black;
+}
+
 
 .pointsDisplay {
   position: absolute;
@@ -357,16 +383,16 @@ a {
   background-size: cover;
   animation: none;
 }
-.pointsTransition{
+.pointsTransition {
   animation: pointsAnim 1.25s ease-out;
 }
-@keyframes pointsAnim{
-	0%{
-        display: block;
-		transform: scale(0);
-	}
-	100%{
-		transform: scale(2);
-    }
+@keyframes pointsAnim {
+  0% {
+    display: block;
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(2);
+  }
 }
 </style>
