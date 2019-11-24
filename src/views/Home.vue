@@ -1,25 +1,8 @@
 <template>
   <div class="home">
-    <router-link to="/about" class="menu menu-about">
-      <button class="menu-button">
-        <p data-text="About">About</p>
-      </button>
-    </router-link>
+    <MenuCursorButton buttonText="About" linkTo="/about" menuClass="menu menu-about" />
     <div class="frontpage-label top">Digital web ninja</div>
-      <button class="menu menu-cases menu-button" @click="toggleCaseMenu">
-      <p data-text="Cases">Cases</p>
-    </button>
-    <ul class="cases-sub-menu" ref="casesmenu">
-      <li @mouseover="hoverOverLink" @mouseout="leaveLink">
-        <router-link to="/hesehus">Hesehus</router-link>
-      </li>
-      <li>
-        <router-link to="/norremadegaard">Nørremadegaard</router-link>
-      </li>
-      <li>
-        <router-link to="/skansing">Skansing IT</router-link>
-      </li>
-    </ul>
+     <SubMenuCursorButton />
     <div class="menu menu-some">
       <a href="/">
         <img class="icon-linked" alt="icon-linkedein" src="../assets/img/SVG/icon-linked.svg" />
@@ -35,55 +18,46 @@
       </a>
     </div>
     <div class="frontpage-label bottom">Web, design, animation</div>
-    <router-link to="/misc" class="menu menu-misc">
-      <button class="menu-button">
-        <p data-text="Misc">Misc</p>
-      </button>
-    </router-link>
+    <MenuCursorButton buttonText="Misc" linkTo="/misc" menuClass="menu menu-misc" />
+
     <FrontpageEntertainment v-bind:isVideoShown="isVideoShown" />
   </div>
 </template>
 
 <script>
 import FrontpageEntertainment from "@/components/FrontpageEntertainment.vue";
+import MenuCursorButton from "@/components/MenuCursorButton.vue";
+import SubMenuCursorButton from "@/components/SubMenuCursorButton.vue";
 
 export default {
   name: "home",
   components: {
-    FrontpageEntertainment
+    FrontpageEntertainment,
+    MenuCursorButton,
+    SubMenuCursorButton
   },
-  data(){
-    return{
-      isVideoShown: false,
-    }
+  data() {
+    return {
+      isVideoShown: false
+    };
   },
-  methods: {
-    toggleCaseMenu: function(e) {
-      // @todo refactor thisss
-      var elem = this.$refs.casesmenu;
-      if (elem.style.display === "flex") {
-        elem.style.display = "none";
-      } else {
-        elem.style.display = "flex";
-      }
-    },
-    toggleIsVideoShown(){
+  methods:{
+    toggleIsVideoShown() {
       this.isVideoShown = !this.isVideoShown;
     },
-    hoverOverLink: function(){
+    hoverOverLink: function() {
       this.toggleIsVideoShown();
-      //document.querySelector('.entertain-element').style.border = "1px solid black";
     },
-    leaveLink: function(){
+    leaveLink: function() {
       this.toggleIsVideoShown();
-     // document.querySelector('.entertain-element').style.border = "none";
     },
-   }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/sass/_global.scss';
+@import "../assets/sass/_global.scss";
+
 .cursor:hover + button p,
 button:hover p {
   color: white;
@@ -97,17 +71,23 @@ button:hover p:after {
   color: transparent;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: $color-green;
+  pointer-events: none;
   left: 1.2%;
   top: 1.2%;
   animation: rumble-menu 0.25s ease-in infinite;
+  pointer-events: none;
 }
 
 .cursor p {
+  pointer-events: none;
   color: black;
+  position: absolute;
   font-family: "Source Code Pro", monospace;
   font-weight: 500;
 }
 .cursor {
+  background: black;
+  pointer-events: none;
   cursor: none;
   user-select: none;
   display: none;
