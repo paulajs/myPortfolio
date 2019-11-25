@@ -35,7 +35,7 @@
   }
   .green {
     position: absolute;
-    left: 8px;
+    left: 1px;
     top: 1px;
     display: none;
   }

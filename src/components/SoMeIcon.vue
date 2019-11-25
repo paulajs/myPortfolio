@@ -9,8 +9,8 @@
 @import "@/assets/sass/_global.scss";
  .icon-some {
 cursor: none;
-  width: 50px;
-  height: 50px;
+  width: 3vw;
+  height: 3vw;
   }
  .icon-cursor{
     width: 25px;

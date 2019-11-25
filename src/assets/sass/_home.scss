@@ -14,7 +14,6 @@ body {
   .menu {
     font-family: $font-primary;
     font-weight: 800;
-    font-size: 3.1vw;
     color: #000;
     text-decoration: none;
     z-index: 1000;
@@ -24,7 +23,7 @@ body {
     p {
       font-family: $font-primary;
       font-weight: 800;
-      font-size: 54px;
+      font-size: 3vw;
       position: relative;
     }
     .menu-button {
@@ -90,17 +89,12 @@ button.menu-button:focus {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  display: flex;
+    align-items: center;
   a {
     text-decoration: none;
     color: #000;
   }
-}
-.menu-some a img {
-  width: 45px;
-}
-.menu-some a svg {
-  width: 60px;
-  margin: 0 7px;
 }
 .menu-misc {
   grid-row-start: 9;
