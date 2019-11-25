@@ -11,6 +11,7 @@
     <img class="page-logo" alt="page logo" src="../assets/img/SVG/logo.svg" v-show="!isVideoShown" />
     <div v-show="!isVideoShown" id="container">
       <p class="pointsDisplay"></p>
+      <canvas id="bubbles-canvas"></canvas>
       <audio id="bubbleSounds" src></audio>
       <video
         src
@@ -29,8 +30,8 @@
 import * as THREE from "three";
 import * as TWEEN from "tween";
 import { ExplodeAnimation } from "../functions/explosion.js";
-import { makeAddSphere } from "../functions/factory.js";
-import { getIntersectingBalls } from "../functions/factory.js";
+import { makeSphere } from "../functions/factory.js";
+import { getIntersectingBallsObject } from "../functions/factory.js";
 import { mouseMoveSetColor } from "../functions/factory.js";
 import { scaleAnimation } from "../functions/factory.js";
 import { getIntersects } from "../functions/factory.js";
@@ -43,6 +44,69 @@ export default {
   },
   data() {
     return {
+      config: {
+        debug: true,
+        displayDesktopMinSize: 736,
+        renderer: {
+          width: window.innerWidth,
+          height: window.innerHeight,
+          parameters: {
+            alpha: true,
+            antialias: true
+          }
+        },
+        scene: {
+          camera: {
+            distance: 390
+          },
+          displayPoints: {
+            offsetX: 120,
+            offsetY: 50
+          },
+          balls: {
+            distance: 66,
+            numBallsX: 10,
+            numBallsY: 4,
+            xMin: -340,
+            yMin: -99,
+            radius: 20,
+
+            scaleAnimation: {
+              animationTime: 500,
+              scaleFactor: 10
+            },
+            hoverAnimation: {
+              scaleFactorMultiplier: 2.2,
+              animationTime: 1500
+            },
+            explosion: {
+              animaTionTime: 4000
+            }
+          }
+        }
+      },
+      selectors: {
+        canvas: "#container canvas",
+        container: "#container",
+        pointsDisplay: ".pointsDisplay"
+      },
+      elements: {
+        canvas: null,
+        container: null,
+        pointsDisplay: null
+      },
+      game: {
+        currentIntersection: null,
+        balls: {},
+        ballIsClicked: {},
+        previousBallId: 0, // zero means no balld id
+        isMouseOnBall: false,
+        isRenderingInitialScene: false,
+        isAnimatingBallHover: false,
+        animateBallHoverPromise: null,
+        isAnimatingExplodingBalls: false,
+        animatingExplodingBalls: null
+      },
       camera: null,
       scene: null,
       renderer: null,
@@ -55,7 +119,6 @@ export default {
       bubbleBurst: false,
       particles: null,
       movementSpeed: 80,
-      pointsDisplay: document.querySelector(".pointsDisplay"),
       //backWin: document.querySelector('#full-screen-win'),
       colorArray: [
         0xff00ff,
@@ -77,49 +140,80 @@ export default {
   },
   methods: {
     init: function() {
-      if (window.innerWidth >= 736) {
+      if (window.innerWidth >= this.config.displayDesktopMinSize) {
         this.initiateCanvasDesktop();
       } else {
         //initiateCanvasMobile();
       }
     },
-    createScene: function(distance, numBallsX, numBallsY, xMin, yMin, radius) {
+    log(message, data = undefined) {
+      if (this.config.debug) {
+        if (data) {
+          console.log(message, data);
+        } else {
+          console.log(message);
+        }
+      }
+    },
+    setSelectors() {
+      for (const [key, selector] of Object.entries(this.selectors)) {
+        this.elements[key] = document.querySelector(selector);
+      }
+    },
+    setStyle(element, style) {
+      for (const key in style) {
+        element.style[key] = style[key];
+      }
+    },
+    initiateCanvasDesktop: function() {
+      this.setSelectors();
+      this.createScene();
+      this.setSelectors();
+      this.setCanvasMouseHandlers();
+      this.AddGameBall();
+      this.animate();
+
+      this.game.isRenderingInitialScene = true;
+      // give the initial ball animation a bit of time to render.
+      setTimeout(() => {
+        this.game.isRenderingInitialScene = false;
+      }, 100);
+    },
+    createScene: function() {
       this.scene = new THREE.Scene();
-      this.scene.name = "lol";
       this.scene.fog = new THREE.FogExp2(0xcccccc, 0.0026);
       this.addRenderer();
-      this.addCamera(0, 0, 390);
-
+      this.addCamera(0, 0, this.config.scene.camera.distance);
       this.addLight(0xffffff, 50, 200, 200);
       this.addLight(0xff00ff, 20, 500, -600);
       this.addLight(0x00ffb6, 300, 300, 50);
-
-      this.AddGameBall(xMin, yMin, numBallsX, numBallsY, distance, radius);
-
-      var geometry = new THREE.PlaneGeometry(200, 200, 32);
-      var material = new THREE.MeshBasicMaterial({
-        color: 0xffff00,
-        side: THREE.DoubleSide
-      });
     },
-    initiateCanvasDesktop: function() {
-      this.createScene(66, 10, 3, -340, -99, 20); /*68, 10, 3, -340, -99, 25*/
-      //distance, numBallsX, numBallsY, xMin, yMin, radius
-      this.animate();
-      var canvas = document.querySelector("#container");
-      canvas.addEventListener("mousedown", this.onDocumentMouseDown, false);
-      canvas.addEventListener("mousemove", this.onDocumentMouseMove, false);
+    setCanvasMouseHandlers() {
+      this.elements.canvas.addEventListener(
+        "mousedown",
+        this.onDocumentMouseDown,
+        false
+      );
+      this.elements.canvas.addEventListener(
+        "mousemove",
+        this.onDocumentMouseMove,
+        false
+      );
     },
     addRenderer: function() {
-      this.renderer = new THREE.WebGLRenderer({ alpha: true });
-      this.renderer.setSize(window.innerWidth, window.innerHeight);
-      this.renderer.setPixelRatio(window.devicePixelRatio);
-      this.renderer.domElement.style.position = "absolute";
-      this.renderer.domElement.style.top = 0;
-      this.renderer.domElement.style.left = 0;
-      this.renderer.setClearColor(0x000000, 0);
-      var canvascon = document.querySelector("#container");
-      canvascon.appendChild(this.renderer.domElement);
+      const rendererParams = Object.assign(
+        {},
+        this.config.renderer.parameters,
+        { canvas: this.elements.canvas }
+      );
+
+      this.renderer = new THREE.WebGLRenderer(rendererParams);
+      this.renderer.setSize(
+        this.config.renderer.width,
+        this.config.renderer.height
+      );
+      this.renderer.setPixelRatio(this.config.renderer.pixelRatio);
+      this.renderer.setClearColor(0xffffff, 0);
     },
     addCamera: function(posX, posY, posZ) {
       this.camera = new THREE.PerspectiveCamera(
@@ -128,78 +222,162 @@ export default {
         1,
         10000
       );
-      this.camera.position.set(posX, posY, posZ); //450
+      this.camera.position.set(posX, posY, posZ);
       this.scene.add(this.camera);
     },
     addLight: function(color, posX, posY, posZ) {
-      var light = new THREE.SpotLight(color);
+      const light = new THREE.SpotLight(color);
       light.position.set(posX, posY, posZ);
       this.scene.add(light);
     },
-    AddGameBall: function(xMin, yMin, numBallsX, numBallsY, distance, radius) {
-      var xMax = xMin + numBallsX * distance;
-      var yMax = yMin + numBallsY * distance;
-      var count = 0;
-      for (var i = xMin; i <= xMax; i += distance) {
-        for (var j = yMin; j <= yMax; j += distance) {
-          var objName = String(i) + String(j);
-          makeAddSphere(0xffffff, i, j, 0, radius, objName, count, this.scene);
-          count = count + 1;
+    AddGameBall: function() {
+      const xMin = this.config.scene.balls.xMin;
+      const yMin = this.config.scene.balls.yMin;
+      const numBallsX = this.config.scene.balls.numBallsX;
+      const numBallsY = this.config.scene.balls.numBallsY;
+      const distance = this.config.scene.balls.distance;
+      const radius = this.config.scene.balls.radius;
+
+      const xMax = xMin + numBallsX * distance;
+      const yMax = yMin + numBallsY * distance;
+
+      let count = 0;
+      for (let i = xMin; i < xMax; i += distance) {
+        for (let j = yMin; j < yMax; j += distance) {
+          const objName = String(i) + String(j);
+          const ball = makeSphere(
+            0xffffff,
+            i,
+            j,
+            0,
+            radius,
+            objName,
+            count,
+            this.scene
+          );
+          this.scene.add(ball);
+          this.game.balls[ball.id] = ball;
+          count++;
         }
       }
+    },
+    setMouseHoverIntersection(event) {
+      this.game.currentIntersection = getIntersects(
+        event,
+        this.camera,
+        this.scene
+      );
     },
     onDocumentMouseMove: function(event) {
-      if (this.isAnimating === false) {
-        let intersects = getIntersects(event, this.camera, this.scene);
-        if (intersects.length > 0) {
-          mouseMoveSetColor(intersects[0].object.material, this.colorArray);
-          document.body.style.cursor = "pointer";
-          let num = 2.2 * Math.random() + 0.5;
-          scaleAnimation(intersects[0].object, num, 2500);
-        } else {
-          document.body.style.cursor = "default";
+      this.setMouseHoverIntersection(event);
+      const previousBallId = this.game.previousBallId;
+
+      if (this.game.currentIntersection.length > 0) {
+        const ball = this.game.currentIntersection[0].object;
+        const ballId = ball.id;
+        this.game.previousBallId = ball.id;
+        if (previousBallId !== ball.id) {
+          this.onMouseHoverBall(ball);
         }
+      } else {
+        this.game.previousBallId = 0;
+        this.setMouseAsDefault();
       }
+    },
+    onMouseHoverBall: function(ball) {
+      this.setMouseAsPointer();
+      this.randomizeBallColorAndSize(ball);
+    },
+    randomizeBallColorAndSize: function(ball) {
+      const animationTime = this.config.scene.balls.hoverAnimation
+        .animationTime;
+      const scaleFactor =
+        this.config.scene.balls.hoverAnimation.scaleFactorMultiplier *
+          Math.random() +
+        0.5;
+
+      if (this.game.animateBallHoverPromise) {
+        clearTimeout(this.game.animateBallHoverPromise);
+      }
+      this.game.animateBallHoverPromise = setTimeout(() => {
+        this.game.isAnimatingBallHover = false;
+      }, animationTime);
+
+      this.game.isAnimatingBallHover = true;
+      mouseMoveSetColor(ball.material, this.colorArray);
+      scaleAnimation(ball, scaleFactor, animationTime);
+    },
+    setMouseAsPointer: function() {
+      document.body.style.cursor = "pointer";
+    },
+    setMouseAsDefault: function() {
+      document.body.style.cursor = "default";
     },
     onDocumentMouseDown: function(event) {
-      this.isAnimating = true;
-      if (Date.now() < this.newClick) {
+      // @todo make click pop sound
+      // constsounds.src = "/assets/" + "pop6" + ".mp3"; @todo move to top assets
+
+      // @todo remove this, detach the click listener instead
+      if (this.gameEnd) {
         return;
       }
-      if (this.gameEnd == true) {
-        this.gameEnded();
+      if (!this.game.currentIntersection) {
+        return;
       }
-      this.clickTime = Date.now();
-      this.newClick = this.clickTime + 1600;
 
-      //sounds.src = "/assets/" + "pop6" + ".mp3";
+      const currentIntersection = this.game.currentIntersection;
+      const ball = this.game.currentIntersection[0];
+      if (!ball) {
+        return;
+      }
 
-      document.querySelector(".pointsDisplay").style.animation = "none";
-      let intersects = getIntersects(event, this.camera, this.scene);
-      let scene = this.scene;
-      let pointsDisplay = document.querySelector(".pointsDisplay");
-
-      if (intersects.length > 0) {
-        let array = getIntersectingBalls(intersects[0].object, this.scene);
-        scaleAnimation(intersects[0].object, 10, 700);
-        //sounds.play();
-        setTimeout(() => {
-          this.isAnimating = false;
-
-          scene.remove(intersects[0].object);
-          this.bubblePopDesktop(pointsDisplay, array, event, intersects);
-        }, 700);
+      if (this.game.ballIsClicked[ball.object.id]) {
+        return;
       } else {
-        this.isAnimating = false;
+        this.game.ballIsClicked[ball.object.id] = true;
       }
+      const intersectingBallsObjects = getIntersectingBallsObject(
+        ball.object,
+        this.scene
+      );
+
+      scaleAnimation(
+        ball.object,
+        this.config.scene.balls.scaleAnimation.scaleFactor,
+        this.config.scene.balls.scaleAnimation.animationTime
+      );
+      setTimeout(() => {
+        // @todo explosion sound?
+        // sounds.play();
+        this.bubblePopDesktop(
+          this.elements.pointsDisplay,
+          intersectingBallsObjects,
+          event,
+          ball
+        );
+        this.removeBall(ball);
+        intersectingBallsObjects.forEach(ballObject => {
+          this.removeBallObject(ballObject);
+        });
+        if (!Object.entries(this.game.balls).length) {
+          this.log("game over!");
+          // this.gameWin();
+        }
+      }, this.config.scene.balls.scaleAnimation.animationTime);
+    },
+    removeBall: function(ball) {
+      this.removeBallObject(ball.object);
+    },
+    removeBallObject: function(ballObject) {
+      delete this.game.balls[ballObject.id];
+      this.scene.remove(ballObject);
     },
     gameEnded: function() {
-      this.gameEnd = false;
-      console.log("end of game");
+      this.gameEnd = true;
+      this.log("end of game");
+      this.clearScene();
       //backWin.src = "";
-      while (this.scene.children.length > 0) {
-        this.scene.remove(scene.children[0]);
-      }
+
       /*let bubblesElem = document.querySelector("#bubbles-container");
       let bubblesOldCanvas = bubblesElem.children[0];
       bubblesElem.removeChild(bubblesOldCanvas);
@@ -209,46 +387,39 @@ export default {
         initiateCanvasMobile();
       }*/
     },
-    bubblePopDesktop: function(elem, array, e, intersects) {
-      this.displayPoints(elem, array, e, e.clientX + "px", e.clientY + "px");
-      this.removeBallsDesktop(array);
-      this.addFireworks(
-        intersects,
-        150,
-        100 + 300 * array.length,
-        this.scene,
-        this.dirs
-      );
+    clearScene: function() {
+      while (this.scene.children.length > 0) {
+        this.scene.remove(scene.children[0]);
+      }
+    },
+    bubblePopDesktop: function(elem, array, e, ball) {
+      this.displayPoints(elem, array, e, e.clientX, e.clientY);
+      this.addFireworks(ball, 150, 100 + 300 * array.length);
     },
     displayPoints: function(elem, array, e, posX, posY) {
-      let points = (array.length + 1) * 1000;
-      console.log(elem);
-
-      let backgrounds = [
-        require("../assets/bubbles/assets/points-background1.svg"),
-        require("../assets/bubbles/assets/points-background2.svg"),
-        require("../assets/bubbles/assets/points-background3.svg")
+      const element = this.elements.pointsDisplay;
+      const backgrounds = [
+        require("../assets/img/SVG/points-background1.svg"),
+        require("../assets/img/SVG/points-background2.svg"),
+        require("../assets/img/SVG/points-background3.svg")
       ];
-      let randomNum = Math.floor(Math.random() * 3);
-      let str = "+" + String(points);
-      elem.innerHTML = str;
-      elem.style.left = posX;
-      elem.style.top = posY;
-      elem.style.color = "#fff";
-      elem.style.webkitTextStroke = "1px #000";
-      elem.style.background =
+      const points = (array.length + 1) * 1000;
+      const randomNum = Math.floor(Math.random() * backgrounds.length);
+      const str = "+" + String(points);
+
+      element.innerHTML = str;
+      element.style.left =
+        posX - this.config.scene.displayPoints.offsetX + "px";
+      element.style.top = posY - this.config.scene.displayPoints.offsetY + "px";
+      element.style.color = "#fff";
+      element.style.webkitTextStroke = "1px #000";
+      element.style.background =
         "url('" + backgrounds[randomNum] + "') no-repeat top left";
-      //elem.style.animation = "pointsAnim 1.25s ease-in";
-    },
-    removeBallsDesktop: function(array) {
-      for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < this.scene.children.length; j++) {
-          if (array[i] == this.scene.children[j].name) {
-            this.scene.remove(this.scene.children[j]);
-          }
-        }
-      }
-      this.congratulate(0);
+
+      element.classList.add("pointsTransition");
+      setTimeout(() => {
+        element.classList.remove("pointsTransition");
+      }, 1000);
     },
     congratulate: function(minBall) {
       if (this.countBalls() === minBall) {
@@ -279,30 +450,43 @@ export default {
           count += 1;
         }
       }
+      this.log("balls left", count);
       return count;
     },
-    addFireworks: function(intersects, objectSize, totalObjects, scene, dirs) {
-      const expPosX = intersects[0].object.position.x;
-      const expPosY = intersects[0].object.position.y;
-      const expColor = intersects[0].object.material.color.getHex();
+    addFireworks: function(ball, objectSize, totalObjects) {
+      const explosionTime = this.config.scene.balls.explosion.animaTionTime;
+
       let particles = new ExplodeAnimation(
-        expPosX,
-        expPosY,
-        expColor,
+        ball.object.position.x,
+        ball.object.position.y,
+        ball.object.material.color.getHex(),
         objectSize,
         totalObjects,
-        scene,
-        dirs
+        this.scene,
+        this.dirs,
+        explosionTime
       );
       particles.createPartices();
-      /*if (this.parts.length > 0) {
-        this.parts.pop();
-      }*/
+      if (this.game.animatingExplodingBalls) {
+        clearTimeout(this.game.animatingExplodingBalls);
+      }
+      this.game.animatingExplodingBalls = setTimeout(() => {
+        this.game.isAnimatingExplodingBalls = false;
+        this.parts = []; // clear out particles when done animating
+      }, explosionTime + 100);
+      this.game.isAnimatingExplodingBalls = true;
+
       this.parts.push(particles);
-      console.log(this.parts);
     },
     animate: function() {
-      requestAnimationFrame(this.animate);
+      const skipAnimation =
+        this.game.isRenderingInitialScene === false &&
+        this.game.isAnimatingBallHover === false &&
+        this.game.isAnimatingExplodingBalls === false;
+      if (skipAnimation) {
+        requestAnimationFrame(this.animate);
+        return;
+      }
 
       TWEEN.update();
       let pCount = this.parts.length;
@@ -311,6 +495,7 @@ export default {
         this.parts[pCount].update();
       }
       this.renderer.render(this.scene, this.camera);
+      requestAnimationFrame(this.animate);
     }
   },
   mounted() {
@@ -335,6 +520,9 @@ li {
 a {
   color: #42b983;
 }
+.show-border{
+  border: 1px solid black;
+}
 .page-logo {
   width: 70%;
   position: absolute;
@@ -346,6 +534,12 @@ a {
   position: absolute;
   top: 0;
   left: 0;
+
+  canvas: {
+    position: "absolute";
+    top: 0;
+    left: 0;
+  }
   .bubbles {
     position: absolute;
     top: 0;
@@ -353,23 +547,14 @@ a {
   }
 }
 .entertain-element {
-  grid-row-start: 2;
-  grid-row-end: 9;
-  grid-column-start: 2;
-  grid-column-end: 12;
+    grid-column-start: 2;
+    grid-column-end: 12;
+    grid-row-start: 2;
+    grid-row-end: 9;
   overflow: hidden;
-  border: none;
-
-  .case-videos {
-    width: 100%;
-  }
 }
-.show-border{
-  border: 1px solid black;
-}
-
-
 .pointsDisplay {
+  user-select: none;
   position: absolute;
   z-index: 1000;
   color: #000;
@@ -378,13 +563,14 @@ a {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
   transform: scale(0);
-  background: url("../assets/bubbles/assets/points-background1.png") no-repeat
-    top left;
+  top: left;
   background-size: cover;
-  animation: none;
 }
 .pointsTransition {
-  animation: pointsAnim 1.25s ease-out;
+  animation: pointsAnim 1s ease-out;
+}
+#bubbles-canvas{
+  position: absolute;
 }
 @keyframes pointsAnim {
   0% {

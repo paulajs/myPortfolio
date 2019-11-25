@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import * as TWEEN from "tween";
 
-export function makeAddSphere (color, posX, posY, posZ, radius, name, delay,scene) {
+export function makeSphere(color, posX, posY, posZ, radius, name, delay = 0) {
   var geometry = new THREE.SphereGeometry(radius, 16, 16);
   var material = new THREE.MeshPhongMaterial({
     color: color,
@@ -22,16 +22,17 @@ export function makeAddSphere (color, posX, posY, posZ, radius, name, delay,scen
         y: 1,
         z: 1
       },
-      800
+      0
     )
-    .delay(30 * delay)
+    .delay(delay)
     .easing(TWEEN.Easing.Elastic.Out)
     .start();
-  scene.add(mesh);
+
+  return mesh
 }
- export function getIntersectingBalls(intersectedObject, scene) {
-  let id = intersectedObject.name;
-  let ball1BBox = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
+ export function getIntersectingBallsObject(intersectedObject, scene) {
+  const id = intersectedObject.name;
+  const ball1BBox = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
   ball1BBox.setFromObject(intersectedObject);
   let intersectArray = [];
   for (let i = 0; i < scene.children.length; i++) {
@@ -46,7 +47,7 @@ export function makeAddSphere (color, posX, posY, posZ, radius, name, delay,scen
       );
       ball2BBox.setFromObject(ball);
       if (ball1BBox.intersectsBox(ball2BBox)) {
-        intersectArray.push(ball.name);
+        intersectArray.push(ball);
       }
     }
   }
