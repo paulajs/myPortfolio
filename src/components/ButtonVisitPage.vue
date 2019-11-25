@@ -31,6 +31,7 @@ $transition: all 0.1s ease-in;
   &:hover::before {
     background: $gradient;
     transition: $transition;
+    opacity: 0.7;
   }
   &:focus {
     outline: 0;

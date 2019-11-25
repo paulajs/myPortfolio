@@ -10,13 +10,14 @@
       <p data-text="Cases">Cases</p>
     </button>
     <ul class="cases-sub-menu" ref="casesmenu">
-      <li @mouseover="hoverOverLink" @mouseout="leaveLink">
-        <router-link to="/hesehus">Hesehus</router-link>
+      <div class="sub-menu-cursor" ref="subcursor"></div>
+      <li @mouseover="onMouseOver" @mouseout="onMouseOut" @mousemove="subCasesCursorShow" @mouseleave="subCasesCursorHide">
+        <router-link  data-text="Hesehus" to="/hesehus">Hesehus</router-link>
       </li>
-      <li>
+      <li @mousemove="subCasesCursorShow" @mouseleave="subCasesCursorHide">
         <router-link to="/norremadegaard">Nørremadegaard</router-link>
       </li>
-      <li>
+      <li @mousemove="subCasesCursorShow" @mouseleave="subCasesCursorHide">
         <router-link to="/skansing">Skansing IT</router-link>
       </li>
     </ul>
@@ -24,7 +25,17 @@
 </template>
 <style lang="scss" scoped>
 @import "../assets/sass/_global.scss";
-
+.sub-menu-cursor {
+  width: 35px;
+  height: 35px;
+  background: black;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  user-select: none;
+  position: absolute;
+  border-radius: 100%;
+  display: none;
+}
 .menu-cases {
   grid-row-start: 1;
   grid-row-end: 8;
@@ -59,9 +70,27 @@
 .cases-sub-menu li a {
   text-decoration: none;
   color: black;
+  cursor: none;
+  &:hover{
+    color: #afafaf;
+  }
 }
 .cases-sub-menu li {
   writing-mode: vertical-lr;
+  animation: casesAnim 0.2s ease-in forwards;
+
+}
+@keyframes casesAnim {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+    transform-origin: center;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: center;
+  }
 }
 .expand {
   animation: cursorAnim3 0.5s;
@@ -90,18 +119,43 @@ button:hover p:before {
   animation: rumble-menu 0.15s ease-in infinite;
   pointer-events: none;
 }
+.expand {
+  animation: cursorClickAnim 0.5s;
+  border: 2px solid black;
+}
+@keyframes cursorClickAnim {
+  0% {
+    border: 1px solid black;
+    background: black;
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-20px, -20px);
+    border: 30px solid black;
+    background: black;
+    opacity: 0.4;
+  }
+  90% {
+    transform: translate(-10px, -10px);
+    border: 10px solid black;
+    opacity: 0.1;
+  }
+  100% {
+    border: 1px solid black;
+    opacity: 1;
+  }
+}
 </style>
 <script>
 import MyCursor from "@/components/MyCursor.vue";
 export default {
-  name: "SubMenuCursorButton",
+  name: "SubMenuCursor",
   components: {
     MyCursor
   },
-    data() {
-    return {
-      isVideoShown: false
-    };
+  props: {
+    onMouseOver: Function,
+    onMouseOut: Function,
   },
   methods: {
     toggleCaseMenu: function(e) {
@@ -111,6 +165,7 @@ export default {
       } else {
         elem.style.display = "flex";
       }
+      this.addClickAnimCursor();
     },
     showCursor(e) {
       this.$children[0].$refs.cursor.style.display = "flex";
@@ -121,14 +176,19 @@ export default {
     hideCursor() {
       this.$children[0].$refs.cursor.style.display = "none";
     },
-    toggleIsVideoShown() {
-      this.isVideoShown = !this.isVideoShown;
+    addClickAnimCursor() {
+      this.$children[0].$refs.cursor.classList.add("expand");
+      setTimeout(() => {
+        this.$children[0].$refs.cursor.classList.remove("expand");
+      }, 500);
     },
-    hoverOverLink: function() {
-      this.toggleIsVideoShown();
+    subCasesCursorShow(e){
+      this.$refs.subcursor.style.display ="block";
+      this.$refs.subcursor.style.top = `${e.pageY - 20}px`;
+      this.$refs.subcursor.style.left = `${e.pageX - 25}px`;
     },
-    leaveLink: function() {
-      this.toggleIsVideoShown();
+    subCasesCursorHide(){
+      this.$refs.subcursor.style.display ="none";
     }
   }
 };

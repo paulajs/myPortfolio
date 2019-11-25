@@ -38,6 +38,10 @@ div {
   background: $color-pink;
   border: 1px solid black;
   position: relative;
+   transition: all 0.15s ease-in;
+  &:hover{
+    background: black;
+  }
   .header-space {
     position: absolute;
     top: 0;
@@ -57,8 +61,8 @@ div {
     @include misc-background(bottom, -70%, 120%, 0.7);
   }
   &:hover .misc-background {
-    background: black;
-    opacity: 1;
+    transition: all 0.1s ease-in;
+    opacity: 0;
   }
   &:hover{
     cursor: pointer;
@@ -69,6 +73,10 @@ div {
   background: $color-pink;
   border: 1px solid black;
   position: relative;
+   transition: all 0.15s ease-in;
+  &:hover{
+    background: black;
+  }
   .header-ripple {
     @include header-style(none);
     position: absolute;
@@ -82,8 +90,8 @@ div {
     @include misc-background(right, -70%, 150%, 0.7);
   }
   &:hover .misc-background {
-    background: black;
-    opacity: 1;
+    transition: all 0.1s ease-in;
+    opacity: 0;
   }
   &:hover{
     cursor: pointer;
@@ -94,6 +102,10 @@ div {
   background: $color-pink;
   border: 1px solid black;
   position: relative;
+   transition: all 0.15s ease-in;
+  &:hover{
+    background: black;
+  }
   .header-horror {
     @include header-style(uppercase);
     position: absolute;
@@ -109,8 +121,8 @@ div {
     @include misc-background(top, -60%, 100%, 0.6);
   }
   &:hover .misc-background {
-    background: black;
-    opacity: 1;
+    transition: all 0.1s ease-in;
+    opacity: 0;
   }
   &:hover{
     cursor: pointer;

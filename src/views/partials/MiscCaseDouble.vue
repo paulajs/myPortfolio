@@ -30,13 +30,17 @@ div {
   background: $color-pink-light;
   border: 1px solid black;
   position: relative;
+   transition: all 0.1s ease-in;
+  &:hover{
+    background: black;
+  }
   .header-adams-ill {
     @include centerX();
     @include header-style(lowercase);
     top: 0;
     font-size: 1.6vw;
     width: 80%;
-    background: #00cf78;
+    background: $color-green-dark;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
@@ -50,7 +54,7 @@ div {
     @include header-style(uppercase);
     font-size: 2.3vw;
     width: 100%;
-    background: $color-pink-light;
+    background:  $color-pink-light;
     border-top: 1px solid black;
     h2 {
       text-align: center;
@@ -60,8 +64,8 @@ div {
     @include misc-background(right, -60%, 130%, 0.7);
   }
   &:hover .misc-background {
-    background: black;
-    opacity: 1;
+    transition: all 0.1s ease-in;
+    opacity: 0;
   }
   &:hover{
     cursor: pointer;
@@ -72,6 +76,10 @@ div {
   background: $color-green;
   border: 1px solid black;
   position: relative;
+   transition: all 0.1s ease-in;
+  &:hover{
+    background: black;
+  }
   .header-bunny-left {
     @include header-style(uppercase);
     @include bunny-header(left, border-right);
@@ -84,8 +92,8 @@ div {
     @include misc-background(bottom, 0%, 180%, 0.7);
   }
   &:hover .misc-background {
-    background: black;
-    opacity: 1;
+    transition: all 0.1s ease-in;
+    opacity: 0;
   }
   &:hover{
     cursor: pointer;
@@ -96,6 +104,10 @@ div {
   background: $color-green;
   border: 1px solid black;
   position: relative;
+   transition: all 0.1s ease-in;
+  &:hover{
+    background: black;
+  }
   .header-wreck-top{
      @include header-style(uppercase);
     @include centerX();
@@ -124,8 +136,8 @@ div {
     @include misc-background(right, 0%, 110%, 0.6);
   }
   &:hover .misc-background {
-    background: black;
-    opacity: 1;
+    transition: all 0.1s ease-in;
+    opacity: 0;
   }
   &:hover{
     cursor: pointer;

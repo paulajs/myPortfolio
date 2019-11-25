@@ -153,6 +153,18 @@
   stroke: #000000;
   stroke-miterlimit: 10;
 }
+.misc-case7{
+  &:hover #gear3{
+    .st1{
+      fill: url(#svg-gradient);
+    }
+  }
+  &:hover #gear1{
+    .st1{
+      fill: url(#svg-gradientLight);
+    }
+  }
+}
 </style>
 <script>
 export default {

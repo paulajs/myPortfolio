@@ -10,6 +10,12 @@
     xml:space="preserve"
     id="caseAudioSVG"
   >
+   <defs>
+    <linearGradient id="svg-gradient" x1="-10%" y1="0%" x2="110%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ffc8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
     <g id="waves">
       <g>
         <g>
@@ -437,10 +443,10 @@
           d="M262.7,140.6L69,107.9c0,0-15.7-1.2-15.7,10.9s-1.2,366.7-1.2,366.7s2.4,9.7,19.4,9.7s182.8-7.3,182.8-7.3
 			s20.6,2.4,20.6-18.2c0-20.6-1.2-313.5-1.2-313.5S274.8,143,262.7,140.6z"
         />
-        <ellipse class="st2" cx="169.7" cy="350.4" rx="96.7" ry="106.1" />
+        <ellipse class="st2 circle1" cx="169.7" cy="350.4" rx="96.7" ry="106.1" />
         <ellipse class="st3" cx="171.2" cy="348.7" rx="80.2" ry="90.5" />
         <ellipse class="st4" cx="171.3" cy="350.7" rx="63.7" ry="73.1" />
-        <ellipse class="st1" cx="171.2" cy="354.3" rx="23.8" ry="22.4" />
+        <ellipse class="st1 small-circle" cx="171.2" cy="354.3" rx="23.8" ry="22.4" />
         <path
           class="st2"
           d="M251.8,439.3h-13.2c0,0-8.9,2.9-8.6,11.6c0.3,8.7,9.3,11.4,9.5,11.6c0.2,0.2,11.4,0.4,11.4,0.4L251.8,439.3z"
@@ -544,6 +550,7 @@
   </svg>
 </template>
 <style lang="scss" scoped>
+@import "@/assets/sass/_global.scss";
 #caseAudioSVG {
   position: absolute;
   top: 0;
@@ -585,6 +592,33 @@
   stroke: #000000;
   stroke-width: 0.5;
   stroke-miterlimit: 10;
+}
+ .misc-case1{
+  transition: all 0.15s ease;
+  &:hover #waves{
+    .st0{
+      fill: $color-green;
+    }
+  }
+  &:hover #textbox{
+    transform: translateX(-2%) scale(1.05);
+    transition: all 0.15s ease;
+    .st5{
+      fill: url(#svg-gradientLight);
+      transition: fill 0.15s ease;
+    }
+    animation-delay: 0.2s;
+  }
+}
+@keyframes textbox-anim{
+  0%{transform: scale(1);}
+  100%{transform: scale(1.1);}
+}
+@keyframes speaker-anim{
+  0%{transform: scale(1);}
+  50%{transform: scale(1.05);}
+  100%{transform: scale(1);}
+
 }
 </style>
 <script>

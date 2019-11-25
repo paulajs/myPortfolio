@@ -5,6 +5,7 @@
 </template>
 <style lang="scss" scoped>
 @import "../assets/sass/_global.scss";
+
 .cursor {
   pointer-events: none;
   user-select: none;
@@ -16,7 +17,7 @@
   mix-blend-mode: luminosity;
   box-shadow: 10px 10px 18px #333;
   border: 1px solid black;
-  background: linear-gradient(rgb(255, 144, 255), rgb(82, 255, 151));
+  background: linear-gradient(#ff90ff, #00ffc8);
   border-radius: 100%;
   position: absolute;
   z-index: 0;

@@ -263,6 +263,14 @@
   stroke-width: 0.5;
   stroke-miterlimit: 10;
 }
+.misc-case2{
+  &:hover #spaceship{
+    .st1{
+      fill: url(#svg-gradient);
+      fill-opacity: 0.83;
+    }
+  }
+}
 </style>
 <script>
 export default {

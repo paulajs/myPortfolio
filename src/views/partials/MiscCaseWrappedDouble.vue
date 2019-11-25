@@ -28,6 +28,10 @@ div {
   background: $color-pink-light;
   border: 1px solid black;
   position: relative;
+   transition: all 0.1s ease-in;
+  &:hover{
+    background: black;
+  }
   .header-audio {
     bottom: 1vh;
     @include centerX();
@@ -46,8 +50,8 @@ div {
     @include misc-background(right, -70%, 160%, 0.6);
   }
   &:hover .misc-background {
-    background: black;
-    opacity: 1;
+    opacity: 0;
+    transition: all 0.1s ease-in;
   }
   &:hover{
     cursor: pointer;
@@ -59,6 +63,10 @@ div {
   background: $color-pink;
   border: 1px solid black;
   position: relative;
+    transition: all 0.1s ease-in;
+  &:hover{
+    background: black;
+  }
   .header-three {
     position: absolute;
     top: 3vh;
@@ -78,8 +86,8 @@ div {
     @include misc-background(right, -60%, 160%, 0.8);
   }
   &:hover .misc-background {
-    background: black;
-    opacity: 1;
+    opacity: 0;
+    transition: all 0.1s ease-in;
   }
   &:hover{
     cursor: pointer;
@@ -90,6 +98,10 @@ div {
   background: $color-pink-light;
   border: 1px solid black;
   position: relative;
+    transition: all 0.1s ease-in;
+  &:hover{
+    background: black;
+  }
   .header-css-anim {
     position: absolute;
     bottom: 2.5vh;
@@ -109,8 +121,8 @@ div {
     @include misc-background(bottom, -40%, 140%, 0.7);
   }
   &:hover .misc-background {
-    background: black;
-    opacity: 1;
+    opacity: 0;
+    transition: all 0.11s ease-in;
   }
   &:hover{
     cursor: pointer;

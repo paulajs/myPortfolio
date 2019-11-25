@@ -10,6 +10,12 @@
     xml:space="preserve"
     id="caseHorrorSVG"
   >
+     <defs>
+    <linearGradient id="svg-gradientLight" x1="-10%" y1="0%" x2="110%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff90ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ffc8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
     <g id="moon">
       <g>
         <circle class="st0" cx="718.8" cy="215.6" r="98" />
@@ -24,7 +30,7 @@
     </g>
     <g id="house">
       <path
-        class="st3"
+        class="st33"
         d="M937.8,568.3C871.9,487.9,684,430,462.5,430c-207.8,0-386,51-461.7,123.6v79.7h937.1V568.3z"
       />
       <g>
@@ -92,7 +98,7 @@
             points="273.5,242.2 270.2,357.6 271.1,372.2 276.4,372 281.5,235.6 			"
           />
           <polygon class="st5" points="313.5,374.7 364.6,372.2 360.7,489.3 313.5,487.6 			" />
-          <polygon class="st3" points="317.8,381.3 317.8,487.6 354.9,489.1 357.6,381.3 			" />
+          <polygon class="st33" points="317.8,381.3 317.8,487.6 354.9,489.1 357.6,381.3 			" />
           <rect x="326" y="388.7" class="st6" width="10.9" height="15.5" />
           <rect x="340.2" y="388.7" class="st6" width="10.4" height="15.5" />
           <polygon class="st6" points="326.3,406.8 326,422.2 336.2,422.2 336.9,406.8 			" />
@@ -332,6 +338,12 @@
   stroke-width: 0.75;
   stroke-miterlimit: 10;
 }
+.st33 {
+  fill: #ff90ff;
+  stroke: #000000;
+  stroke-width: 0.75;
+  stroke-miterlimit: 10;
+}
 .st4 {
   fill: #00ffc8;
   stroke: #000000;
@@ -360,6 +372,18 @@
   stroke: #000000;
   stroke-width: 0.5;
   stroke-miterlimit: 10;
+}
+.misc-case8 {
+  &:hover #house {
+     .st3{
+      fill: url(#svg-gradientLight);
+    }
+  }
+  &:hover #textbox{
+    .st8{
+      fill: url(#svg-gradient);
+    }
+  }
 }
 </style>
 <script>
