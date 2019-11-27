@@ -105,7 +105,7 @@
   position: relative;
   margin-bottom: 18vh;
   p{
-    color: white;
+    color: black;
     position: absolute;
     top: 0;
     z-index: 5;
@@ -119,7 +119,7 @@
     height: 100%;
     /* opacity: 0.8; */
     opacity: 1;
-    background: #0b0b0b;/* linear-gradient($color-green -50% , $color-pink  140%); */
+    background: #dfdfdf;/* linear-gradient($color-green -50% , $color-pink  140%); */
   }
 
   .audio-postit-wrapper {

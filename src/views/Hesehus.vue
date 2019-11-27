@@ -1,9 +1,9 @@
 <template>
-  <div class="case-hesehus">
-    <CasesAboveTheFold
-    caseTitle= "Hesehus"
-    description="Motion graphics and React"
-    aboutText="Hesehus is the largest e-commerce solution provider
+    <div class="case-hesehus">
+      <CasesAboveTheFold
+        caseTitle="Hesehus"
+        description="Motion graphics and React"
+        aboutText="Hesehus is the largest e-commerce solution provider
         in Denmark. This project was part of my exam at MMD, and additional
         freelance work after the exam."
         challangeText="Hesehus had 2 concerns: they needed to display their cases at e-commerce fairs and
@@ -16,11 +16,14 @@
         the cases will be shown with motion graphics videos to grab attention with visuals and movement.
         The videos should be an appetizer of Hesehus’ work. At the fair users can control the videos with
         an interface."
-    />
-    <CasesResultHesehus/>
-    <CasesProcessHesehus/>
-  </div>
+      />
+      <CasesResultHesehus />
+      <CasesProcessHesehus />
+    </div>
 </template>
+<style lang="scss" scoped>
+
+</style>
 <script>
 import CasesAboveTheFold from "@/views/partials/CasesAboveTheFold.vue";
 import CasesResultHesehus from "@/views/partials/CasesResultHesehus.vue";

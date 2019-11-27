@@ -38,7 +38,7 @@
 }
 .menu-cases {
   grid-row-start: 1;
-  grid-row-end: 8;
+  grid-row-end: 2;
   grid-column-start: 12;
   background: none;
   border: none;

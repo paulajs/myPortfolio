@@ -2,8 +2,8 @@
   <div>
     <MiscCaseHeader
       caseTitle="CSS Animation"
-      caseText="A small and simple example of a walk cycle animation with CSS keyframes,
-      using prites."
+      caseText="A small and simple example with a lot of  sentimental value.
+      Example showing a walk cycle animation using sprites and CSS keyframes."
     />
     <div class="case-cssanim">
       <CaseTextSection
@@ -51,19 +51,17 @@
     grid-column-start: 1;
   }
   .animation-wrapper {
-    grid-row-start: 16;
+    grid-row-start: 13;
     grid-row-end: 28;
     grid-column-start: 6;
     grid-column-end: 20;
-    background-image: linear-gradient($color-pink-light -70%, $color-green 180%);
-    border: 8px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
 
 
     .walk-animation {
-      border: 1px solid black;
+      border: 3px solid black;
       height: 500px;
       width: 500px;
       background: url("../../assets/img/cssAnim/css-animation-sprite.png");

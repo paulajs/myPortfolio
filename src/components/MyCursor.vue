@@ -17,7 +17,7 @@
   mix-blend-mode: luminosity;
   box-shadow: 10px 10px 18px #333;
   border: 1px solid black;
-  background: linear-gradient(#ff90ff, #00ffc8);
+  background: linear-gradient(#ff90ff -20%, #00ffc8 130%);
   border-radius: 100%;
   position: absolute;
   z-index: 0;
@@ -27,7 +27,7 @@
     position: absolute;
     font-family: $font-secundary;
     font-weight: 500;
-    font-size: 23%;
+    font-size: 14px;
   }
 }
 </style>

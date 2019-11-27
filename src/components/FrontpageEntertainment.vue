@@ -11,7 +11,10 @@
     <img class="page-logo" alt="page logo" src="../assets/img/SVG/logo.svg" v-show="!isVideoShown" />
     <div v-show="!isVideoShown" id="container">
       <p class="pointsDisplay"></p>
-      <canvas id="bubbles-canvas"></canvas>
+
+        <canvas id="bubbles-canvas"></canvas>
+
+
       <audio id="bubbleSounds" src></audio>
       <video
         src
@@ -36,11 +39,16 @@ import { mouseMoveSetColor } from "../functions/factory.js";
 import { scaleAnimation } from "../functions/factory.js";
 import { getIntersects } from "../functions/factory.js";
 import { log } from "three";
+import ShapeOverlays from "@/components/ShapeOverlays.vue";
 
+const LogoBig = require("../assets/img/SVG/logo.svg");
 export default {
   name: "FrontpageEntertainment",
   props: {
     isVideoShown: Boolean
+  },
+  components:{
+    ShapeOverlays
   },
   data() {
     return {
@@ -64,11 +72,11 @@ export default {
             offsetY: 50
           },
           balls: {
-            distance: 66,
+            distance: 70,
             numBallsX: 10,
             numBallsY: 4,
-            xMin: -340,
-            yMin: -99,
+            xMin: -322,
+            yMin: -102,
             radius: 20,
 
             scaleAnimation: {
@@ -119,22 +127,13 @@ export default {
       bubbleBurst: false,
       particles: null,
       movementSpeed: 80,
+      cursorImg: "img/cross1.png",
       //backWin: document.querySelector('#full-screen-win'),
       colorArray: [
         0xff00ff,
-        0xff1aff,
-        0xff33ff,
-        0xff4dff,
-        0xff66ff,
-        0xff7fff,
-        0x00cf78,
-        0x00ffb6,
-        0x75f9d0,
-        0x61ffa6,
-        0x7affbf,
-        0x93ffd8,
-        0xcc00cc,
-        0xb300b3
+        0x00ffc8,
+        0xff90ff,
+        0x00cf78
       ]
     };
   },
@@ -146,7 +145,7 @@ export default {
         //initiateCanvasMobile();
       }
     },
-    log(message, data = undefined) {
+/*     log(message, data = undefined) {
       if (this.config.debug) {
         if (data) {
           console.log(message, data);
@@ -154,7 +153,7 @@ export default {
           console.log(message);
         }
       }
-    },
+    }, */
     setSelectors() {
       for (const [key, selector] of Object.entries(this.selectors)) {
         this.elements[key] = document.querySelector(selector);
@@ -308,7 +307,8 @@ export default {
       scaleAnimation(ball, scaleFactor, animationTime);
     },
     setMouseAsPointer: function() {
-      document.body.style.cursor = "pointer";
+        console.log('lol', this.cursorImg);
+        // document.body.style.cursor = "url("+this.cursorImg+"), pointer";
     },
     setMouseAsDefault: function() {
       document.body.style.cursor = "default";
@@ -317,7 +317,6 @@ export default {
       // @todo make click pop sound
       // constsounds.src = "/assets/" + "pop6" + ".mp3"; @todo move to top assets
 
-      // @todo remove this, detach the click listener instead
       if (this.gameEnd) {
         return;
       }
@@ -360,7 +359,7 @@ export default {
           this.removeBallObject(ballObject);
         });
         if (!Object.entries(this.game.balls).length) {
-          this.log("game over!");
+          /* this.log("game over!"); */
           // this.gameWin();
         }
       }, this.config.scene.balls.scaleAnimation.animationTime);
@@ -374,7 +373,7 @@ export default {
     },
     gameEnded: function() {
       this.gameEnd = true;
-      this.log("end of game");
+      // this.log("end of game");
       this.clearScene();
       //backWin.src = "";
 
@@ -394,7 +393,7 @@ export default {
     },
     bubblePopDesktop: function(elem, array, e, ball) {
       this.displayPoints(elem, array, e, e.clientX, e.clientY);
-      this.addFireworks(ball, 150, 100 + 300 * array.length);
+      this.addFireworks(ball, 150, 100 + 150 * array.length);
     },
     displayPoints: function(elem, array, e, posX, posY) {
       const element = this.elements.pointsDisplay;
@@ -450,7 +449,7 @@ export default {
           count += 1;
         }
       }
-      this.log("balls left", count);
+      // this.log("balls left", count);
       return count;
     },
     addFireworks: function(ball, objectSize, totalObjects) {
@@ -571,6 +570,10 @@ a {
 }
 #bubbles-canvas{
   position: absolute;
+
+  cursor: auto;
+  cursor: url('/img/cross1.png'), pointer;
+
 }
 @keyframes pointsAnim {
   0% {

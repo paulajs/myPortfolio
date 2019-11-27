@@ -2,7 +2,7 @@
   <div class="home">
     <MenuCursorButton buttonText="About" linkTo="/about" menuClass="menu menu-about" />
     <div class="frontpage-label top">Digital web ninja</div>
-    <SubMenuCursor v-bind:onMouseOver="mouseOver" v-bind:onMouseOut="toggleIsVideoShown" />
+    <SubMenuCursor v-bind:onMouseClick="showSplat" v-bind:onMouseOver="mouseOver" v-bind:onMouseOut="toggleIsVideoShown" />
     <div class="menu menu-some">
       <a href="/">
         <SoMeIcon>
@@ -28,7 +28,7 @@
     <div class="frontpage-label bottom">Web, design, animation</div>
     <MenuCursorButton buttonText="Misc" linkTo="/misc" menuClass="menu menu-misc" />
 
-    <FrontpageEntertainment v-bind:isVideoShown="isVideoShown" />
+    <FrontpageEntertainment v-bind:isVideoShown="isVideoShown"/>
   </div>
 </template>
 
@@ -42,6 +42,7 @@ import MyCursor from "@/components/MyCursor.vue";
 import SoMeMail from "@/components/svg/SoMeMail.vue";
 import SoMeInsta from "@/components/svg/SoMeInsta.vue";
 import SoMePin from "@/components/svg/SoMePin.vue";
+
 
 export default {
   name: "home",
@@ -71,6 +72,9 @@ export default {
     },
     toggleIsVideoShown() {
       this.isVideoShown = !this.isVideoShown;
+    },
+    showSplat(){
+      this.isSplatShown = true;
     }
   }
 };
