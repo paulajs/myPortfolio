@@ -26,7 +26,7 @@
       <div class="animation-wrapper">
         <div class="walk-animation"></div>
       </div>
-      <img class="css-codesnip" src="@/assets/img/cssAnim/code-snip.jpg" alt="">
+      <img class="css-codesnip" src="@/assets/img/cssAnim/code-snip.jpg" alt />
     </div>
   </div>
 </template>
@@ -59,7 +59,6 @@
     justify-content: center;
     align-items: center;
 
-
     .walk-animation {
       border: 3px solid black;
       height: 500px;
@@ -67,9 +66,10 @@
       background: url("../../assets/img/cssAnim/css-animation-sprite.png");
       animation: play 2.5s steps(8) infinite;
     }
+
   }
-  .css-codesnip{
-    grid-row-start: 32;
+  .css-codesnip {
+    grid-row-start: 27;
     grid-column-start: 2;
     grid-column-end: 24;
     justify-self: center;

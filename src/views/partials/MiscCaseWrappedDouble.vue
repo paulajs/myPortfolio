@@ -59,7 +59,7 @@ div {
 }
 
 .misc-case5 {
-  @include place-in-grid(5, 9, 7, 10);
+  @include place-in-grid(1, 5, 10, 13);
   background: $color-pink;
   border: 1px solid black;
   position: relative;
@@ -94,7 +94,7 @@ div {
   }
 }
 .misc-case7 {
-  @include place-in-grid(9, 13, 1, 4);
+  @include place-in-grid(9, 13, 10, 13);
   background: $color-pink-light;
   border: 1px solid black;
   position: relative;

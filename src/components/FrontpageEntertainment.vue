@@ -1,20 +1,9 @@
 <template>
   <div :class="{'entertain-element': true, 'show-border':isVideoShown}">
-    <video
-      v-show="isVideoShown"
-      class="case-videos"
-      muted
-      loop
-      autoplay
-      src="../assets/videos/frontpage-entertain/case-vid-test2.mp4"
-    ></video>
     <img class="page-logo" alt="page logo" src="../assets/img/SVG/logo.svg" v-show="!isVideoShown" />
     <div v-show="!isVideoShown" id="container">
       <p class="pointsDisplay"></p>
-
         <canvas id="bubbles-canvas"></canvas>
-
-
       <audio id="bubbleSounds" src></audio>
       <video
         src
@@ -307,8 +296,7 @@ export default {
       scaleAnimation(ball, scaleFactor, animationTime);
     },
     setMouseAsPointer: function() {
-        console.log('lol', this.cursorImg);
-        // document.body.style.cursor = "url("+this.cursorImg+"), pointer";
+        document.body.style.cursor = "pointer";
     },
     setMouseAsDefault: function() {
       document.body.style.cursor = "default";
@@ -519,9 +507,7 @@ li {
 a {
   color: #42b983;
 }
-.show-border{
-  border: 1px solid black;
-}
+
 .page-logo {
   width: 70%;
   position: absolute;
@@ -571,8 +557,8 @@ a {
 #bubbles-canvas{
   position: absolute;
 
-  cursor: auto;
-  cursor: url('/img/cross1.png'), pointer;
+/*   cursor: auto;
+  cursor: url('/img/cross1.png'), pointer; */
 
 }
 @keyframes pointsAnim {

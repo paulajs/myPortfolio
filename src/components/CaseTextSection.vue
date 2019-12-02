@@ -95,9 +95,9 @@
   .audio-text-circle{
     grid-column-end: 8;
   }
-  .visual-id-text-nmg{
+/*   .visual-id-text-nmg{
     grid-column-end: 8;
-  }
+  } */
 }
 </style>
 <script>
