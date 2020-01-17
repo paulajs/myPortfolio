@@ -288,22 +288,7 @@
   stroke-width: 0.25;
   stroke-miterlimit: 10;
 }
-.misc-case3{
-  &:hover #dress1_1_{
-    .st0{
-      fill: url(#svg-gradientLight);
-    }
-    .st4{
-      fill: #00ffc8;
-    }
-    .st5{
-      fill: #ff90ff;
-    }
-    .st1{
-      fill: #ff90ff;
-    }
-  }
-}
+
 </style>
 <script>
 export default {

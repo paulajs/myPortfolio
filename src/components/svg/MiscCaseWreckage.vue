@@ -191,13 +191,7 @@
   stroke-width: 0.5;
   stroke-miterlimit: 10;
 }
-.misc-case9{
-  &:hover .wreck-textbox{
-    .st7{
-      fill: url(#svg-gradientLight);
-    }
-  }
-}
+
 </style>
 <script>
 export default {

@@ -54,9 +54,11 @@
   }
   .pink {
     position: absolute;
+    pointer-events: none;
   }
   .green {
     position: absolute;
+    pointer-events: none;
     left: 1px;
     top: 1px;
     display: none;

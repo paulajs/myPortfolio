@@ -1,7 +1,7 @@
 <template>
   <div class="misc">
     <div class="misc-header">
-      <h1>Miscellaneous</h1>
+      <h1>Laboratory</h1>
       <router-link class="misc-home-button" to="/">
         <HomeButton buttonText="Home"/>
       </router-link>

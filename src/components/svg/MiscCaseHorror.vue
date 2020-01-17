@@ -373,18 +373,7 @@
   stroke-width: 0.5;
   stroke-miterlimit: 10;
 }
-.misc-case8 {
-  &:hover #house {
-     .st3{
-      fill: url(#svg-gradientLight);
-    }
-  }
-  &:hover #textbox{
-    .st8{
-      fill: url(#svg-gradient);
-    }
-  }
-}
+
 </style>
 <script>
 export default {

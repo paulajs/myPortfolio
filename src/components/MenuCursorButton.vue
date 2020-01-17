@@ -2,8 +2,8 @@
   <div :class="menuClass">
     <MyCursor cursorRef="cursor"/>
     <router-link v-bind:to="linkTo">
-      <button class="menu-button" @mousemove="showCursor" @mouseleave="hideCursor">
-        <p :data-text="buttonText">{{buttonText}}</p>
+      <button class="menu-button" @mousemove="showCursor" @mouseleave="hideCursor" @mouseover="onMouseOver" @mouseout="onMouseOut">
+        <p :data-case="buttonText">{{buttonText}}</p>
       </button>
     </router-link>
   </div>
@@ -40,7 +40,9 @@ export default {
   props: {
     buttonText: String,
     linkTo: String,
-    menuClass: String
+    menuClass: String,
+    onMouseOver: Function,
+    onMouseOut: Function
   },
   components: {
     MyCursor

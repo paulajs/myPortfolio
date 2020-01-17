@@ -253,11 +253,11 @@
   stroke-miterlimit: 10;
 }
 .misc-case4{
-  &:hover #textbox{
+/*   &:hover #textbox{
     .st1{
        fill: url(#svg-gradientLight);
     }
-  }
+  } */
 }
 </style>
 <script>

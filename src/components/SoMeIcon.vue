@@ -12,6 +12,7 @@ cursor: none;
   width: 3vw;
   height: 3vw;
   }
+
  .icon-cursor{
     width: 25px;
     height: 25px;

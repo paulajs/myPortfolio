@@ -315,13 +315,7 @@
   stroke-width: 0.5;
   stroke-miterlimit: 10;
 }
-.misc-case6{
-  &:hover #textbox{
-    .st2{
-      fill: url(#svg-gradient);
-    }
-  }
-}
+
 </style>
 <script>
 export default {

@@ -1,36 +1,36 @@
 <template>
   <div class="home">
-    <MenuCursorButton buttonText="About" linkTo="/about" menuClass="menu menu-about" />
+    <MenuCursorButton buttonText="About" linkTo="/about" menuClass="menu menu-about"  v-bind:onMouseOver="mouseOverMain" v-bind:onMouseOut="toggleIsVideoShown"/>
     <div class="frontpage-label top">Digital web ninja</div>
     <SubMenuCursor
       v-bind:onMouseClick="showSplat"
       v-bind:onMouseOver="mouseOver"
       v-bind:onMouseOut="toggleIsVideoShown"
     />
-    <div class="menu menu-some">
-      <a href="/">
+    <div class="menu menu-some" data-case="some">
+      <a href="/" @mouseover="mouseOverSoMe" @mouseout="toggleIsVideoShown">
         <SoMeIcon>
           <component :is="icon_linked_component"></component>
         </SoMeIcon>
       </a>
-      <a href="/">
+      <a href="/" @mouseover="mouseOverSoMe"  @mouseout="toggleIsVideoShown">
         <SoMeIcon>
           <component :is="icon_mail_component"></component>
         </SoMeIcon>
       </a>
-      <a href="/">
+      <a href="/" @mouseover="mouseOverSoMe"  @mouseout="toggleIsVideoShown">
         <SoMeIcon>
           <component :is="icon_insta_component"></component>
         </SoMeIcon>
       </a>
-      <a href="/">
+      <a href="/" @mouseover="mouseOverSoMe"  @mouseout="toggleIsVideoShown">
         <SoMeIcon>
           <component :is="icon_pin_component"></component>
         </SoMeIcon>
       </a>
     </div>
     <div class="frontpage-label bottom">Web, design, animation</div>
-    <MenuCursorButton buttonText="Misc" linkTo="/misc" menuClass="menu menu-misc" />
+    <MenuCursorButton buttonText="Lab" linkTo="/lab" menuClass="menu menu-misc" v-bind:onMouseOver="mouseOverMain" v-bind:onMouseOut="toggleIsVideoShown"/>
     <FrontpageEntertainment v-bind:isVideoShown="isVideoShown" />
     <div :class="{'entertain-element': true, 'show-border':isVideoShown}">
       <video
@@ -39,7 +39,8 @@
         ref="casevideo"
         muted
         autoplay
-        src="../assets/videos/frontpage-entertain/noise-old.mp4"
+        preload="auto"
+        src="../assets/videos/frontpage-entertain/noise.mp4"
         @ended="onVideoEnded"
       ></video>
     </div>
@@ -56,8 +57,12 @@ import MyCursor from "@/components/MyCursor.vue";
 import SoMeMail from "@/components/svg/SoMeMail.vue";
 import SoMeInsta from "@/components/svg/SoMeInsta.vue";
 import SoMePin from "@/components/svg/SoMePin.vue";
-const caseVideo = require("@/assets/videos/frontpage-entertain/case-vid-test2.mp4");
-const noise = require("@/assets/videos/frontpage-entertain/noise-old.mp4");
+const caseVideoHesehus = require("@/assets/videos/frontpage-entertain/hesehus.mp4");
+const caseVideoNMG = require("@/assets/videos/frontpage-entertain/nmg1.mp4");
+const caseVideoSkansing = require("@/assets/videos/frontpage-entertain/skansingit.mp4");
+const caseVideoContact = require("@/assets/videos/frontpage-entertain/contact1.mp4");
+const caseVideoLab = require("@/assets/videos/frontpage-entertain/lab4.mp4");
+const noise = require("@/assets/videos/frontpage-entertain/noise.mp4");
 
 export default {
   name: "home",
@@ -78,19 +83,36 @@ export default {
       icon_pin_component: "SoMePin",
       icon_insta_component: "SoMeInsta",
       icon_mail_component: "SoMeMail",
-      icon_linked_component: "SoMeLinked"
+      icon_linked_component: "SoMeLinked",
+      switchVideo: null,
     };
   },
-  watch:{
-    isVideoShown: function(){
-      if(!this.isVideoShown){
+  watch: {
+    isVideoShown: function() {
+      if (!this.isVideoShown) {
         this.$refs.casevideo.src = noise;
         this.$refs.casevideo.loop = false;
       }
     }
   },
+  beforeRouteUpdate(to, from, next) {
+    console.log(42);
+  },
   methods: {
+    mouseOverMain(e){
+      this.switchVideo = e.target.dataset.case;
+      this.toggleIsVideoShown();
+      console.log(this.switchVideo);
+    },
+    mouseOverSoMe(e){
+      this.switchVideo = "some";
+      e.preventDefault();
+      e.stopPropagation();
+      this.toggleIsVideoShown();
+    },
     mouseOver(e) {
+      this.switchVideo = e.target.dataset.case;
+      console.log(e.target);
       this.toggleIsVideoShown();
     },
     toggleIsVideoShown() {
@@ -99,8 +121,37 @@ export default {
     showSplat() {
       this.isSplatShown = true;
     },
-    onVideoEnded(){
-      this.$refs.casevideo.src = caseVideo;
+    onVideoEnded(e) {
+      switch (this.switchVideo) {
+        case 'hesehus':
+          this.$refs.casevideo.src = caseVideoHesehus;
+          console.log(caseVideoHesehus);
+          break;
+        case 'nmg':
+          this.$refs.casevideo.src = caseVideoNMG;
+          console.log('nmg video');
+          break;
+
+        case 'skansingit':
+          this.$refs.casevideo.src = caseVideoSkansing;
+          console.log('skansing it video');
+          break;
+
+         case 'some':
+           console.log('some video');
+           this.$refs.casevideo.src = caseVideoContact;
+           break;
+
+          case 'About':
+            console.log('about video');
+            break;
+
+          case 'Lab':
+            console.log('lab video');
+            this.$refs.casevideo.src = caseVideoLab;
+            break;
+      }
+      //this.$refs.casevideo.src = this.switchVideo;
       this.$refs.casevideo.loop = true;
     }
   }
@@ -110,10 +161,10 @@ export default {
 <style lang="scss" scoped>
 @import "../assets/sass/_global.scss";
 
-.case-videos{
-  width: 100%;
-}
-.show-border{
+/* .case-videos {
+   width: 100%;
+} */
+.show-border {
   border: 1px solid black;
 }
 button:hover p {
@@ -135,10 +186,10 @@ button:hover p:after {
   pointer-events: none;
 }
 .entertain-element {
-    grid-column-start: 2;
-    grid-column-end: 12;
-    grid-row-start: 2;
-    grid-row-end: 9;
+  grid-column-start: 2;
+  grid-column-end: 12;
+  grid-row-start: 2;
+  grid-row-end: 9;
   overflow: hidden;
 }
 </style>

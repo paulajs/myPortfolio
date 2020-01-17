@@ -12,13 +12,13 @@
     <ul class="cases-sub-menu" ref="casesmenu">
       <div class="sub-menu-cursor" ref="subcursor"></div>
       <li @mouseover="onMouseOver" @mouseout="onMouseOut" @mousemove="subCasesCursorShow" @mouseleave="subCasesCursorHide">
-        <router-link  data-text="Hesehus" to="/hesehus">Hesehus</router-link>
+        <router-link  data-case="hesehus" to="/hesehus">Hesehus</router-link>
       </li>
-      <li @mousemove="subCasesCursorShow" @mouseleave="subCasesCursorHide">
-        <router-link to="/norremadegaard">Nørremadegaard</router-link>
+      <li @mouseover="onMouseOver" @mouseout="onMouseOut" @mousemove="subCasesCursorShow" @mouseleave="subCasesCursorHide">
+        <router-link data-case="nmg" to="/norremadegaard">Nørremadegaard</router-link>
       </li>
-      <li @mousemove="subCasesCursorShow" @mouseleave="subCasesCursorHide">
-        <router-link to="/skansing">Skansing IT</router-link>
+      <li @mouseover="onMouseOver" @mouseout="onMouseOut" @mousemove="subCasesCursorShow" @mouseleave="subCasesCursorHide">
+        <router-link data-case="skansingit" to="/skansing">Skansing IT</router-link>
       </li>
     </ul>
   </div>

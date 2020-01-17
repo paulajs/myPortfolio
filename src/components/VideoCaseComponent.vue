@@ -38,6 +38,11 @@
     &:focus {
       outline: 0;
     }
+    &:hover{
+      cursor: pointer;
+      box-shadow: 26px 28px 14px #b6b6b6;
+      transition: all 0.1s ease;
+    }
   }
 
   .video-section-header {

@@ -77,11 +77,11 @@
   stroke-miterlimit: 10;
 }
 .misc-case5{
-   &:hover #textbox{
+/*    &:hover #textbox{
     .st2{
       fill: url(#svg-gradient);
     }
-  }
+  } */
 }
 </style>
 <script>

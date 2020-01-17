@@ -600,15 +600,12 @@
       fill: $color-green;
     }
   }
-  &:hover #textbox{
-    transform: translateX(-2%) scale(1.05);
-    transition: all 0.15s ease;
+/*   &:hover #textbox{
     .st5{
       fill: url(#svg-gradientLight);
       transition: fill 0.15s ease;
     }
-    animation-delay: 0.2s;
-  }
+  } */
 }
 @keyframes textbox-anim{
   0%{transform: scale(1);}

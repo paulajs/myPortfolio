@@ -134,15 +134,6 @@ export default {
         //initiateCanvasMobile();
       }
     },
-/*     log(message, data = undefined) {
-      if (this.config.debug) {
-        if (data) {
-          console.log(message, data);
-        } else {
-          console.log(message);
-        }
-      }
-    }, */
     setSelectors() {
       for (const [key, selector] of Object.entries(this.selectors)) {
         this.elements[key] = document.querySelector(selector);
@@ -487,7 +478,9 @@ export default {
   },
   mounted() {
     this.init();
-  }
+   /*  setTimeout(()=>{
+    }, 50); */
+  },
 };
 </script>
 

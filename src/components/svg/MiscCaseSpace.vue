@@ -264,12 +264,12 @@
   stroke-miterlimit: 10;
 }
 .misc-case2{
-  &:hover #spaceship{
+/*   &:hover #spaceship{
     .st1{
       fill: url(#svg-gradient);
       fill-opacity: 0.83;
     }
-  }
+  } */
 }
 </style>
 <script>

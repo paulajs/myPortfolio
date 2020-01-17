@@ -137,7 +137,7 @@
       font-family: $font-secundary;
       font-size: 2em;
       margin-bottom: 5vh;
-      color: white;
+      color: black;
       font-weight: 300;
     }
     img {

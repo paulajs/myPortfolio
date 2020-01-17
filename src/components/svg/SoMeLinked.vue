@@ -27,13 +27,16 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 .icon-some {
+
  .svg-wrapper {
     position: relative;
   }
   .pink {
+    pointer-events: none;
     position: absolute;
   }
   .green {
+    pointer-events: none;
     position: absolute;
     left: 1px;
     top: 1px;

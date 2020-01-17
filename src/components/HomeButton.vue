@@ -35,8 +35,8 @@ $transition: all 0.1s ease-in;
   }
   &:hover {
     background: linear-gradient(#ff90ff, #00ffc8);
-    box-shadow: 23px 18px 14px #c7c7c7;
-    transition: $transition;
+    /* box-shadow: 23px 18px 14px #c7c7c7; */
+    border: 1px solid #00ffc8;
   }
   &:hover p {
     -webkit-text-stroke-width: 1px;

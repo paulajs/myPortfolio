@@ -150,14 +150,16 @@ $transition: all 0.1s ease-in;
     .nmg-visual-web1{
       grid-row-start: 93;
       grid-column-start: 1;
-      grid-column-end: 15;
-      width: 100%;
+      grid-column-end: 14;
+      width: 96%;
+      justify-self: start;
     }
     .nmg-visual-web2{
       grid-row-start: 93;
-      grid-column-start: 15;
+      grid-column-start: 12;
       grid-column-end: 25;
-      width: 100%;
+      width: 96%;
+      justify-self: end;
     }
   }
 }

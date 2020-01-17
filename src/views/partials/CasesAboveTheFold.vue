@@ -26,6 +26,8 @@
   </div>
 </template>
 <style lang="scss">
+@import "@/assets/sass/_global.scss";
+
 $transition: all 0.1s ease-in;
 .case-nmg div h1 {
     font-size: 10vw;
@@ -51,7 +53,7 @@ $transition: all 0.1s ease-in;
     grid-row-start: 1;
     grid-row-end: 8;
     font-size: 242px;
-    font-family: "Poppins", sans-serif;
+    font-family: $font-primary;
     color: black;
     margin-left: -0.067em;
     align-self: end;
