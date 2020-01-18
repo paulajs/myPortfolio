@@ -29,6 +29,7 @@ import { scaleAnimation } from "../functions/factory.js";
 import { getIntersects } from "../functions/factory.js";
 import { log } from "three";
 import ShapeOverlays from "@/components/ShapeOverlays.vue";
+const endVideo = require("@/assets/videos/frontpage-entertain/applause.mp4");
 
 const LogoBig = require("../assets/img/SVG/logo.svg");
 export default {
@@ -349,25 +350,29 @@ export default {
     removeBallObject: function(ballObject) {
       delete this.game.balls[ballObject.id];
       this.scene.remove(ballObject);
+      const numberOfBallsLeft = Object.keys(this.game.balls).length;
+
+      if(numberOfBallsLeft == 0){
+        this.gameEnded();
+      }
     },
     gameEnded: function() {
       this.gameEnd = true;
       // this.log("end of game");
+      console.log('game ended');
       this.clearScene();
+      const vid = document.querySelector('.case-videos');
+      vid.style.display = "block";
+      vid.style.width = "100%";
+      vid.style.zIndex = "10000";
+      vid.loop = true;
+      vid.src = endVideo;
       //backWin.src = "";
 
-      /*let bubblesElem = document.querySelector("#bubbles-container");
-      let bubblesOldCanvas = bubblesElem.children[0];
-      bubblesElem.removeChild(bubblesOldCanvas);
-      if (window.innerWidth >= 736) {
-        initiateCanvasDesktop();
-      } else {
-        initiateCanvasMobile();
-      }*/
     },
     clearScene: function() {
       while (this.scene.children.length > 0) {
-        this.scene.remove(scene.children[0]);
+        this.scene.remove(this.scene.children[0]);
       }
     },
     bubblePopDesktop: function(elem, array, e, ball) {
