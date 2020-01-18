@@ -29,13 +29,12 @@ import { scaleAnimation } from "../functions/factory.js";
 import { getIntersects } from "../functions/factory.js";
 import { log } from "three";
 import ShapeOverlays from "@/components/ShapeOverlays.vue";
-const endVideo = require("@/assets/videos/frontpage-entertain/applause.mp4");
 
-const LogoBig = require("../assets/img/SVG/logo.svg");
 export default {
   name: "FrontpageEntertainment",
   props: {
-    isVideoShown: Boolean
+    isVideoShown: Boolean,
+    onGameEnd: Function
   },
   components:{
     ShapeOverlays
@@ -63,8 +62,8 @@ export default {
           },
           balls: {
             distance: 70,
-            numBallsX: 10,
-            numBallsY: 4,
+            numBallsX: 1,//10
+            numBallsY: 1,//4
             xMin: -322,
             yMin: -102,
             radius: 20,
@@ -357,16 +356,17 @@ export default {
       }
     },
     gameEnded: function() {
-      this.gameEnd = true;
-      // this.log("end of game");
-      console.log('game ended');
+      this.onGameEnd();
       this.clearScene();
-      const vid = document.querySelector('.case-videos');
+      setTimeout(() => {
+        this.gameEnd = true;
+      }, 100)
+      /* const vid = document.querySelector('.case-videos');
       vid.style.display = "block";
       vid.style.width = "100%";
       vid.style.zIndex = "10000";
       vid.loop = true;
-      vid.src = endVideo;
+      vid.src = endVideo; */
       //backWin.src = "";
 
     },
@@ -404,13 +404,12 @@ export default {
         element.classList.remove("pointsTransition");
       }, 1000);
     },
-    congratulate: function(minBall) {
+/*     congratulate: function(minBall) {
       if (this.countBalls() === minBall) {
         this.congrats();
-        gameEnd = true;
       }
-    },
-    congrats: function() {
+    }, */
+/*     congrats: function() {
       let sti = "assets/applause.mp4";
       let stiMob = "assets/applausemob.mp4";
 
@@ -425,7 +424,7 @@ export default {
         //sounds.src = "assets/" + "applause" + ".wav";
         //sounds.play();
       }, 500);
-    },
+    }, */
     countBalls: function() {
       let count = 0;
       for (var i = 0; i < this.scene.children.length; i++) {
@@ -462,6 +461,10 @@ export default {
       this.parts.push(particles);
     },
     animate: function() {
+      if(this.gameEnd){
+        return;
+      }
+
       const skipAnimation =
         this.game.isRenderingInitialScene === false &&
         this.game.isAnimatingBallHover === false &&
