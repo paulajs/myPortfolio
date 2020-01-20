@@ -62,8 +62,8 @@ export default {
           },
           balls: {
             distance: 70,
-            numBallsX: 1,//10
-            numBallsY: 1,//4
+            numBallsX: 10,
+            numBallsY: 4,
             xMin: -322,
             yMin: -102,
             radius: 20,
@@ -117,7 +117,6 @@ export default {
       particles: null,
       movementSpeed: 80,
       cursorImg: "img/cross1.png",
-      //backWin: document.querySelector('#full-screen-win'),
       colorArray: [
         0xff00ff,
         0x00ffc8,
@@ -361,14 +360,6 @@ export default {
       setTimeout(() => {
         this.gameEnd = true;
       }, 100)
-      /* const vid = document.querySelector('.case-videos');
-      vid.style.display = "block";
-      vid.style.width = "100%";
-      vid.style.zIndex = "10000";
-      vid.loop = true;
-      vid.src = endVideo; */
-      //backWin.src = "";
-
     },
     clearScene: function() {
       while (this.scene.children.length > 0) {
@@ -404,27 +395,6 @@ export default {
         element.classList.remove("pointsTransition");
       }, 1000);
     },
-/*     congratulate: function(minBall) {
-      if (this.countBalls() === minBall) {
-        this.congrats();
-      }
-    }, */
-/*     congrats: function() {
-      let sti = "assets/applause.mp4";
-      let stiMob = "assets/applausemob.mp4";
-
-      setTimeout(function() {
-        if (window.innerWidth < 736) {
-          //backWin.src = stiMob;
-          //backWin.play();
-        } else {
-          //backWin.src = sti;
-          //backWin.play();
-        }
-        //sounds.src = "assets/" + "applause" + ".wav";
-        //sounds.play();
-      }, 500);
-    }, */
     countBalls: function() {
       let count = 0;
       for (var i = 0; i < this.scene.children.length; i++) {
@@ -432,7 +402,6 @@ export default {
           count += 1;
         }
       }
-      // this.log("balls left", count);
       return count;
     },
     addFireworks: function(ball, objectSize, totalObjects) {
@@ -486,8 +455,6 @@ export default {
   },
   mounted() {
     this.init();
-   /*  setTimeout(()=>{
-    }, 50); */
   },
 };
 </script>

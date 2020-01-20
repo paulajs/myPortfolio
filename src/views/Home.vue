@@ -77,8 +77,9 @@ const caseVideoNMG = require("@/assets/videos/frontpage-entertain/nmg1.mp4");
 const caseVideoSkansing = require("@/assets/videos/frontpage-entertain/skansingit.mp4");
 const caseVideoContact = require("@/assets/videos/frontpage-entertain/contact1.mp4");
 const caseVideoLab = require("@/assets/videos/frontpage-entertain/lab4.mp4");
+const caseVideoAbout = require("@/assets/videos/frontpage-entertain/about2.mp4");
 const noise = require("@/assets/videos/frontpage-entertain/noise.mp4");
-const endVideo = require("@/assets/videos/frontpage-entertain/applause.mp4");
+const endVideo = require("@/assets/videos/frontpage-entertain/applause1.mp4");
 
 export default {
   name: "home",
@@ -119,12 +120,14 @@ export default {
     showGameEndedVideo() {
       this.gameEnd = true;
       this.$refs.casevideo.src = endVideo;
+      this.$refs.casevideo.loop = true;
       this.showVideo();
     },
     mouseOverMain(e) {
       if (this.gameEnd) {
         this.$refs.casevideo.src = noise;
         this.gameEnd = false;
+        this.$refs.casevideo.loop = false;
       }
       this.switchVideo = e.target.dataset.case;
       this.showVideo();
@@ -133,6 +136,7 @@ export default {
       if (this.gameEnd) {
         this.$refs.casevideo.src = noise;
         this.gameEnd = false;
+        this.$refs.casevideo.loop = false;
       }
       this.switchVideo = "some";
       this.showVideo();
@@ -141,6 +145,7 @@ export default {
       if (this.gameEnd) {
         this.$refs.casevideo.src = null;
         this.gameEnd = false;
+        this.$refs.casevideo.loop = false;
       }
       this.hideVideo();
     },
@@ -184,6 +189,7 @@ export default {
 
         case "About":
           console.log("about video");
+          this.$refs.casevideo.src = caseVideoAbout;
           break;
 
         case "Lab":

@@ -1,9 +1,13 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-    <ShapeOverlays/>
+    <img class="about-test" src="@/assets/img/about.png" alt="">
   </div>
 </template>
+<style lang="scss" scoped>
+  .about-test{
+    width: 100%;
+  }
+</style>
 <script>
 import ShapeOverlays from "@/components/ShapeOverlays.vue";
 export default {
