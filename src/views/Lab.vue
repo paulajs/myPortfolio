@@ -112,7 +112,7 @@
 
 .misc-header {
   @include create-grid(4, 9.94vh, 12, 7.01vw, 1vh, 1vw);
-  margin: 2vh 2vw 7vh 2vw;
+  margin: 2vh 2vw 9vh 2vw;
   align-items: center;
   h1 {
     font-family: "Poppins", sans-serif;
@@ -128,11 +128,11 @@
   .misc-description {
     @include place-in-grid(4, 5, 1, 13);
     height: 100%;
-    background: $color-pink;
+    background: white;
     border: 1px solid black;
     position: relative;
     p {
-      color: white;
+      color: black;
       font-family: $font-secundary;
       font-size: 1.5em;
       margin-left: 3vw;
@@ -144,11 +144,7 @@
       height: 100%;
       display: flex;
       align-items: center;
-      background: linear-gradient(
-        -45deg,
-        $color-pink-light -70%,
-        $color-green 120%
-      );
+      background: white;
       opacity: 0.6;
     }
   }

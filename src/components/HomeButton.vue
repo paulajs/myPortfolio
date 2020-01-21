@@ -34,7 +34,8 @@ $transition: all 0.1s ease-in;
     /* transition: $transition; */
   }
   &:hover {
-    background: linear-gradient(#ff90ff, #00ffc8);
+    background: black;
+    transform: scale(1.05);
     /* box-shadow: 23px 18px 14px #c7c7c7; */
     border: 1px solid #00ffc8;
   }
@@ -44,10 +45,10 @@ $transition: all 0.1s ease-in;
   }
   &:hover p:after {
     content: attr(data-text);
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-48%,-48%);
-    position: absolute;
     color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #00ffc8;

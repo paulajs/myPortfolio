@@ -27,17 +27,14 @@
 </template>
 <style lang="scss">
 @import "@/assets/sass/_global.scss";
+@import "@/assets/sass/_mixins.scss";
 
 $transition: all 0.1s ease-in;
 .case-nmg div h1 {
     font-size: 10vw;
 }
 .above-the-fold {
-  display: grid;
-  grid-template-rows: repeat(17, 4.94vh);
-  grid-row-gap: 1vh;
-  grid-template-columns: repeat(24, 3.125vw);
-  grid-column-gap: 1vw;
+  @include create-grid(17, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
   .case-home-button {
     grid-column-start: 24;
@@ -45,13 +42,9 @@ $transition: all 0.1s ease-in;
     justify-self: end;
     align-self: start;
     transform: translate(-26px, 8px);
-
   }
   h1 {
-    grid-column-start: 2;
-    grid-column-end: 23;
-    grid-row-start: 1;
-    grid-row-end: 8;
+    @include place-in-grid(1, 8, 2, 23);
     font-size: 242px;
     font-family: $font-primary;
     color: black;

@@ -40,7 +40,9 @@ div {
   position: relative;
    transition: all 0.15s ease-in;
   &:hover{
-    background: black;
+    .misc-background {
+    @include misc-background(bottom, -70%, 120%, 0.7);
+  }
   }
   .header-space {
     position: absolute;
@@ -58,11 +60,10 @@ div {
     }
   }
   .misc-background {
-    @include misc-background(bottom, -70%, 120%, 0.7);
+    background: black;
   }
   &:hover .misc-background {
     transition: all 0.1s ease-in;
-    opacity: 0;
   }
   &:hover{
     cursor: pointer;
@@ -75,7 +76,11 @@ div {
   position: relative;
    transition: all 0.15s ease-in;
   &:hover{
-    background: black;
+    .misc-background{
+      @include misc-background(right, -70%, 150%, 0.7);
+     transition: all 0.1s ease-in;
+    }
+
   }
   .header-ripple {
     @include header-style(none);
@@ -87,11 +92,11 @@ div {
     line-height: 4.6vw;
   }
   .misc-background {
-    @include misc-background(right, -70%, 150%, 0.7);
+
+    background: black;
   }
   &:hover .misc-background {
     transition: all 0.1s ease-in;
-    opacity: 0;
   }
   &:hover{
     cursor: pointer;
@@ -104,7 +109,10 @@ div {
   position: relative;
    transition: all 0.15s ease-in;
   &:hover{
-    background: black;
+    .misc-background{
+     @include misc-background(top, -60%, 100%, 0.6);
+     transition: all 0.1s ease-in;
+     }
   }
   .header-horror {
     @include header-style(uppercase);
@@ -118,11 +126,11 @@ div {
     border-bottom: 1px solid black;
   }
   .misc-background {
-    @include misc-background(top, -60%, 100%, 0.6);
+    background: black;
   }
   &:hover .misc-background {
     transition: all 0.1s ease-in;
-    opacity: 0;
+    //opacity: 0;
   }
   &:hover{
     cursor: pointer;

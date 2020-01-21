@@ -32,7 +32,9 @@ div {
   position: relative;
    transition: all 0.1s ease-in;
   &:hover{
-    background: black;
+      .misc-background {
+    @include misc-background(right, -60%, 130%, 0.7);
+  }
   }
   .header-adams-ill {
     @include centerX();
@@ -61,11 +63,10 @@ div {
     }
   }
   .misc-background {
-    @include misc-background(right, -60%, 130%, 0.7);
+    background: black;
   }
   &:hover .misc-background {
     transition: all 0.1s ease-in;
-    opacity: 0;
   }
   &:hover{
     cursor: pointer;
@@ -78,7 +79,9 @@ div {
   position: relative;
    transition: all 0.1s ease-in;
   &:hover{
-    background: black;
+      .misc-background {
+    @include misc-background(bottom, 0%, 180%, 0.7);
+  }
   }
   .header-bunny-left {
     @include header-style(uppercase);
@@ -89,11 +92,10 @@ div {
     @include bunny-header(right, border-left);
   }
   .misc-background {
-    @include misc-background(bottom, 0%, 180%, 0.7);
+    background: black;
   }
   &:hover .misc-background {
     transition: all 0.1s ease-in;
-    opacity: 0;
   }
   &:hover{
     cursor: pointer;
@@ -106,7 +108,9 @@ div {
   position: relative;
    transition: all 0.1s ease-in;
   &:hover{
-    background: black;
+      .misc-background {
+    @include misc-background(right, 0%, 110%, 0.6);
+  }
   }
   .header-wreck-top{
      @include header-style(uppercase);
@@ -133,11 +137,10 @@ div {
         z-index: 3;
   }
   .misc-background {
-    @include misc-background(right, 0%, 110%, 0.6);
+    background: black;
   }
   &:hover .misc-background {
     transition: all 0.1s ease-in;
-    opacity: 0;
   }
   &:hover{
     cursor: pointer;

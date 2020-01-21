@@ -30,7 +30,9 @@ div {
   position: relative;
    transition: all 0.1s ease-in;
   &:hover{
-    background: black;
+    .misc-background {
+    @include misc-background(right, -70%, 160%, 0.6);
+    }
   }
   .header-audio {
     bottom: 1vh;
@@ -47,10 +49,9 @@ div {
     }
   }
   .misc-background {
-    @include misc-background(right, -70%, 160%, 0.6);
+    background: black;
   }
   &:hover .misc-background {
-    opacity: 0;
     transition: all 0.1s ease-in;
   }
   &:hover{
@@ -65,7 +66,9 @@ div {
   position: relative;
     transition: all 0.1s ease-in;
   &:hover{
-    background: black;
+     .misc-background {
+    @include misc-background(right, -60%, 160%, 0.8);
+  }
   }
   .header-three {
     position: absolute;
@@ -83,10 +86,9 @@ div {
     }
   }
   .misc-background {
-    @include misc-background(right, -60%, 160%, 0.8);
+    background: black;
   }
   &:hover .misc-background {
-    opacity: 0;
     transition: all 0.1s ease-in;
   }
   &:hover{
@@ -100,7 +102,9 @@ div {
   position: relative;
     transition: all 0.1s ease-in;
   &:hover{
-    background: black;
+    .misc-background {
+    @include misc-background(bottom, -40%, 140%, 0.7);
+  }
   }
   .header-css-anim {
     position: absolute;
@@ -118,10 +122,9 @@ div {
     }
   }
   .misc-background {
-    @include misc-background(bottom, -40%, 140%, 0.7);
+    background: black;
   }
   &:hover .misc-background {
-    opacity: 0;
     transition: all 0.11s ease-in;
   }
   &:hover{

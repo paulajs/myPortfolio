@@ -31,8 +31,11 @@
   </div>
 </template>
 <style lang="scss" scoped>
+@import "@/assets/sass/_global.scss";
+@import "@/assets/sass/_mixins.scss";
+
 .case-process-skansing h2 {
-  font-family: "Poppins", sans-serif;
+  font-family: $font-primary;
   font-size: 150px;
   color: black;
   margin-left: 4.75vw;
@@ -40,24 +43,14 @@
 }
 .process-wrapper {
   grid-row-start: 3;
-  font-family: "Source Code Pro", monospace;
-  display: grid;
-  grid-template-rows: repeat(90, 4.94vh);
-  grid-row-gap: 1vh;
-  grid-template-columns: repeat(24, 3.125vw);
-  grid-column-gap: 1vw;
+  font-family: $font-secundary;
+  @include create-grid(90, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 0 1vw;
   #slider-insp-skansing{
-      grid-row-start: 6;
-  grid-row-end: 19;
-  grid-column-start: 2;
-  grid-column-end: 24;
+    @include place-in-grid(6, 19, 2, 24);
   }
   #slider-exp-skansing{
-          grid-row-start: 29;
-  grid-row-end: 41;
-  grid-column-start: 2;
-  grid-column-end: 24;
+    @include place-in-grid(29, 41, 2, 24);
   }
   .inspiration-skansing {
     grid-row-start: 2;

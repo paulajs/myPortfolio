@@ -16,29 +16,29 @@ $transition: all 0.1s ease-in;
   border: 2px solid black;
   background: white;
   font-family: $font-secundary;
-  font-size: 21px;
+  font-size: 23px;
   position: relative;
   &::before {
     content: "";
     width: 320px;
     height: 70px;
     border: 2px solid black;
-    transform: translate(-150px, -12px);
+    transform: translate(-147px, -9px);
     position: absolute;
     z-index: -1;
     transition: $transition;
   }
   &:hover::before {
-    background: $gradient;
+    background: black;
     transition: $transition;
-    opacity: 0.7;
+
   }
   &:focus {
     outline: 0;
   }
   &:hover {
     cursor: pointer;
-    background: black;
+    background: white;
     color: white;
     transition: $transition;
   }
@@ -49,7 +49,8 @@ $transition: all 0.1s ease-in;
   &:hover p:after {
     content: attr(data-text);
     position: absolute;
-    left: 98px;
+    left: 91px;
+    top: 19px;
     color: $color-green;
     animation: rumble 0.3s ease-in infinite;
   }
