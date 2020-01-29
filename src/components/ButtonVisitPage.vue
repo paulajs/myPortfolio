@@ -29,16 +29,15 @@ $transition: all 0.1s ease-in;
     transition: $transition;
   }
   &:hover::before {
-    background: black;
+    background: white;
     transition: $transition;
-
   }
   &:focus {
     outline: 0;
   }
   &:hover {
     cursor: pointer;
-    background: white;
+    background: black;
     color: white;
     transition: $transition;
   }
@@ -53,6 +52,28 @@ $transition: all 0.1s ease-in;
     top: 19px;
     color: $color-green;
     animation: rumble 0.3s ease-in infinite;
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .visit-page {
+    margin-top: 9vh;
+    margin-bottom: 31vh;
+  }
+}
+@media screen and (min-device-width: 1900px) {
+  .visit-page {
+    width: 345px;
+    height: 90px;
+    font-size: 25px;
+    &::before {
+      width: 345px;
+      height: 90px;
+      transform: translate(-152px, -13px);
+    }
+    &:hover p:after {
+      left: 92px;
+      top: 26px;
+    }
   }
 }
 </style>

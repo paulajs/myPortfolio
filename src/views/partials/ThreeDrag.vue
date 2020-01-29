@@ -16,6 +16,11 @@
     width: 100%;
   }
 }
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+.canvas-drag-wrapper {
+  grid-row-start: 138;
+}
+}
 </style>
 <script>
 import * as THREE from "three";

@@ -26,8 +26,8 @@
 <style lang="scss" scoped>
 @import "../assets/sass/_global.scss";
 .sub-menu-cursor {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   background: black;
   mix-blend-mode: difference;
   pointer-events: none;
@@ -65,13 +65,12 @@
   list-style: none;
   z-index: 1000;
   height: 75vh;
-  margin-left: -2vw;
 }
 
 .cases-sub-menu li a {
   text-decoration: none;
   color: black;
-  cursor: none;
+  cursor: default;
   &:hover{
     color: #afafaf;
   }

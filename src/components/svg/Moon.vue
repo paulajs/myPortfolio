@@ -37,21 +37,21 @@
 #moon {
   position: absolute;
   width: 100%;
-  bottom: 9vh;
+  bottom: 4vw;
   left: 0;
   z-index: 10;
 }
-#horror-win:hover .st0{
+#horror-win:hover .st0 {
   fill: white;
   opacity: 0.35;
   transition: all 1.2s ease-in;
 }
-#horror-mac:hover .st0{
+#horror-mac:hover .st0 {
   fill: white;
   opacity: 0.35;
   transition: all 1.2s ease-in;
 }
-#horror-linux:hover .st0{
+#horror-linux:hover .st0 {
   fill: white;
   opacity: 0.35;
   transition: all 1.2s ease-in;

@@ -71,6 +71,11 @@
     grid-column-end: 22;
   }
 }
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .case-process-skansing h2 {
+    font-size: 8vw;
+  }
+}
 </style>
 <script>
 import Slider from "@/components/Slider.vue";

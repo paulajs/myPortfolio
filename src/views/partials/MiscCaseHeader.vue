@@ -37,7 +37,7 @@
     grid-column-end: 23;
     grid-row-start: 1;
     grid-row-end: 8;
-    font-size: 9vw;
+    font-size: 8vw;
     font-family: "Poppins", sans-serif;
     color: black;
     margin-left: -0.067em;
@@ -50,10 +50,21 @@
     grid-row-start: 9;
     align-self: end;
     font-family: "Source Code Pro", monospace;
-    font-size: 21px;
+    font-size: 1.1vw;
     font-weight: 400;
   }
 }
+  @media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .misc-header {
+      h2{
+        grid-row-start: 10;
+        font-size: 1.3vw;
+      }
+    }
+  }
 </style>
 <script>
 import HomeButton from "@/components/HomeButton.vue";

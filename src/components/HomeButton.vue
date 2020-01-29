@@ -14,17 +14,16 @@ $transition: all 0.1s ease-in;
   height: 115px;
   border: none;
   background: black;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
+  /*   -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black; */
   color: white;
   /* border: 1px solid black; */
-  font-family: "Poppins", sans-serif;
-  font-size: 31px;
-  font-weight: 800;
+  font-family: $font-secundary;
+  font-size: 28px;
+  font-weight: 400;
   position: relative;
   transition: $transition;
   cursor: pointer;
-
 
   &:focus {
     outline: 0;
@@ -35,23 +34,18 @@ $transition: all 0.1s ease-in;
   }
   &:hover {
     background: black;
-    transform: scale(1.05);
-    /* box-shadow: 23px 18px 14px #c7c7c7; */
-    border: 1px solid #00ffc8;
+    transform: scale(1.07);
   }
   &:hover p {
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #ff00ff;
+    color: #ff00ff;
   }
   &:hover p:after {
     content: attr(data-text);
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-48%,-48%);
-    color: transparent;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #00ffc8;
+    transform: translate(-48%, -48%);
+    color: #00ffc8;
     animation: rumble 0.3s ease-in infinite;
   }
 }
@@ -78,6 +72,12 @@ $transition: all 0.1s ease-in;
     opacity: 1;
     background: white;
     transform: scale(1.2);
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .home-button {
+    width: 100px;
+    height: 100px;
   }
 }
 </style>

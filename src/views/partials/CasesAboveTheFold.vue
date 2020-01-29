@@ -45,7 +45,7 @@ $transition: all 0.1s ease-in;
   }
   h1 {
     @include place-in-grid(1, 8, 2, 23);
-    font-size: 242px;
+    font-size: 12.5vw;
     font-family: $font-primary;
     color: black;
     margin-left: -0.067em;
@@ -58,9 +58,10 @@ $transition: all 0.1s ease-in;
     grid-column-end: 5;
     grid-row-start: 8;
     align-self: end;
-    font-family: "Source Code Pro", monospace;
-    font-size: 28px;
+    font-family: $font-secundary;
+    font-size: 1.5vw;
     font-weight: 400;
+    color: black;
   }
 
   .info-box {
@@ -73,13 +74,13 @@ $transition: all 0.1s ease-in;
       grid-column-end: 1;
       writing-mode: vertical-lr;
       justify-self: end;
-      font-family: "Poppins", sans-serif;
-      font-size: 21px;
+      font-family: $font-primary;
+      font-size: 2.2vh;
     }
     p {
       grid-column-start: 2;
       grid-column-end: 8;
-      font-family: "Source Code Pro", monospace;
+      font-family: $font-secundary;
     }
   }
   .info-about {
@@ -113,6 +114,19 @@ $transition: all 0.1s ease-in;
     }
     100%{
       transform: translate3D(1px, 0px,0);
+    }
+  }
+
+  @media screen
+  and (min-device-width: 1200px)
+  and (max-device-width: 1600px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .above-the-fold {
+      .info-box {
+        h3{
+          font-size: 2.7vh;
+        }
+      }
     }
   }
 

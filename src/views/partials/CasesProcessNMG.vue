@@ -39,16 +39,17 @@
   </div>
 </template>
 <style lang="scss" scoped>
+@import "@/assets/sass/_global.scss";
 .case-process-NMG h2 {
-  font-family: "Poppins", sans-serif;
-  font-size: 150px;
+  font-family: $font-primary;
+  font-size: 8vw;
   color: black;
   margin-left: 4.75vw;
   margin-top: 14vh;
 }
 .process-wrapper {
   grid-row-start: 3;
-  font-family: "Source Code Pro", monospace;
+  font-family: $font-secundary;
   display: grid;
   grid-template-rows: repeat(82, 4.94vh);
   grid-row-gap: 1vh;
@@ -98,6 +99,23 @@
     grid-column-start: 3;
     grid-column-end: 23;
     box-shadow: 13px 11px 19px #8b8a8a;
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .process-wrapper {
+    #slider-insp-nmg {
+      grid-row-start: 7;
+      grid-row-end: 20;
+    }
+    .nmg-exp1 {
+      grid-row-start: 30;
+    }
+    .nmg-exp3 {
+      grid-row-start: 46;
+    }
+    .styletiles-nmg {
+      grid-row-start: 57;
+    }
   }
 }
 </style>

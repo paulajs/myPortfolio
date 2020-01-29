@@ -504,7 +504,7 @@ a {
     grid-column-end: 12;
     grid-row-start: 2;
     grid-row-end: 9;
-  overflow: hidden;
+    overflow: hidden;
 }
 .pointsDisplay {
   user-select: none;
@@ -524,10 +524,6 @@ a {
 }
 #bubbles-canvas{
   position: absolute;
-
-/*   cursor: auto;
-  cursor: url('/img/cross1.png'), pointer; */
-
 }
 @keyframes pointsAnim {
   0% {
@@ -538,4 +534,5 @@ a {
     transform: scale(2);
   }
 }
+
 </style>

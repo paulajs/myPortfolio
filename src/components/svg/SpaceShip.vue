@@ -94,7 +94,7 @@
   transform: translateX(-50%);
   z-index: 10;
   polygon.st0{
-    transform: scaleX(0.2) translateX(32.5vw);
+    transform: scaleX(0.2) translateX(200%);
   }
 }
 #space-mac .st0{
@@ -155,6 +155,16 @@
 @keyframes spacebeam {
   100% {
     transform: scaleX(1) translateX(0);
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  #spaceship {
+    top: 13vh;
+  }
+}
+@media screen and (min-device-width: 1900px) {
+    #spaceship {
+    top: 13vh;
   }
 }
 </style>

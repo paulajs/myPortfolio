@@ -17,7 +17,14 @@
       </div>
       <img class="desktop-mock1" src="@/assets/img/SVG/mockupv1.svg" alt />
     </div>
-    <video @mouseover="eventVideo" @mouseleave="eventVideoLeave" class="skansing-video" muted loop src="@/assets/videos/skansing/skansingvid44.mp4"></video>
+    <video
+      @mouseover="eventVideo"
+      @mouseleave="eventVideoLeave"
+      class="skansing-video"
+      muted
+      loop
+      src="@/assets/videos/skansing/skansingvid44.mp4"
+    ></video>
     <div class="desktop-mockup2-skansing">
       <div class="skansing-result-header">
         <h4>Desktop mockup version 2</h4>
@@ -32,10 +39,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  .skansing-video{
-      width: 100%;
-      margin-bottom: 19vh;
-    }
+  .skansing-video {
+    width: 100%;
+    margin-bottom: 19vh;
+  }
   .display-results {
     display: grid;
     grid-template-rows: repeat(5, 4.94vh);
@@ -52,28 +59,27 @@
       font-size: 150px;
       color: black;
     }
-
   }
   .skansing-result-header {
-      color: white;
-      background: black;
-      grid-column-start: 1;
-      grid-column-end: 6;
-      display: grid;
-      grid-template-columns: repeat(24, 3.125vw);
-      grid-column-gap: 1vw;
-      height: 3.4vh;
-      transform: translateX(-1vw);
-      font-family: "Source Code Pro", monospace;
-      h4 {
-        grid-row-start: 2;
-        grid-column-start: 2;
-        grid-column-end: 8;
-        font-size: 18px;
-        transform: translateX(1vw);
-        font-weight: 300;
-      }
+    color: white;
+    background: black;
+    grid-column-start: 1;
+    grid-column-end: 6;
+    display: grid;
+    grid-template-columns: repeat(24, 3.125vw);
+    grid-column-gap: 1vw;
+    height: 3.4vh;
+    transform: translateX(-1vw);
+    font-family: "Source Code Pro", monospace;
+    h4 {
+      grid-row-start: 2;
+      grid-column-start: 2;
+      grid-column-end: 8;
+      font-size: 18px;
+      transform: translateX(1vw);
+      font-weight: 300;
     }
+  }
   .mobile-mockup-skansing {
     display: grid;
     grid-template-rows: repeat(21, 4.94vh);
@@ -121,10 +127,22 @@
       width: 100%;
     }
 
-     .desktop-mock2 {
+    .desktop-mock2 {
       grid-column-start: 2;
       grid-column-end: 24;
       grid-row-start: 2;
+    }
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .cases-result-skansing {
+    .skansing-result-header {
+      grid-column-end: 8;
+    }
+    .display-results {
+      h2.result-header {
+        font-size: 8vw;
+      }
     }
   }
 }
@@ -139,12 +157,12 @@ export default {
     ButtonVisitPage
   },
   methods: {
-    eventVideo: function(e){
-      console.log('enter')
+    eventVideo: function(e) {
+      console.log("enter");
       e.target.play();
     },
-    eventVideoLeave: function(e){
-      console.log('leave');
+    eventVideoLeave: function(e) {
+      console.log("leave");
       e.target.pause();
     }
   }

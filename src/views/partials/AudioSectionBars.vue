@@ -74,6 +74,11 @@
     }
   }
 }
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .audio-section-bars {
+  @include place-in-grid(22, 35, 1, 25);
+  }
+}
 </style>
 <script>
 const music = require("@/assets/audio/chill_jim.mp3");

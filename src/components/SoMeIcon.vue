@@ -8,14 +8,14 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
  .icon-some {
-cursor: none;
-  width: 3vw;
-  height: 3vw;
+cursor: default;
+  width: 3.3vw;
+  height: 3.3vw;
   }
 
  .icon-cursor{
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     background: -webkit-gradient(linear, left top, left bottom, from(#ff90ff), to(#00ffc8));
     mix-blend-mode: luminosity;
     pointer-events: none;

@@ -10,7 +10,199 @@ body {
   grid-template-columns: repeat(12, 7.25vw);
   grid-column-gap: 1vw;
   margin: 2vh 1vw;
+  .mobile-logo {
+    display: none;
+    margin-left: -2.5vw;
+  }
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    color: black;
 
+    .mobile-cases {
+      position: relative;
+      .submenu-link {
+        &:after {
+          content: "";
+          width: 0;
+          height: 0;
+          border: none;
+          margin: 0;
+        }
+      }
+      .submenu-indicator {
+        position: absolute;
+        right: 16%;
+        top: 78%;
+        transform: translateY(-50%);
+        font-size: 1.8em;
+        font-family: $font-primary;
+        font-weight: 300;
+      }
+      .ind-open{
+        animation: ind-open-anim 0.3s forwards ease-out;
+      }
+      .ind-close{
+        animation: ind-close-anim 0.3s forwards ease-in;
+      }
+      @keyframes ind-open-anim{
+        0%{
+          transform: translateY(-50%) rotate(0) scale(1);
+        }
+        85%{
+          transform: translateY(-50%) rotate(90deg) scale(1);
+        }
+        100%{
+          transform: translateY(-50%) rotate(90deg) scaleX(0.3);
+        }
+      }
+      @keyframes ind-close-anim{
+        0%{
+          transform: translateY(-50%) rotate(90deg) scaleX(0.3);
+        }
+        85%{
+          transform: translateY(-50%) rotate(90deg) scale(1);
+        }
+        100%{
+          transform: translateY(-50%) rotate(0) scale(1);
+        }
+      }
+      .submenu {
+        border: 1px solid black;
+        width: 60vw;
+        height: 7vh;
+        position: absolute;
+        margin-top: -16%;
+        margin-left: 8%;
+        z-index: -1;
+        .submenulist{
+          animation: show-items 0.3s forwards ease-in;
+        }
+        ul {
+          transform: scaleX(0);
+          list-style: none;
+          font-family: $font-secundary;
+          li {
+            border-bottom: 1px solid black;
+            height: 5vh;
+            text-align: center;
+            padding-top: 1vh;
+            z-index: 10000;
+          }
+        }
+      }
+      .open-submenu {
+        background: white;
+        animation: open-menu-anim 0.3s forwards ease;
+      }
+      .close-submenu {
+        background: white;
+        animation: close-menu-anim 0.2s forwards ease;
+      }
+    }
+    @keyframes show-items {
+      0%{transform: scaleX(0);}
+      95%{transform: scaleX(0);}
+      100%{transform: scaleX(1);}
+    }
+    @keyframes open-menu-anim {
+      50%{
+        margin-left: 0;
+        margin-top: -1%;
+        height: 7vh;
+      }
+      60%{
+        margin-left: 0;
+        margin-top: -1%;
+        height: 7vh;
+      }
+      100%{
+        height: 19vh;
+        margin-left: 0;
+        margin-top: -1%;
+      }
+    }
+    @keyframes close-menu-anim {
+      0%{
+        height: 19vh;
+        margin-left: 0;
+        margin-top: -1%;
+      }
+      85%{
+        height: 7vh;
+        margin-left: 0;
+        margin-top: -1%;
+      }
+      100%{
+        margin-left: 8%;
+        margin-top: -16%;
+        height: 7vh;
+      }
+    }
+    .mobile-link {
+      border: 1px solid black;
+      background: white;
+      width: 60vw;
+      height: 8vh;
+      /* margin-top: 8.6vh; */
+      margin-top: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      font-size: 7.4vw;
+      font-family: $font-primary;
+      font-weight: 700;
+      &:after {
+        content: "";
+        border: 1px solid black;
+        width: 60vw;
+        height: 7vh;
+        position: absolute;
+        margin-top: 7%;
+        margin-left: 8%;
+        z-index: -1;
+      }
+    }
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+  .mobile-menu-button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    color: white;
+    font-family: "Source Code Pro", monospace;
+    width: 16vw;
+    height: 16vw;
+    grid-column-start: 11;
+    grid-row-start: 1;
+    border-radius: 100%;
+    margin-left: -1.5vh;
+  }
+  .mobile-close {
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    p {
+      border: none;
+      &:after {
+        border: none;
+      }
+    }
+  }
   .menu {
     font-family: $font-primary;
     font-weight: 800;
@@ -87,17 +279,89 @@ button.menu-button:focus {
   grid-column-end: 3;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
   display: flex;
-    align-items: center;
+  align-items: center;
   a {
     text-decoration: none;
     color: #000;
+    margin-right: 6%;
   }
 }
 .menu-misc {
   grid-row-start: 9;
   grid-column-start: 12;
   justify-self: end;
+}
+
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .home {
+    .menu {
+      display: none;
+    }
+    .bottom {
+      width: 100vw;
+    }
+    .top {
+      position: initial;
+      grid-row-start: 2;
+      grid-column-start: 1;
+      grid-column-end: 6;
+      transform: translateX(-2vw);
+      width: auto;
+      height: 3vh;
+      align-self: center;
+    }
+    .page-logo {
+      display: none;
+    }
+    .mobile-logo {
+      display: block;
+      grid-row-start: 1;
+      grid-column-start: 2;
+      width: 66vw;
+      align-self: end;
+    }
+    .mobile-menu-button {
+      display: flex;
+    }
+    .mobile-menu {
+      /* display: flex; */
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .entertain-element {
+    .case-videos {
+      width: 112%;
+      margin-left: -5%;
+    }
+  }
+  .menu-cases {
+    .cases-sub-menu {
+      height: 81vh;
+      font-size: 16px;
+    }
+  }
+  .frontpage-label {
+    width: 19.5vw;
+  }
+}
+
+@media screen and (min-height: 1080px) and (min-width: 1900px) {
+  .entertain-element {
+    video {
+      width: 112%;
+      margin-left: -5%;
+    }
+  }
+  .menu-cases {
+    .cases-sub-menu {
+      height: 81vh;
+      font-size: 21px;
+    }
+  }
 }

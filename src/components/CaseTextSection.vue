@@ -56,48 +56,61 @@
   .process-text-space {
     grid-column-end: 12;
   }
-  .try-text-space{
+  .try-text-space {
     grid-column-end: 12;
   }
-  .process-text-horror{
+  .process-text-horror {
     grid-column-end: 12;
   }
-  .try-text-horror{
+  .try-text-horror {
     grid-column-end: 12;
   }
-  .process-text-platformer{
+  .process-text-platformer {
     grid-column-end: 12;
   }
-  .process-text-runner{
+  .process-text-runner {
     grid-column-end: 8;
   }
-  .process-text-fall{
+  .process-text-fall {
     grid-column-end: 8;
   }
-  .anim-text-three{
+  .anim-text-three {
     grid-column-end: 10;
   }
-  .adams-text-inspiration{
+  .adams-text-inspiration {
     grid-column-end: 10;
   }
-  .adams-text-concept{
+  .adams-text-concept {
     grid-column-end: 12;
   }
-  .wreck-text-sprite{
+  .wreck-text-sprite {
     grid-column-end: 10;
   }
-  .wreck-text-try{
+  .wreck-text-try {
     grid-column-end: 10;
   }
-  .audio-text-bars{
+  .audio-text-bars {
     grid-column-end: 12;
   }
-  .audio-text-circle{
+  .audio-text-circle {
     grid-column-end: 8;
   }
-/*   .visual-id-text-nmg{
-    grid-column-end: 8;
-  } */
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .case-text-section {
+    .case-section-header {
+      grid-column-end: 7;
+      h5 {
+        font-size: 16px;
+      }
+    }
+    .inspiration-text-nmg {
+      grid-column-end: 11;
+    }
+    p.experimentation-text-nmg {
+      grid-column-end: 15;
+    }
+  }
 }
 </style>
 <script>

@@ -30,7 +30,12 @@
         textClass="visual-id-text-nmglabel"
         sectionText="Example of the visual identity on a marmelade label."
       />
-      <img class="nmg-visual-label" src="@/assets/img/SVG/nmg-vi-label1.svg" alt />
+      <div class="nmg-visual-label">
+        <img src="@/assets/img/EThindbær.png" alt />
+        <img src="@/assets/img/ETkvæde.png" alt />
+        <img src="@/assets/img/EThyldebær.png" alt />
+      </div>
+
       <CaseTextSection
         sectionClass="case-text-section visual-id-nmgbooklet"
         sectionHeaderClass="case-section-header header-visual-id-nmg"
@@ -39,7 +44,7 @@
         sectionText="Example of a booklet for the marlemade course."
       />
       <img class="nmg-visual-booklet" src="@/assets/img/nmg-vi-booklet-100.jpg" alt />
-       <CaseTextSection
+      <CaseTextSection
         sectionClass="case-text-section visual-id-nmgweb"
         sectionHeaderClass="case-section-header header-visual-id-nmg"
         headertext="Visual Identity Website"
@@ -110,17 +115,17 @@ $transition: all 0.1s ease-in;
       grid-row-end: 16;
       font-family: $font-primary;
       color: white;
-      font-size: 94px;
+      font-size: 8vw;
       color: rgb(27, 25, 25);
     }
     .nmg-result-para {
       font-family: $font-secundary;
-      grid-row-start: 18;
+      grid-row-start: 19;
       grid-column-start: 2;
-      grid-column-end: 24;
+      grid-column-end: 14;
     }
     .models-nmg {
-      grid-row-start: 21;
+      grid-row-start: 22;
       grid-column-start: 1;
     }
     .visual-id-nmglabel {
@@ -130,8 +135,15 @@ $transition: all 0.1s ease-in;
     .nmg-visual-label {
       grid-column-start: 3;
       grid-column-end: 23;
-      grid-row-start: 56;
+      grid-row-start: 59;
+      grid-row-end: 67;
       width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      img {
+        width: 25%;
+      }
     }
     .visual-id-nmgbooklet {
       grid-row-start: 70;
@@ -143,23 +155,35 @@ $transition: all 0.1s ease-in;
       grid-column-end: 23;
       width: 100%;
     }
-    .visual-id-nmgweb{
+    .visual-id-nmgweb {
       grid-row-start: 91;
       grid-column-start: 1;
     }
-    .nmg-visual-web1{
+    .nmg-visual-web1 {
       grid-row-start: 93;
       grid-column-start: 1;
       grid-column-end: 14;
       width: 96%;
       justify-self: start;
     }
-    .nmg-visual-web2{
+    .nmg-visual-web2 {
       grid-row-start: 93;
       grid-column-start: 12;
       grid-column-end: 25;
       width: 96%;
       justify-self: end;
+    }
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .cases-result-nmg {
+    .display-results {
+      .nmg-result-para {
+        grid-column-end: 16;
+      }
+      .nmg-visual-booklet {
+      grid-row-start: 73;
+      }
     }
   }
 }

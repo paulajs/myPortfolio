@@ -68,6 +68,14 @@
             <li>Unity</li>
           </ul>
         </div>
+        <h4 class="skill-header header-contact">Contact</h4>
+        <div class="skill-subset subset-contact">
+          <ul>
+            <li> <img src="@/assets/img/SVG/icon-email.svg" > </li>
+            <li> <img src="@/assets/img/SVG/icon-linked.svg"> </li>
+            <img src="" alt="">
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -151,8 +159,12 @@
         grid-row-start: 3;
         grid-column-start: 1;
       }
-      .header-3d{
+      .header-3d {
         grid-row-start: 2;
+        grid-column-start: 1;
+      }
+      .header-contact {
+        grid-row-start: 3;
         grid-column-start: 1;
       }
       .skill-header {
@@ -179,7 +191,22 @@
         grid-row-start: 3;
         grid-column-start: 2;
       }
-      .subset-misc{
+      .subset-contact{
+        grid-row-start: 3;
+        grid-column-start: 2;
+        ul{
+          display: flex;
+          flex-direction: row;
+          li{
+            width: 23%;
+            img{
+              width: 80%;
+
+            }
+          }
+        }
+      }
+      .subset-misc {
         grid-row-start: 2;
         grid-column-start: 2;
       }

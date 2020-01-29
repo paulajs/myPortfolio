@@ -51,7 +51,7 @@
 .display-nmg {
   grid-column-start: 2;
   grid-column-end: 23;
-  grid-row-start: 23;
+  grid-row-start: 24;
 
   .result-nmg-wrapper {
     display: grid;

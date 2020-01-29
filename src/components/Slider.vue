@@ -29,7 +29,7 @@
     </div>
     <div class="nav-overview">
       <svg class="navigation-bar" :viewBox="getViewBox()">
-        <line x1="-5" y1="13.98" :x2="lengthOfLine" y2="13.98" stroke="black"/>
+        <line x1="-5" y1="13.98" :x2="lengthOfLine" y2="13.98" stroke="black" />
         <circle
           v-for="(image, key) in images"
           v-bind:key="image.id"
@@ -156,7 +156,7 @@
 .nav-overview {
   grid-column-start: 10;
   grid-column-end: 16;
-  grid-row-start: 19;
+  grid-row-start: 18;
 }
 .nav-slider-button-text {
   visibility: hidden;
@@ -199,7 +199,6 @@
     box-shadow: 17px 15px 18px #333;
   }
 }
-
 
 @keyframes textShow {
   0% {
@@ -245,19 +244,26 @@
     opacity: 1;
   }
 }
+@media screen
+and (min-height: 1080px )
+and (min-width: 1900px) {
+  .nav-overview {
+    grid-row-start: 17;
+  }
+}
 </style>
 <script>
 export default {
   name: "Slider",
   props: {
     images: Array,
-    sliderID: String,
+    sliderID: String
   },
   data() {
-    const radius= 8;
+    const radius = 8;
     const factor = 350;
-    const lengthOfLine = factor - (factor/this.images.length);
-    const len = factor/this.images.length;
+    const lengthOfLine = factor - factor / this.images.length;
+    const len = factor / this.images.length;
 
     return {
       index: 0,
@@ -268,16 +274,16 @@ export default {
   },
   methods: {
     getIndicatorXPosition(index) {
-      return (this.len * index)
+      return this.len * index;
     },
-    getViewBox(){
+    getViewBox() {
       return "-10 0 " + (this.lengthOfLine + 2 * this.radius + 3) + " 31";
     },
     next() {
-      let button = this.$refs.nextbutton
-      button.classList.add('clickAnim');
-      setTimeout(function(){
-        button.classList.remove('clickAnim');
+      let button = this.$refs.nextbutton;
+      button.classList.add("clickAnim");
+      setTimeout(function() {
+        button.classList.remove("clickAnim");
       }, 500);
 
       const index = this.index + 1;
@@ -288,10 +294,10 @@ export default {
       }
     },
     previous() {
-      let button = this.$refs.prevbutton
-      button.classList.add('clickAnim');
-      setTimeout(function(){
-        button.classList.remove('clickAnim');
+      let button = this.$refs.prevbutton;
+      button.classList.add("clickAnim");
+      setTimeout(function() {
+        button.classList.remove("clickAnim");
       }, 500);
 
       const index = this.index - 1;

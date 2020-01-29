@@ -115,7 +115,7 @@
   margin: 2vh 2vw 9vh 2vw;
   align-items: center;
   h1 {
-    font-family: "Poppins", sans-serif;
+    font-family: $font-primary;
     font-size: 8.6vw;
     width: 100%;
     color: black;

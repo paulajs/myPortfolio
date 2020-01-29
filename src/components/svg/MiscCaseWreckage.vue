@@ -138,7 +138,7 @@
   left: 0;
   width: 100%;
 }
-.wreck-textbox{
+.wreck-textbox {
   transform: translate(0.2vw, -0.7vh);
 }
 .st0 {
@@ -191,7 +191,20 @@
   stroke-width: 0.5;
   stroke-miterlimit: 10;
 }
-
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  #caseWreckageSVG {
+    width: auto;
+    height: 79%;
+  }
+}
+@media screen
+and (min-height: 1080px )
+and (min-device-width: 1900px) {
+  #caseWreckageSVG {
+    width: auto;
+    height: 80%;
+  }
+}
 </style>
 <script>
 export default {

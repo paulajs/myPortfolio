@@ -46,14 +46,14 @@
         Same principles as before, but with circles instead of bars."
       />
       <AudioSectionCircle />
-      <CaseTextSection
+<!--       <CaseTextSection
         sectionClass="case-text-section misc-audio-bubbbles"
         sectionHeaderClass="case-section-header header-audio-bubbles"
         headertext="Bubbles"
         textClass="audio-text-bubbles"
         sectionText="Using data to place stars/circles in space."
-      />
-      <AudioSectionBubbles />
+      /> -->
+      <!-- <AudioSectionBubbles /> -->
       <CaseTextSection
         sectionClass="case-text-section misc-audio-img"
         sectionHeaderClass="case-section-header header-audio-img"
@@ -92,7 +92,7 @@
   }
   .misc-audio-img {
     grid-column-start: 1;
-    grid-row-start: 78;
+    grid-row-start: 56;
   }
 }
 
@@ -145,7 +145,6 @@
     }
   }
 }
-
 
 </style>
 <script>

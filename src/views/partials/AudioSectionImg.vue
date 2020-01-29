@@ -16,7 +16,7 @@
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
 .audio-section-img {
-  @include place-in-grid(79, 89, 1, 25);
+  @include place-in-grid(56, 69, 1, 25);
   justify-self: center;
   @include create-grid(20, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   #audio-player {

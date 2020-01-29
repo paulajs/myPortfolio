@@ -107,7 +107,7 @@
     grid-column-start: 1;
   }
   .kittytoss-video {
-    /* width: 100%; */
+    width: 100%;
     @include place-in-grid(46, 54, 5, 21);
   }
 }

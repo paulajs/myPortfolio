@@ -89,11 +89,11 @@
     display: block;
     animation: paw-anim 0.6s ease-in forwards;
   }
-  &:hover svg #textbox{
+/*   &:hover svg #textbox{
     display: block;
     animation: textbox 0.3s ease-in forwards;
     animation-delay: 0.45s;
-  }
+  } */
 }
 #wreck-mac{
   svg #textbox{
@@ -105,22 +105,22 @@
     display: block;
     animation: paw-anim 0.65s ease-in forwards;
   }
-  &:hover svg #textbox{
+/*   &:hover svg #textbox{
     display: block;
     animation: textbox 0.3s ease-in forwards;
     animation-delay: 0.45s;
-  }
+  } */
 }
 #wreck-linux{
   &:hover svg #paw{
     display: block;
     animation: paw-anim 0.65s ease-in forwards;
   }
-  &:hover svg #textbox{
+/*   &:hover svg #textbox{
     display: block;
     animation: textbox 0.3s ease-in forwards;
     animation-delay: 0.45s;
-  }
+  } */
 }
 @keyframes textbox{
   0%{

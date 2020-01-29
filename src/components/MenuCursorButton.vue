@@ -19,7 +19,7 @@ button:hover p {
   -webkit-text-stroke-color: $color-pink;
 }
 button:hover p:before {
-  content: attr(data-text);
+  content: attr(data-case);
   position: absolute;
   z-index: -50;
   color: transparent;

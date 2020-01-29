@@ -47,10 +47,11 @@
   </div>
 </template>
 <style lang="scss">
+@import "@/assets/sass/_global.scss";
 .case-process-hesehus {
   h2 {
-    font-family: "Poppins", sans-serif;
-    font-size: 150px;
+    font-family: $font-primary;
+    font-size: 8vw;
     color: black;
     margin-left: 4.75vw;
     margin-top: 4vh;
@@ -126,6 +127,7 @@
     }
   }
 }
+
 </style>
 <script>
 import CaseTextSection from "@/components/CaseTextSection.vue";

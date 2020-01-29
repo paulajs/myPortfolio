@@ -19,41 +19,41 @@
 #horror-win {
   grid-column-start: 3;
   grid-column-end: 9;
-  background: $color-pink;
+  background: black;
   &:hover {
-    background: black;
+    background: $color-pink;
     transition: all 0.7s ease;
   }
 }
 #horror-mac {
   grid-column-start: 10;
   grid-column-end: 16;
-  background: $color-pink;
+  background: black;
   &:hover {
-    background: black;
+    background: $color-pink;
     transition: all 0.7s ease;
   }
   .space-background {
-    opacity: 0.5;
+    opacity: 0;
   }
    &:hover .space-background {
-    opacity: 0;
+    opacity: 0.5;
     transition: all 0.4s ease-out;
   }
 }
 #horror-linux {
   grid-column-start: 17;
   grid-column-end: 23;
-  background: $color-pink;
+  background: black;
   &:hover {
-    background: black;
+    background: $color-pink;
     transition: all 0.7s ease;
   }
   .space-background {
-    opacity: 0.7;
+    opacity: 0;
   }
    &:hover .space-background {
-    opacity: 0;
+    opacity: 0.7;
     transition: all 0.4s ease-out;
   }
 }
@@ -199,7 +199,7 @@
     transition: all 0.4s ease;
   }
   &:hover .space-background {
-    opacity: 0;
+    opacity: 0.8;
     transition: all 0.4s ease-out;
   }
 
@@ -214,7 +214,7 @@
       $color-pink-light -70%,
       $color-green 120%
     );
-    opacity: 0.8;
+    opacity: 0;
     transition: all 0.3s ease;
   }
   .top-text {

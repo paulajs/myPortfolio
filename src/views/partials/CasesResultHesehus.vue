@@ -34,15 +34,14 @@
         :videoPoster="getJourneyPoster()"
       />
 
-        <CaseTextSection
+      <CaseTextSection
         sectionClass="case-text-section hesehus-result-mockup"
         sectionHeaderClass="case-section-header header-hesehus-mockup"
         headertext="Mockup"
         textClass="hesehus-text-mockup"
         sectionText="Mockup of the app. The prototype of the app is made in React.js."
       />
-        <img class="hesehus-mockup" src="@/assets/img/SVG/hesehus-app-mock.svg" alt />
-
+      <img class="hesehus-mockup" src="@/assets/img/SVG/hesehus-app-mock.svg" alt />
     </div>
   </div>
 </template>
@@ -70,20 +69,28 @@ $transition: all 0.1s ease-in;
       grid-row-end: 4;
       font-family: $font-primary;
       transform: translateY(-184px) translateX(-17.068px);
-      font-size: 150px;
+      font-size: 8vw;
       color: black;
     }
-    .hesehus-result-mockup{
+    .hesehus-result-mockup {
       grid-row-start: 108;
       grid-column-start: 1;
     }
-     .hesehus-mockup {
-        grid-row-start: 118;
+    .hesehus-mockup {
+      grid-row-start: 118;
       grid-column-start: 2;
       grid-column-end: 24;
-        align-self: center;
+      align-self: center;
+    }
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .cases-result-hesehus {
+    .display-results {
+      h2.result-header {
+        margin-top: 6vh;
       }
-
+    }
   }
 }
 </style>

@@ -66,6 +66,16 @@
     }
   }
 }
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .video-section{
+      .video-section-header {
+    grid-column-end: 7;
+    h4{
+      font-size: 16px;
+    }
+  }
+  }
+}
 </style>
 <script>
 export default {
