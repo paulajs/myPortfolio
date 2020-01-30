@@ -3,7 +3,7 @@
     <img class="page-logo" alt="page logo" src="../assets/img/SVG/logo.svg" v-show="!isVideoShown" />
     <div v-show="!isVideoShown" id="container">
       <p class="pointsDisplay"></p>
-        <canvas id="bubbles-canvas"></canvas>
+      <canvas id="bubbles-canvas"></canvas>
       <audio id="bubbleSounds" src></audio>
       <video
         src
@@ -36,7 +36,7 @@ export default {
     isVideoShown: Boolean,
     onGameEnd: Function
   },
-  components:{
+  components: {
     ShapeOverlays
   },
   data() {
@@ -62,11 +62,17 @@ export default {
           },
           balls: {
             distance: 70,
+            distanceMob: 75,
             numBallsX: 10,
+            numBallsMobX: 3,
             numBallsY: 4,
-            xMin: -322,
+            numBallsMobY: 4,
+            xMin: -320,
+            xMobMin: -77,
             yMin: -102,
+            yMobMin: -165,
             radius: 20,
+            radiusMob: 25,
 
             scaleAnimation: {
               animationTime: 500,
@@ -117,12 +123,7 @@ export default {
       particles: null,
       movementSpeed: 80,
       cursorImg: "img/cross1.png",
-      colorArray: [
-        0xff00ff,
-        0x00ffc8,
-        0xff90ff,
-        0x00cf78
-      ]
+      colorArray: [0xff00ff, 0x00ffc8, 0xff90ff, 0x00cf78]
     };
   },
   methods: {
@@ -130,7 +131,7 @@ export default {
       if (window.innerWidth >= this.config.displayDesktopMinSize) {
         this.initiateCanvasDesktop();
       } else {
-        //initiateCanvasMobile();
+        this.initiateCanvasMobile();
       }
     },
     setSelectors() {
@@ -157,6 +158,20 @@ export default {
         this.game.isRenderingInitialScene = false;
       }, 100);
     },
+    initiateCanvasMobile: function() {
+      this.setSelectors();
+      this.createScene();
+      this.setSelectors();
+      this.setCanvasMouseHandlersMobile();
+      this.AddGameBallMobile();
+      this.animate();
+
+      this.game.isRenderingInitialScene = true;
+      // give the initial ball animation a bit of time to render.
+      setTimeout(() => {
+        this.game.isRenderingInitialScene = false;
+      }, 100);
+    },
     createScene: function() {
       this.scene = new THREE.Scene();
       this.scene.fog = new THREE.FogExp2(0xcccccc, 0.0026);
@@ -175,6 +190,18 @@ export default {
       this.elements.canvas.addEventListener(
         "mousemove",
         this.onDocumentMouseMove,
+        false
+      );
+    },
+    setCanvasMouseHandlersMobile() {
+      this.elements.canvas.addEventListener(
+        "dblclick",
+        this.onDocumentMouseDBClickMobile,
+        false
+      );
+      this.elements.canvas.addEventListener(
+        "mousedown",
+        this.onDocumentMouseDownMobile,
         false
       );
     },
@@ -215,6 +242,37 @@ export default {
       const numBallsY = this.config.scene.balls.numBallsY;
       const distance = this.config.scene.balls.distance;
       const radius = this.config.scene.balls.radius;
+
+      const xMax = xMin + numBallsX * distance;
+      const yMax = yMin + numBallsY * distance;
+
+      let count = 0;
+      for (let i = xMin; i < xMax; i += distance) {
+        for (let j = yMin; j < yMax; j += distance) {
+          const objName = String(i) + String(j);
+          const ball = makeSphere(
+            0xffffff,
+            i,
+            j,
+            0,
+            radius,
+            objName,
+            count,
+            this.scene
+          );
+          this.scene.add(ball);
+          this.game.balls[ball.id] = ball;
+          count++;
+        }
+      }
+    },
+    AddGameBallMobile: function() {
+      const xMin = this.config.scene.balls.xMobMin;
+      const yMin = this.config.scene.balls.yMobMin;
+      const numBallsX = this.config.scene.balls.numBallsMobX;
+      const numBallsY = this.config.scene.balls.numBallsMobY;
+      const distance = this.config.scene.balls.distanceMob;
+      const radius = this.config.scene.balls.radiusMob;
 
       const xMax = xMin + numBallsX * distance;
       const yMax = yMin + numBallsY * distance;
@@ -286,10 +344,77 @@ export default {
       scaleAnimation(ball, scaleFactor, animationTime);
     },
     setMouseAsPointer: function() {
-        document.body.style.cursor = "pointer";
+      document.body.style.cursor = "pointer";
     },
     setMouseAsDefault: function() {
       document.body.style.cursor = "default";
+    },
+    onDocumentMouseDBClickMobile: function(event) {
+      // @todo make click pop sound
+      // constsounds.src = "/assets/" + "pop6" + ".mp3"; @todo move to top assets
+      console.log("double clicked");
+      if (this.gameEnd) {
+        return;
+      }
+      if (!this.game.currentIntersection) {
+        return;
+      }
+
+      const currentIntersection = this.game.currentIntersection;
+      const ball = this.game.currentIntersection[0];
+      if (!ball) {
+        return;
+      }
+
+      if (this.game.ballIsClicked[ball.object.id]) {
+        return;
+      } else {
+        this.game.ballIsClicked[ball.object.id] = true;
+      }
+      const intersectingBallsObjects = getIntersectingBallsObject(
+        ball.object,
+        this.scene
+      );
+
+      scaleAnimation(
+        ball.object,
+        this.config.scene.balls.scaleAnimation.scaleFactor,
+        this.config.scene.balls.scaleAnimation.animationTime
+      );
+      setTimeout(() => {
+        // @todo explosion sound?
+        // sounds.play();
+        this.bubblePopDesktop(
+          this.elements.pointsDisplay,
+          intersectingBallsObjects,
+          event,
+          ball
+        );
+        this.removeBall(ball);
+        intersectingBallsObjects.forEach(ballObject => {
+          this.removeBallObject(ballObject);
+        });
+        if (!Object.entries(this.game.balls).length) {
+          /* this.log("game over!"); */
+          // this.gameWin();
+        }
+      }, this.config.scene.balls.scaleAnimation.animationTime);
+    },
+    onDocumentMouseDownMobile: function(event) {
+      this.setMouseHoverIntersection(event);
+      const previousBallId = this.game.previousBallId;
+
+      if (this.game.currentIntersection.length > 0) {
+        const ball = this.game.currentIntersection[0].object;
+        const ballId = ball.id;
+        this.game.previousBallId = ball.id;
+        if (previousBallId !== ball.id) {
+          this.onMouseHoverBall(ball);
+        }
+      } else {
+        this.game.previousBallId = 0;
+        this.setMouseAsDefault();
+      }
     },
     onDocumentMouseDown: function(event) {
       // @todo make click pop sound
@@ -298,6 +423,7 @@ export default {
       if (this.gameEnd) {
         return;
       }
+      console.log(this.game.currentIntersection);
       if (!this.game.currentIntersection) {
         return;
       }
@@ -350,7 +476,7 @@ export default {
       this.scene.remove(ballObject);
       const numberOfBallsLeft = Object.keys(this.game.balls).length;
 
-      if(numberOfBallsLeft == 0){
+      if (numberOfBallsLeft == 0) {
         this.gameEnded();
       }
     },
@@ -359,7 +485,7 @@ export default {
       this.clearScene();
       setTimeout(() => {
         this.gameEnd = true;
-      }, 100)
+      }, 100);
     },
     clearScene: function() {
       while (this.scene.children.length > 0) {
@@ -430,7 +556,7 @@ export default {
       this.parts.push(particles);
     },
     animate: function() {
-      if(this.gameEnd){
+      if (this.gameEnd) {
         return;
       }
 
@@ -455,7 +581,7 @@ export default {
   },
   mounted() {
     this.init();
-  },
+  }
 };
 </script>
 
@@ -500,11 +626,11 @@ a {
   }
 }
 .entertain-element {
-    grid-column-start: 2;
-    grid-column-end: 12;
-    grid-row-start: 2;
-    grid-row-end: 9;
-    overflow: hidden;
+  grid-column-start: 2;
+  grid-column-end: 12;
+  grid-row-start: 2;
+  grid-row-end: 9;
+  overflow: hidden;
 }
 .pointsDisplay {
   user-select: none;
@@ -522,7 +648,7 @@ a {
 .pointsTransition {
   animation: pointsAnim 1s ease-out;
 }
-#bubbles-canvas{
+#bubbles-canvas {
   position: absolute;
 }
 @keyframes pointsAnim {
@@ -534,5 +660,4 @@ a {
     transform: scale(2);
   }
 }
-
 </style>
