@@ -30,6 +30,7 @@ $transition: all 0.1s ease-in;
   }
   p {
     position: relative;
+    pointer-events: none;
     /* transition: $transition; */
   }
   &:hover {
@@ -42,6 +43,7 @@ $transition: all 0.1s ease-in;
   &:hover p:after {
     content: attr(data-text);
     position: absolute;
+    pointer-events: none;
     left: 50%;
     top: 50%;
     transform: translate(-48%, -48%);
@@ -72,6 +74,19 @@ $transition: all 0.1s ease-in;
     opacity: 1;
     background: white;
     transform: scale(1.2);
+  }
+}
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .home-button {
+    width: 85px;
+    height: 85px;
+    font-size: 21px;
+    &:hover {
+      p:after {
+        left: 51%;
+        top: 52%;
+      }
+    }
   }
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {

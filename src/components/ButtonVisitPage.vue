@@ -54,6 +54,26 @@ $transition: all 0.1s ease-in;
     animation: rumble 0.3s ease-in infinite;
   }
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .visit-page {
+    width: 78vw;
+    height: 68px;
+    margin-bottom: 20vh;
+    margin-left: -3vw;
+    font-size: 23px;
+    &:before {
+      width: 77vw;
+      height: 70px;
+      transform: translate(-35vw, -13px);
+    }
+    &:hover {
+      p:after {
+        left: 20.6vw;
+        top: 2.6vh;
+      }
+    }
+  }
+}
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .visit-page {
     margin-top: 9vh;

@@ -25,7 +25,6 @@
       <img class="hesehus-space" src="@/assets/img/SVG/night-ideation.svg" alt />
       <img class="hesehus-ideation" src="@/assets/img/SVG/ideation-icons.svg" alt />
 
-
       <CaseTextSection
         sectionClass="case-text-section storyboards-hesehus"
         sectionHeaderClass="case-section-header header-storyboards-hesehus"
@@ -127,14 +126,64 @@
     }
   }
 }
-
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .case-process-hesehus {
+    h2 {
+      font-size: 17vw;
+    }
+    .process-wrapper {
+      p {
+        grid-column-end: 23;
+      }
+      .hesehus-indtryk {
+        grid-column-end: 24;
+      }
+      .hesehus-messe {
+        grid-row-start: 14;
+        grid-column-start: 2;
+        grid-column-end: 24;
+      }
+      .experimentation-hesehus {
+        grid-row-start: 25;
+      }
+      .hesehus-boat {
+        grid-row-start: 30;
+        grid-column-start: 1;
+        grid-column-end: 25;
+      }
+      .hesehus-space {
+        grid-row-start: 36;
+        grid-column-start: 1;
+        grid-column-end: 25;
+      }
+      .hesehus-ideation {
+        grid-row-start: 41;
+        grid-column-start: 1;
+        grid-column-end: 25;
+      }
+      .storyboards-hesehus {
+        grid-row-start: 51;
+      }
+      .hesehus-storyboard-inspiration {
+        grid-row-start: 54;
+        grid-column-start: 1;
+        grid-column-end: 25;
+      }
+      .hesehus-storyboard-fristads-kansas {
+        grid-row-start: 70;
+        grid-column-start: 1;
+        grid-column-end: 25;
+      }
+    }
+  }
+}
 </style>
 <script>
 import CaseTextSection from "@/components/CaseTextSection.vue";
 export default {
   name: "CasesProcessHesehus",
   components: {
-    CaseTextSection,
+    CaseTextSection
   }
 };
 </script>

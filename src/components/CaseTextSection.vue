@@ -96,6 +96,20 @@
     grid-column-end: 8;
   }
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .case-text-section {
+    p {
+      grid-column-end: 23;
+    }
+    .case-section-header {
+      grid-column-end: 20;
+      height: 4.5vh;
+    }
+    p.experimentation-text-hesehus{
+      grid-column-end: 23;
+    }
+  }
+}
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .case-text-section {
     .case-section-header {

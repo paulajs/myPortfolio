@@ -10,11 +10,11 @@
     />
 
     <div class="mobile-menu-button mobile-open" v-on:click="mobileMenuOpen">
-      <p>Menu</p>
+      <p data-text="Menu">Menu</p>
     </div>
     <div class="mobile-menu" ref="mobilemenu">
       <div class="mobile-menu-button mobile-close" v-on:click="mobileMenuClose">
-        <p>Close</p>
+        <p data-text="Close">Close</p>
       </div>
       <div class="menu-wrapper">
         <router-link to="/about">

@@ -71,9 +71,13 @@
         <h4 class="skill-header header-contact">Contact</h4>
         <div class="skill-subset subset-contact">
           <ul>
-            <li> <img src="@/assets/img/SVG/icon-email.svg" > </li>
-            <li> <img src="@/assets/img/SVG/icon-linked.svg"> </li>
-            <img src="" alt="">
+            <li>
+              <img src="@/assets/img/SVG/icon-email.svg" />
+            </li>
+            <li>
+              <img src="@/assets/img/SVG/icon-linked.svg" />
+            </li>
+            <img src alt />
           </ul>
         </div>
       </div>
@@ -92,7 +96,7 @@
     grid-row-start: 1;
     justify-self: end;
     align-self: start;
-    transform: translate(-26px, 8px);
+    transform: translate(-9px, 1px);
   }
   .about-header {
     @include place-in-grid(1, 7, 2, 23);
@@ -191,17 +195,16 @@
         grid-row-start: 3;
         grid-column-start: 2;
       }
-      .subset-contact{
+      .subset-contact {
         grid-row-start: 3;
         grid-column-start: 2;
-        ul{
+        ul {
           display: flex;
           flex-direction: row;
-          li{
+          li {
             width: 23%;
-            img{
+            img {
               width: 80%;
-
             }
           }
         }
@@ -221,6 +224,58 @@
           li {
             padding: 2% 0;
           }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .about {
+    grid-template-rows: repeat(86, 4.94vh);
+
+    .about-header {
+      grid-row-start: 5;
+      grid-row-end: 15;
+      flex-direction: column;
+      .about-background {
+        h1 {
+          font-size: 16vw;
+          position: relative;
+          &:after {
+            left: 4.5vw;
+            top: 0.8vh;
+          }
+        }
+      }
+      .about-text {
+        top: 0vh;
+        font-size: 4.6vw;
+        position: initial;
+        width: 100%;
+      }
+    }
+    .about-skills {
+      grid-row-start: 15;
+      grid-row-end: 67;
+      flex-direction: column;
+      .skill-section {
+        width: 100%;
+        grid-template-rows: repeat(3, 14vh);
+        grid-row-gap: 15%;
+        grid-column-gap: 5%;
+        margin-bottom: 20vh;
+        h3 {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          align-self: end;
+          justify-self: center;
+          font-size: 2.3em;
+        }
+        .skill-header {
+          justify-self: end;
+          align-self: center;
+          margin-right: 0;
+          font-size: 1.4em;
         }
       }
     }

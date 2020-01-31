@@ -2,26 +2,20 @@
   <div class="above-the-fold">
     <h1>{{caseTitle}}</h1>
     <router-link class="case-home-button" to="/">
-      <HomeButton buttonText= "Home"/>
+      <HomeButton buttonText="Home" />
     </router-link>
     <h2>{{description}}</h2>
     <div class="info-box info-about">
       <h3>About</h3>
-      <p>
-        {{aboutText}}
-      </p>
+      <p>{{aboutText}}</p>
     </div>
     <div class="info-box info-challange">
       <h3>Challange</h3>
-      <p>
-        {{challangeText}}
-      </p>
+      <p>{{challangeText}}</p>
     </div>
     <div class="info-box info-thoughts">
       <h3>Thoughts</h3>
-      <p>
-        {{thoughtsText}}
-      </p>
+      <p>{{thoughtsText}}</p>
     </div>
   </div>
 </template>
@@ -31,7 +25,7 @@
 
 $transition: all 0.1s ease-in;
 .case-nmg div h1 {
-    font-size: 10vw;
+  font-size: 10vw;
 }
 .above-the-fold {
   @include create-grid(17, 4.94vh, 24, 3.125vw, 1vh, 1vw);
@@ -96,40 +90,88 @@ $transition: all 0.1s ease-in;
     grid-column-end: 25;
   }
 }
-@keyframes rumble{
-    0%{
-      transform: translate3D(0px, 0px,0);
+@keyframes rumble {
+  0% {
+    transform: translate3D(0px, 0px, 0);
+  }
+  10% {
+    transform: translate3D(1px, 0.5px, 0);
+  }
+  40% {
+    transform: translate3D(0px, 0px, 0);
+  }
+  60% {
+    transform: translate3D(-1px, 1px, 0);
+  }
+  80% {
+    transform: translate3D(0px, 0.5px, 0);
+  }
+  100% {
+    transform: translate3D(1px, 0px, 0);
+  }
+}
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .above-the-fold {
+    grid-template-rows: repeat(37, 4.94vh);
+    h1 {
+      grid-row-start: 1;
+      grid-row-end: 6;
+      font-size: 16.5vw;
     }
-    10%{
-      transform: translate3D(1px, 0.5px,0);
+    h2 {
+      grid-column-start: 2;
+      grid-column-end: 10;
+      grid-row-start: 6;
+      grid-row-end: 8;
+      align-self: start;
+      font-size: 3.5vw;
     }
-    40%{
-      transform: translate3D(0px, 0px,0);
+    .case-home-button {
+      transform: translate(-9px, 1px);
     }
-    60%{
-      transform: translate3D(-1px, 1px,0);
+    .info-box {
+      grid-column-start: 1;
+      grid-column-end: 23;
+      grid-template-columns: repeat(8, 11.5%);
+      grid-template-rows: repeat(17, 4.94vh);
+      grid-row-gap: 1vh;
+      h3 {
+        grid-column-start: 2;
+        grid-column-end: 8;
+        grid-row-start: 1;
+        writing-mode: horizontal-tb;
+        justify-self: start;
+        font-size: 4.8vh;
+      }
+      p {
+        grid-column-start: 2;
+        grid-column-end: 9;
+        grid-row-start: 3;
+      }
     }
-    80%{
-      transform: translate3D(0px, 0.5px,0);
+    .info-about {
+      grid-row-start: 9;
+      grid-row-end: 16;
     }
-    100%{
-      transform: translate3D(1px, 0px,0);
+    .info-challange{
+      grid-row-start: 16;
+      grid-row-end: 27;
+    }
+    .info-thoughts{
+      grid-row-start: 28;
+      grid-row-end: 37;
     }
   }
-
-  @media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 1) {
-    .above-the-fold {
-      .info-box {
-        h3{
-          font-size: 2.7vh;
-        }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .above-the-fold {
+    .info-box {
+      h3 {
+        font-size: 2.7vh;
       }
     }
   }
-
+}
 </style>
 <script>
 import HomeButton from "@/components/HomeButton.vue";
@@ -144,6 +186,6 @@ export default {
     aboutText: String,
     challangeText: String,
     thoughtsText: String
-  },
+  }
 };
 </script>

@@ -408,9 +408,9 @@ export default {
         const ball = this.game.currentIntersection[0].object;
         const ballId = ball.id;
         this.game.previousBallId = ball.id;
-        if (previousBallId !== ball.id) {
           this.onMouseHoverBall(ball);
-        }
+       /*  if (previousBallId !== ball.id) {
+        } */
       } else {
         this.game.previousBallId = 0;
         this.setMouseAsDefault();

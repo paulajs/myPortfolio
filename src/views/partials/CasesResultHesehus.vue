@@ -82,6 +82,59 @@ $transition: all 0.1s ease-in;
       grid-column-end: 24;
       align-self: center;
     }
+    .hesehus-result-mockup {
+      grid-row-start: 59;
+    }
+    .hesehus-mockup {
+      grid-row-start: 65;
+      grid-column-start: 1;
+      grid-column-end: 25;
+    }
+  }
+}
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .cases-result-hesehus {
+    .display-results {
+      grid-template-rows: repeat(71, 4.94vh);
+      h2.result-header {
+        grid-column-start: 2;
+        grid-column-end: 24;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        transform: translateY(0) translateX(-1vw);
+        font-size: 17vw;
+        justify-self: start;
+      }
+      .video-section {
+        .video-section-header {
+          grid-column-start: 1;
+          grid-column-end: 20;
+          height: 4.5vh;
+          h4 {
+            grid-row-start: 2;
+            grid-column-start: 2;
+            grid-column-end: 18;
+            font-size: 17px;
+          }
+        }
+        video {
+          grid-column-start: 2;
+          grid-column-end: 24;
+        }
+      }
+      .section-fristads {
+        grid-row-start: 15;
+      }
+      .section-inspiration {
+        grid-row-start: 26;
+      }
+      .section-danoffice {
+        grid-row-start: 37;
+      }
+      .section-kunderejse {
+        grid-row-start: 48;
+      }
+    }
   }
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {

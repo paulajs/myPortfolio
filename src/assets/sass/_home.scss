@@ -301,8 +301,20 @@ body {
     margin-left: -1.5vh;
     z-index: 10000;
     &:hover{
-      background: white;
-      color: black;
+      transform: scale(1.2);
+      color: $color-pink;
+      p{ 
+         
+        position: relative;   
+        &:after{
+        content: attr(data-text);
+        position: absolute; 
+        left: 1%;
+        top: 1%;
+        color: $color-green;
+        animation: rumble-menu 0.25s ease-in infinite;
+      }}
+
     }
   }
   .mobile-close {
@@ -444,14 +456,13 @@ button.menu-button:focus {
     .mobile-menu-button {
       display: flex;
     }
-    .mobile-menu {
-      /* display: none; */
-
-  
-    }
+/*     .mobile-menu {
+       display: none; 
+    } */
     #bubbles-canvas{
       position: fixed;
       bottom: 1vh;
+      left: 0;
   }
     .entertain-element {
       grid-row-start: 4;
