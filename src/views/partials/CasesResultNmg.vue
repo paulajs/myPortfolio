@@ -43,7 +43,12 @@
         textClass="visual-id-text-nmgbooklet"
         sectionText="Example of a booklet for the marlemade course."
       />
-      <img class="nmg-visual-booklet" src="@/assets/img/nmg-vi-booklet-100.jpg" alt />
+      <div class="nmg-visual-booklet">
+        <img src="@/assets/img/nmg-straw-book-100.jpg" alt />
+        <img src="@/assets/img/nmg-quince-book-100.jpg" alt />
+        <img src="@/assets/img/nmg-hyld-book-100.jpg" alt />
+      </div>
+
       <CaseTextSection
         sectionClass="case-text-section visual-id-nmgweb"
         sectionHeaderClass="case-section-header header-visual-id-nmg"
@@ -135,12 +140,13 @@ $transition: all 0.1s ease-in;
     .nmg-visual-label {
       grid-column-start: 3;
       grid-column-end: 23;
-      grid-row-start: 59;
-      grid-row-end: 67;
+      grid-row-start: 58;
+      grid-row-end: 68;
       width: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+      align-items: center;
       img {
         width: 25%;
       }
@@ -150,10 +156,18 @@ $transition: all 0.1s ease-in;
       grid-column-start: 1;
     }
     .nmg-visual-booklet {
-      grid-row-start: 72;
-      grid-column-start: 3;
-      grid-column-end: 23;
-      width: 100%;
+      grid-row-start: 74;
+      grid-row-end: 88;
+      grid-column-start: 2;
+      grid-column-end: 24;
+      width: auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-evenly;
+      img {
+        width: 28%;
+      }
     }
     .visual-id-nmgweb {
       grid-row-start: 91;
@@ -175,6 +189,129 @@ $transition: all 0.1s ease-in;
     }
   }
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .cases-result-nmg {
+    .display-results {
+      grid-template-rows: repeat(206, 4.94vh);
+      .nmg-design-obj {
+        grid-row-end: 41;
+        h2 {
+          font-size: 16vw;
+        }
+        .postits {
+          grid-row-start: 7;
+          grid-row-end: 34;
+          flex-direction: column;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+      h2.result-header {
+        grid-row-start: 43;
+        grid-row-end: 46;
+        font-size: 16vw;
+      }
+      .nmg-result-para {
+        grid-row-start: 46;
+        grid-column-end: 23;
+      }
+      .models-nmg {
+        grid-row-start: 54;
+      }
+      .display-nmg {
+        grid-row-start: 57;
+      }
+      .result-nmg-wrapper {
+        grid-template-rows: repeat(56, 4.94vh);
+        #strawberryjam {
+          grid-column-start: 1;
+          grid-column-end: 23;
+          grid-row-start: 3;
+          grid-row-end: 9;
+        }
+        #strawberryfolder {
+          grid-column-start: 1;
+          grid-column-end: 23;
+          grid-row-start: 9;
+          grid-row-end: 15;
+        }
+        #quincejam {
+          grid-column-start: 1;
+          grid-column-end: 23;
+          grid-row-start: 15;
+          grid-row-end: 21;
+        }
+        #quincefolder {
+          grid-column-start: 1;
+          grid-column-end: 23;
+          grid-row-start: 21;
+          grid-row-end: 27;
+        }
+        #elderjam {
+          grid-column-start: 1;
+          grid-column-end: 23;
+          grid-row-start: 27;
+          grid-row-end: 32;
+        }
+        #elderfolder {
+          grid-column-start: 1;
+          grid-column-end: 23;
+          grid-row-start: 33;
+          grid-row-end: 39;
+        }
+      }
+      .visual-id-nmglabel {
+        grid-row-start: 98;
+      }
+      .nmg-visual-label {
+        grid-row-start: 103;
+        grid-row-end: 140;
+        justify-content: normal;
+        align-items: center;
+        flex-direction: column;
+        img {
+          width: 95%;
+          margin-bottom: 12vh;
+        }
+      }
+      .visual-id-nmgbooklet {
+        grid-row-start: 138;
+      }
+      .nmg-visual-booklet {
+        grid-row-start: 142;
+        grid-row-end: 186;
+        grid-column-start: 2;
+        grid-column-end: 24;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: normal;
+        img {
+          width: 93%;
+        }
+      }
+      .visual-id-nmgweb {
+        grid-row-start: 188;
+      }
+      .nmg-visual-web1 {
+        grid-row-start: 192;
+        grid-column-start: 1;
+        grid-column-end: 25;
+        width: 100%;
+        justify-self: center;
+      }
+      .nmg-visual-web2 {
+        grid-row-start: 199;
+        grid-column-start: 1;
+        grid-column-end: 25;
+        width: 100%;
+        justify-self: center;
+      }
+    }
+  }
+}
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .cases-result-nmg {
     .display-results {
@@ -182,7 +319,7 @@ $transition: all 0.1s ease-in;
         grid-column-end: 16;
       }
       .nmg-visual-booklet {
-      grid-row-start: 73;
+        grid-row-start: 73;
       }
     }
   }

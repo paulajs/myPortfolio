@@ -244,9 +244,18 @@
     opacity: 1;
   }
 }
-@media screen
-and (min-height: 1080px )
-and (min-width: 1900px) {
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  div#slider-insp-nmg {
+    display: none;
+  }
+  div#slider-insp-skansing {
+    display: none;
+  }
+  div#slider-exp-skansing{
+    display: none;
+  }
+}
+@media screen and (min-height: 1080px) and (min-width: 1900px) {
   .nav-overview {
     grid-row-start: 17;
   }

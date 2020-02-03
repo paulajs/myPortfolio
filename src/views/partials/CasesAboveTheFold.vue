@@ -111,6 +111,32 @@ $transition: all 0.1s ease-in;
   }
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .case-nmg {
+    .above-the-fold {
+      .info-thoughts {
+        grid-row-start: 25;
+      }
+    }
+  }
+  .case-skansing {
+    .above-the-fold {
+      grid-template-rows: repeat(33, 4.94vh);
+      h1 {
+        font-size: 14.5vw;
+      }
+      .info-about {
+        grid-row-end: 14;
+      }
+      .info-challange {
+        grid-row-start: 15;
+        grid-row-end: 22;
+      }
+      .info-thoughts {
+        grid-row-start: 22;
+        grid-row-end: 32;
+      }
+    }
+  }
   .above-the-fold {
     grid-template-rows: repeat(37, 4.94vh);
     h1 {
@@ -142,6 +168,7 @@ $transition: all 0.1s ease-in;
         writing-mode: horizontal-tb;
         justify-self: start;
         font-size: 4.8vh;
+        color: black;
       }
       p {
         grid-column-start: 2;
@@ -153,11 +180,11 @@ $transition: all 0.1s ease-in;
       grid-row-start: 9;
       grid-row-end: 16;
     }
-    .info-challange{
+    .info-challange {
       grid-row-start: 16;
       grid-row-end: 27;
     }
-    .info-thoughts{
+    .info-thoughts {
       grid-row-start: 28;
       grid-row-end: 37;
     }

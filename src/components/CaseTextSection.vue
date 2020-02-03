@@ -104,9 +104,21 @@
     .case-section-header {
       grid-column-end: 20;
       height: 4.5vh;
+      h5 {
+        grid-column-end: 19;
+      }
     }
-    p.experimentation-text-hesehus{
+    p.experimentation-text-hesehus {
       grid-column-end: 23;
+    }
+    .inspiration-text-nmg {
+      grid-column-end: 23;
+    }
+    p.experimentation-text-nmg {
+      grid-column-end: 23;
+    }
+    .inspiration-text-skansing{
+      grid-column-end: 20;
     }
   }
 }

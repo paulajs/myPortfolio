@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-   <!--  <button v-bind:click="playPaint">Splat</button> -->
+    <!--  <button v-bind:click="playPaint">Splat</button> -->
     <svg
       class="shape-overlays"
       ref="shapeoverlays"
@@ -25,10 +25,6 @@
   </div>
 </template>
 <style lang="scss" scoped>
-.wrapper {
-  height: 100vh;
-  width: 100vw;
-}
 .shape-overlays {
   width: 100vw;
   height: 100vh;
@@ -40,6 +36,11 @@
   top: 0;
   left: 0;
 }
+  .wrapper {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+  }
 .shape-overlays.is-opened {
   pointer-events: auto;
 }
@@ -63,12 +64,17 @@
   stroke: black;
   stroke-width: 0.2;
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .wrapper {
+    display: block;
+  }
+}
 </style>
 <script>
 import ease from "../functions/easings.js";
 export default {
   name: "ShapeOverlays",
-  props:{
+  props: {
     runPaint: Boolean
   },
   data() {
@@ -89,7 +95,7 @@ export default {
     this.init();
   },
   watch: {
-    runPaint: function(){
+    runPaint: function() {
       this.toggle();
     }
   },
