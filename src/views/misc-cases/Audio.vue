@@ -46,13 +46,13 @@
         Same principles as before, but with circles instead of bars."
       />
       <AudioSectionCircle />
-<!--       <CaseTextSection
+      <!--       <CaseTextSection
         sectionClass="case-text-section misc-audio-bubbbles"
         sectionHeaderClass="case-section-header header-audio-bubbles"
         headertext="Bubbles"
         textClass="audio-text-bubbles"
         sectionText="Using data to place stars/circles in space."
-      /> -->
+      />-->
       <!-- <AudioSectionBubbles /> -->
       <CaseTextSection
         sectionClass="case-text-section misc-audio-img"
@@ -75,11 +75,11 @@
     grid-column-start: 1;
     grid-row-start: 1;
   }
-    .bars-snippet {
-      grid-row-start: 6;
+  .bars-snippet {
+    grid-row-start: 6;
     grid-column-start: 1;
     grid-column-end: 25;
-        justify-self: center;
+    justify-self: center;
     box-shadow: 26px 36px 19px #666;
   }
   .misc-audio-circle {
@@ -104,7 +104,7 @@
   background: $color-pink-light;
   position: relative;
   margin-bottom: 18vh;
-  p{
+  p {
     color: black;
     position: absolute;
     top: 0;
@@ -112,14 +112,14 @@
     font-family: $font-secundary;
     font-size: 21px;
   }
-  .background{
+  .background {
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
     /* opacity: 0.8; */
     opacity: 1;
-    background: #dfdfdf;/* linear-gradient($color-green -50% , $color-pink  140%); */
+    background: #dfdfdf; /* linear-gradient($color-green -50% , $color-pink  140%); */
   }
 
   .audio-postit-wrapper {
@@ -145,7 +145,33 @@
     }
   }
 }
-
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .case-audio {
+    .bars-snippet {
+      width: 100%;
+    }
+    .misc-audio-circle {
+      grid-row-start: 28;
+    }
+    .misc-audio-img{
+      grid-row-start: 47;
+    }
+  }
+  .audio-outline {
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 18vh;
+    .audio-postit-wrapper {
+      width: 118%;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+      margin-bottom: 18vh;
+      z-index: 10;
+    }
+  }
+}
 </style>
 <script>
 import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";

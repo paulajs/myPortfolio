@@ -7,7 +7,7 @@
     </div>
     <div class="canvas-wrapper">
       <button id="audio-start" ref="audiostart" v-on:click="initMp3Player">Play</button>
-      <img class="img-back" src="@/assets/img/audio/jim-bg.png" v-on:click="audioControlPLay" alt="" />
+      <img class="img-back" src="@/assets/img/audio/jim-bg.png" v-on:click="audioControlPLay" alt />
       <canvas id="img-render" ref="imgrenderer"></canvas>
     </div>
   </div>
@@ -44,18 +44,18 @@
     display: flex;
     #audio-start {
       position: absolute;
-    top: -11vh;
-    left: 50%;
-    transform: translate(-50%, 0%);
-   @include header-style(uppercase);
-    background: black;
-    font-size: 3.4vw;
-    width: 68.4%;
-    height: 6vw;
-    border: 1px solid black;
-    z-index: 8;
-    -webkit-transition: all 0.15s ease-in;
-    transition: all 0.15s ease-in;
+      top: -11vh;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      @include header-style(uppercase);
+      background: black;
+      font-size: 3.4vw;
+      width: 68.4%;
+      height: 6vw;
+      border: 1px solid black;
+      z-index: 8;
+      -webkit-transition: all 0.15s ease-in;
+      transition: all 0.15s ease-in;
       &:hover {
         cursor: pointer;
         background: $color-pink;
@@ -77,7 +77,29 @@
     #img-render {
       background: linear-gradient(#262626, #6e65f6);
       border: 4px solid black;
-
+    }
+  }
+}
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .audio-section-img {
+    grid-row-start: 49;
+    grid-row-end: 60;
+    #audio-player {
+      grid-row-end: 4;
+    }
+    .canvas-wrapper {
+      grid-row-start: 4;
+      grid-row-end: 9;
+      .img-back {
+        width: 75.5%;
+        z-index: 1;
+        bottom: 0;
+      }
+      #audio-start {
+        font-size: 7.4vw;
+        width: 78.4%;
+        height: 14vw;
+      }
     }
   }
 }
@@ -103,11 +125,10 @@ export default {
       this.canvas.width = window.innerWidth / 1.5;
       this.canvas.height = window.innerHeight / 1.5;
     },
-      audioControlPLay(){
-         if (this.$refs.theaudio.paused) {
+    audioControlPLay() {
+      if (this.$refs.theaudio.paused) {
         this.$refs.theaudio.play();
-      }
-      else{
+      } else {
         this.$refs.theaudio.pause();
       }
     },
@@ -129,7 +150,7 @@ export default {
       const fbc_array = new Uint8Array(this.analyser.frequencyBinCount);
       this.analyser.getByteFrequencyData(fbc_array);
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-      this.ctx.fillStyle = this.gradient( "#ff90ff","#ff00ff","#00ffc8" );
+      this.ctx.fillStyle = this.gradient("#ff90ff", "#ff00ff", "#00ffc8");
       this.createBars(fbc_array);
     },
     createBars(fbc_array) {
@@ -147,7 +168,7 @@ export default {
       grd.addColorStop(0.6, color2);
       grd.addColorStop(0, color3);
       return grd;
-    },
+    }
   }
 };
 </script>

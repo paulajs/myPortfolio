@@ -1,19 +1,19 @@
 <template>
-<router-link :class="miscCaseClass" :to="routerLink">
-  <div class="wrap">
-    <div class="misc-background"></div>
-    <div :class="headerClass">
-      <h2 :class="headerFirstClass">{{headerFirstText}}</h2>
-      <h2 :class="headerSecondClass">{{headerSecondText}}</h2>
+  <router-link :class="miscCaseClass" :to="routerLink">
+    <div class="wrap">
+      <div class="misc-background"></div>
+      <div :class="headerClass">
+        <h2 :class="headerFirstClass">{{headerFirstText}}</h2>
+        <h2 :class="headerSecondClass">{{headerSecondText}}</h2>
+      </div>
+      <slot></slot>
     </div>
-    <slot></slot>
-  </div>
-</router-link>
+  </router-link>
 </template>
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
-a .wrap{
+a .wrap {
   width: 100%;
   height: 100%;
 }
@@ -28,10 +28,10 @@ div {
   background: $color-pink-light;
   border: 1px solid black;
   position: relative;
-   transition: all 0.1s ease-in;
-  &:hover{
+  transition: all 0.1s ease-in;
+  &:hover {
     .misc-background {
-    @include misc-background(right, -70%, 160%, 0.6);
+      @include misc-background(right, -70%, 160%, 0.6);
     }
   }
   .header-audio {
@@ -54,7 +54,7 @@ div {
   &:hover .misc-background {
     transition: all 0.1s ease-in;
   }
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
@@ -64,11 +64,11 @@ div {
   background: $color-pink;
   border: 1px solid black;
   position: relative;
-    transition: all 0.1s ease-in;
-  &:hover{
-     .misc-background {
-    @include misc-background(right, -60%, 160%, 0.8);
-  }
+  transition: all 0.1s ease-in;
+  &:hover {
+    .misc-background {
+      @include misc-background(right, -60%, 160%, 0.8);
+    }
   }
   .header-three {
     position: absolute;
@@ -91,7 +91,7 @@ div {
   &:hover .misc-background {
     transition: all 0.1s ease-in;
   }
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
@@ -100,11 +100,11 @@ div {
   background: $color-pink-light;
   border: 1px solid black;
   position: relative;
-    transition: all 0.1s ease-in;
-  &:hover{
+  transition: all 0.1s ease-in;
+  &:hover {
     .misc-background {
-    @include misc-background(bottom, -40%, 140%, 0.7);
-  }
+      @include misc-background(bottom, -40%, 140%, 0.7);
+    }
   }
   .header-css-anim {
     position: absolute;
@@ -127,8 +127,45 @@ div {
   &:hover .misc-background {
     transition: all 0.11s ease-in;
   }
-  &:hover{
+  &:hover {
     cursor: pointer;
+  }
+}
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .misc-case1 {
+    @include place-in-grid(1, 6, 1, 5);
+    .header-audio {
+      .text-audio {
+        font-size: 5vw;
+      }
+      .text-exp {
+        font-size: 6vh;
+        margin-top: -1vh;
+      }
+    }
+  }
+  .misc-case5 {
+    @include place-in-grid(11, 16, 1, 5);
+    .header-three {
+      .text-three {
+        font-size: 16.5vw;
+      }
+      .text-exp {
+        font-size: 9vw;
+        margin-top: -2.3vh;
+      }
+    }
+  }
+  .misc-case7 {
+    @include place-in-grid(40, 45, 1, 5);
+    .header-css-anim{
+      .text-css{
+        font-size: 16vw;
+      }
+      .text-anim{
+        font-size: 11vw;
+      }
+    }
   }
 }
 </style>

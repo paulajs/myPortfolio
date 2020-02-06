@@ -252,12 +252,13 @@
   stroke-width: 0.25;
   stroke-miterlimit: 10;
 }
-.misc-case4{
-/*   &:hover #textbox{
-    .st1{
-       fill: url(#svg-gradientLight);
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #caseBunnySVG {
+    transform: translate(-50%, -20%) scaleX(1) scaleY(1.4);
+    g#textbox {
+      transform: scaleY(0.9);
     }
-  } */
+  }
 }
 </style>
 <script>

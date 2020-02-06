@@ -24,7 +24,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-     @include place-in-grid(1, 3, 1, 25);
+    @include place-in-grid(1, 3, 1, 25);
     #audio-box {
       display: flex;
       justify-content: center;
@@ -55,13 +55,13 @@
       border-radius: 100%;
       border: none;
       transition: all 0.15s ease-in;
-      &:hover{
+      &:hover {
         cursor: pointer;
         background: white;
         color: black;
         transition: all 0.2s ease-in;
       }
-      &:active{
+      &:active {
         background: black;
         color: white;
       }
@@ -74,9 +74,22 @@
     }
   }
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .audio-section-bars {
+    grid-row-start: 13;
+    grid-row-end: 27;
+    .canvas-wrapper {
+      #audio-start {
+        font-size: 10vw;
+        width: 40vw;
+        height: 40vw;
+      }
+    }
+  }
+}
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .audio-section-bars {
-  @include place-in-grid(22, 35, 1, 25);
+    @include place-in-grid(22, 35, 1, 25);
   }
 }
 </style>
@@ -102,11 +115,10 @@ export default {
       this.canvas.width = window.innerWidth / 1.5;
       this.canvas.height = window.innerHeight / 2;
     },
-    audioControlPLay(){
-         if (this.$refs.theaudio.paused) {
+    audioControlPLay() {
+      if (this.$refs.theaudio.paused) {
         this.$refs.theaudio.play();
-      }
-      else{
+      } else {
         this.$refs.theaudio.pause();
       }
     },
@@ -130,7 +142,7 @@ export default {
       this.analyser.getByteFrequencyData(fbc_array);
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-      this.ctx.fillStyle = this.gradient("#ff90ff", "#00ffc8","#ff00ff" );
+      this.ctx.fillStyle = this.gradient("#ff90ff", "#00ffc8", "#ff00ff");
       this.createBars(fbc_array);
     },
     gradient(color1, color2, color3) {

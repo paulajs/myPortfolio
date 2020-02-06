@@ -10,12 +10,12 @@
     xml:space="preserve"
     id="caseHorrorSVG"
   >
-     <defs>
-    <linearGradient id="svg-gradientLight" x1="-10%" y1="0%" x2="110%" y2="0%">
-      <stop offset="0%" style="stop-color:#ff90ff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00ffc8;stop-opacity:1" />
-    </linearGradient>
-  </defs>
+    <defs>
+      <linearGradient id="svg-gradientLight" x1="-10%" y1="0%" x2="110%" y2="0%">
+        <stop offset="0%" style="stop-color:#ff90ff;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#00ffc8;stop-opacity:1" />
+      </linearGradient>
+    </defs>
     <g id="moon">
       <g>
         <circle class="st0" cx="718.8" cy="215.6" r="98" />
@@ -373,7 +373,18 @@
   stroke-width: 0.5;
   stroke-miterlimit: 10;
 }
-
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #caseHorrorSVG {
+    width: 153%;
+    transform: translateX(-21vw);
+    g#moon {
+      transform: translate(-28vw, -18vh);
+    }
+    g#textbox {
+      transform: translate(36vw, -3vh) scaleY(0.9);
+    }
+  }
+}
 </style>
 <script>
 export default {

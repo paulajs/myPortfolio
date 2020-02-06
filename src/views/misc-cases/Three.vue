@@ -167,6 +167,94 @@
     justify-self: center;
   }
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .case-three {
+    .three-anim {
+      grid-row-start: 2;
+    }
+    .three-anim-canvas {
+      grid-row-start: 11;
+    }
+    .three-header {
+      font-size: 16vw;
+    }
+    .misc-three-anim {
+      grid-row-start: 5;
+    }
+    .anim-snippet1 {
+      grid-row-start: 24;
+      width: 100%;
+    }
+    #anim-snip-text {
+      grid-row-start: 28;
+    }
+    .three-click {
+      grid-row-start: 35;
+    }
+    .misc-three-clickadd {
+      grid-row-start: 41;
+    }
+    .canvas-wrapper {
+      grid-row-start: 45;
+      grid-row-end: 52;
+    }
+    .canvas-move-wrapper {
+      grid-row-start: 62;
+      grid-row-end: 66;
+    }
+    .misc-three-clickMove {
+      grid-row-start: 58;
+    }
+    .click-snippet {
+      grid-row-start: 68;
+      width: 100%;
+    }
+    .three-ray {
+      grid-row-start: 79;
+    }
+    .misc-three-remove {
+      grid-row-start: 83;
+    }
+    .canvas-remove-wrapper {
+      grid-row-start: 88;
+      grid-row-end: 100;
+    }
+    .three-ray {
+      grid-row-start: 83;
+    }
+    .misc-three-remove {
+      grid-row-start: 86;
+    }
+    .canvas-remove-wrapper {
+      grid-row-start: 91;
+      grid-row-end: 100;
+    }
+    .misc-three-over {
+      grid-row-start: 102;
+    }
+    .canvas-over-wrapper {
+      grid-row-start: 107;
+      grid-row-end: 114;
+    }
+    .ray-snippet {
+      grid-row-start: 116;
+      width: 100%;
+    }
+    .three-drag {
+      grid-row-start: 125;
+    }
+    .misc-three-drag {
+      grid-row-start: 129;
+    }
+    .canvas-drag-wrapper {
+      grid-row-start: 134;
+    }
+    .drag-snippet {
+      width: 100%;
+      grid-row-start: 147;
+    }
+  }
+}
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .case-three {
     .three-header {

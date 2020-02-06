@@ -25,6 +25,10 @@
       <img class="hesehus-space" src="@/assets/img/SVG/night-ideation.svg" alt />
       <img class="hesehus-ideation" src="@/assets/img/SVG/ideation-icons.svg" alt />
 
+      <img class="hesehus-boat-mob" src="@/assets/img/SVG/day-ideation-mob.svg" alt />
+      <img class="hesehus-space-mob" src="@/assets/img/SVG/night-ideation-mob.svg" alt />
+      <img class="hesehus-ideation-mob" src="@/assets/img/SVG/ideation-icons-mob.svg" alt />
+
       <CaseTextSection
         sectionClass="case-text-section storyboards-hesehus"
         sectionHeaderClass="case-section-header header-storyboards-hesehus"
@@ -38,8 +42,18 @@
         alt
       />
       <img
+        class="hesehus-storyboard-inspiration-mob"
+        src="@/assets/img/SVG/inspiration-storyboard-mob.svg"
+        alt
+      />
+      <img
         class="hesehus-storyboard-fristads-kansas"
         src="@/assets/img/SVG/danoffice-storyboard.svg"
+        alt
+      />
+      <img
+        class="hesehus-storyboard-fristads-kansas-mob"
+        src="@/assets/img/SVG/danoffice-storyboard-mob.svg"
         alt
       />
     </div>
@@ -100,11 +114,17 @@
       grid-column-end: 23;
       width: 100%;
     }
+    .hesehus-boat-mob {
+      display: none;
+    }
     .hesehus-space {
       grid-row-start: 43;
       grid-column-start: 3;
       grid-column-end: 23;
       width: 100%;
+    }
+    .hesehus-space-mob {
+      display: none;
     }
     .hesehus-ideation {
       grid-row-start: 58;
@@ -112,11 +132,17 @@
       grid-column-end: 23;
       width: 100%;
     }
+    .hesehus-ideation-mob {
+      display: none;
+    }
     .hesehus-storyboard-inspiration {
       grid-row-start: 81;
       grid-column-start: 3;
       grid-column-end: 13;
       width: 100%;
+    }
+    .hesehus-storyboard-inspiration-mob {
+      display: none;
     }
     .hesehus-storyboard-fristads-kansas {
       grid-row-start: 81;
@@ -132,6 +158,7 @@
       font-size: 17vw;
     }
     .process-wrapper {
+      grid-template-rows: repeat(220, 4.94vh);
       p {
         grid-column-end: 23;
       }
@@ -147,30 +174,49 @@
         grid-row-start: 25;
       }
       .hesehus-boat {
+        display: none;
+      }
+      .hesehus-boat-mob {
+        display: block;
         grid-row-start: 30;
         grid-column-start: 1;
         grid-column-end: 25;
       }
       .hesehus-space {
-        grid-row-start: 36;
-        grid-column-start: 1;
-        grid-column-end: 25;
+        display: none;
       }
-      .hesehus-ideation {
-        grid-row-start: 41;
-        grid-column-start: 1;
-        grid-column-end: 25;
-      }
-      .storyboards-hesehus {
-        grid-row-start: 51;
-      }
-      .hesehus-storyboard-inspiration {
+      .hesehus-space-mob {
+        display: block;
         grid-row-start: 54;
         grid-column-start: 1;
         grid-column-end: 25;
       }
+      .hesehus-ideation-mob {
+        display: block;
+        grid-row-start: 94;
+        grid-column-start: 1;
+        grid-column-end: 25;
+      }
+      .hesehus-ideation {
+        display: none;
+      }
+      .storyboards-hesehus {
+        grid-row-start: 132;
+      }
+      .hesehus-storyboard-inspiration {
+        display: none;
+      }
+      .hesehus-storyboard-inspiration-mob {
+        display: block;
+        grid-row-start: 136;
+        grid-column-start: 1;
+        grid-column-end: 25;
+      }
       .hesehus-storyboard-fristads-kansas {
-        grid-row-start: 70;
+        display: none;
+      }
+      .hesehus-storyboard-fristads-kansas-mob {
+        grid-row-start: 176;
         grid-column-start: 1;
         grid-column-end: 25;
       }

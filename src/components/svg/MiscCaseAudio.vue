@@ -10,12 +10,12 @@
     xml:space="preserve"
     id="caseAudioSVG"
   >
-   <defs>
-    <linearGradient id="svg-gradient" x1="-10%" y1="0%" x2="110%" y2="0%">
-      <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#00ffc8;stop-opacity:1" />
-    </linearGradient>
-  </defs>
+    <defs>
+      <linearGradient id="svg-gradient" x1="-10%" y1="0%" x2="110%" y2="0%">
+        <stop offset="0%" style="stop-color:#ff00ff;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#00ffc8;stop-opacity:1" />
+      </linearGradient>
+    </defs>
     <g id="waves">
       <g>
         <g>
@@ -593,29 +593,43 @@
   stroke-width: 0.5;
   stroke-miterlimit: 10;
 }
- .misc-case1{
+.misc-case1 {
   transition: all 0.15s ease;
-  &:hover #waves{
-    .st0{
+  &:hover #waves {
+    .st0 {
       fill: $color-green;
     }
   }
-/*   &:hover #textbox{
+  /*   &:hover #textbox{
     .st5{
       fill: url(#svg-gradientLight);
       transition: fill 0.15s ease;
     }
   } */
 }
-@keyframes textbox-anim{
-  0%{transform: scale(1);}
-  100%{transform: scale(1.1);}
+@keyframes textbox-anim {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
-@keyframes speaker-anim{
-  0%{transform: scale(1);}
-  50%{transform: scale(1.05);}
-  100%{transform: scale(1);}
-
+@keyframes speaker-anim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #caseAudioSVG {
+    top: 6vh;
+  }
 }
 </style>
 <script>

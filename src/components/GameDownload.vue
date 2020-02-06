@@ -36,7 +36,7 @@
   .space-background {
     opacity: 0;
   }
-   &:hover .space-background {
+  &:hover .space-background {
     opacity: 0.5;
     transition: all 0.4s ease-out;
   }
@@ -52,7 +52,7 @@
   .space-background {
     opacity: 0;
   }
-   &:hover .space-background {
+  &:hover .space-background {
     opacity: 0.7;
     transition: all 0.4s ease-out;
   }
@@ -62,15 +62,15 @@
   grid-column-end: 9;
   background: $color-pink;
   overflow: hidden;
-    .os-logo {
+  .os-logo {
     @include centerX();
     top: 40%;
     width: 60%;
     transition: all 0.4s ease;
     opacity: 0.8;
   }
-  &:hover .os-logo{
-     animation: logo-anim 0.2s ease-in forwards;
+  &:hover .os-logo {
+    animation: logo-anim 0.2s ease-in forwards;
     animation-delay: 0.48s;
   }
 }
@@ -84,42 +84,42 @@
   .download-choice-text {
     background: $color-pink;
   }
-    .os-logo {
+  .os-logo {
     @include centerX();
     top: 38%;
     width: 53%;
     transition: all 0.4s ease;
     opacity: 0.8;
   }
-  &:hover .os-logo{
-     animation: logo-anim 0.2s ease-in forwards;
+  &:hover .os-logo {
+    animation: logo-anim 0.2s ease-in forwards;
     animation-delay: 0.48s;
   }
 }
 
-#wreck-linux{
+#wreck-linux {
   grid-column-start: 17;
   grid-column-end: 23;
   background: $color-pink-light;
-    .os-logo {
+  .os-logo {
     @include centerX();
     top: 40%;
     width: 46%;
     transition: all 0.4s ease;
     opacity: 0.8;
   }
-  &:hover .os-logo{
-     animation: logo-anim 0.2s ease-in forwards;
+  &:hover .os-logo {
+    animation: logo-anim 0.2s ease-in forwards;
     animation-delay: 0.48s;
   }
 }
 
-@keyframes logo-anim{
-  0%{
-    transform: translateX(-50%) scaleY(1) ;
+@keyframes logo-anim {
+  0% {
+    transform: translateX(-50%) scaleY(1);
   }
-  100%{
-    transform: translateX(-50%) scaleY(0.1) ;
+  100% {
+    transform: translateX(-50%) scaleY(0.1);
     margin-top: 29%;
   }
 }
@@ -317,7 +317,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-     background: linear-gradient(
+    background: linear-gradient(
       -45deg,
       $color-pink-light -70%,
       $color-green 120%
@@ -325,7 +325,6 @@
     opacity: 0.6;
     transition: all 0.2s ease;
   }
-
 
   .top-text {
     @include header-style(lowercase);
@@ -349,6 +348,34 @@
     z-index: 10;
   }
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #space-win {
+    grid-column-start: 2;
+    grid-column-end: 24;
+    grid-row-start: 80;
+    grid-row-end: 93;
+  }
+  #space-mac {
+    grid-column-start: 2;
+    grid-column-end: 24;
+    grid-row-start: 95;
+    grid-row-end: 108;
+  }
+  #space-linux {
+    grid-column-start: 2;
+    grid-column-end: 24;
+    grid-row-start: 110;
+    grid-row-end: 123;
+  }
+  .space-download {
+    .top-text {
+      font-size: 6.8vw;
+    }
+    .download-choice-text {
+      font-size: 10vw;
+    }
+  }
+}
 </style>
 <script>
 export default {
@@ -358,6 +385,6 @@ export default {
     downloadClass: String,
     operatingSystem: String,
     logoImg: String
-  },
+  }
 };
 </script>

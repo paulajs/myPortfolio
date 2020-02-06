@@ -1,8 +1,8 @@
 <template>
   <div>
     <MiscCaseHeader
-    caseTitle="Space Kitty"
-    caseText = "A quick proof of concept (game) about a cat from outerspace
+      caseTitle="Space Kitty"
+      caseText="A quick proof of concept (game) about a cat from outerspace
       comming to earth and collecting human inventions, while
       fighting giant rats."
     />
@@ -21,11 +21,7 @@
         src="@/assets/img/space-kitty/spacekittyscreenshot3.png"
         alt="game screen shot"
       />
-      <img
-        class="process-img2"
-        src="@/assets/img/space-kitty/spaceship.png"
-        alt="game screen shot"
-      />
+      <img class="process-img2" src="@/assets/img/space-kitty/spaceship.png" alt="game screen shot" />
       <img class="process-img3" src="@/assets/img/space-kitty/rat.png" alt="game screen shot" />
       <img
         class="process-img4"
@@ -76,26 +72,26 @@
         src="@/assets/videos/space-kitty/spacekitty.mp4"
       ></video>
       <GameDownload
-      downloadClass="space-download"
-      downloadID="space-win"
-      operatingSystem="Windows"
-      :logoImg="getWinLogo()"
+        downloadClass="space-download"
+        downloadID="space-win"
+        operatingSystem="Windows"
+        :logoImg="getWinLogo()"
       >
         <component :is="spaceship_component"></component>
       </GameDownload>
       <GameDownload
-      downloadClass="space-download"
-      downloadID="space-mac"
-      operatingSystem="Mac"
-      :logoImg="getMacLogo()"
+        downloadClass="space-download"
+        downloadID="space-mac"
+        operatingSystem="Mac"
+        :logoImg="getMacLogo()"
       >
         <component :is="spaceship_component"></component>
       </GameDownload>
       <GameDownload
-      downloadClass="space-download"
-      downloadID="space-linux"
-      operatingSystem="Linux"
-      :logoImg="getLinuxLogo()"
+        downloadClass="space-download"
+        downloadID="space-linux"
+        operatingSystem="Linux"
+        :logoImg="getLinuxLogo()"
       >
         <component :is="spaceship_component"></component>
       </GameDownload>
@@ -126,7 +122,7 @@
 .space-case {
   @include create-grid(85, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
-  img{
+  img {
     width: 100%;
   }
   .process-img1 {
@@ -154,6 +150,50 @@
     @include place-in-grid(39, 46, 13, 24);
   }
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .space-case {
+    grid-template-rows: repeat(150, 4.94vh);
+    .misc-space-process{
+      grid-row-start: 3;
+    }
+    .misc-space-result {
+      grid-row-start: 36;
+    }
+    .process-img1 {
+      @include place-in-grid(9, 11, 2, 24);
+    }
+    .process-img2 {
+      @include place-in-grid(15, 18, 2, 24);
+    }
+    .process-img3 {
+      @include place-in-grid(21, 24, 2, 24);
+    }
+    .process-img4 {
+      @include place-in-grid(27, 30, 2, 24);
+    }
+    .result-img1 {
+      @include place-in-grid(39, 43, 2, 24);
+    }
+    .result-img2 {
+      @include place-in-grid(45, 49, 2, 24);
+    }
+    .result-img3 {
+      @include place-in-grid(51, 54, 2, 24);
+    }
+    .result-img4 {
+      @include place-in-grid(57, 60, 2, 24);
+    }
+    .misc-space-try {
+      grid-row-start: 65;
+    }
+    .space-video {
+      grid-row-start: 72;
+      grid-row-end: 75;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+  }
+}
 </style>
 <script>
 import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
@@ -177,11 +217,11 @@ export default {
   methods: {
     getWinLogo: () => winLogo,
     getMacLogo: () => macLogo,
-    getLinuxLogo: () => linuxLogo,
+    getLinuxLogo: () => linuxLogo
   },
   data() {
     return {
-      spaceship_component: "SpaceShip",
+      spaceship_component: "SpaceShip"
     };
   }
 };

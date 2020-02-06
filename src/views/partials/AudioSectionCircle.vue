@@ -74,6 +74,19 @@
     }
   }
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .audio-section-circle {
+    grid-row-start: 30;
+    grid-row-end: 46;
+    .canvas-wrapper {
+      #audio-start {
+        font-size: 10vw;
+        width: 40vw;
+        height: 40vw;
+      }
+    }
+  }
+}
 </style>
 <script>
 export default {
@@ -96,11 +109,10 @@ export default {
       this.canvas.width = window.innerWidth / 1.5;
       this.canvas.height = window.innerHeight / 2;
     },
-      audioControlPLay(){
-         if (this.$refs.theaudio.paused) {
+    audioControlPLay() {
+      if (this.$refs.theaudio.paused) {
         this.$refs.theaudio.play();
-      }
-      else{
+      } else {
         this.$refs.theaudio.pause();
       }
     },
@@ -131,7 +143,13 @@ export default {
         const radius = -(fbc_array[increment] / 1.3);
 
         /* this.ctx.strokeStyle = this.gradient("#ff90ff", "#00ffc8","#ff00ff","#ff90ff", "#00ffc8"); */
-        this.ctx.strokeStyle = this.gradient("#3250f7","#32f78f","#8bc34a","#2196f3","#f732dd");
+        this.ctx.strokeStyle = this.gradient(
+          "#3250f7",
+          "#32f78f",
+          "#8bc34a",
+          "#2196f3",
+          "#f732dd"
+        );
         this.ctx.beginPath();
         this.ctx.arc(
           this.canvas.width / 2,

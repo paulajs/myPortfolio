@@ -2,18 +2,17 @@
   <div class="misc-header">
     <h1>{{caseTitle}}</h1>
     <router-link class="case-home-button" to="/lab">
-      <HomeButton buttonText="Back"/>
+      <HomeButton buttonText="Back" />
     </router-link>
-    <h2>
-      {{caseText}}
-
-    </h2>
+    <h2>{{caseText}}</h2>
   </div>
 </template>
 <style lang="scss" scoped>
-.case-three{
-  .misc-header{
-    h1{
+@import "@/assets/sass/_global.scss";
+@import "@/assets/sass/_mixins.scss";
+.case-three {
+  .misc-header {
+    h1 {
       font-size: 155px;
     }
   }
@@ -38,7 +37,7 @@
     grid-row-start: 1;
     grid-row-end: 8;
     font-size: 8vw;
-    font-family: "Poppins", sans-serif;
+    font-family: $font-primary;
     color: black;
     margin-left: -0.067em;
     align-self: end;
@@ -49,22 +48,44 @@
     grid-column-end: 10;
     grid-row-start: 9;
     align-self: end;
-    font-family: "Source Code Pro", monospace;
+    font-family: $font-secundary;
     font-size: 1.1vw;
     font-weight: 400;
   }
 }
-  @media screen
-  and (min-device-width: 1200px)
-  and (max-device-width: 1600px)
-  and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .misc-header {
+    h1 {
+      grid-column-start: 2;
+      grid-column-end: 23;
+      grid-row-start: 1;
+      grid-row-end: 8;
+      font-size: 16vw;
+      margin-bottom: -4vh;
+    }
+    h2 {
+      grid-column-start: 2;
+      grid-column-end: 22;
+      grid-row-start: 12;
+      font-size: 4.7vw;
+    }
+  }
+  .case-three {
     .misc-header {
-      h2{
-        grid-row-start: 10;
-        font-size: 1.3vw;
+      h1 {
+        font-size: 14vw;
       }
     }
   }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .misc-header {
+    h2 {
+      grid-row-start: 10;
+      font-size: 1.3vw;
+    }
+  }
+}
 </style>
 <script>
 import HomeButton from "@/components/HomeButton.vue";

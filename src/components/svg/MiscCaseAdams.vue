@@ -236,7 +236,7 @@
   </svg>
 </template>
 <style lang="scss" scoped>
-#caseAdamsSVG{
+#caseAdamsSVG {
   position: absolute;
   top: 5.5vh;
 }
@@ -288,7 +288,11 @@
   stroke-width: 0.25;
   stroke-miterlimit: 10;
 }
-
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #caseAdamsSVG {
+    top: 8.5vh;
+  }
+}
 </style>
 <script>
 export default {

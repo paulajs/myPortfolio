@@ -1,19 +1,21 @@
 <template>
-<router-link :class="miscCaseClass" :to="routerLink">
-  <div class="wrap">
-    <div class="misc-background"></div>
-    <img :class="stars" src="../../assets/img/SVG/stars.svg" alt="stars" />
-    <div :class="headerClass">
-      <h2>{{headerText}}</h2>
+  <router-link :class="miscCaseClass" :to="routerLink">
+    <div class="wrap">
+      <div class="misc-background"></div>
+    <!--   <img :class="stars" src="../../assets/img/SVG/stars.svg" alt="stars" /> -->
+      <img :class="stars" id="starts-desk" src="../../assets/img/SVG/stars.svg" alt="stars" />
+      <img :class="stars" id="starts-mob" src="../../assets/img/SVG/stars-mob.svg" alt="stars" />
+      <div :class="headerClass">
+        <h2>{{headerText}}</h2>
+      </div>
+      <slot></slot>
     </div>
-    <slot></slot>
-  </div>
-</router-link>
+  </router-link>
 </template>
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
-a .wrap{
+a .wrap {
   width: 100%;
   height: 100%;
 }
@@ -28,6 +30,9 @@ div {
   top: 0;
   display: block;
 }
+#starts-mob {
+  display: none;
+}
 .no {
   position: absolute;
   top: 0;
@@ -38,11 +43,11 @@ div {
   background: $color-pink;
   border: 1px solid black;
   position: relative;
-   transition: all 0.15s ease-in;
-  &:hover{
+  transition: all 0.15s ease-in;
+  &:hover {
     .misc-background {
-    @include misc-background(bottom, -70%, 120%, 0.7);
-  }
+      @include misc-background(bottom, -70%, 120%, 0.7);
+    }
   }
   .header-space {
     position: absolute;
@@ -65,7 +70,7 @@ div {
   &:hover .misc-background {
     transition: all 0.1s ease-in;
   }
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
@@ -74,13 +79,12 @@ div {
   background: $color-pink;
   border: 1px solid black;
   position: relative;
-   transition: all 0.15s ease-in;
-  &:hover{
-    .misc-background{
+  transition: all 0.15s ease-in;
+  &:hover {
+    .misc-background {
       @include misc-background(right, -70%, 150%, 0.7);
-     transition: all 0.1s ease-in;
+      transition: all 0.1s ease-in;
     }
-
   }
   .header-ripple {
     @include header-style(none);
@@ -92,13 +96,12 @@ div {
     line-height: 4.6vw;
   }
   .misc-background {
-
     background: black;
   }
   &:hover .misc-background {
     transition: all 0.1s ease-in;
   }
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
@@ -107,12 +110,12 @@ div {
   background: $color-pink;
   border: 1px solid black;
   position: relative;
-   transition: all 0.15s ease-in;
-  &:hover{
-    .misc-background{
-     @include misc-background(top, -60%, 100%, 0.6);
-     transition: all 0.1s ease-in;
-     }
+  transition: all 0.15s ease-in;
+  &:hover {
+    .misc-background {
+      @include misc-background(top, -60%, 100%, 0.6);
+      transition: all 0.1s ease-in;
+    }
   }
   .header-horror {
     @include header-style(uppercase);
@@ -132,12 +135,50 @@ div {
     transition: all 0.1s ease-in;
     //opacity: 0;
   }
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
 
-
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .misc-case2 {
+    @include place-in-grid(6, 11, 1, 5);
+    overflow: hidden;
+    .header-space {
+      h2 {
+        font-size: 13vw;
+      }
+    }
+    #starts-mob {
+      display: block;
+    }
+    #starts-desk {
+      display: none;
+    }
+  }
+  .misc-case6 {
+    @include place-in-grid(25, 30, 1, 5);
+    .header-ripple {
+      left: 9vw;
+      font-size: 10.4vw;
+      width: 77%;
+      line-height: 21.6vw;
+    }
+  }
+  .misc-case8 {
+    @include place-in-grid(35, 40, 1, 5);
+    overflow: hidden;
+    .header-horror {
+      font-size: 7.6vw;
+    }
+        #starts-mob {
+      display: block;
+    }
+    #starts-desk {
+      display: none;
+    }
+  }
+}
 </style>
 <script>
 export default {

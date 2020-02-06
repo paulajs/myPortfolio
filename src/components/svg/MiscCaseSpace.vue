@@ -263,7 +263,27 @@
   stroke-width: 0.5;
   stroke-miterlimit: 10;
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  #caseSpaceSVG {
+    position: absolute;
+    bottom: 0;
+    left: -74px;
+    width: 162%;
+      g#ground {
+    transform: translateX(13%) scaleX(0.62);
+  }
+  g#spaceship {
+    transform: translateX(-11vw);
+  }
+  g#cat {
+    transform: translateX(-9vw);
+  }
+ g#textbox {
+    transform: translate(-9vw, -7vh) scale(0.8);
+  }
+  }
 
+}
 </style>
 <script>
 export default {

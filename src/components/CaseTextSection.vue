@@ -117,8 +117,23 @@
     p.experimentation-text-nmg {
       grid-column-end: 23;
     }
-    .inspiration-text-skansing{
+    .inspiration-text-skansing {
       grid-column-end: 20;
+    }
+    .audio-text-bars {
+      grid-column-end: 24;
+    }
+    .audio-text-circle {
+      grid-column-end: 22;
+    }
+    .process-text-space{
+      grid-column-end: 22;
+    }
+    .try-text-space{
+      grid-column-end: 22;
+    }
+    .anim-text-three{
+      grid-column-end: 22;
     }
   }
 }

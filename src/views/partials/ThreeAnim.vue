@@ -34,6 +34,16 @@
     bottom: 1px solid black;
   }
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .three-anim-canvas {
+    grid-row-start: 12;
+    button.try {
+      width: 55vw;
+      padding: 11% 5%;
+      font-size: 5vw;
+    }
+  }
+}
 </style>
 <script>
 import * as THREE from "three";
