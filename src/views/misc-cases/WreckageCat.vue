@@ -53,7 +53,7 @@
       >
         <component :is="paw_component"></component>
       </GameDownload>
-         <GameDownload
+      <GameDownload
         downloadClass="wreck-download"
         downloadID="wreck-linux"
         operatingSystem="Linux"
@@ -109,6 +109,62 @@
   .kittytoss-video {
     width: 100%;
     @include place-in-grid(46, 54, 5, 21);
+  }
+}
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .wreck-case {
+    grid-template-rows: repeat(185, 4.94vh);
+    .misc-wreck-sprite {
+      grid-row-start: 2;
+    }
+    .wreck-sprite1 {
+      grid-row-start: 8;
+      grid-row-end: 12;
+      grid-column-start: 1;
+      grid-column-end: 25;
+    }
+    .wreck-sprite2 {
+      grid-row-start: 14;
+      grid-row-end: 18;
+      grid-column-start: 1;
+      grid-column-end: 25;
+    }
+    .misc-wreck-result {
+      grid-row-start: 22;
+    }
+    .wreck-result1 {
+      grid-row-start: 25;
+      grid-row-end: 27;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .wreck-result2 {
+      grid-row-start: 31;
+      grid-row-end: 32;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .wreck-result3 {
+      grid-row-start: 37;
+      grid-row-end: 46;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .wreck-result4 {
+      grid-row-start: 43;
+      grid-row-end: 44;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .misc-wreck-try {
+      grid-row-start: 51;
+    }
+    .kittytoss-video {
+      grid-row-start: 57;
+      grid-row-end: 60;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
   }
 }
 </style>

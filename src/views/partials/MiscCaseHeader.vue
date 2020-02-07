@@ -60,7 +60,7 @@
       grid-column-end: 23;
       grid-row-start: 1;
       grid-row-end: 8;
-      font-size: 16vw;
+      font-size: 15vw;
       margin-bottom: -4vh;
     }
     h2 {
@@ -68,13 +68,6 @@
       grid-column-end: 22;
       grid-row-start: 12;
       font-size: 4.7vw;
-    }
-  }
-  .case-three {
-    .misc-header {
-      h1 {
-        font-size: 14vw;
-      }
     }
   }
 }

@@ -251,8 +251,16 @@
   div#slider-insp-skansing {
     display: none;
   }
-  div#slider-exp-skansing{
+  div#slider-exp-skansing {
     display: none;
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .nav-left {
+    grid-row-start: 7;
+  }
+  .nav-right {
+    grid-row-start: 7;
   }
 }
 @media screen and (min-height: 1080px) and (min-width: 1900px) {

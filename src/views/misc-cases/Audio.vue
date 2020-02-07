@@ -149,12 +149,13 @@
   .case-audio {
     .bars-snippet {
       width: 100%;
+      box-shadow: none;
     }
     .misc-audio-circle {
       grid-row-start: 28;
     }
     .misc-audio-img{
-      grid-row-start: 47;
+      grid-row-start: 48;
     }
   }
   .audio-outline {
@@ -162,6 +163,8 @@
     justify-content: space-around;
     align-items: center;
     margin-bottom: 18vh;
+    padding-top: 8vh;
+    overflow: hidden;
     .audio-postit-wrapper {
       width: 118%;
       flex-direction: column;

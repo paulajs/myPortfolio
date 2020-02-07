@@ -16,6 +16,7 @@ export class ExplodeAnimation{
   createPartices(){
     var geometry = new THREE.Geometry();
     var movementSpeed = 80;
+
     for (let i = 0; i < this.totalObjects; i++) {
       var vertex = new THREE.Vector3();
       vertex.x = this.x;
@@ -25,8 +26,11 @@ export class ExplodeAnimation{
       geometry.vertices.push(vertex);
       this.dirs.push({ x: (Math.random() * movementSpeed) - (movementSpeed / 2), y: (Math.random() * movementSpeed) - (movementSpeed / 2), z: (Math.random() * movementSpeed) - (movementSpeed / 2) });
     }
-    var sprite = new THREE.TextureLoader().load(require("../assets/img/disk.png"));
-    var material = new THREE.PointsMaterial({ size: this.objectSize, map: sprite, color: this.color, alphaTest: 0.7, transparent: true });
+    var sprite = new THREE.TextureLoader().load(require("../assets/img/hireme.png"));
+    var sprite1 = new THREE.TextureLoader().load(require("../assets/img/disk.png"));
+    var sprites = [sprite, sprite1];
+    var random = Math.random() < 0.5 ? 1 : 0;
+    var material = new THREE.PointsMaterial({ size: this.objectSize, map: sprites[random], color: this.color, alphaTest: 0.7, transparent: true });
     var particles = new THREE.Points(geometry, material);
 
     this.object = particles;

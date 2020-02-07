@@ -39,9 +39,9 @@
         textClass="adams-text-early"
         sectionText="The first types made after initial observation at the store.  "
       />
-      <img class="img-olderman" src="@/assets/img/dr-adams/SVG/older-man.svg" alt="">
-      <img class="img-poshlady" src="@/assets/img/dr-adams/SVG/posh-lady.svg" alt="">
-      <img class="img-youngboy" src="@/assets/img/dr-adams/SVG/young-boy.svg" alt="">
+      <img class="img-olderman" src="@/assets/img/dr-adams/SVG/older-man.svg" alt />
+      <img class="img-poshlady" src="@/assets/img/dr-adams/SVG/posh-lady.svg" alt />
+      <img class="img-youngboy" src="@/assets/img/dr-adams/SVG/young-boy.svg" alt />
       <CaseTextSection
         sectionClass="case-text-section misc-adams-final"
         sectionHeaderClass="case-section-header header-adams-final"
@@ -52,16 +52,16 @@
       <p class="stylishlady">The stylish lady</p>
       <p class="stylishman">The stylish man</p>
       <p class="exgirl">The excentric girl</p>
-      <img class="img-gry" src="@/assets/img/dr-adams/SVG/gry.svg" alt="">
-      <img class="img-soren" src="@/assets/img/dr-adams/SVG/soren.svg" alt="">
-      <img class="img-katrine" src="@/assets/img/dr-adams/SVG/katrine.svg" alt="">
+      <img class="img-gry" src="@/assets/img/dr-adams/SVG/gry.svg" alt />
+      <img class="img-soren" src="@/assets/img/dr-adams/SVG/soren.svg" alt />
+      <img class="img-katrine" src="@/assets/img/dr-adams/SVG/katrine.svg" alt />
 
       <p class="teenboy">The teenage boy</p>
       <p class="teengirl">The sporty and querky girl</p>
       <p class="oldman">The excentric older man</p>
-      <img class="img-william" src="@/assets/img/dr-adams/SVG/william.svg" alt="">
-      <img class="img-emile" src="@/assets/img/dr-adams/SVG/emile.svg" alt="">
-      <img class="img-bjarne" src="@/assets/img/dr-adams/SVG/bjarne.svg" alt="">
+      <img class="img-william" src="@/assets/img/dr-adams/SVG/william.svg" alt />
+      <img class="img-emile" src="@/assets/img/dr-adams/SVG/emile.svg" alt />
+      <img class="img-bjarne" src="@/assets/img/dr-adams/SVG/bjarne.svg" alt />
       <CaseTextSection
         sectionClass="case-text-section misc-adams-logo"
         sectionHeaderClass="case-section-header header-adams-logo"
@@ -69,17 +69,17 @@
         textClass="adams-text-logo"
         sectionText="To math the illustrated universe, Dr Adams logo was made in an illustrated version aswell to match the concept."
       />
-       <img class="logo-white" src="@/assets/img/dr-adams/SVG/logo-white.svg" alt="">
-      <img class="logo-black" src="@/assets/img/dr-adams/SVG/logo-black.svg" alt="">
+      <img class="logo-white" src="@/assets/img/dr-adams/SVG/logo-white.svg" alt />
+      <img class="logo-black" src="@/assets/img/dr-adams/SVG/logo-black.svg" alt />
       <CaseTextSection
         sectionClass="case-text-section misc-adams-logofinal"
         sectionHeaderClass="case-section-header header-adams-logofinal"
         headertext="The final logos"
         textClass="adams-text-logofinal"
-        sectionText=""
+        sectionText
       />
-      <img class="logofinal-white" src="@/assets/img/dr-adams/SVG/logo-final-white.svg" alt="">
-      <img class="logofinal-black" src="@/assets/img/dr-adams/SVG/logo-final-black.svg" alt="">
+      <img class="logofinal-white" src="@/assets/img/dr-adams/SVG/logo-final-white.svg" alt />
+      <img class="logofinal-black" src="@/assets/img/dr-adams/SVG/logo-final-black.svg" alt />
     </div>
   </div>
 </template>
@@ -111,30 +111,30 @@
     grid-row-start: 20;
     grid-column-start: 1;
   }
-  .misc-adams-early{
+  .misc-adams-early {
     grid-row-start: 29;
     grid-column-start: 1;
   }
-  .img-olderman{
+  .img-olderman {
     grid-row-start: 33;
     grid-column-start: 6;
     grid-column-end: 10;
   }
-  .img-poshlady{
+  .img-poshlady {
     grid-row-start: 33;
     grid-column-start: 11;
     grid-column-end: 15;
   }
-  .img-youngboy{
+  .img-youngboy {
     grid-row-start: 33;
     grid-column-start: 16;
     grid-column-end: 20;
   }
-  .misc-adams-final{
+  .misc-adams-final {
     grid-row-start: 50;
     grid-column-start: 1;
   }
-  .stylishlady{
+  .stylishlady {
     grid-row-start: 54;
     grid-column-start: 6;
     grid-column-end: 10;
@@ -142,12 +142,12 @@
     align-self: center;
     font-family: $font-secundary;
   }
-  .img-gry{
+  .img-gry {
     grid-row-start: 55;
     grid-column-start: 6;
     grid-column-end: 10;
   }
-  .stylishman{
+  .stylishman {
     grid-row-start: 54;
     grid-column-start: 11;
     grid-column-end: 15;
@@ -155,12 +155,12 @@
     align-self: center;
     font-family: $font-secundary;
   }
-  .img-soren{
+  .img-soren {
     grid-row-start: 55;
     grid-column-start: 11;
     grid-column-end: 15;
   }
-  .exgirl{
+  .exgirl {
     grid-row-start: 54;
     grid-column-start: 16;
     grid-column-end: 20;
@@ -168,12 +168,12 @@
     align-self: center;
     font-family: $font-secundary;
   }
-  .img-katrine{
+  .img-katrine {
     grid-row-start: 55;
     grid-column-start: 16;
     grid-column-end: 20;
   }
-  .teenboy{
+  .teenboy {
     grid-row-start: 71;
     grid-column-start: 6;
     grid-column-end: 10;
@@ -181,13 +181,13 @@
     align-self: center;
     font-family: $font-secundary;
   }
-  .img-william{
+  .img-william {
     grid-row-start: 72;
     grid-column-start: 6;
     grid-column-end: 10;
   }
 
-  .teengirl{
+  .teengirl {
     grid-row-start: 71;
     grid-column-start: 11;
     grid-column-end: 15;
@@ -195,12 +195,12 @@
     align-self: center;
     font-family: $font-secundary;
   }
-    .img-emile{
+  .img-emile {
     grid-row-start: 72;
     grid-column-start: 11;
     grid-column-end: 15;
   }
-  .oldman{
+  .oldman {
     grid-row-start: 71;
     grid-column-start: 16;
     grid-column-end: 20;
@@ -208,38 +208,166 @@
     align-self: center;
     font-family: $font-secundary;
   }
-  .img-bjarne{
+  .img-bjarne {
     grid-row-start: 72;
     grid-column-start: 16;
     grid-column-end: 20;
   }
-  .misc-adams-logo{
-     grid-row-start: 89;
+  .misc-adams-logo {
+    grid-row-start: 89;
     grid-column-start: 1;
   }
-  .logo-white{
+  .logo-white {
     grid-row-start: 93;
     grid-column-start: 6;
     grid-column-end: 13;
   }
-  .logo-black{
+  .logo-black {
     grid-row-start: 93;
     grid-column-start: 13;
     grid-column-end: 20;
   }
-  .misc-adams-logofinal{
-     grid-row-start: 112;
+  .misc-adams-logofinal {
+    grid-row-start: 112;
     grid-column-start: 1;
   }
-  .logofinal-white{
+  .logofinal-white {
     grid-row-start: 115;
     grid-column-start: 4;
     grid-column-end: 13;
   }
-   .logofinal-black{
+  .logofinal-black {
     grid-row-start: 115;
     grid-column-start: 13;
     grid-column-end: 22;
+  }
+}
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .case-adams {
+    grid-template-rows: repeat(385, 4.94vh);
+    .misc-adams-inspiration {
+      grid-row-start: 3;
+    }
+    .adams-offline {
+      grid-row-start: 9;
+      grid-column-start: 1;
+      grid-column-end: 25;
+    }
+    .adams-online {
+      grid-row-start: 17;
+      grid-column-start: 1;
+      grid-column-end: 25;
+    }
+    .misc-adams-concept {
+      grid-row-start: 27;
+    }
+    .misc-adams-early {
+      grid-row-start: 42;
+    }
+    .img-olderman {
+      grid-row-start: 46;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .img-poshlady {
+      grid-row-start: 68;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .img-youngboy {
+      grid-row-start: 90;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .misc-adams-final {
+      grid-row-start: 114;
+    }
+    .stylishlady {
+      grid-row-start: 118;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .img-gry {
+      grid-row-start: 120;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .stylishman {
+      grid-row-start: 144;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .img-soren {
+      grid-row-start: 146;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .exgirl {
+      grid-row-start: 170;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .img-katrine {
+      grid-row-start: 172;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .teenboy {
+      grid-row-start: 196;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .img-william {
+      grid-row-start: 198;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .teengirl {
+      grid-row-start: 222;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .img-emile {
+      grid-row-start: 224;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .oldman {
+      grid-row-start: 248;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .img-bjarne {
+      grid-row-start: 250;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .misc-adams-logo {
+      grid-row-start: 276;
+    }
+    .logo-white {
+      grid-row-start: 280;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .logo-black {
+      grid-row-start: 295;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .misc-adams-logofinal {
+      grid-row-start: 312;
+    }
+    .logofinal-white {
+      grid-row-start: 314;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+    .logofinal-black {
+      grid-row-start: 320;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
   }
 }
 </style>
@@ -252,7 +380,6 @@ export default {
     MiscCaseHeader,
     CaseTextSection
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>

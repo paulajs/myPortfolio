@@ -202,7 +202,7 @@ and (min-height: 1080px )
 and (min-device-width: 1900px) {
   #caseWreckageSVG {
     width: auto;
-    height: 80%;
+    height: 74%;
   }
 }
 </style>

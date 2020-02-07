@@ -66,7 +66,6 @@
       background: url("../../assets/img/cssAnim/css-animation-sprite.png");
       animation: play 2.5s steps(8) infinite;
     }
-
   }
   .css-codesnip {
     grid-row-start: 27;
@@ -81,6 +80,37 @@
     }
     100% {
       background-position: -4000px;
+    }
+  }
+}
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .case-cssanim {
+    overflow: hidden;
+    .misc-css-sprites {
+      grid-row-start: 2;
+    }
+    .the-sprite {
+      grid-row-start: 7;
+      grid-column-start: 1;
+      grid-column-end: 25;
+    }
+    .misc-css-anim {
+      grid-row-start: 12;
+    }
+    .animation-wrapper {
+      grid-row-start: 15;
+      grid-row-end: 34;
+      grid-column-start: 1;
+      grid-column-end: 26;
+    }
+    .walk-animation {
+      transform: translateX(-31vw);
+    }
+    .css-codesnip {
+      grid-row-start: 33;
+      grid-column-start: 1;
+      grid-column-end: 25;
+      width: 100%;
     }
   }
 }

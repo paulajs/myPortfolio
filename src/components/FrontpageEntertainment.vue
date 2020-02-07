@@ -352,7 +352,6 @@ export default {
     onDocumentMouseDBClickMobile: function(event) {
       // @todo make click pop sound
       // constsounds.src = "/assets/" + "pop6" + ".mp3"; @todo move to top assets
-      console.log("double clicked");
       if (this.gameEnd) {
         return;
       }
@@ -423,7 +422,6 @@ export default {
       if (this.gameEnd) {
         return;
       }
-      console.log(this.game.currentIntersection);
       if (!this.game.currentIntersection) {
         return;
       }
@@ -618,6 +616,7 @@ a {
     position: "absolute";
     top: 0;
     left: 0;
+     user-select: none;
   }
   .bubbles {
     position: absolute;

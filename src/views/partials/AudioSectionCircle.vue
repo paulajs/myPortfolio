@@ -76,8 +76,15 @@
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .audio-section-circle {
-    grid-row-start: 30;
+    grid-row-start: 31;
     grid-row-end: 46;
+    #audio-player {
+      #audio-box {
+        audio {
+          width: 98%;
+        }
+      }
+    }
     .canvas-wrapper {
       #audio-start {
         font-size: 10vw;
@@ -96,7 +103,8 @@ export default {
       audio: new Audio(),
       canvas: null,
       ctx: null,
-      analyser: null
+      analyser: null,
+      circle_increment: 3
     };
   },
   mounted() {
@@ -106,8 +114,14 @@ export default {
     init() {
       this.canvas = this.$refs.circlerenderer;
       this.ctx = this.canvas.getContext("2d");
-      this.canvas.width = window.innerWidth / 1.5;
-      this.canvas.height = window.innerHeight / 2;
+      if (window.innerWidth < 736) {
+        this.canvas.width = window.innerWidth / 1.1;
+        this.canvas.height = window.innerHeight / 2;
+        this.circle_increment = 1;
+      } else {
+        this.canvas.width = window.innerWidth / 1.5;
+        this.canvas.height = window.innerHeight / 2;
+      }
     },
     audioControlPLay() {
       if (this.$refs.theaudio.paused) {
@@ -139,7 +153,7 @@ export default {
     createCircles(fbc_array) {
       const circles = 200;
       for (let i = 0; i < circles; i++) {
-        const increment = i * 3;
+        const increment = i * this.circle_increment;
         const radius = -(fbc_array[increment] / 1.3);
 
         /* this.ctx.strokeStyle = this.gradient("#ff90ff", "#00ffc8","#ff00ff","#ff90ff", "#00ffc8"); */

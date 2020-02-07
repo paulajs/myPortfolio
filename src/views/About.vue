@@ -9,7 +9,7 @@
       </div>
       <p class="about-text">
         Hello my name is Paula Ravn, I am a web programmer and designer, with
-        interests in all the creative outlets on the web. I love the process from idea,
+        interests in all the creative outlets on the web. I am open to new opportunities. I love the process from idea,
         to design, to building a product. I like to learn and develop, eat pasta, watch American Horror Story,
         play Borderlands, and everything with 4 legs and fur. Below are some the technoligies and tools
         that I am familiar with.
@@ -201,6 +201,7 @@
         ul {
           display: flex;
           flex-direction: row;
+          width: 100%;
           li {
             width: 23%;
             img {

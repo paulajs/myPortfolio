@@ -110,6 +110,7 @@
     grid-column-start: 2;
     grid-column-end: 24;
     justify-self: center;
+    z-index: 100;
   }
   .anim-snippet2 {
     grid-row-start: 18;
@@ -176,82 +177,87 @@
       grid-row-start: 11;
     }
     .three-header {
-      font-size: 16vw;
+      font-size: 13vw;
     }
     .misc-three-anim {
       grid-row-start: 5;
     }
     .anim-snippet1 {
       grid-row-start: 24;
+      grid-column-start: 1;
+      grid-column-end: 25;
       width: 100%;
     }
     #anim-snip-text {
-      grid-row-start: 28;
+      grid-row-start: 27;
+      text-align: left;
     }
     .three-click {
-      grid-row-start: 35;
+      grid-row-start: 33;
     }
     .misc-three-clickadd {
-      grid-row-start: 41;
+      grid-row-start: 38;
     }
     .canvas-wrapper {
-      grid-row-start: 45;
-      grid-row-end: 52;
+      grid-row-start: 42;
+      grid-row-end: 50;
+      grid-column-start: 2;
+      grid-column-end: 24;
     }
     .canvas-move-wrapper {
-      grid-row-start: 62;
-      grid-row-end: 66;
+      grid-row-start: 58;
+      grid-row-end: 63;
+      grid-column-start: 2;
+      grid-column-end: 24;
     }
     .misc-three-clickMove {
-      grid-row-start: 58;
+      grid-row-start: 54;
     }
     .click-snippet {
-      grid-row-start: 68;
+      grid-row-start: 65;
       width: 100%;
     }
     .three-ray {
-      grid-row-start: 79;
+      grid-row-start: 75;
     }
     .misc-three-remove {
-      grid-row-start: 83;
+      grid-row-start: 78;
     }
     .canvas-remove-wrapper {
-      grid-row-start: 88;
-      grid-row-end: 100;
-    }
-    .three-ray {
       grid-row-start: 83;
-    }
-    .misc-three-remove {
-      grid-row-start: 86;
-    }
-    .canvas-remove-wrapper {
-      grid-row-start: 91;
       grid-row-end: 100;
+      grid-column-start: 2;
+      grid-column-end: 24;
     }
+
     .misc-three-over {
       grid-row-start: 102;
     }
     .canvas-over-wrapper {
       grid-row-start: 107;
       grid-row-end: 114;
+      grid-column-start: 2;
+      grid-column-end: 24;
     }
     .ray-snippet {
-      grid-row-start: 116;
+      grid-row-start: 115;
       width: 100%;
     }
     .three-drag {
-      grid-row-start: 125;
+      grid-row-start: 124;
     }
     .misc-three-drag {
-      grid-row-start: 129;
+      grid-row-start: 127;
     }
     .canvas-drag-wrapper {
-      grid-row-start: 134;
+      grid-row-start: 132;
+      grid-column-start: 2;
+      grid-column-end: 24;
+      display: none;
     }
     .drag-snippet {
       width: 100%;
-      grid-row-start: 147;
+      grid-row-start: 131;
     }
   }
 }

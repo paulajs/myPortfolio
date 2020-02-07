@@ -367,6 +367,58 @@
     grid-row-start: 110;
     grid-row-end: 123;
   }
+  #wreck-win {
+    grid-column-start: 2;
+    grid-column-end: 24;
+    grid-row-start: 65;
+    grid-row-end: 78;
+  }
+  #wreck-mac {
+    grid-column-start: 2;
+    grid-column-end: 24;
+    grid-row-start: 80;
+    grid-row-end: 93;
+  }
+  #wreck-linux {
+    grid-column-start: 2;
+    grid-column-end: 24;
+    grid-row-start: 95;
+    grid-row-end: 108;
+  }
+  #horror-win {
+    grid-column-start: 2;
+    grid-column-end: 24;
+    grid-row-start: 79;
+    grid-row-end: 92;
+  }
+  #horror-mac {
+    grid-column-start: 2;
+    grid-column-end: 24;
+    grid-row-start: 94;
+    grid-row-end: 107;
+  }
+  #horror-linux {
+    grid-column-start: 2;
+    grid-column-end: 24;
+    grid-row-start: 109;
+    grid-row-end: 122;
+  }
+  .horror-download {
+    .top-text {
+      font-size: 7.8vw;
+    }
+    .download-choice-text {
+      font-size: 10vw;
+    }
+  }
+  .wreck-download {
+    .top-text {
+      font-size: 7.8vw;
+    }
+    .download-choice-text {
+      font-size: 10vw;
+    }
+  }
   .space-download {
     .top-text {
       font-size: 6.8vw;

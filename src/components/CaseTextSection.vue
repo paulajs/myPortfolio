@@ -126,13 +126,40 @@
     .audio-text-circle {
       grid-column-end: 22;
     }
-    .process-text-space{
+    .process-text-space {
       grid-column-end: 22;
     }
-    .try-text-space{
+    .try-text-space {
       grid-column-end: 22;
     }
-    .anim-text-three{
+    .anim-text-three {
+      grid-column-end: 22;
+    }
+    .process-text-platformer {
+      grid-column-end: 22;
+    }
+    .process-text-runner{
+      grid-column-end: 22;
+    }
+    .process-text-fall{
+      grid-column-end: 22;
+    }
+    .adams-text-concept{
+      grid-column-end: 22;
+    }
+    .adams-text-inspiration{
+      grid-column-end: 22;
+    }
+    .wreck-text-sprite{
+      grid-column-end: 22;
+    }
+    .wreck-text-try{
+      grid-column-end: 22;
+    }
+    .process-text-horror{
+      grid-column-end: 22;
+    }
+    .try-text-horror{
       grid-column-end: 22;
     }
   }

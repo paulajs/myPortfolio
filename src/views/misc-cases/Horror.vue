@@ -76,7 +76,7 @@
         src="../../assets/videos/horror/horror.mp4"
       ></video>
       <GameDownload
-      downloadClass="horror-download"
+        downloadClass="horror-download"
         downloadID="horror-win"
         operatingSystem="Windows"
         :logoImg="getWinLogo()"
@@ -84,15 +84,15 @@
         <component :is="moon_component"></component>
       </GameDownload>
       <GameDownload
-      downloadClass="horror-download"
+        downloadClass="horror-download"
         downloadID="horror-mac"
         operatingSystem="Mac"
         :logoImg="getMacLogo()"
       >
         <component :is="moon_component"></component>
       </GameDownload>
-       <GameDownload
-      downloadClass="horror-download"
+      <GameDownload
+        downloadClass="horror-download"
         downloadID="horror-linux"
         operatingSystem="Linux"
         :logoImg="getLinuxLogo()"
@@ -154,6 +154,50 @@
     @include place-in-grid(38, 45, 13, 24);
   }
 }
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .horror-case {
+    grid-template-rows: repeat(185, 4.94vh);
+    .misc-horror-process {
+      grid-row-start: 2;
+    }
+    .process-img1 {
+      @include place-in-grid(9, 15, 2, 24);
+    }
+    .process-img2 {
+      @include place-in-grid(15, 18, 2, 24);
+    }
+    .process-img3 {
+      @include place-in-grid(21, 25, 2, 24);
+    }
+    .process-img4 {
+      @include place-in-grid(27, 31, 2, 24);
+    }
+    .misc-horror-result {
+      grid-row-start: 34;
+    }
+    .result-img1 {
+      @include place-in-grid(38, 41, 2, 24);
+    }
+    .result-img2 {
+      @include place-in-grid(44, 48, 2, 24);
+    }
+    .result-img3 {
+      @include place-in-grid(50, 54, 2, 24);
+    }
+    .result-img4 {
+      @include place-in-grid(56, 59, 2, 24);
+    }
+    .misc-horror-try {
+      grid-row-start: 64;
+    }
+    .horror-video {
+      grid-row-start: 71;
+      grid-row-end: 74;
+      grid-column-start: 2;
+      grid-column-end: 24;
+    }
+  }
+}
 </style>
 <script>
 import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
@@ -177,11 +221,11 @@ export default {
   methods: {
     getWinLogo: () => winLogo,
     getMacLogo: () => macLogo,
-    getLinuxLogo: () => linuxLogo,
+    getLinuxLogo: () => linuxLogo
   },
-    data() {
+  data() {
     return {
-      moon_component: "Moon",
+      moon_component: "Moon"
     };
   }
 };

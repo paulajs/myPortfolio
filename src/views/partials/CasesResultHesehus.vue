@@ -82,14 +82,6 @@ $transition: all 0.1s ease-in;
       grid-column-end: 24;
       align-self: center;
     }
-    .hesehus-result-mockup {
-      grid-row-start: 59;
-    }
-    .hesehus-mockup {
-      grid-row-start: 65;
-      grid-column-start: 1;
-      grid-column-end: 25;
-    }
   }
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -121,6 +113,14 @@ $transition: all 0.1s ease-in;
           grid-column-start: 2;
           grid-column-end: 24;
         }
+      }
+      .hesehus-result-mockup {
+        grid-row-start: 59;
+      }
+      .hesehus-mockup {
+        grid-row-start: 65;
+        grid-column-start: 1;
+        grid-column-end: 25;
       }
       .section-fristads {
         grid-row-start: 15;

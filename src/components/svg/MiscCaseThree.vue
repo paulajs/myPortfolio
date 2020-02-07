@@ -76,12 +76,11 @@
   stroke-width: 0.5;
   stroke-miterlimit: 10;
 }
-.misc-case5{
-/*    &:hover #textbox{
-    .st2{
-      fill: url(#svg-gradient);
-    }
-  } */
+
+@media screen and (min-height: 1080px) and (min-device-width: 1900px) {
+  #caseThreeSVG {
+    bottom: 6vh;
+  }
 }
 </style>
 <script>

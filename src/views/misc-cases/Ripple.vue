@@ -2,7 +2,7 @@
   <div>
     <MiscCaseHeader
       caseTitle="Ripple effect"
-      caseText="A small project made with Pixi.js. A ripple effect on mouse over"
+      caseText="A small project made with Pixi.js. A ripple effect on mouse over. Unfortunately it does not work on mobile."
     />
     <div class="case-ripple">
       <CaseTextSection
@@ -114,8 +114,14 @@ export default {
         this.renderer.view.width / 2,
         this.renderer.view.height / 2
       );
-      this.renderer.view.width = 1366;
-      this.renderer.view.height = 768;
+      if (window.innerWidth < 736) {
+        this.renderer.view.width = 600;
+        this.renderer.view.height = 900;
+      } else {
+        this.renderer.view.width = 1366;
+        this.renderer.view.height = 768;
+      }
+
       this.stage.addChild(background);
 
       this.renderer.view.addEventListener("click", ev => {
@@ -129,11 +135,12 @@ export default {
 
         const canvasRect = this.renderer.view.getBoundingClientRect();
 
-        const mousex = (ev.clientX - canvasRect.left);
-        const mousey = (ev.clientY - canvasRect.top);
+        const mousex = ev.clientX - canvasRect.left;
+        const mousey = ev.clientY - canvasRect.top;
 
         sprite.position.set(mousex, mousey);
-        sprite.scale.set(0.1);
+        /* sprite.scale.set(0.1); */
+        sprite.scale.set(0.5);
         const filter = new filters.DisplacementFilter(sprite);
         const ripple = new Ripple(sprite, filter);
         this.stage.addChild(sprite);

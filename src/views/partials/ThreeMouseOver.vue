@@ -84,7 +84,6 @@ export default {
       light.position.set(200, 500, 500);
     },
     addBalls() {
-      console.log("balls added");
       var radius = 20;
 
       var i = -300;

@@ -553,7 +553,7 @@
 @import "@/assets/sass/_global.scss";
 #caseAudioSVG {
   position: absolute;
-  top: 0;
+  top: 2vh;
 }
 .st0 {
   fill: #00cf78;
@@ -629,6 +629,11 @@
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   #caseAudioSVG {
     top: 6vh;
+  }
+}
+@media screen and (min-height: 1080px) and (min-device-width: 1900px) {
+  #caseAudioSVG {
+    top: 5vh;
   }
 }
 </style>

@@ -149,15 +149,22 @@
   }
 }
 .misc-grid {
-  @include create-grid(13, 11.94vh, 12, 5.18vw, 7vh, 3vw);
+/*   @include create-grid(13, 11.94vh, 12, 5.18vw, 7vh, 3vw);
+ margin: 2vh 2vw; */
+  grid-template-rows: repeat(13, 10.94vh);
+  grid-template-columns: repeat(12, 4.18vw);
+  grid-row-gap: 7vh;
+  grid-column-gap: 3vw;
   display: grid;
-  margin: 2vh 2vw;
+  margin: 2vh 8vw;
+
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .misc-grid {
     grid-template-columns: repeat(4, 22.54vw);
     grid-template-rows: repeat(103, 11.94vh);
     grid-column-gap: 2vw;
+    margin: 2vh 2vw;
   }
   .misc {
     .misc-header {

@@ -34,13 +34,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  width: 100%;
   .contact-header {
     width: 94%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2vh;
+    margin-top: -6vh;
     h1 {
       font-family: $font-primary;
       font-size: 3.3em;
@@ -54,8 +56,9 @@
   }
   .contact-links {
     width: 100%;
-    margin-top: 10vh;
-    height: 64vh;
+    padding-top: 7vh;
+
+    height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

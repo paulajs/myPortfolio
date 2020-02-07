@@ -2,6 +2,13 @@ html,
 body {
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .home {
   display: grid;
@@ -57,7 +64,7 @@ body {
     left: 0;
     background: white;
     color: black;
-    a{
+    a {
       width: 100%;
       height: 100%;
     }
@@ -358,6 +365,12 @@ body {
       }
     }
   }
+  .entertain-element {
+    video{
+      width: 100%;
+      /* margin-top: -1%; */
+    }
+  }
 }
 
 .frontpage-label {
@@ -430,9 +443,11 @@ button.menu-button:focus {
 
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .home {
-    position: fixed;
+    grid-template-rows: repeat(9, 8.77vh);
     bottom: 0;
     left: 0;
+    margin: 0 0;
+
     .menu {
       display: none;
     }
@@ -447,32 +462,38 @@ button.menu-button:focus {
       transform: translateX(-2vw);
       width: auto;
       height: 3vh;
-      align-self: center;
+      align-self: self-start;
+      margin-top: -3vh;
     }
     .page-logo {
       display: none;
     }
     .mobile-logo {
       display: block;
-      grid-row-start: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
       grid-column-start: 2;
       width: 66vw;
-      align-self: end;
+      align-self: center;
     }
     .mobile-menu-button {
       display: flex;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      align-self: center;
     }
-    /*     .mobile-menu {
-       display: none; 
-    } */
     #bubbles-canvas {
       position: fixed;
-      bottom: 1vh;
-      left: 0;
+      top: 46.5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      user-select: none;
+      /*   touch-action: none;
+      -webkit-tap-highlight-color: transparent; */
     }
     .entertain-element {
       grid-row-start: 4;
-      grid-row-end: 9;
+      grid-row-end: 10;
       overflow: hidden;
       video::-internal-media-controls-overlay-cast-button {
         display: none;
@@ -482,12 +503,12 @@ button.menu-button:focus {
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-  .entertain-element {
+/*   .entertain-element {
     .case-videos {
       width: 112%;
       margin-left: -5%;
     }
-  }
+  } */
   .menu-cases {
     .cases-sub-menu {
       height: 81vh;
@@ -496,6 +517,14 @@ button.menu-button:focus {
   }
   .frontpage-label {
     width: 19.5vw;
+  }
+}
+@media (min-aspect-ratio: 16/9) and (max-aspect-ratio: 17/9) {
+  .entertain-element {
+    .case-videos {
+      width: 112%;
+      margin-left: -5%;
+    }
   }
 }
 

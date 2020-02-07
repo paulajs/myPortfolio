@@ -293,6 +293,11 @@
     top: 8.5vh;
   }
 }
+@media screen and (min-height: 1080px) and (min-device-width: 1900px) {
+  #caseAdamsSVG {
+    top: 11.5vh;
+  }
+}
 </style>
 <script>
 export default {

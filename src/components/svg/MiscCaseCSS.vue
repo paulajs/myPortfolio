@@ -8,7 +8,7 @@
     viewBox="0 0 446.7 490.1"
     style="enable-background:new 0 0 446.7 490.1;"
     xml:space="preserve"
-    id = "caseRippleSVG"
+    id = "caseCSSSVG"
   >
     <g id="gear1">
       <path
@@ -134,7 +134,7 @@
   </svg>
 </template>
 <style lang="scss" scoped>
-#caseRippleSVG {
+#caseCSSSVG {
   position: absolute;
   top: 2vh;
 }
@@ -153,7 +153,11 @@
   stroke: #000000;
   stroke-miterlimit: 10;
 }
-
+@media screen and (min-height: 1080px) and (min-device-width: 1900px) {
+  #caseCSSSVG {
+    top: 8vh;
+  }
+}
 </style>
 <script>
 export default {

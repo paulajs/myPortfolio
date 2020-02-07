@@ -39,7 +39,7 @@
     grid-row-start: 12;
     button.try {
       width: 55vw;
-      padding: 11% 5%;
+      padding: 9% 5%;
       font-size: 5vw;
     }
   }
@@ -63,7 +63,8 @@ export default {
       renderer: new THREE.WebGLRenderer({ antialias: true }),
       cube: null,
       isAnimating: false,
-      animationDurationMS: 1000
+      animationDurationMS: 1000,
+      distance: 200,
     };
   },
   methods: {
@@ -72,8 +73,14 @@ export default {
       this.scene.fog = new THREE.Fog(0xffffff);
 
       this.camera.position.z = 600;
+      if(window.innerWidth < 736){
+        this.renderer.setSize(window.innerWidth * 0.8, window.innerHeight * 0.8);
+        this.distance = 80;
+      }
+      else{
+        this.renderer.setSize(window.innerWidth * 0.5, window.innerHeight * 0.5);
+      }
 
-      this.renderer.setSize(window.innerWidth * 0.5, window.innerHeight * 0.5);
       document
         .querySelector(".three-anim-canvas")
         .appendChild(this.renderer.domElement);
@@ -114,7 +121,7 @@ export default {
       var animA = new TWEEN.Tween(this.cube.position)
         .to(
           {
-            x: 200,
+            x: this.distance,
             y: 0,
             z: 0
           },
@@ -126,7 +133,7 @@ export default {
       var animB = new TWEEN.Tween(this.cube.position)
         .to(
           {
-            x: -200,
+            x: -this.distance,
             y: 0,
             z: 0
           },

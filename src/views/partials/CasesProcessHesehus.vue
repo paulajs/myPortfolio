@@ -144,6 +144,9 @@
     .hesehus-storyboard-inspiration-mob {
       display: none;
     }
+    .hesehus-storyboard-fristads-kansas-mob{
+        display: none;
+    }
     .hesehus-storyboard-fristads-kansas {
       grid-row-start: 81;
       grid-column-start: 13;

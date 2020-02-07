@@ -315,7 +315,11 @@
   stroke-width: 0.5;
   stroke-miterlimit: 10;
 }
-
+@media screen and (min-height: 1080px) and (min-device-width: 1900px) {
+  #caseRippleSVG {
+    bottom: 5vh;
+  }
+}
 </style>
 <script>
 export default {

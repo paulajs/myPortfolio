@@ -160,28 +160,28 @@
       grid-row-start: 36;
     }
     .process-img1 {
-      @include place-in-grid(9, 11, 2, 24);
+      @include place-in-grid(9, 11, 1, 25);
     }
     .process-img2 {
-      @include place-in-grid(15, 18, 2, 24);
+      @include place-in-grid(15, 18, 1, 25);
     }
     .process-img3 {
-      @include place-in-grid(21, 24, 2, 24);
+      @include place-in-grid(21, 24, 1, 25);
     }
     .process-img4 {
-      @include place-in-grid(27, 30, 2, 24);
+      @include place-in-grid(27, 30, 1, 25);
     }
     .result-img1 {
-      @include place-in-grid(39, 43, 2, 24);
+      @include place-in-grid(39, 43, 1, 25);
     }
     .result-img2 {
-      @include place-in-grid(45, 49, 2, 24);
+      @include place-in-grid(45, 49, 1, 25);
     }
     .result-img3 {
-      @include place-in-grid(51, 54, 2, 24);
+      @include place-in-grid(51, 54, 1, 25);
     }
     .result-img4 {
-      @include place-in-grid(57, 60, 2, 24);
+      @include place-in-grid(57, 60, 1, 25);
     }
     .misc-space-try {
       grid-row-start: 65;

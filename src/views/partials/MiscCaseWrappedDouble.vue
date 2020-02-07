@@ -158,12 +158,32 @@ div {
   }
   .misc-case7 {
     @include place-in-grid(40, 45, 1, 5);
-    .header-css-anim{
-      .text-css{
+    .header-css-anim {
+      .text-css {
         font-size: 16vw;
       }
-      .text-anim{
+      .text-anim {
         font-size: 11vw;
+      }
+    }
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .misc-case1 {
+    .header-audio {
+      .text-exp {
+        font-size: 4.1vh;
+        margin-top: -2vh;
+      }
+    }
+  }
+}
+@media screen and (min-height: 1080px) and (min-width: 1900px) {
+  .misc-case1 {
+    .header-audio {
+      .text-exp {
+        font-size: 4.3vh;
+        margin-top: -3vh;
       }
     }
   }

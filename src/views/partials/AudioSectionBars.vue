@@ -78,6 +78,13 @@
   .audio-section-bars {
     grid-row-start: 13;
     grid-row-end: 27;
+    #audio-player {
+      #audio-box {
+        audio {
+          width: 98%;
+        }
+      }
+    }
     .canvas-wrapper {
       #audio-start {
         font-size: 10vw;
@@ -102,7 +109,11 @@ export default {
       audio: new Audio(),
       canvas: null,
       ctx: null,
-      analyser: null
+      analyser: null,
+      bar_height: 2.5,
+      bars: 200,
+      bar_width: 3,
+      bar_x: 8,
     };
   },
   mounted() {
@@ -112,8 +123,17 @@ export default {
     init() {
       this.canvas = this.$refs.barsrenderer;
       this.ctx = this.canvas.getContext("2d");
-      this.canvas.width = window.innerWidth / 1.5;
-      this.canvas.height = window.innerHeight / 2;
+      if (window.innerWidth < 736) {
+        this.canvas.width = window.innerWidth/1.1;
+        this.canvas.height = window.innerHeight/4;
+        this.bar_height = 1;
+        this.bars = 50;
+        this.bar_width = 3;
+        this.bar_x = 7;
+      } else {
+        this.canvas.width = window.innerWidth / 1.5;
+        this.canvas.height = window.innerHeight / 2;
+      }
     },
     audioControlPLay() {
       if (this.$refs.theaudio.paused) {
@@ -153,11 +173,11 @@ export default {
       return grd;
     },
     createBars(fbc_array) {
-      const bars = 200;
-      for (let i = 0; i < bars; i++) {
-        const bar_x = i * 8;
-        const bar_width = 3;
-        const bar_height = -fbc_array[i] * 2.5;
+      /* const bars = 200; */
+      for (let i = 0; i < this.bars; i++) {
+        const bar_x = i * this.bar_x;
+        const bar_width = this.bar_width;
+        const bar_height = -fbc_array[i] * this.bar_height;
         this.ctx.fillRect(bar_x, this.canvas.height, bar_width, bar_height);
       }
     }

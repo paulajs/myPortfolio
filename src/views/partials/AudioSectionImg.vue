@@ -82,16 +82,23 @@
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .audio-section-img {
-    grid-row-start: 49;
+    grid-row-start: 50;
     grid-row-end: 60;
+    #audio-player {
+      #audio-box {
+        audio {
+          width: 98%;
+        }
+      }
+    }
     #audio-player {
       grid-row-end: 4;
     }
     .canvas-wrapper {
-      grid-row-start: 4;
-      grid-row-end: 9;
+      grid-row-start: 5;
+      grid-row-end: 10;
       .img-back {
-        width: 75.5%;
+        width: 92.5%;
         z-index: 1;
         bottom: 0;
       }
@@ -112,7 +119,11 @@ export default {
       audio: new Audio(),
       canvas: null,
       ctx: null,
-      analyser: null
+      analyser: null,
+      bar_height: 6,
+      bars: 200,
+      bar_width: 7,
+      bar_x: 8
     };
   },
   mounted() {
@@ -122,8 +133,17 @@ export default {
     init() {
       this.canvas = this.$refs.imgrenderer;
       this.ctx = this.canvas.getContext("2d");
-      this.canvas.width = window.innerWidth / 1.5;
-      this.canvas.height = window.innerHeight / 1.5;
+      if (window.innerWidth < 736) {
+        this.canvas.width = window.innerWidth / 1.1;
+        this.canvas.height = window.innerHeight / 2;
+        this.bar_height = 2;
+        this.bars= 50;
+        this.bar_width = 6;
+        this.bar_x = 7;
+      } else {
+        this.canvas.width = window.innerWidth / 1.5;
+        this.canvas.height = window.innerHeight / 1.5;
+      }
     },
     audioControlPLay() {
       if (this.$refs.theaudio.paused) {
@@ -154,11 +174,11 @@ export default {
       this.createBars(fbc_array);
     },
     createBars(fbc_array) {
-      const bars = 200;
+      const bars = this.bars;
       for (let i = 0; i < bars; i++) {
-        const bar_x = i * 8;
-        const bar_width = 7;
-        const bar_height = -fbc_array[i] * 6;
+        const bar_x = i * this.bar_x;
+        const bar_width = this.bar_width;
+        const bar_height = -fbc_array[i] * this.bar_height;
         this.ctx.fillRect(bar_x, this.canvas.height, bar_width, bar_height);
       }
     },
