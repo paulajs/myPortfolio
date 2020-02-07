@@ -22,7 +22,6 @@
     </div>
 </template>
 <style lang="scss" scoped>
-
 </style>
 <script>
 import CasesAboveTheFold from "@/views/partials/CasesAboveTheFold.vue";

@@ -1,7 +1,8 @@
-html,
+
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -88,6 +89,17 @@ body {
       height: 60vh;
       position: fixed;
       bottom: 18vh;
+      opacity: 0;
+      animation: fade-in 0.3s forwards ease-in;
+      animation-delay: 1.05s;
+    }
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
     }
     .mobile-cases {
       position: relative;
@@ -281,6 +293,7 @@ body {
         z-index: -1;
       }
     }
+
     .link-lab {
       a {
         width: 60vw;
@@ -366,7 +379,7 @@ body {
     }
   }
   .entertain-element {
-    video{
+    video {
       width: 100%;
       /* margin-top: -1%; */
     }
@@ -503,7 +516,7 @@ button.menu-button:focus {
 }
 
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-/*   .entertain-element {
+  /*   .entertain-element {
     .case-videos {
       width: 112%;
       margin-left: -5%;
@@ -520,10 +533,12 @@ button.menu-button:focus {
   }
 }
 @media (min-aspect-ratio: 16/9) and (max-aspect-ratio: 17/9) {
-  .entertain-element {
-    .case-videos {
-      width: 112%;
-      margin-left: -5%;
+  .home {
+    .entertain-element {
+      .case-videos {
+        width: 112%;
+        margin-left: -5%;
+      }
     }
   }
 }

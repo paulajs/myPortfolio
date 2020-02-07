@@ -18,7 +18,8 @@
       </div>
       <div class="menu-wrapper">
         <router-link to="/about">
-          <p class="mobile-link">About</p>
+          <p class="mobile-link">About </p>
+
         </router-link>
         <router-link to="/contact">
           <p class="mobile-link">Contact</p>
@@ -90,7 +91,7 @@
         muted
         autoplay
         preload="auto"
-        src="../assets/videos/frontpage-entertain/noise3.mp4"
+        src="../assets/videos/frontpage-entertain/noise33.mp4"
         @ended="onVideoEnded"
       ></video>
     </div>
@@ -114,7 +115,7 @@ const caseVideoSkansing = require("@/assets/videos/frontpage-entertain/skansingi
 const caseVideoContact = require("@/assets/videos/frontpage-entertain/contact1.mp4");
 const caseVideoLab = require("@/assets/videos/frontpage-entertain/lab3.mp4");
 const caseVideoAbout = require("@/assets/videos/frontpage-entertain/about1.mp4");
-const noise = require("@/assets/videos/frontpage-entertain/noise3.mp4");
+const noise = require("@/assets/videos/frontpage-entertain/noise33.mp4");
 const endVideo = require("@/assets/videos/frontpage-entertain/applause1.mp4");
 const endVideoMob = require("@/assets/videos/frontpage-entertain/applausemob.mp4");
 
@@ -232,7 +233,7 @@ export default {
     },
     onMouseOutSoMe(e) {
       if (this.gameEnd) {
-        this.$refs.casevideo.src = null;
+        this.$refs.casevideo.src = "";
         this.gameEnd = false;
         this.$refs.casevideo.loop = false;
       }
@@ -259,30 +260,24 @@ export default {
       switch (this.switchVideo) {
         case "hesehus":
           this.$refs.casevideo.src = caseVideoHesehus;
-          console.log(caseVideoHesehus);
           break;
         case "nmg":
           this.$refs.casevideo.src = caseVideoNMG;
-          console.log("nmg video");
           break;
 
         case "skansingit":
           this.$refs.casevideo.src = caseVideoSkansing;
-          console.log("skansing it video");
           break;
 
         case "some":
-          console.log("some video");
           this.$refs.casevideo.src = caseVideoContact;
           break;
 
         case "About":
-          console.log("about video");
           this.$refs.casevideo.src = caseVideoAbout;
           break;
 
         case "Lab":
-          console.log("lab video");
           this.$refs.casevideo.src = caseVideoLab;
           break;
       }
@@ -295,7 +290,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/sass/_global.scss";
-
 /* .case-videos {
    width: 100%;
 } */

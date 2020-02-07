@@ -1,10 +1,14 @@
 <template>
   <div id="app">
-    <!-- <transition name="fade" mode="out-in"> -->
+    <transition
+      mode="out-in"
+      leave-active-class="animated fadeOut"
+      enter-active-class="animated fadeInDown"
+    >
       <!-- <keep-alive include="home"> -->
-        <router-view />
+      <router-view />
       <!-- </keep-alive> -->
-    <!-- </transition> -->
+    </transition>
   </div>
 </template>
 
