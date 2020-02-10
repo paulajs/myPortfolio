@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="case-audio-wrap">
     <MiscCaseHeader
       caseTitle="Javascript Audio"
       caseText="Small experiments with Web Audio API,
-      and some simple animation made from audio frequencies. Below is a small introduction"
+      and some simple animation made from audio frequencies. The music is mixed from samples using Adobe Audition.
+      Below is a small introduction to the elements from Audio API's that are used."
     />
     <div class="audio-outline">
       <div class="background"></div>
@@ -32,8 +33,8 @@
         headertext="Bars"
         textClass="audio-text-bars"
         sectionText="Extracting data from audio with javascript,
-        to produce graphics to the frequencies of the audio. In this case the classic bars.
-        Below is also an example of the code in a simplified version."
+        to produce graphics to the frequencies of the audio. In this case producings simple bars.
+        Below is also an example of the code."
       />
       <img class="bars-snippet" src="@/assets/img/audio/bars.jpg" alt />
       <AudioSectionBars />
@@ -46,14 +47,6 @@
         Same principles as before, but with circles instead of bars."
       />
       <AudioSectionCircle />
-      <!--       <CaseTextSection
-        sectionClass="case-text-section misc-audio-bubbbles"
-        sectionHeaderClass="case-section-header header-audio-bubbles"
-        headertext="Bubbles"
-        textClass="audio-text-bubbles"
-        sectionText="Using data to place stars/circles in space."
-      />-->
-      <!-- <AudioSectionBubbles /> -->
       <CaseTextSection
         sectionClass="case-text-section misc-audio-img"
         sectionHeaderClass="case-section-header header-audio-img"
@@ -62,14 +55,22 @@
         sectionText
       />
       <AudioSectionImg />
+      <div class="thanks-to">
+        All the samples used in this project are from Looperman.com. Thanks to
+        Nightingale, Path0gen, Fanto8BC, davidf0502, Rasputin, Danke, ksdq, ProdbyBarnabas,
+        restartg, PRRJLY for providing samples.
+      </div>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
+.case-audio-wrap{
+  animation: page-opacity 0.6s ease forwards;
+}
 .case-audio {
-  @include create-grid(150, 4.94vh, 24, 3.125vw, 1vh, 1vw);
+  @include create-grid(78, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
   .misc-audio-bars {
     grid-column-start: 1;
@@ -93,6 +94,12 @@
   .misc-audio-img {
     grid-column-start: 1;
     grid-row-start: 56;
+  }
+  .thanks-to{
+    grid-row-start: 75;
+    grid-column-start: 2;
+    grid-column-end: 12;
+    font-family: $font-secundary;
   }
 }
 
@@ -147,6 +154,7 @@
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .case-audio {
+    grid-template-rows: repeat(67, 4.94vh);
     .bars-snippet {
       width: 100%;
       box-shadow: none;
@@ -157,6 +165,10 @@
     .misc-audio-img{
       grid-row-start: 48;
     }
+      .thanks-to{
+    grid-row-start: 61;
+    grid-column-end: 24;
+  }
   }
   .audio-outline {
     flex-direction: column;

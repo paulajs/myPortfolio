@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="case-three-wrap">
     <MiscCaseHeader
       caseTitle="Three interactions"
       caseText="Small examples of animation and mouse events in Three.js,
@@ -75,7 +75,9 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
-
+.case-three-wrap{
+  animation: page-opacity 0.6s ease forwards;
+}
 .case-three {
   @include create-grid(165, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
@@ -170,6 +172,7 @@
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .case-three {
+        grid-template-rows: repeat(139, 4.94vh);
     .three-anim {
       grid-row-start: 2;
     }

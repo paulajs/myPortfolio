@@ -70,12 +70,26 @@
       font-size: 4.7vw;
     }
   }
+  .case-audio-wrap{
+    .misc-header {
+      h2{
+        grid-row-start: 13;
+        grid-column-end: 24;
+      }
+    }
+  }
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
   .misc-header {
     h2 {
-      grid-row-start: 10;
-      font-size: 1.3vw;
+      grid-column-end: 13;
+    }
+  }
+}
+@media screen and (min-height: 1080px) and (min-device-width: 1900px) {
+  .misc-header {
+    h2 {
+      grid-column-end: 13;
     }
   }
 }

@@ -12,7 +12,9 @@
     <div class="mobile-menu-button mobile-open" v-on:click="mobileMenuOpen">
       <p data-text="Menu">Menu</p>
     </div>
+
     <div class="mobile-menu" ref="mobilemenu">
+
       <div class="mobile-menu-button mobile-close" v-on:click="mobileMenuClose">
         <p data-text="Close">Close</p>
       </div>
@@ -92,7 +94,6 @@
         autoplay
         preload="auto"
         src="../assets/videos/frontpage-entertain/noise33.mp4"
-        @ended="onVideoEnded"
       ></video>
     </div>
   </div>
@@ -109,14 +110,14 @@ import MyCursor from "@/components/MyCursor.vue";
 import SoMeMail from "@/components/svg/SoMeMail.vue";
 import SoMeInsta from "@/components/svg/SoMeInsta.vue";
 import SoMePin from "@/components/svg/SoMePin.vue";
-const caseVideoHesehus = require("@/assets/videos/frontpage-entertain/hesehus.mp4");
-const caseVideoNMG = require("@/assets/videos/frontpage-entertain/nmg.mp4");
-const caseVideoSkansing = require("@/assets/videos/frontpage-entertain/skansingit.mp4");
+const caseVideoHesehus = require("@/assets/videos/frontpage-entertain/hesehus2.mp4");
+const caseVideoNMG = require("@/assets/videos/frontpage-entertain/nmg1.mp4");
+const caseVideoSkansing = require("@/assets/videos/frontpage-entertain/skansingit1.mp4");
 const caseVideoContact = require("@/assets/videos/frontpage-entertain/contact1.mp4");
-const caseVideoLab = require("@/assets/videos/frontpage-entertain/lab3.mp4");
+const caseVideoLab = require("@/assets/videos/frontpage-entertain/lab5.mp4");
 const caseVideoAbout = require("@/assets/videos/frontpage-entertain/about1.mp4");
 const noise = require("@/assets/videos/frontpage-entertain/noise33.mp4");
-const endVideo = require("@/assets/videos/frontpage-entertain/applause1.mp4");
+const endVideo = require("@/assets/videos/frontpage-entertain/applause.mp4");
 const endVideoMob = require("@/assets/videos/frontpage-entertain/applausemob.mp4");
 
 export default {
@@ -148,10 +149,10 @@ export default {
   },
   watch: {
     isVideoShown: function() {
-      if (!this.isVideoShown) {
+/*       if (!this.isVideoShown) {
         this.$refs.casevideo.src = noise;
         this.$refs.casevideo.loop = false;
-      }
+      } */
     },
     openMobileMenu: function() {
       if (this.openMobileMenu) {
@@ -220,6 +221,7 @@ export default {
         this.$refs.casevideo.loop = false;
       }
       this.switchVideo = e.target.dataset.case;
+      this.onVideoEnded();
       this.showVideo();
     },
     mouseOverSoMe(e) {
@@ -229,6 +231,7 @@ export default {
         this.$refs.casevideo.loop = false;
       }
       this.switchVideo = "some";
+      this.onVideoEnded();
       this.showVideo();
     },
     onMouseOutSoMe(e) {
@@ -245,6 +248,7 @@ export default {
         this.gameEnd = false;
       }
       this.switchVideo = e.target.dataset.case;
+      this.onVideoEnded();
       this.showVideo();
     },
     showVideo() {
@@ -290,11 +294,9 @@ export default {
 
 <style lang="scss" scoped>
 @import "../assets/sass/_global.scss";
-/* .case-videos {
-   width: 100%;
-} */
 .show-border {
   border: 1px solid black;
+  background: black;
 }
 button:hover p {
   color: white;
@@ -320,8 +322,5 @@ button:hover p:after {
   grid-row-start: 2;
   grid-row-end: 9;
   overflow: hidden;
-  /*  video{
-    width: 100%;
-  } */
 }
 </style>

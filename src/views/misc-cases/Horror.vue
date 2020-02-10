@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="case-horror-wrap">
     <MiscCaseHeader
       caseTitle="Horror Game"
-      caseText="A quick proof of concept (game), set in a eerie vintage world about
+      caseText="A quick proof of concept (Unity game), set in an eerie vintage world. It's about
     a girl who has to collect keys, and protect
     herself from owls with rocks."
     />
@@ -105,6 +105,9 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
+.case-horror-wrap{
+  animation: page-opacity 0.6s ease forwards;
+}
 .horror-case {
   @include create-grid(85, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
@@ -156,7 +159,7 @@
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .horror-case {
-    grid-template-rows: repeat(185, 4.94vh);
+    grid-template-rows: repeat(125, 4.94vh);
     .misc-horror-process {
       grid-row-start: 2;
     }

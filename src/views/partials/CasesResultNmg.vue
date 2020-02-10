@@ -12,15 +12,16 @@
       </div>
       <h2 class="result-header">Results</h2>
       <p class="nmg-result-para">
-        The resulting illustrations symbolises marmalade splatter dropped on floor like children's playfulness in the kitchen, where accidents sometimes happen ;).
-        The splatter is combined with a focus on each of the main ingredients in the marmalade, and which are grown on the farm.
+        The resulting illustrations symbolises marmalade splatter dropped on floor,
+        like childrens playfulness in the kitchen causing accidents to happen at times ;).
+        The splatter is combined with a focus on each of the main organic ingredients in the marmalade.
       </p>
       <CaseTextSection
         sectionClass="case-text-section models-nmg"
         sectionHeaderClass="case-section-header header-models-nmg"
         headertext="3d models"
         textClass="visual-models-nmg"
-        sectionText="Results are illustrated with renders of the jams and the booklets. "
+        sectionText="Results are illustrated with renders of the marmelade labels and the booklets or the course. "
       />
       <ThreeNmgDisplay />
       <CaseTextSection

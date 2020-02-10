@@ -30,6 +30,7 @@
 @import "@/assets/sass/_mixins.scss";
 
 .contact-page {
+  animation: page-opacity 0.6s ease forwards;
   display: flex;
   flex-direction: column;
   justify-content: center;

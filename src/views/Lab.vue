@@ -1,5 +1,6 @@
 <template>
   <div class="misc">
+   <!--  <video class="mobile-videos" v-on:ended="videoEnd" muted autoplay src="@/assets/videos/frontpage-entertain/lab-mobile.mp4" ref="mobilevid"></video> -->
     <div class="misc-header">
       <h1>Laboratory</h1>
       <router-link class="misc-home-button" to="/">
@@ -108,7 +109,17 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
-
+ .misc{
+   animation: page-opacity 0.6s ease forwards;
+ }
+/*  @keyframes page-opacity {
+   0%{
+     opacity: 0;
+   }
+   100%{
+     opacity: 1;
+   }
+ } */
 .misc-header {
   @include create-grid(4, 9.94vh, 12, 7.01vw, 1vh, 1vw);
   margin: 2vh 2vw 9vh 2vw;
@@ -149,7 +160,7 @@
   }
 }
 .misc-grid {
-/*   @include create-grid(13, 11.94vh, 12, 5.18vw, 7vh, 3vw);
+  /*   @include create-grid(13, 11.94vh, 12, 5.18vw, 7vh, 3vw);
  margin: 2vh 2vw; */
   grid-template-rows: repeat(13, 10.94vh);
   grid-template-columns: repeat(12, 4.18vw);
@@ -157,16 +168,28 @@
   grid-column-gap: 3vw;
   display: grid;
   margin: 2vh 8vw;
-
+}
+.mobile-videos {
+  display: none;
+  position: fixed;
+  top: 0vh;
+  left: 0vw;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100000;
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
-  .misc-grid {
+
+ .misc-grid {
     grid-template-columns: repeat(4, 22.54vw);
     grid-template-rows: repeat(103, 11.94vh);
     grid-column-gap: 2vw;
     margin: 2vh 2vw;
   }
   .misc {
+    .show-mob-video {
+      display: block;
+    }
     .misc-header {
       h1 {
         font-size: 11.6vw;
@@ -179,6 +202,7 @@
     }
   }
 }
+
 </style>
 
 <script>
@@ -195,6 +219,7 @@ import MiscCaseRippleSVG from "@/components/svg/MiscCaseRipple.vue";
 import MiscCaseCSSSVG from "@/components/svg/MiscCaseCSS.vue";
 import MiscCaseHorrorSVG from "@/components/svg/MiscCaseHorror.vue";
 import MiscCaseWreckageSVG from "@/components/svg/MiscCaseWreckage.vue";
+const caseVideoMobLab = require("@/assets/videos/frontpage-entertain/lab-mobile.mp4");
 export default {
   components: {
     HomeButton,
@@ -223,7 +248,7 @@ export default {
       case_horror_component: "MiscCaseHorrorSVG",
       case_wreck_component: "MiscCaseWreckageSVG"
     };
-  }
+  },
 };
 </script>
 

@@ -23,10 +23,9 @@
         headertext="Experimentation"
         textClass="experimentation-text-nmg"
         sectionText="Experiments with colors,fonts and textures from the farm.
-        Also Different examples of logos.
+        Also different examples of logos.
         Tinted colors are used to represent the sweetness of the marmelade, and a graphic
-        of splatter is used to represent dropped jam, a likely occurence
-        with children in the kitchen ;-) "
+        of splatter is used to represent dropped jam."
       />
       <img class="nmg-exp1" src="@/assets/img/exp1-100.jpg" alt />
       <img class="nmg-exp2" src="@/assets/img/exp2-100.jpg" alt />

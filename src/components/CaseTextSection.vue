@@ -50,7 +50,16 @@
   p.experimentation-text-hesehus {
     grid-column-end: 8;
   }
+  .storyboards-text-hesehus {
+    grid-column-end: 8;
+  }
+  .inspiration-text-hesehus {
+    grid-column-end: 8;
+  }
   .inspiration-text-skansing {
+    grid-column-end: 8;
+  }
+  .visual-models-nmg {
     grid-column-end: 8;
   }
   .process-text-space {
@@ -108,11 +117,20 @@
         grid-column-end: 19;
       }
     }
+    .inspiration-text-hesehus {
+      grid-column-end: 22;
+    }
+    .storyboards-text-hesehus{
+      grid-column-end: 22;
+    }
     p.experimentation-text-hesehus {
       grid-column-end: 23;
     }
     .inspiration-text-nmg {
       grid-column-end: 23;
+    }
+    .visual-models-nmg{
+      grid-column-end: 22;
     }
     p.experimentation-text-nmg {
       grid-column-end: 23;
@@ -138,28 +156,28 @@
     .process-text-platformer {
       grid-column-end: 22;
     }
-    .process-text-runner{
+    .process-text-runner {
       grid-column-end: 22;
     }
-    .process-text-fall{
+    .process-text-fall {
       grid-column-end: 22;
     }
-    .adams-text-concept{
+    .adams-text-concept {
       grid-column-end: 22;
     }
-    .adams-text-inspiration{
+    .adams-text-inspiration {
       grid-column-end: 22;
     }
-    .wreck-text-sprite{
+    .wreck-text-sprite {
       grid-column-end: 22;
     }
-    .wreck-text-try{
+    .wreck-text-try {
       grid-column-end: 22;
     }
-    .process-text-horror{
+    .process-text-horror {
       grid-column-end: 22;
     }
-    .try-text-horror{
+    .try-text-horror {
       grid-column-end: 22;
     }
   }

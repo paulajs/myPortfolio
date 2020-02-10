@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="case-space-wrap">
     <MiscCaseHeader
       caseTitle="Space Kitty"
-      caseText="A quick proof of concept (game) about a cat from outerspace
+      caseText="A quick proof of concept (Unity game) about a cat from outerspace
       comming to earth and collecting human inventions, while
       fighting giant rats."
     />
@@ -13,8 +13,7 @@
         headertext="Process"
         textClass="process-text-space"
         sectionText="Primary purpose of project was to learn Unity.
-        The riggging, animation, design of characters and world made in Blender 3D.
-        The idea for the world is taken out of the blue ;)"
+        The riggging, animation, design of characters and world are made in Blender 3D."
       />
       <img
         class="process-img1"
@@ -101,6 +100,9 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
+.case-space-wrap{
+  animation: page-opacity 0.6s ease forwards;
+}
 
 .misc-space-process {
   grid-row-start: 1;
@@ -152,7 +154,7 @@
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .space-case {
-    grid-template-rows: repeat(150, 4.94vh);
+    grid-template-rows: repeat(125, 4.94vh);
     .misc-space-process{
       grid-row-start: 3;
     }

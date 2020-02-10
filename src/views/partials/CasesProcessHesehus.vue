@@ -7,7 +7,7 @@
         sectionHeaderClass="case-section-header"
         headertext="Inspiration"
         textClass="inspiration-text-hesehus"
-        sectionText="Moodboard of Hesehus’ visual identity and research of e-commerce fairs."
+        sectionText="Moodboard of Hesehus’ visual identity (left) and research of e-commerce fairs (right)."
       />
 
       <img class="hesehus-indtryk" src="@/assets/img/hesehus-indtryk.jpg" alt />
@@ -17,7 +17,7 @@
         sectionHeaderClass="case-section-header header-experimentation-hesehus"
         headertext="Experimentation"
         textClass="experimentation-text-hesehus"
-        sectionText=" Work process/ customer journey represented by boat and by spaceship, and
+        sectionText=" Work process/ customer journey represented by boat, train and spaceship, and
         development of graphic universe for the cases."
       />
 
@@ -34,7 +34,7 @@
         sectionHeaderClass="case-section-header header-storyboards-hesehus"
         headertext="Storyboards"
         textClass="storyboards-text-hesehus"
-        sectionText=" Example of a storyboard for the case Inspiration."
+        sectionText=" Example of a storyboard for the case Inspiration (left) and Danoffice (right)."
       />
       <img
         class="hesehus-storyboard-inspiration"
@@ -73,7 +73,7 @@
     grid-row-start: 3;
     font-family: "Source Code Pro", monospace;
     display: grid;
-    grid-template-rows: repeat(105, 4.94vh);
+    grid-template-rows: repeat(108, 4.94vh);
     grid-row-gap: 1vh;
     grid-template-columns: repeat(24, 3.125vw);
     grid-column-gap: 1vw;
@@ -136,7 +136,7 @@
       display: none;
     }
     .hesehus-storyboard-inspiration {
-      grid-row-start: 81;
+      grid-row-start: 82;
       grid-column-start: 3;
       grid-column-end: 13;
       width: 100%;
@@ -148,7 +148,7 @@
         display: none;
     }
     .hesehus-storyboard-fristads-kansas {
-      grid-row-start: 81;
+      grid-row-start: 82;
       grid-column-start: 13;
       grid-column-end: 23;
       width: 100%;
@@ -219,6 +219,7 @@
         display: none;
       }
       .hesehus-storyboard-fristads-kansas-mob {
+        display: block;
         grid-row-start: 176;
         grid-column-start: 1;
         grid-column-end: 25;

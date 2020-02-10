@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="case-dradam-wrap">
     <MiscCaseHeader
       caseTitle="Dr Adams"
       caseText="In my short time studying concept development,
       I participated in a project about bridging the gap between
-      Dr Adams (clothes store) online and offline world."
+      Dr Adams (cloting store) online and offline world."
     />
     <div class="case-adams">
       <CaseTextSection
@@ -27,8 +27,8 @@
         a handfull of styles/types (of people that shop at Dr Adams)
         were identified, og illustrated by a character called Mini Me’s.
         These would be put on keychains, on patches, stickers and other,
-        and the target group should indentify with the characters enough
-        to make them part of their Instagram post, when posting their new outfit.
+        and the target group should identify with the characters enough
+        to make them part of their Instagram posts, when posting their new outfit.
         The store could use them for different purposes, among other for putting
         outfits together for the types, as gifts for customers, and social media campains. "
       />
@@ -37,7 +37,8 @@
         sectionHeaderClass="case-section-header header-adams-early"
         headertext="Early types"
         textClass="adams-text-early"
-        sectionText="The first types made after initial observation at the store.  "
+        sectionText="The first types made after initial observation at the store. They represent the excentric man,
+        the stylish lady, and the teenage boy. "
       />
       <img class="img-olderman" src="@/assets/img/dr-adams/SVG/older-man.svg" alt />
       <img class="img-poshlady" src="@/assets/img/dr-adams/SVG/posh-lady.svg" alt />
@@ -67,7 +68,7 @@
         sectionHeaderClass="case-section-header header-adams-logo"
         headertext="The logos"
         textClass="adams-text-logo"
-        sectionText="To math the illustrated universe, Dr Adams logo was made in an illustrated version aswell to match the concept."
+        sectionText="Dr Adams logo was made in an illustrated version aswell to match the concept."
       />
       <img class="logo-white" src="@/assets/img/dr-adams/SVG/logo-white.svg" alt />
       <img class="logo-black" src="@/assets/img/dr-adams/SVG/logo-black.svg" alt />
@@ -86,6 +87,9 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
+.case-dradam-wrap{
+  animation: page-opacity 0.6s ease forwards;
+}
 .case-adams {
   @include create-grid(125, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
@@ -244,7 +248,7 @@
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .case-adams {
-    grid-template-rows: repeat(385, 4.94vh);
+    grid-template-rows: repeat(328, 4.94vh);
     .misc-adams-inspiration {
       grid-row-start: 3;
     }

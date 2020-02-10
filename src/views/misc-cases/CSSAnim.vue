@@ -1,9 +1,10 @@
 <template>
-  <div>
+  <div class="case-cssanim-wrap">
     <MiscCaseHeader
       caseTitle="CSS Animation"
-      caseText="A small and simple example with a lot of  sentimental value.
-      Example showing a walk cycle animation using sprites and CSS keyframes."
+      caseText="A small and simple example with a lot of  sentimental value, as
+      it was my first keyframe animation in CSS.
+      Example showing a walk cycle animation using sprites."
     />
     <div class="case-cssanim">
       <CaseTextSection
@@ -20,7 +21,7 @@
         sectionHeaderClass="case-section-header header-css-anim"
         headertext="The animation"
         textClass="css-text-anim"
-        sectionText="The resulting animation. There are 8 frame, therefore steps(8),
+        sectionText="The resulting animation. There are 8 frames, therefore steps(8),
         and the length of the sprite is 4000px."
       />
       <div class="animation-wrapper">
@@ -33,8 +34,11 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
+.case-cssanim-wrap{
+  animation: page-opacity 0.6s ease forwards;
+}
 .case-cssanim {
-  @include create-grid(50, 4.94vh, 24, 3.125vw, 1vh, 1vw);
+  @include create-grid(41, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
   .misc-css-sprites {
     grid-row-start: 1;

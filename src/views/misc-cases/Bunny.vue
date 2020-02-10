@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="case-bunny-wrap">
     <MiscCaseHeader
       caseTitle="Bunny Games"
-      caseText="A while back when learning Quintus.js ,
-      I made 3 games The inspiration for the world was
-      found in Alice in Wonderland"
+      caseText="A while back when learning Quintus.js, a javascript HTML5 game engine ,
+      I made 3 small games. The inspiration for the world was
+      found in Alice in Wonderland."
     />
     <div class="bunny-case">
       <CaseTextSection
@@ -55,7 +55,7 @@
         sectionHeaderClass="case-section-header header-bunny-runner"
         headertext="Bunny Runner"
         textClass="process-text-runner"
-        sectionText="The second type ofgame made in Quintus is a runner game.
+        sectionText="The second game is a runner game.
         The bunny has to avoid the dice and collect the card suits. "
       />
       <img class="runner-img1" src="@/assets/img/bunny/bunnyrunner.jpg" alt="game screen shot" />
@@ -82,8 +82,11 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
+.case-bunny-wrap{
+  animation: page-opacity 0.6s ease forwards;
+}
 .bunny-case {
-  @include create-grid(85, 4.94vh, 24, 3.125vw, 1vh, 1vw);
+  @include create-grid(77, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
   img {
     width: 100%;
@@ -148,7 +151,7 @@
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .bunny-case {
-    grid-template-rows: repeat(120, 4.94vh);
+    grid-template-rows: repeat(91, 4.94vh);
     .misc-bunny-platformer {
       grid-row-start: 2;
     }

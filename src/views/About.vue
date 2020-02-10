@@ -8,10 +8,10 @@
         <h1 data-text="About me">About me</h1>
       </div>
       <p class="about-text">
-        Hello my name is Paula Ravn, I am a web programmer and designer, with
-        interests in all the creative outlets on the web. I am open to new opportunities. I love the process from idea,
-        to design, to building a product. I like to learn and develop, eat pasta, watch American Horror Story,
-        play Borderlands, and everything with 4 legs and fur. Below are some the technoligies and tools
+        Hello my name is Paula, I am a web developer and designer, with
+        interests in all creative outlets on the web. I am currently looking for new opportunities.
+        I like to learn, to eat pasta, to play Borderlands, watching American Horror Story,
+         and everything with 4 legs and fur. Below are some the technoligies and tools
         that I am familiar with.
       </p>
     </div>
@@ -89,6 +89,7 @@
 @import "@/assets/sass/_mixins.scss";
 
 .about {
+  animation: page-opacity 0.6s ease forwards;
   @include create-grid(16, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
   .case-home-button {
@@ -232,7 +233,7 @@
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .about {
-    grid-template-rows: repeat(86, 4.94vh);
+    grid-template-rows: repeat(44, 4.94vh);
 
     .about-header {
       grid-row-start: 5;

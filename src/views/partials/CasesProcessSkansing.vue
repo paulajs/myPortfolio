@@ -7,8 +7,8 @@
         sectionHeaderClass="case-section-header header-inspiration-skansing"
         headertext="Inspiration"
         textClass="inspiration-text-skansing"
-        sectionText="Inspiration from the series Mr Robot, some from cliché
-        hacker/security visuals and cyber punk inspiration"
+        sectionText="Inspiration from the series Mr Robot, some inspiration from cliché
+        hacker/security and cyber punk universe"
       />
       <Slider :images="sliderImages" sliderID="slider-insp-skansing" />
       <div class="mobile-insp-img">
@@ -55,7 +55,7 @@
 .process-wrapper {
   grid-row-start: 3;
   font-family: $font-secundary;
-  @include create-grid(90, 4.94vh, 24, 3.125vw, 1vh, 1vw);
+  @include create-grid(71, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 0 1vw;
   .skansing-style-img-mob {
     display: none;

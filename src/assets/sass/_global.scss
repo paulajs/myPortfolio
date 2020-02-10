@@ -63,4 +63,13 @@ $gradient: linear-gradient(#ff90ff, #00ffc8);
   }
 }
 
+@keyframes page-opacity {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
 

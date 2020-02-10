@@ -293,6 +293,11 @@
     top: 8.5vh;
   }
 }
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  #caseAdamsSVG {
+    top: 11.5vh;
+  }
+}
 @media screen and (min-height: 1080px) and (min-device-width: 1900px) {
   #caseAdamsSVG {
     top: 11.5vh;

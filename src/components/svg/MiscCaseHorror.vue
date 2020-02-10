@@ -314,6 +314,7 @@
 #caseHorrorSVG {
   position: absolute;
   bottom: 0;
+  width: 100%;
 }
 .st0 {
   fill: #ffffff;

@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div class="case-ripple-wrap">
     <MiscCaseHeader
       caseTitle="Ripple effect"
-      caseText="A small project made with Pixi.js. A ripple effect on mouse over. Unfortunately it does not work on mobile."
+      caseText="A small project made with Pixi.js. A ripple effect on mouse down.
+      Unfortunately it does not work on mobile devices."
     />
     <div class="case-ripple">
       <CaseTextSection
@@ -21,6 +22,9 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
+.case-ripple-wrap{
+  animation: page-opacity 0.6s ease forwards;
+}
 .case-ripple {
   @include create-grid(20, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;

@@ -12,6 +12,7 @@ body {
   user-select: none;
 }
 .home {
+  animation: page-opacity 0.6s ease forwards;
   display: grid;
   grid-template-rows: repeat(9, 9.77vh);
   grid-row-gap: 1vh;
@@ -22,6 +23,7 @@ body {
     display: none;
     margin-left: -2.5vw;
   }
+
   .open-mobile-menu {
     opacity: 0;
     animation: open-mobilemenu-anim 0.3s forwards ease-out;
@@ -65,6 +67,7 @@ body {
     left: 0;
     background: white;
     color: black;
+ 
     a {
       width: 100%;
       height: 100%;
@@ -380,6 +383,7 @@ body {
   }
   .entertain-element {
     video {
+      /*  height: 100%;  */
       width: 100%;
       /* margin-top: -1%; */
     }
@@ -536,8 +540,21 @@ button.menu-button:focus {
   .home {
     .entertain-element {
       .case-videos {
-        width: 112%;
-        margin-left: -5%;
+       width: 112%;
+        margin-left: -5%; 
+
+      }
+    }
+  }
+}
+@media (min-aspect-ratio: 18/9) and (max-aspect-ratio: 21/9) {
+  .home {
+    .entertain-element {
+      .case-videos {
+        width: 100%;
+        height: auto;
+        margin-top: -1%; 
+
       }
     }
   }
@@ -546,7 +563,7 @@ button.menu-button:focus {
 @media screen and (min-height: 1080px) and (min-width: 1900px) {
   .entertain-element {
     video {
-      width: 112%;
+     width: 112%;
       margin-left: -5%;
     }
   }

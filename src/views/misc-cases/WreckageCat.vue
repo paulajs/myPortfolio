@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="case-wreck-wrap">
     <MiscCaseHeader
       caseTitle="Wreckage Cat"
       caseText="A quick proof of concept of a 2D game in Unity,
@@ -67,6 +67,9 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
+.case-wreck-wrap{
+  animation: page-opacity 0.6s ease forwards;
+}
 .wreck-case {
   @include create-grid(85, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
@@ -113,7 +116,7 @@
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .wreck-case {
-    grid-template-rows: repeat(185, 4.94vh);
+    grid-template-rows: repeat(112, 4.94vh);
     .misc-wreck-sprite {
       grid-row-start: 2;
     }
