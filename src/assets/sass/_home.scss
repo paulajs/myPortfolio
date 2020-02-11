@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   padding: 0;
@@ -67,10 +66,17 @@ body {
     left: 0;
     background: white;
     color: black;
- 
+
     a {
       width: 100%;
       height: 100%;
+
+             &:active p{
+        background: #ff00ff;
+      }
+      &:focus p{
+        background: #ff00ff;
+      } 
     }
     .mobile-noise {
       display: none;
@@ -281,10 +287,6 @@ body {
       font-size: 7.4vw;
       font-family: $font-primary;
       font-weight: 700;
-      &:hover {
-        background: black;
-        color: white;
-      }
       &:after {
         content: "";
         border: 1px solid black;
@@ -540,9 +542,8 @@ button.menu-button:focus {
   .home {
     .entertain-element {
       .case-videos {
-       width: 112%;
-        margin-left: -5%; 
-
+        width: 112%;
+        margin-left: -5%;
       }
     }
   }
@@ -553,8 +554,7 @@ button.menu-button:focus {
       .case-videos {
         width: 100%;
         height: auto;
-        margin-top: -1%; 
-
+        margin-top: -1%;
       }
     }
   }
@@ -563,7 +563,7 @@ button.menu-button:focus {
 @media screen and (min-height: 1080px) and (min-width: 1900px) {
   .entertain-element {
     video {
-     width: 112%;
+      width: 112%;
       margin-left: -5%;
     }
   }
