@@ -1,5 +1,5 @@
 <template>
-  <button class="home-button">
+  <button class="home-button" v-on:touchstart="touchAnim">
     <p class="home-button-text" :data-text="buttonText">{{buttonText}}</p>
   </button>
 </template>
@@ -82,9 +82,53 @@ $transition: all 0.1s ease-in;
     height: 85px;
     font-size: 21px;
     &:hover {
-      p:after {
-        left: 51%;
-        top: 52%;
+      background: black;
+      transform: none;
+    }
+    &:hover p {
+      color: white;
+    }
+    &:hover p:after {
+      content: "";
+      position: initial;
+      left: auto;
+      top: auto;
+      transform: none;
+      color: black;
+      animation: none;
+    }
+/*     &:active {
+      background: black;
+      transform: scale(1.07);
+      p {
+        color: #ff00ff;
+        &:after {
+          content: attr(data-text);
+          position: absolute;
+          pointer-events: none;
+          left: 50%;
+          top: 50%;
+          transform: translate(-48%, -48%);
+          color: #00ffc8;
+          animation: rumble 0.3s ease-in infinite;
+        }
+      }
+    } */
+  }
+  .home-button-touch {
+    background: black;
+    transform: scale(1.07);
+    p {
+      color: #ff00ff;
+      &:after {
+        content: attr(data-text);
+        position: absolute;
+        pointer-events: none;
+        left: 50%;
+        top: 50%;
+        transform: translate(-48%, -48%);
+        color: #00ffc8;
+        animation: rumble 0.3s ease-in infinite;
       }
     }
   }
@@ -101,6 +145,11 @@ export default {
   name: "HomeButton",
   props: {
     buttonText: String
+  },
+  methods: {
+    touchAnim(e){
+      e.target.classList.add('home-button-touch');
+    }
   }
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <router-link :class="miscCaseClass" :to="routerLink">
-    <div class="wrap">
+    <div class="wrap" v-on:click="miscTouchAnim">
       <div class="misc-background"></div>
       <div :class="headerOneClass">
         <h2>{{headerOneText}}</h2>
@@ -157,23 +157,32 @@ div {
       font-size: 6.5vw;
       letter-spacing: -2vw;
     }
+    .misc-case-touch {
+      @include misc-background(right, -70%, 160%, 0.6);
+    }
   }
   .misc-case3 {
     @include place-in-grid(20, 25, 1, 5);
     .header-adams-ill {
       font-size: 5.6vw;
     }
-    .header-adams{
+    .header-adams {
       font-size: 9.3vw;
+    }
+    .misc-case-touch {
+      @include misc-background(right, -70%, 160%, 0.6);
     }
   }
   .misc-case9 {
     @include place-in-grid(30, 35, 1, 5);
-    .header-wreck-top{
+    .header-wreck-top {
       font-size: 9.8vw;
     }
-    .header-wreck-bottom{
+    .header-wreck-bottom {
       font-size: 5.8vw;
+    }
+    .misc-case-touch {
+      @include misc-background(right, -70%, 160%, 0.6);
     }
   }
 }
@@ -188,6 +197,12 @@ export default {
     headerOneText: String,
     headerTwoText: String,
     routerLink: String
+  },
+  methods: {
+    miscTouchAnim(e) {
+      console.log("click");
+      this.$refs.miscbackground.classList.add("misc-case-touch");
+    }
   }
 };
 </script>

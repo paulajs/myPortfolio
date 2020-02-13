@@ -14,39 +14,49 @@
     </div>
 
     <div class="mobile-menu" ref="mobilemenu">
-
       <div class="mobile-menu-button mobile-close" v-on:click="mobileMenuClose">
         <p data-text="Close">Close</p>
       </div>
       <div class="menu-wrapper">
         <router-link to="/about">
-          <p class="mobile-link">About </p>
-
+          <p class="mobile-link" data-text="About" v-on:touchstart="mobileMenuTouchAnim" v-on:touchend="mobileMenuTouchAnimEnd">About</p>
         </router-link>
         <router-link to="/contact">
-          <p class="mobile-link">Contact</p>
+          <p class="mobile-link" data-text="Contact" v-on:touchstart="mobileMenuTouchAnim"  v-on:touchend="mobileMenuTouchAnimEnd">Contact</p>
         </router-link>
-        <div class="mobile-cases" v-on:click="submenuToggle">
-          <p class="mobile-link submenu-link">Cases</p>
-          <div class="submenu" ref="submenu">
+        <div class="mobile-cases" ref="mobilecasesmenu" v-on:click="submenuToggle">
+          <p class="mobile-link submenu-link" data-text="Cases">Cases</p>
+          <div class="submenu" ref="submenu" v-on:click.stop>
             <ul ref="submenulist">
               <li>
-                <router-link to="/hesehus">Hesehus</router-link>
+                <router-link to="/hesehus">
+                  <p class="submenu-cases" v-on:touchstart="submenuTouch" v-on:touchend="submenuTouchEnd">Hesehus</p>
+                </router-link>
               </li>
               <li>
-                <router-link to="/norremadegaard">Nørremadegaard</router-link>
+                <router-link to="/norremadegaard">
+                  <p class="submenu-cases" v-on:touchstart="submenuTouch" v-on:touchend="submenuTouchEnd">Nørremadegaard</p>
+                </router-link>
               </li>
               <li>
-                <router-link to="/skansing">Skansing IT</router-link>
+                <router-link to="/skansing">
+                  <p class="submenu-cases" v-on:touchstart="submenuTouch" v-on:touchend="submenuTouchEnd">Skansing IT</p>
+                </router-link>
               </li>
             </ul>
           </div>
-          <div class="submenu-indicator" ref="indicator">+</div>
+          <div class="submenu-indicator" ref="indicator">></div>
         </div>
 
-        <p class="mobile-link link-lab" ref="linklab">
-          <router-link to="/lab">Lab</router-link>
-        </p>
+        <router-link to="/lab">
+          <p
+            class="mobile-link link-lab"
+            ref="linklab"
+            data-text="Lab"
+            v-on:touchstart="mobileMenuTouchAnim"
+             v-on:touchend="mobileMenuTouchAnimEnd"
+          >Lab</p>
+        </router-link>
       </div>
     </div>
     <div class="frontpage-label top">Portfolio</div>
@@ -144,23 +154,23 @@ export default {
       switchVideo: null,
       gameEnd: false,
       openMobileMenu: false,
-      runPaint: false,
+      runPaint: false
     };
   },
   watch: {
     isVideoShown: function() {
-/*       if (!this.isVideoShown) {
+      /*       if (!this.isVideoShown) {
         this.$refs.casevideo.src = noise;
         this.$refs.casevideo.loop = false;
       } */
     },
     openMobileMenu: function() {
       if (this.openMobileMenu) {
-        this.$refs.submenu.classList.add("open-submenu");
-        this.$refs.submenu.classList.remove("close-submenu");
+          this.$refs.submenu.classList.add("open-submenu");
+          this.$refs.submenu.classList.remove("close-submenu");
       } else {
-        this.$refs.submenu.classList.add("close-submenu");
-        this.$refs.submenu.classList.remove("open-submenu");
+          this.$refs.submenu.classList.add("close-submenu");
+          this.$refs.submenu.classList.remove("open-submenu");
       }
     }
   },
@@ -170,17 +180,29 @@ export default {
   methods: {
     mobileMenuOpen() {
       this.$refs.mobilemenu.style.display = "flex";
-      this.$refs.mobilemenu.classList.add('open-mobile-menu');
-      this.$refs.mobilemenu.classList.remove('close-mobile-menu');
+      this.$refs.mobilemenu.classList.add("open-mobile-menu");
+      this.$refs.mobilemenu.classList.remove("close-mobile-menu");
       this.runPaint = true;
     },
     mobileMenuClose() {
-      this.$refs.mobilemenu.classList.add('close-mobile-menu');
-      this.$refs.mobilemenu.classList.remove('open-mobile-menu');
+      this.$refs.mobilemenu.classList.add("close-mobile-menu");
+      this.$refs.mobilemenu.classList.remove("open-mobile-menu");
       this.runPaint = false;
-      setTimeout(() =>{
+      setTimeout(() => {
         this.$refs.mobilemenu.style.display = "none";
       }, 1300);
+    },
+    mobileMenuTouchAnim(e) {
+      e.target.classList.add("mobile-menu-touch");
+    },
+    mobileMenuTouchAnimEnd(e){
+      e.target.classList.remove("mobile-menu-touch");
+    },
+    submenuTouch(e) {
+      e.target.classList.add('submenu-touch-anim');
+    },
+    submenuTouchEnd(){
+      e.target.classList.remove('submenu-touch-anim');
     },
     submenuToggle() {
       if (this.openMobileMenu) {
@@ -189,14 +211,22 @@ export default {
         this.$refs.indicator.classList.remove("ind-open");
         this.$refs.indicator.classList.add("ind-close");
 
+        this.$refs.mobilecasesmenu.style.border = "none";
+        /* this.$refs.mobilecasesmenu.style.background="transparent"; */
+        this.$refs.mobilecasesmenu.classList.remove("submenu-active");
+
         this.$refs.submenulist.classList.add("hide-submenulist");
         this.$refs.submenulist.classList.remove("show-submenulist");
-        this.$refs.linklab.style.marginTop = "7vh";
+        this.$refs.linklab.style.marginTop = "0";
       } else {
         this.openMobileMenu = true;
 
         this.$refs.indicator.classList.remove("ind-close");
         this.$refs.indicator.classList.add("ind-open");
+
+        this.$refs.mobilecasesmenu.style.border = "1px solid black";
+        /* this.$refs.mobilecasesmenu.style.background="#ff00ff"; */
+        this.$refs.mobilecasesmenu.classList.add("submenu-active");
 
         this.$refs.submenulist.classList.add("show-submenulist");
         this.$refs.submenulist.classList.remove("hide-submenulist");

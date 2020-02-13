@@ -251,6 +251,7 @@
       }
       .about-text {
         top: 0vh;
+        margin-top: 3vh;
         font-size: 4.6vw;
         position: initial;
         width: 100%;

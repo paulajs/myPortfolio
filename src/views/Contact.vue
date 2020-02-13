@@ -71,6 +71,7 @@
     }
   }
 }
+
 </style>
 <script>
 import HomeButton from "@/components/HomeButton.vue";

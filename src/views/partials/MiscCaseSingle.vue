@@ -1,8 +1,8 @@
 <template>
   <router-link :class="miscCaseClass" :to="routerLink">
-    <div class="wrap">
+    <div class="wrap" v-on:click="miscTouchAnim">
       <div class="misc-background"></div>
-    <!--   <img :class="stars" src="../../assets/img/SVG/stars.svg" alt="stars" /> -->
+      <!--   <img :class="stars" src="../../assets/img/SVG/stars.svg" alt="stars" /> -->
       <img :class="stars" id="starts-desk" src="../../assets/img/SVG/stars.svg" alt="stars" />
       <img :class="stars" id="starts-mob" src="../../assets/img/SVG/stars-mob.svg" alt="stars" />
       <div :class="headerClass">
@@ -155,6 +155,9 @@ div {
     #starts-desk {
       display: none;
     }
+    .misc-case-touch {
+      @include misc-background(right, -70%, 160%, 0.6);
+    }
   }
   .misc-case6 {
     @include place-in-grid(25, 30, 1, 5);
@@ -164,6 +167,9 @@ div {
       width: 77%;
       line-height: 21.6vw;
     }
+    .misc-case-touch {
+      @include misc-background(right, -70%, 160%, 0.6);
+    }
   }
   .misc-case8 {
     @include place-in-grid(35, 40, 1, 5);
@@ -171,11 +177,14 @@ div {
     .header-horror {
       font-size: 7.6vw;
     }
-        #starts-mob {
+    #starts-mob {
       display: block;
     }
     #starts-desk {
       display: none;
+    }
+    .misc-case-touch {
+      @include misc-background(right, -70%, 160%, 0.6);
     }
   }
 }
@@ -189,6 +198,12 @@ export default {
     headerText: String,
     stars: String,
     routerLink: String
+  },
+  methods: {
+    miscTouchAnim(e) {
+      console.log("click");
+      this.$refs.miscbackground.classList.add("misc-case-touch");
+    }
   }
 };
 </script>

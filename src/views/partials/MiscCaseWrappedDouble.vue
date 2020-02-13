@@ -1,7 +1,7 @@
 <template>
   <router-link :class="miscCaseClass" :to="routerLink">
-    <div class="wrap">
-      <div class="misc-background"></div>
+    <div class="wrap" v-on:click="miscTouchAnim">
+      <div class="misc-background" ref="miscbackground"></div>
       <div :class="headerClass">
         <h2 :class="headerFirstClass">{{headerFirstText}}</h2>
         <h2 :class="headerSecondClass">{{headerSecondText}}</h2>
@@ -134,6 +134,7 @@ div {
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .misc-case1 {
     @include place-in-grid(1, 6, 1, 5);
+    transition: none;
     .header-audio {
       .text-audio {
         font-size: 5vw;
@@ -143,7 +144,17 @@ div {
         margin-top: -1vh;
       }
     }
+    &:active{
+      .misc-background{
+        @include misc-background(right, -70%, 160%, 0.6);
+      }
+    }
+    .misc-case-touch {
+      @include misc-background(right, -70%, 160%, 0.6);
+      /* opacity: 0.6; */
+    }
   }
+
   .misc-case5 {
     @include place-in-grid(11, 16, 1, 5);
     .header-three {
@@ -155,6 +166,9 @@ div {
         margin-top: -2.3vh;
       }
     }
+    .misc-case-touch {
+      @include misc-background(right, -70%, 160%, 0.6);
+    }
   }
   .misc-case7 {
     @include place-in-grid(40, 45, 1, 5);
@@ -165,6 +179,9 @@ div {
       .text-anim {
         font-size: 11vw;
       }
+    }
+    .misc-case-touch {
+      @include misc-background(right, -70%, 160%, 0.6);
     }
   }
 }
@@ -200,6 +217,12 @@ export default {
     headerFirstText: String,
     headerSecondText: String,
     routerLink: String
+  },
+  methods: {
+    miscTouchAnim(e) {
+      console.log('click');
+      this.$refs.miscbackground.classList.add("misc-case-touch");
+    }
   }
 };
 </script>

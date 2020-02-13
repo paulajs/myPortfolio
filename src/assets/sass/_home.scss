@@ -66,18 +66,92 @@ body {
     left: 0;
     background: white;
     color: black;
-
+    .submenu-active {
+      p {
+        color: white;
+        position: relative;
+        font-size: 16vw;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $color-pink;
+        transition: all 0.1s ease-in;
+        &:after {
+          content: attr(data-text);
+          position: absolute;
+          left: 51%;
+          top: 51%;
+          transform: translate(-50%, -50%);
+          color: transparent;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: $color-green;
+          animation: rumble-menu 0.25s ease-in infinite;
+          transition: all 0s ease-in;
+        }
+      }
+    }
     a {
       width: 100%;
       height: 100%;
+      .mobile-menu-touch {
+        color: white;
+        position: relative;
+        font-size: 16vw;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $color-pink;
 
-             &:active p{
-        background: #ff00ff;
+        &:after {
+          content: attr(data-text);
+          position: absolute;
+          left: 51%;
+          top: 51%;
+          transform: translate(-50%, -50%);
+          color: transparent;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: $color-green;
+          animation: rumble-menu 0.25s ease-in infinite;
+        }
       }
-      &:focus p{
-        background: #ff00ff;
-      } 
+/*       &:active p {
+        color: white;
+        position: relative;
+        font-size: 16vw;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $color-pink;
+        transition: all 0.1s ease-in;
+        &:after {
+          content: attr(data-text);
+          position: absolute;
+          left: 51%;
+          top: 51%;
+          transform: translate(-50%, -50%);
+          color: transparent;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: $color-green;
+          animation: rumble-menu 0.25s ease-in infinite;
+          transition: all 0s ease-in;
+        }
+      } */
+/*       &:focus p {
+        color: white;
+        position: relative;
+        font-size: 16vw;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: $color-pink;
+        transition: all 0.1s ease-in;
+        &:after {
+          content: attr(data-text);
+          position: absolute;
+          left: 51%;
+          top: 51%;
+          transform: translate(-50%, -50%);
+          color: transparent;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: $color-green;
+          animation: rumble-menu 0.25s ease-in infinite;
+          transition: all 0s ease-in;
+        }
+      } */
     }
+
     .mobile-noise {
       display: none;
       opacity: 0;
@@ -97,7 +171,9 @@ body {
     .menu-wrapper {
       height: 60vh;
       position: fixed;
-      bottom: 18vh;
+      /*  bottom: 18vh;  */
+      top: 52%;
+      transform: translateY(-50%);
       opacity: 0;
       animation: fade-in 0.3s forwards ease-in;
       animation-delay: 1.05s;
@@ -112,15 +188,6 @@ body {
     }
     .mobile-cases {
       position: relative;
-      .submenu-link {
-        &:after {
-          content: "";
-          width: 0;
-          height: 0;
-          border: none;
-          margin: 0;
-        }
-      }
       .submenu-indicator {
         position: absolute;
         right: 16%;
@@ -139,32 +206,38 @@ body {
       @keyframes ind-open-anim {
         0% {
           transform: translateY(-50%) rotate(0) scale(1);
+          right: 16%;
         }
         85% {
           transform: translateY(-50%) rotate(90deg) scale(1);
+          right: 8%;
         }
         100% {
-          transform: translateY(-50%) rotate(90deg) scaleX(0.3);
+          transform: translateY(-50%) rotate(90deg) scaleX(0.2);
+          right: 8%;
         }
       }
       @keyframes ind-close-anim {
         0% {
           transform: translateY(-50%) rotate(90deg) scaleX(0.3);
+          right: 8%;
         }
         85% {
           transform: translateY(-50%) rotate(90deg) scale(1);
+          right: 16%;
         }
         100% {
           transform: translateY(-50%) rotate(0) scale(1);
+          right: 16%;
         }
       }
       .submenu {
-        border: 1px solid black;
-        width: 60vw;
+        /* border: 1px solid black; */
+        width: 100vw;
         height: 7vh;
         position: absolute;
         margin-top: -16%;
-        margin-left: 8%;
+        margin-left: 0%;
         z-index: -1;
         .show-submenulist {
           transform-origin: 0 0;
@@ -182,17 +255,34 @@ body {
           transition: all 0.1s ease-in;
           list-style: none;
           font-family: $font-secundary;
+          margin-top: 0.5vh;
           li {
-            border-bottom: 1px solid black;
-            height: 5vh;
+/*             border-bottom: 1px solid black; */
+            height: 6.5vh;
+            /* background: white; */
             text-align: center;
-            padding-top: 1vh;
             z-index: 10000;
             display: flex;
             justify-content: center;
+            a {
+              .submenu-touch-anim{
+                background: black;
+                color: white;
+              }
+  
+            }
           }
         }
       }
+      .submenu-cases {
+          color: black;
+         background: white; 
+         -webkit-text-stroke-width: 0;
+         font-size: 5vw;
+         display: block;
+         padding: 3% 0;
+         border: 1px solid black;
+       }
       .open-submenu {
         animation: open-menu-anim 0.2s;
         animation-fill-mode: forwards;
@@ -275,27 +365,24 @@ body {
     }
 
     .mobile-link {
-      border: 1px solid black;
-      background: white;
-      width: 60vw;
-      height: 8vh;
-      margin-top: 7vh;
+      width: 100vw;
+      height: 15vh;
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
-      font-size: 7.4vw;
+      font-size: 12vw;
       font-family: $font-primary;
       font-weight: 700;
       &:after {
         content: "";
-        border: 1px solid black;
+        /*         border: 1px solid black;
         width: 60vw;
         height: 7vh;
         position: absolute;
         margin-top: 7%;
         margin-left: 8%;
-        z-index: -1;
+        z-index: -1; */
       }
     }
 
@@ -306,12 +393,6 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-      }
-    }
-    .submenu-link {
-      &:hover {
-        background: white;
-        color: black;
       }
     }
     a {
@@ -481,6 +562,8 @@ button.menu-button:focus {
       transform: translateX(-2vw);
       width: auto;
       height: 3vh;
+      padding-top: 0.7vh;
+      padding-bottom: 0.4vh;
       align-self: self-start;
       margin-top: -3vh;
     }

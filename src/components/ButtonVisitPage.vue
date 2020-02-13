@@ -61,16 +61,44 @@ $transition: all 0.1s ease-in;
     margin-bottom: 20vh;
     margin-left: -3vw;
     font-size: 23px;
+    position: relative;
+    &:hover {
+      background: white;
+      color: black;
+      transition: none;
+      p {
+        color: black;
+        &:after {
+          content: "";
+          position: initial;
+          left: auto;
+          top: auto;
+          color: black;
+          animation: none;
+        }
+      }
+    }
     &:before {
       width: 77vw;
       height: 70px;
       transform: translate(-35vw, -13px);
     }
-    &:hover {
-      p:after {
-        left: 20.6vw;
-        top: 2.6vh;
+    &:active {
+      background: black;
+      color: white;
+      transition: $transition;
+      p {
+        color: $color-pink;
+        transform-origin: center;
       }
+    }
+    &:active p:after {
+      content: attr(data-text);
+      left: 27%;
+      top: 25.6%;
+      position: absolute;
+      color: $color-green;
+      animation: rumble 0.3s ease-in infinite;
     }
   }
 }

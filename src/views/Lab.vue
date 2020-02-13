@@ -182,7 +182,7 @@
 
  .misc-grid {
     grid-template-columns: repeat(4, 22.54vw);
-    grid-template-rows: repeat(103, 11.94vh);
+    grid-template-rows: repeat(45, 11.94vh);
     grid-column-gap: 2vw;
     margin: 2vh 2vw;
   }
