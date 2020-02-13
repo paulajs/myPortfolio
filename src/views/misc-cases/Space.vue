@@ -100,7 +100,7 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
-.case-space-wrap{
+.case-space-wrap {
   animation: page-opacity 0.6s ease forwards;
 }
 
@@ -120,6 +120,10 @@
   width: 100%;
   @include place-in-grid(55, 63, 5, 21);
   border: 2px solid black;
+  &:hover {
+    box-shadow: 26px 28px 14px #b6b6b6;
+    cursor: pointer;
+  }
 }
 .space-case {
   @include create-grid(85, 4.94vh, 24, 3.125vw, 1vh, 1vw);
@@ -155,7 +159,7 @@
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .space-case {
     grid-template-rows: repeat(125, 4.94vh);
-    .misc-space-process{
+    .misc-space-process {
       grid-row-start: 3;
     }
     .misc-space-result {

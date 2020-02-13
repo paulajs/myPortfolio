@@ -104,7 +104,7 @@
       }
       #audio-start {
         font-size: 7.4vw;
-        width: 78.4%;
+        width: 95.4%;
         height: 14vw;
       }
     }

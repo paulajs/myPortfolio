@@ -67,7 +67,7 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
-.case-wreck-wrap{
+.case-wreck-wrap {
   animation: page-opacity 0.6s ease forwards;
 }
 .wreck-case {
@@ -112,6 +112,10 @@
   .kittytoss-video {
     width: 100%;
     @include place-in-grid(46, 54, 5, 21);
+    &:hover {
+      box-shadow: 26px 28px 14px #b6b6b6;
+      cursor: pointer;
+    }
   }
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {

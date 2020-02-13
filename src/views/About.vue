@@ -8,11 +8,13 @@
         <h1 data-text="About me">About me</h1>
       </div>
       <p class="about-text">
-        Hello my name is Paula, I am a web developer and designer, with
-        interests in all creative outlets on the web. I am currently looking for new opportunities.
-        I like to learn, to eat pasta, to play Borderlands, watching American Horror Story,
-         and everything with 4 legs and fur. Below are some the technoligies and tools
-        that I am familiar with.
+        Hello my name is Paula,
+        <em>I am a web developer and designer</em>, with
+        interests in all creative outlets on the web. I like the interplay of the visual and the technical.
+        I like to learn, eat pasta, play Borderlands, watching American Horror Story,
+        and adore everything with 4 legs and fur, and
+        <em>I am currently looking for new opportunities.</em>
+        Below are some the technoligies and tools that I am familiar with.
       </p>
     </div>
     <div class="about-skills">
@@ -72,10 +74,18 @@
         <div class="skill-subset subset-contact">
           <ul>
             <li>
-              <img src="@/assets/img/SVG/icon-email.svg" />
+              <a href="/">
+                <SoMeIcon>
+                  <component :is="icon_mail_component"></component>
+                </SoMeIcon>
+              </a>
             </li>
             <li>
-              <img src="@/assets/img/SVG/icon-linked.svg" />
+              <a href="/">
+                <SoMeIcon>
+                  <component :is="icon_linked_component"></component>
+                </SoMeIcon>
+              </a>
             </li>
             <img src alt />
           </ul>
@@ -131,6 +141,11 @@
       top: 22vh;
       font-size: 1.6vw;
       text-align: center;
+      em {
+        background: black;
+        color: white;
+        font-style: normal;
+      }
     }
   }
   .about-skills {
@@ -204,9 +219,12 @@
           flex-direction: row;
           width: 100%;
           li {
-            width: 23%;
-            img {
-              width: 80%;
+            width: 34%;
+            a {
+              .icon-some {
+                width: 4vw;
+                height: 4vw;
+              }
             }
           }
         }
@@ -280,6 +298,19 @@
           margin-right: 0;
           font-size: 1.4em;
         }
+        .subset-contact {
+          ul {
+            li {
+              width: 45%;
+              a {
+                .icon-some {
+                  width: 18vw;
+                  height: 18vw;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -287,10 +318,22 @@
 </style>
 <script>
 import HomeButton from "@/components/HomeButton.vue";
+import SoMeIcon from "@/components/SoMeIcon.vue";
+import SoMeLinked from "@/components/svg/SoMeLinked.vue";
+import SoMeMail from "@/components/svg/SoMeMail.vue";
 export default {
   name: "about",
   components: {
-    HomeButton
+    HomeButton,
+    SoMeLinked,
+    SoMeMail,
+    SoMeIcon
+  },
+  data() {
+    return {
+      icon_mail_component: "SoMeMail",
+      icon_linked_component: "SoMeLinked"
+    };
   }
 };
 </script>

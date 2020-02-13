@@ -13,7 +13,7 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 .icon-some {
-  cursor: default;
+  cursor: pointer;
   width: 3.3vw;
   height: 3.3vw;
   .pinkTouch {

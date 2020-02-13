@@ -105,7 +105,7 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
-.case-horror-wrap{
+.case-horror-wrap {
   animation: page-opacity 0.6s ease forwards;
 }
 .horror-case {
@@ -130,6 +130,10 @@
     width: 100%;
     @include place-in-grid(54, 62, 5, 21);
     border: 2px solid black;
+    &:hover {
+      box-shadow: 26px 28px 14px #b6b6b6;
+      cursor: pointer;
+    }
   }
 
   .process-img1 {

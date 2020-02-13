@@ -103,7 +103,7 @@
         muted
         autoplay
         preload="auto"
-        src="../assets/videos/frontpage-entertain/noise33.mp4"
+        src=""
       ></video>
     </div>
   </div>
@@ -120,13 +120,12 @@ import MyCursor from "@/components/MyCursor.vue";
 import SoMeMail from "@/components/svg/SoMeMail.vue";
 import SoMeInsta from "@/components/svg/SoMeInsta.vue";
 import SoMePin from "@/components/svg/SoMePin.vue";
-const caseVideoHesehus = require("@/assets/videos/frontpage-entertain/hesehus2.mp4");
-const caseVideoNMG = require("@/assets/videos/frontpage-entertain/nmg1.mp4");
-const caseVideoSkansing = require("@/assets/videos/frontpage-entertain/skansingit1.mp4");
-const caseVideoContact = require("@/assets/videos/frontpage-entertain/contact1.mp4");
-const caseVideoLab = require("@/assets/videos/frontpage-entertain/lab5.mp4");
-const caseVideoAbout = require("@/assets/videos/frontpage-entertain/about1.mp4");
-const noise = require("@/assets/videos/frontpage-entertain/noise33.mp4");
+const caseVideoHesehus = require("@/assets/videos/frontpage-entertain/hesehus.mp4");
+const caseVideoNMG = require("@/assets/videos/frontpage-entertain/nmg.mp4");
+const caseVideoSkansing = require("@/assets/videos/frontpage-entertain/skansingit.mp4");
+const caseVideoContact = require("@/assets/videos/frontpage-entertain/contact.mp4");
+const caseVideoLab = require("@/assets/videos/frontpage-entertain/lab.mp4");
+const caseVideoAbout = require("@/assets/videos/frontpage-entertain/about.mp4");
 const endVideo = require("@/assets/videos/frontpage-entertain/applause.mp4");
 const endVideoMob = require("@/assets/videos/frontpage-entertain/applausemob.mp4");
 
@@ -158,12 +157,6 @@ export default {
     };
   },
   watch: {
-    isVideoShown: function() {
-      /*       if (!this.isVideoShown) {
-        this.$refs.casevideo.src = noise;
-        this.$refs.casevideo.loop = false;
-      } */
-    },
     openMobileMenu: function() {
       if (this.openMobileMenu) {
           this.$refs.submenu.classList.add("open-submenu");
@@ -201,7 +194,7 @@ export default {
     submenuTouch(e) {
       e.target.classList.add('submenu-touch-anim');
     },
-    submenuTouchEnd(){
+    submenuTouchEnd(e){
       e.target.classList.remove('submenu-touch-anim');
     },
     submenuToggle() {
@@ -245,21 +238,11 @@ export default {
       this.showVideo();
     },
     mouseOverMain(e) {
-      if (this.gameEnd) {
-        this.$refs.casevideo.src = noise;
-        this.gameEnd = false;
-        this.$refs.casevideo.loop = false;
-      }
       this.switchVideo = e.target.dataset.case;
       this.onVideoEnded();
       this.showVideo();
     },
     mouseOverSoMe(e) {
-      if (this.gameEnd) {
-        this.$refs.casevideo.src = noise;
-        this.gameEnd = false;
-        this.$refs.casevideo.loop = false;
-      }
       this.switchVideo = "some";
       this.onVideoEnded();
       this.showVideo();
@@ -273,10 +256,6 @@ export default {
       this.hideVideo();
     },
     mouseOver(e) {
-      if (this.gameEnd) {
-        this.$refs.casevideo.src = noise;
-        this.gameEnd = false;
-      }
       this.switchVideo = e.target.dataset.case;
       this.onVideoEnded();
       this.showVideo();
@@ -315,7 +294,6 @@ export default {
           this.$refs.casevideo.src = caseVideoLab;
           break;
       }
-      //this.$refs.casevideo.src = this.switchVideo;
       this.$refs.casevideo.loop = true;
     }
   }

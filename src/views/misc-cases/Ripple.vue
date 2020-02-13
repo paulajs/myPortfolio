@@ -41,11 +41,19 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+        overflow: hidden;
     .canvas-click-text {
       @include header-style(uppercase);
       position: absolute;
       font-size: 14vw;
       bottom: 0;
+    }
+  }
+}
+@media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
+  .case-ripple{
+    .pixi-container{
+      overflow: hidden;
     }
   }
 }

@@ -2,7 +2,7 @@
   <div class="audio-section-bubbles">
     <div id="audio-player">
       <div id="audio-box" ref="audiobox">
-        <audio ref="theaudio" src="@/assets/audio/experiments.mp3" controls loop></audio>
+        <audio ref="theaudio" src="" controls loop></audio>
       </div>
     </div>
     <div class="canvas-wrapper">

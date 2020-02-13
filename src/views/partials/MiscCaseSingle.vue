@@ -1,6 +1,6 @@
 <template>
   <router-link :class="miscCaseClass" :to="routerLink">
-    <div class="wrap" v-on:click="miscTouchAnim">
+    <div class="wrap">
       <div class="misc-background"></div>
       <!--   <img :class="stars" src="../../assets/img/SVG/stars.svg" alt="stars" /> -->
       <img :class="stars" id="starts-desk" src="../../assets/img/SVG/stars.svg" alt="stars" />
@@ -199,11 +199,5 @@ export default {
     stars: String,
     routerLink: String
   },
-  methods: {
-    miscTouchAnim(e) {
-      console.log("click");
-      this.$refs.miscbackground.classList.add("misc-case-touch");
-    }
-  }
 };
 </script>

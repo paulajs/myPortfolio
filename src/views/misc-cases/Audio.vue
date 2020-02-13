@@ -193,7 +193,7 @@ import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
 import AudioSectionBars from "@/views/partials/AudioSectionBars.vue";
 import AudioSectionCircle from "@/views/partials/AudioSectionCircle.vue";
-import AudioSectionBubbles from "@/views/partials/AudioSectionBubbles.vue";
+/* import AudioSectionBubbles from "@/views/partials/AudioSectionBubbles.vue"; */
 import AudioSectionImg from "@/views/partials/AudioSectionImg.vue";
 
 export default {
@@ -203,7 +203,7 @@ export default {
     CaseTextSection,
     AudioSectionBars,
     AudioSectionCircle,
-    AudioSectionBubbles,
+    /* AudioSectionBubbles, */
     AudioSectionImg
   }
 };

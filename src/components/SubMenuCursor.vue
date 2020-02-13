@@ -70,7 +70,7 @@
 .cases-sub-menu li a {
   text-decoration: none;
   color: black;
-  cursor: default;
+  cursor: pointer;
   &:hover{
     color: #afafaf;
   }

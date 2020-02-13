@@ -46,7 +46,7 @@
   h2 {
     grid-column-start: 2;
     grid-column-end: 10;
-    grid-row-start: 9;
+    grid-row-start: 10;
     align-self: end;
     font-family: $font-secundary;
     font-size: 1.1vw;

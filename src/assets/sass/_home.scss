@@ -77,8 +77,8 @@ body {
         &:after {
           content: attr(data-text);
           position: absolute;
-          left: 51%;
-          top: 51%;
+          left: 50.5%;
+          top: 50.5%;
           transform: translate(-50%, -50%);
           color: transparent;
           -webkit-text-stroke-width: 1px;
@@ -101,8 +101,8 @@ body {
         &:after {
           content: attr(data-text);
           position: absolute;
-          left: 51%;
-          top: 51%;
+          left: 50.5%;
+          top: 50.5%;
           transform: translate(-50%, -50%);
           color: transparent;
           -webkit-text-stroke-width: 1px;
@@ -110,46 +110,6 @@ body {
           animation: rumble-menu 0.25s ease-in infinite;
         }
       }
-/*       &:active p {
-        color: white;
-        position: relative;
-        font-size: 16vw;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: $color-pink;
-        transition: all 0.1s ease-in;
-        &:after {
-          content: attr(data-text);
-          position: absolute;
-          left: 51%;
-          top: 51%;
-          transform: translate(-50%, -50%);
-          color: transparent;
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: $color-green;
-          animation: rumble-menu 0.25s ease-in infinite;
-          transition: all 0s ease-in;
-        }
-      } */
-/*       &:focus p {
-        color: white;
-        position: relative;
-        font-size: 16vw;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: $color-pink;
-        transition: all 0.1s ease-in;
-        &:after {
-          content: attr(data-text);
-          position: absolute;
-          left: 51%;
-          top: 51%;
-          transform: translate(-50%, -50%);
-          color: transparent;
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: $color-green;
-          animation: rumble-menu 0.25s ease-in infinite;
-          transition: all 0s ease-in;
-        }
-      } */
     }
 
     .mobile-noise {

@@ -49,7 +49,7 @@ $transition: all 0.1s ease-in;
 
   h2 {
     grid-column-start: 2;
-    grid-column-end: 5;
+    grid-column-end: 6;
     grid-row-start: 8;
     align-self: end;
     font-family: $font-secundary;
