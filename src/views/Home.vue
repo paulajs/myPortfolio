@@ -19,10 +19,20 @@
       </div>
       <div class="menu-wrapper">
         <router-link to="/about">
-          <p class="mobile-link" data-text="About" v-on:touchstart="mobileMenuTouchAnim" v-on:touchend="mobileMenuTouchAnimEnd">About</p>
+          <p
+            class="mobile-link"
+            data-text="About"
+            v-on:touchstart="mobileMenuTouchAnim"
+            v-on:touchend="mobileMenuTouchAnimEnd"
+          >About</p>
         </router-link>
         <router-link to="/contact">
-          <p class="mobile-link" data-text="Contact" v-on:touchstart="mobileMenuTouchAnim"  v-on:touchend="mobileMenuTouchAnimEnd">Contact</p>
+          <p
+            class="mobile-link"
+            data-text="Contact"
+            v-on:touchstart="mobileMenuTouchAnim"
+            v-on:touchend="mobileMenuTouchAnimEnd"
+          >Contact</p>
         </router-link>
         <div class="mobile-cases" ref="mobilecasesmenu" v-on:click="submenuToggle">
           <p class="mobile-link submenu-link" data-text="Cases">Cases</p>
@@ -30,17 +40,29 @@
             <ul ref="submenulist">
               <li>
                 <router-link to="/hesehus">
-                  <p class="submenu-cases" v-on:touchstart="submenuTouch" v-on:touchend="submenuTouchEnd">Hesehus</p>
+                  <p
+                    class="submenu-cases"
+                    v-on:touchstart="submenuTouch"
+                    v-on:touchend="submenuTouchEnd"
+                  >Hesehus</p>
                 </router-link>
               </li>
               <li>
                 <router-link to="/norremadegaard">
-                  <p class="submenu-cases" v-on:touchstart="submenuTouch" v-on:touchend="submenuTouchEnd">Nørremadegaard</p>
+                  <p
+                    class="submenu-cases"
+                    v-on:touchstart="submenuTouch"
+                    v-on:touchend="submenuTouchEnd"
+                  >Nørremadegaard</p>
                 </router-link>
               </li>
               <li>
                 <router-link to="/skansing">
-                  <p class="submenu-cases" v-on:touchstart="submenuTouch" v-on:touchend="submenuTouchEnd">Skansing IT</p>
+                  <p
+                    class="submenu-cases"
+                    v-on:touchstart="submenuTouch"
+                    v-on:touchend="submenuTouchEnd"
+                  >Skansing IT</p>
                 </router-link>
               </li>
             </ul>
@@ -54,7 +76,7 @@
             ref="linklab"
             data-text="Lab"
             v-on:touchstart="mobileMenuTouchAnim"
-             v-on:touchend="mobileMenuTouchAnimEnd"
+            v-on:touchend="mobileMenuTouchAnimEnd"
           >Lab</p>
         </router-link>
       </div>
@@ -72,12 +94,12 @@
           <component :is="icon_linked_component"></component>
         </SoMeIcon>
       </a>
-      <a href="/" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
+      <a href="mailto:paulajoannasobczak@gmail.com" class="some-mail" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
         <SoMeIcon>
           <component :is="icon_mail_component"></component>
         </SoMeIcon>
       </a>
-      <a href="/" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
+      <a href="https://www.pinterest.dk/paulajoannasobc/" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
         <SoMeIcon>
           <component :is="icon_pin_component"></component>
         </SoMeIcon>
@@ -103,7 +125,7 @@
         muted
         autoplay
         preload="auto"
-        src=""
+        src
       ></video>
     </div>
   </div>
@@ -125,7 +147,7 @@ const caseVideoNMG = require("@/assets/videos/frontpage-entertain/nmg.mp4");
 const caseVideoSkansing = require("@/assets/videos/frontpage-entertain/skansingit.mp4");
 const caseVideoContact = require("@/assets/videos/frontpage-entertain/contact.mp4");
 const caseVideoLab = require("@/assets/videos/frontpage-entertain/lab.mp4");
-const caseVideoAbout = require("@/assets/videos/frontpage-entertain/about.mp4");
+const caseVideoAbout = require("@/assets/videos/frontpage-entertain/about1.mp4");
 const endVideo = require("@/assets/videos/frontpage-entertain/applause.mp4");
 const endVideoMob = require("@/assets/videos/frontpage-entertain/applausemob.mp4");
 
@@ -159,11 +181,11 @@ export default {
   watch: {
     openMobileMenu: function() {
       if (this.openMobileMenu) {
-          this.$refs.submenu.classList.add("open-submenu");
-          this.$refs.submenu.classList.remove("close-submenu");
+        this.$refs.submenu.classList.add("open-submenu");
+        this.$refs.submenu.classList.remove("close-submenu");
       } else {
-          this.$refs.submenu.classList.add("close-submenu");
-          this.$refs.submenu.classList.remove("open-submenu");
+        this.$refs.submenu.classList.add("close-submenu");
+        this.$refs.submenu.classList.remove("open-submenu");
       }
     }
   },
@@ -188,14 +210,14 @@ export default {
     mobileMenuTouchAnim(e) {
       e.target.classList.add("mobile-menu-touch");
     },
-    mobileMenuTouchAnimEnd(e){
+    mobileMenuTouchAnimEnd(e) {
       e.target.classList.remove("mobile-menu-touch");
     },
     submenuTouch(e) {
-      e.target.classList.add('submenu-touch-anim');
+      e.target.classList.add("submenu-touch-anim");
     },
-    submenuTouchEnd(e){
-      e.target.classList.remove('submenu-touch-anim');
+    submenuTouchEnd(e) {
+      e.target.classList.remove("submenu-touch-anim");
     },
     submenuToggle() {
       if (this.openMobileMenu) {
@@ -239,25 +261,18 @@ export default {
     },
     mouseOverMain(e) {
       this.switchVideo = e.target.dataset.case;
-      this.onVideoEnded();
+      this.switchVideoFunction();
       this.showVideo();
     },
     mouseOverSoMe(e) {
-      this.switchVideo = "some";
-      this.onVideoEnded();
-      this.showVideo();
+      //delete
     },
     onMouseOutSoMe(e) {
-      if (this.gameEnd) {
-        this.$refs.casevideo.src = "";
-        this.gameEnd = false;
-        this.$refs.casevideo.loop = false;
-      }
       this.hideVideo();
     },
     mouseOver(e) {
       this.switchVideo = e.target.dataset.case;
-      this.onVideoEnded();
+      this.switchVideoFunction();
       this.showVideo();
     },
     showVideo() {
@@ -269,7 +284,7 @@ export default {
     showSplat() {
       this.isSplatShown = true;
     },
-    onVideoEnded(e) {
+    switchVideoFunction(e) {
       switch (this.switchVideo) {
         case "hesehus":
           this.$refs.casevideo.src = caseVideoHesehus;
@@ -282,9 +297,9 @@ export default {
           this.$refs.casevideo.src = caseVideoSkansing;
           break;
 
-        case "some":
+/*         case "some":
           this.$refs.casevideo.src = caseVideoContact;
-          break;
+          break; */
 
         case "About":
           this.$refs.casevideo.src = caseVideoAbout;
@@ -295,7 +310,11 @@ export default {
           break;
       }
       this.$refs.casevideo.loop = true;
-    }
+    },
+/*     onVideoEnded(){
+      console.log('video end');
+      this.hideVideo();
+    }, */
   }
 };
 </script>

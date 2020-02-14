@@ -12,7 +12,7 @@
           <component :is="icon_linked_component"></component>
         </SoMeIcon>
       </a>
-      <a href="/" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
+      <a href="mailto:paulajoannasobczak@gmail.com" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
         <SoMeIcon>
           <component :is="icon_mail_component"></component>
         </SoMeIcon>

@@ -10,8 +10,8 @@ $transition: all 0.1s ease-in;
 
 .home-button {
   border-radius: 100%;
-  width: 115px;
-  height: 115px;
+  width: 6vw;
+  height: 6vw;
   border: none;
   background: black;
   /*   -webkit-text-stroke-width: 1px;
@@ -97,7 +97,7 @@ $transition: all 0.1s ease-in;
       color: black;
       animation: none;
     }
-/*     &:active {
+    /*     &:active {
       background: black;
       transform: scale(1.07);
       p {
@@ -147,8 +147,8 @@ export default {
     buttonText: String
   },
   methods: {
-    touchAnim(e){
-      e.target.classList.add('home-button-touch');
+    touchAnim(e) {
+      e.target.classList.add("home-button-touch");
     }
   }
 };

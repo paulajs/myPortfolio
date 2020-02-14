@@ -23,6 +23,25 @@ body {
     margin-left: -2.5vw;
   }
 
+  .show-email {
+    animation: show-email-anim 0.2s ease-in forwards;
+  }
+  @keyframes show-email-anim {
+    0% {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateY(1vh);
+    }
+    2% {
+      visibility: visible;
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      transform: translateY(0vh);
+      opacity: 1;
+    }
+  }
   .open-mobile-menu {
     opacity: 0;
     animation: open-mobilemenu-anim 0.3s forwards ease-out;
@@ -217,7 +236,7 @@ body {
           font-family: $font-secundary;
           margin-top: 0.5vh;
           li {
-/*             border-bottom: 1px solid black; */
+            /*             border-bottom: 1px solid black; */
             height: 6.5vh;
             /* background: white; */
             text-align: center;
@@ -225,24 +244,23 @@ body {
             display: flex;
             justify-content: center;
             a {
-              .submenu-touch-anim{
+              .submenu-touch-anim {
                 background: black;
                 color: white;
               }
-  
             }
           }
         }
       }
       .submenu-cases {
-          color: black;
-         background: white; 
-         -webkit-text-stroke-width: 0;
-         font-size: 5vw;
-         display: block;
-         padding: 3% 0;
-         border: 1px solid black;
-       }
+        color: black;
+        background: white;
+        -webkit-text-stroke-width: 0;
+        font-size: 5vw;
+        display: block;
+        padding: 3% 0;
+        border: 1px solid black;
+      }
       .open-submenu {
         animation: open-menu-anim 0.2s;
         animation-fill-mode: forwards;
@@ -493,6 +511,10 @@ button.menu-button:focus {
     text-decoration: none;
     color: #000;
     margin-right: 6%;
+  }
+  .some-mail {
+    margin-right: 6%;
+    display: block;
   }
 }
 .menu-misc {
