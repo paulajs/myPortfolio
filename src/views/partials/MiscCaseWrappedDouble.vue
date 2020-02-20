@@ -43,9 +43,9 @@ div {
       font-size: 4vw;
     }
     .text-exp {
-      @include header-style(lowercase);
-      font-size: 5vh;
-      margin-top: -4vh;
+      @include header-style(uppercase);
+      font-size: 4vh;
+      margin-top: -2vh;
     }
   }
   .misc-background {
@@ -80,9 +80,9 @@ div {
       font-size: 3.5vw;
     }
     .text-exp {
-      @include header-style(lowercase);
+      @include header-style(uppercase);
       font-size: 2vw;
-      margin-top: -2.3vh;
+      margin-top: -1.5vh;
     }
   }
   .misc-background {
@@ -116,9 +116,9 @@ div {
       font-size: 4vw;
     }
     .text-anim {
-      @include header-style(lowercase);
+      @include header-style(uppercase);
       font-size: 2vw;
-      margin-top: -2vh;
+      margin-top: -1vh;
     }
   }
   .misc-background {
@@ -144,8 +144,8 @@ div {
         margin-top: -1vh;
       }
     }
-    &:active{
-      .misc-background{
+    &:active {
+      .misc-background {
         @include misc-background(right, -70%, 160%, 0.6);
       }
     }
@@ -217,6 +217,6 @@ export default {
     headerFirstText: String,
     headerSecondText: String,
     routerLink: String
-  },
+  }
 };
 </script>

@@ -15,7 +15,7 @@
 }
 button:hover p {
   color: transparent;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: $color-pink;
 }
 button:hover p:before {
@@ -23,15 +23,14 @@ button:hover p:before {
   position: absolute;
   z-index: -50;
   color: transparent;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: $color-green;
+   -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: $color-green;
   pointer-events: none;
   left: 1.2%;
   top: 1.2%;
   animation: rumble-menu 0.15s ease-in infinite;
   pointer-events: none;
 }
-
 </style>
 <script>
 import MyCursor from "@/components/MyCursor.vue";

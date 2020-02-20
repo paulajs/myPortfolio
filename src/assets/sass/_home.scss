@@ -172,9 +172,9 @@ body {
         right: 16%;
         top: 52%;
         transform: translateY(-50%);
-        font-size: 1.8em;
+        font-size: 3em;
         font-family: $font-primary;
-        font-weight: 300;
+        font-weight: 900;
       }
       .ind-open {
         animation: ind-open-anim 0.2s forwards ease-out;
@@ -349,9 +349,8 @@ body {
       align-items: center;
       justify-content: center;
       position: relative;
-      font-size: 12vw;
-      font-family: $font-primary;
-      font-weight: 700;
+      font-size: 14vw;
+      @include font-primary-and-less-fat;
       &:after {
         content: "";
         /*         border: 1px solid black;
@@ -430,8 +429,8 @@ body {
     }
     p {
       font-family: $font-primary;
-      font-weight: 800;
-      font-size: 3vw;
+      font-weight: 900;
+      font-size: 3.2vw;
       position: relative;
     }
     .menu-button {

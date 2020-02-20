@@ -20,7 +20,7 @@ $transition: all 0.1s ease-in;
   /* border: 1px solid black; */
   font-family: $font-secundary;
   font-size: 28px;
-  font-weight: 400;
+  font-weight: 100;
   position: relative;
   transition: $transition;
   cursor: pointer;
@@ -78,8 +78,8 @@ $transition: all 0.1s ease-in;
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .home-button {
-    width: 85px;
-    height: 85px;
+    width: 71px;
+    height: 71px;
     font-size: 21px;
     &:hover {
       background: black;

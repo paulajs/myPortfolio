@@ -47,6 +47,7 @@
 </template>
 <style lang="scss">
 @import "@/assets/sass/_global.scss";
+@import "@/assets/sass/_mixins.scss";
 
 $transition: all 0.1s ease-in;
 
@@ -63,21 +64,21 @@ $transition: all 0.1s ease-in;
     padding: 2vh 0.55vw;
     background: white;
     h2.result-header {
+      @include font-primary-and-fat;
       grid-column-start: 2;
       grid-column-end: 24;
       grid-row-start: 1;
       grid-row-end: 4;
-      font-family: $font-primary;
       transform: translateY(-184px) translateX(-17.068px);
-      font-size: 8vw;
+      font-size: 7vw;
       color: black;
     }
     .hesehus-result-mockup {
-      grid-row-start: 108;
+      grid-row-start: 107;
       grid-column-start: 1;
     }
     .hesehus-mockup {
-      grid-row-start: 118;
+      grid-row-start: 117;
       grid-column-start: 2;
       grid-column-end: 24;
       align-self: center;

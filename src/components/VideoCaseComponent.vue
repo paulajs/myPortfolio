@@ -8,19 +8,19 @@
 </template>
 <style lang="scss" scoped>
 .section-matas {
-  grid-row-start: 4;
+  grid-row-start: 2;
 }
 .section-fristads {
-  grid-row-start: 25;
+  grid-row-start: 23;
 }
 .section-inspiration {
-  grid-row-start: 46;
+  grid-row-start: 44;
 }
 .section-danoffice {
-  grid-row-start: 67;
+  grid-row-start: 65;
 }
 .section-kunderejse {
-  grid-row-start: 88;
+  grid-row-start: 86;
 }
 .video-section {
   display: grid;

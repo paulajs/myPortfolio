@@ -61,17 +61,18 @@
 </template>
 <style lang="scss">
 @import "@/assets/sass/_global.scss";
+@import "@/assets/sass/_mixins.scss";
 .case-process-hesehus {
   h2 {
-    font-family: $font-primary;
-    font-size: 8vw;
+    @include font-primary-and-fat;
+    font-size: 7vw;
     color: black;
     margin-left: 4.75vw;
     margin-top: 4vh;
   }
   .process-wrapper {
     grid-row-start: 3;
-    font-family: "Source Code Pro", monospace;
+    font-family: $font-secundary;
     display: grid;
     grid-template-rows: repeat(108, 4.94vh);
     grid-row-gap: 1vh;

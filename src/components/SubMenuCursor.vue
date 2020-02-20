@@ -102,7 +102,7 @@
 .cursor:hover + button p,
 button:hover p {
   color: transparent;
-  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: $color-pink;
 }
 .cursor:hover + button p:before,

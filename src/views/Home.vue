@@ -67,7 +67,7 @@
               </li>
             </ul>
           </div>
-          <div class="submenu-indicator" ref="indicator">></div>
+          <div class="submenu-indicator" ref="indicator">+</div>
         </div>
 
         <router-link to="/lab">
@@ -82,7 +82,7 @@
       </div>
     </div>
     <div class="frontpage-label top">Portfolio</div>
-    <img class="mobile-logo" src="@/assets/img/SVG/logo.svg" alt />
+    <img class="mobile-logo" src="@/assets/img/SVG/logo-new.svg" alt />
     <SubMenuCursor
       v-bind:onMouseClick="showSplat"
       v-bind:onMouseOver="mouseOver"
@@ -142,11 +142,11 @@ import MyCursor from "@/components/MyCursor.vue";
 import SoMeMail from "@/components/svg/SoMeMail.vue";
 import SoMeInsta from "@/components/svg/SoMeInsta.vue";
 import SoMePin from "@/components/svg/SoMePin.vue";
-const caseVideoHesehus = require("@/assets/videos/frontpage-entertain/hesehus.mp4");
-const caseVideoNMG = require("@/assets/videos/frontpage-entertain/nmg.mp4");
-const caseVideoSkansing = require("@/assets/videos/frontpage-entertain/skansingit.mp4");
+const caseVideoHesehus = require("@/assets/videos/frontpage-entertain/hesehus1.mp4");
+const caseVideoNMG = require("@/assets/videos/frontpage-entertain/nmg1.mp4");
+const caseVideoSkansing = require("@/assets/videos/frontpage-entertain/skansingit1.mp4");
 const caseVideoContact = require("@/assets/videos/frontpage-entertain/contact.mp4");
-const caseVideoLab = require("@/assets/videos/frontpage-entertain/lab.mp4");
+const caseVideoLab = require("@/assets/videos/frontpage-entertain/lab1.mp4");
 const caseVideoAbout = require("@/assets/videos/frontpage-entertain/about1.mp4");
 const endVideo = require("@/assets/videos/frontpage-entertain/applause.mp4");
 const endVideoMob = require("@/assets/videos/frontpage-entertain/applausemob.mp4");

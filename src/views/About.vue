@@ -117,39 +117,29 @@
       width: 100%;
       margin-top: -3%;
       h1 {
-        font-family: $font-primary;
-        font-size: 16vw;
+        @include font-primary-and-less-fat;
+        font-size: 7.5vw;
         text-align: center;
-        color: white;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: $color-pink;
-        &::after {
-          content: attr(data-text);
-          position: absolute;
-          color: white;
-          -webkit-text-stroke-width: 1px;
-          -webkit-text-stroke-color: #00ffc8;
-          left: 8.5vw;
-          top: -2.2vh;
-        }
+        margin-top: 5vh;
+        color: black;
       }
     }
     .about-text {
       width: 85%;
       font-family: $font-secundary;
+      font-weight: 100;
       position: absolute;
-      top: 22vh;
-      font-size: 1.6vw;
+      top: 28vh;
+      font-size: 1.5vw;
       text-align: center;
       em {
-        background: black;
-        color: white;
+        border-bottom: 1px solid black;
         font-style: normal;
       }
     }
   }
   .about-skills {
-    @include place-in-grid(8, 18, 1, 24);
+    @include place-in-grid(9, 18, 1, 24);
     display: flex;
     flex-direction: row;
     .skill-section {
@@ -159,7 +149,7 @@
         grid-row-start: 1;
         grid-column-start: 2;
         align-self: end;
-        font-family: $font-primary;
+        @include font-primary-and-fat;
         font-size: 3.5em;
         color: black;
       }
@@ -188,7 +178,7 @@
         grid-column-start: 1;
       }
       .skill-header {
-        font-family: $font-primary;
+        @include font-primary-and-fat;
         color: black;
         justify-self: end;
         align-self: center;

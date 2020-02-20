@@ -38,9 +38,9 @@ div {
   }
   .header-adams-ill {
     @include centerX();
-    @include header-style(lowercase);
+    @include header-style(uppercase);
     top: 0;
-    font-size: 1.6vw;
+    font-size: 1.2vw;
     width: 80%;
     background: $color-green-dark;
     border-bottom: 1px solid black;
@@ -121,7 +121,8 @@ div {
     top: 0;
     width: 100%;
     text-align: center;
-    font-size: 1.8vw;
+    font-size: 1.9vw;
+    padding: 0.5vh 0;
     z-index: 3;
   }
   .header-wreck-bottom {
@@ -133,7 +134,7 @@ div {
     bottom: 0;
     width: 100%;
     text-align: center;
-    font-size: 1.8vw;
+    font-size: 1.9vw;
     z-index: 3;
   }
   .misc-background {

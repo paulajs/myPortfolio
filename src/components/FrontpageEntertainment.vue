@@ -1,6 +1,6 @@
 <template>
   <div :class="{'entertain-element': true, 'show-border':isVideoShown}">
-    <img class="page-logo" alt="page logo" src="../assets/img/SVG/logo.svg" v-show="!isVideoShown" />
+    <img class="page-logo" alt="page logo" src="../assets/img/SVG/logo-new.svg" v-show="!isVideoShown" />
     <div v-show="!isVideoShown" id="container">
       <p class="pointsDisplay"></p>
       <canvas id="bubbles-canvas"></canvas>
@@ -510,7 +510,7 @@ export default {
         posX - this.config.scene.displayPoints.offsetX + "px";
       element.style.top = posY - this.config.scene.displayPoints.offsetY + "px";
       element.style.color = "#fff";
-      element.style.webkitTextStroke = "1px #000";
+       element.style.webkitTextStroke = "1px #000";
       element.style.background =
         "url('" + backgrounds[randomNum] + "') no-repeat top left";
 
@@ -585,6 +585,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import "@/assets/sass/_global.scss";
+@import "@/assets/sass/_mixins.scss";
 h3 {
   margin: 40px 0 0;
 }
@@ -638,8 +640,8 @@ a {
   color: #000;
   font-size: 30px;
   padding: 35px 70px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
+  font-family: $font-secundary;
+  font-weight: 900;
   transform: scale(0);
   top: left;
   background-size: cover;

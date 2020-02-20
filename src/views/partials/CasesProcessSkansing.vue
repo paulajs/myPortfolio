@@ -46,8 +46,8 @@
 @import "@/assets/sass/_mixins.scss";
 
 .case-process-skansing h2 {
-  font-family: $font-primary;
-  font-size: 150px;
+  @include font-primary-and-fat;
+  font-size: 7vw;
   color: black;
   margin-left: 4.75vw;
   margin-top: 4vh;

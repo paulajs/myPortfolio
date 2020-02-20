@@ -37,7 +37,7 @@
     grid-row-start: 1;
     grid-row-end: 8;
     font-size: 8vw;
-    font-family: $font-primary;
+    @include font-primary-and-less-fat;
     color: black;
     margin-left: -0.067em;
     align-self: end;
@@ -61,6 +61,7 @@
       grid-row-start: 1;
       grid-row-end: 8;
       font-size: 15vw;
+      @include font-primary-and-less-fat;
       margin-bottom: -4vh;
     }
     h2 {
@@ -69,6 +70,7 @@
       grid-row-start: 12;
       font-size: 4.7vw;
     }
+
   }
   .case-audio-wrap{
     .misc-header {

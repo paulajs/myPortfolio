@@ -35,6 +35,8 @@
 </template>
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
+@import "@/assets/sass/_mixins.scss";
+
 .cases-result-skansing {
   display: flex;
   flex-direction: column;
@@ -45,7 +47,7 @@
   }
   .display-results {
     display: grid;
-    grid-template-rows: repeat(5, 4.94vh);
+    grid-template-rows: repeat(4, 4.94vh);
     grid-row-gap: 1vh;
     grid-template-columns: repeat(24, 3.125vw);
     grid-column-gap: 1vw;
@@ -55,8 +57,8 @@
       grid-column-end: 24;
       grid-row-start: 1;
       grid-row-end: 4;
-      font-family: $font-primary;
-      font-size: 150px;
+      @include font-primary-and-fat;
+      font-size: 7vw;
       color: black;
     }
   }

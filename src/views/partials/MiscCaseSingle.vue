@@ -61,7 +61,7 @@ div {
     border-bottom: 1px solid black;
     h2 {
       @include header-style(uppercase);
-      font-size: 4vw;
+      font-size: 4.2vw;
     }
   }
   .misc-background {
@@ -93,7 +93,7 @@ div {
     left: 2vw;
     font-size: 2.4vw;
     width: 50%;
-    line-height: 4.6vw;
+    line-height: 4.3vw;
   }
   .misc-background {
     background: black;

@@ -27,6 +27,13 @@ $transition: all 0.1s ease-in;
 .case-nmg div h1 {
   font-size: 10vw;
 }
+.case-skansing {
+  .above-the-fold {
+    h1 {
+      font-size: 10.7vw;
+    }
+  }
+}
 .above-the-fold {
   @include create-grid(17, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
@@ -40,7 +47,7 @@ $transition: all 0.1s ease-in;
   h1 {
     @include place-in-grid(1, 8, 2, 23);
     font-size: 12.5vw;
-    font-family: $font-primary;
+    @include font-primary-and-less-fat;
     color: black;
     margin-left: -0.067em;
     align-self: end;
@@ -53,7 +60,7 @@ $transition: all 0.1s ease-in;
     grid-row-start: 8;
     align-self: end;
     font-family: $font-secundary;
-    font-size: 1.5vw;
+    font-size: 1.6vw;
     font-weight: 400;
     color: black;
   }
@@ -61,15 +68,19 @@ $transition: all 0.1s ease-in;
   .info-box {
     grid-row-start: 11;
     display: grid;
+    grid-row-end: 13;
+    grid-row-gap: 2.4vh;
     grid-template-columns: repeat(8, 3.125vw);
     grid-column-gap: 1vw;
+    grid-template-rows: repeat(2, 50%);
     h3 {
-      grid-column-start: 1;
-      grid-column-end: 1;
-      writing-mode: vertical-lr;
-      justify-self: end;
-      font-family: $font-primary;
-      font-size: 2.2vh;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      justify-self: auto;
+      @include font-primary-and-less-fat;
+      font-size: 3.8vh;
+      color: black;
     }
     p {
       grid-column-start: 2;
@@ -112,6 +123,12 @@ $transition: all 0.1s ease-in;
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .case-nmg {
+    div {
+      h1 {
+        font-size: 12vw;
+      }
+    }
+
     .above-the-fold {
       .info-thoughts {
         grid-row-start: 25;
@@ -122,7 +139,7 @@ $transition: all 0.1s ease-in;
     .above-the-fold {
       grid-template-rows: repeat(33, 4.94vh);
       h1 {
-        font-size: 14.5vw;
+        font-size: 16.5vw;
       }
       .info-about {
         grid-row-end: 14;
@@ -142,7 +159,7 @@ $transition: all 0.1s ease-in;
     h1 {
       grid-row-start: 1;
       grid-row-end: 6;
-      font-size: 16.5vw;
+      font-size: 20.5vw;
     }
     h2 {
       grid-column-start: 2;

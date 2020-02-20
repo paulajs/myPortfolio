@@ -64,6 +64,7 @@
 </template>
 <style lang="scss">
 @import "@/assets/sass/_global.scss";
+@import "@/assets/sass/_mixins.scss";
 
 $transition: all 0.1s ease-in;
 
@@ -74,7 +75,7 @@ $transition: all 0.1s ease-in;
 
   .display-results {
     display: grid;
-    grid-template-rows: repeat(101, 4.94vh);
+    grid-template-rows: repeat(103, 4.94vh);
     grid-row-gap: 1vh;
     grid-template-columns: repeat(24, 3.125vw);
     grid-column-gap: 1vw;
@@ -95,16 +96,16 @@ $transition: all 0.1s ease-in;
       h2 {
         grid-column-start: 2;
         grid-column-end: 24;
-        font-family: $font-primary;
+        @include font-primary-and-fat;
         color: white;
-        font-size: 87px;
+        font-size: 6vw;
         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: black;
       }
       .postits {
         grid-column-start: 2;
         grid-column-end: 24;
-        grid-row-start: 4;
+        grid-row-start: 5;
         grid-row-end: 10;
         display: flex;
         flex-direction: row;
@@ -119,14 +120,13 @@ $transition: all 0.1s ease-in;
       grid-column-end: 24;
       grid-row-start: 15;
       grid-row-end: 16;
-      font-family: $font-primary;
-      color: white;
-      font-size: 8vw;
-      color: rgb(27, 25, 25);
+      @include font-primary-and-less-fat;
+      font-size: 6vw;
+      color: black;
     }
     .nmg-result-para {
       font-family: $font-secundary;
-      grid-row-start: 19;
+      grid-row-start: 18;
       grid-column-start: 2;
       grid-column-end: 14;
     }

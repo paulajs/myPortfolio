@@ -16,9 +16,9 @@
 }
 
 @mixin header-style($text-style) {
-  font-family: $font-primary;
+  font-family: $font-secundary;
   color: white;
-  font-weight: 700;
+  font-weight: 900;
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   text-transform: $text-style;
@@ -52,4 +52,14 @@
 @mixin misc-background($direction,$percent-first, $percent-second, $opacity) {
   background: linear-gradient(to $direction, $color-pink-light $percent-first, $color-green $percent-second);
   opacity: $opacity;
+}
+
+@mixin font-primary-and-fat{
+  font-family: $font-primary;
+  font-weight: 900;
+}
+
+@mixin font-primary-and-less-fat{
+  font-family: $font-primary;
+  font-weight: 800;
 }

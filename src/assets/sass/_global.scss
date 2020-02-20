@@ -1,4 +1,5 @@
-$font-primary: "Poppins", sans-serif;  
+/* $font-primary: "Poppins", sans-serif;  */
+$font-primary: 'Playfair Display', serif;  
 $font-secundary: "Source Code Pro", monospace;
 $font-test: 'Playfair Display', serif;
 $font-test2: 'Abril Fatface', serif;
@@ -41,6 +42,8 @@ $gradient: linear-gradient(#ff90ff, #00ffc8);
   0% {
     margin-top: 0;
     margin-left: 0;
+    -webkit-text-stroke-color: $color-green;
+    -webkit-text-stroke-width: 1px;
   }
   10% {
     margin-top: 1px;

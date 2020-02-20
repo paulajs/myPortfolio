@@ -1,7 +1,7 @@
 <template>
   <div class="case-skansing">
     <CasesAboveTheFold
-    caseTitle="Skansing IT"
+    caseTitle="Skansing it"
     description="Visual Identity &amp; website"
     aboutText="Independent hacker searching for vulnerabilities in web applications."
     challangeText="Create a visual identity and a website to promote and explain the hacking services available. "

@@ -49,9 +49,11 @@
 </template>
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
+@import "@/assets/sass/_mixins.scss";
+
 .case-process-NMG h2 {
-  font-family: $font-primary;
-  font-size: 8vw;
+  @include font-primary-and-less-fat;
+  font-size: 7vw;
   color: black;
   margin-left: 4.75vw;
   margin-top: 14vh;

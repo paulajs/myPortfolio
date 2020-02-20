@@ -1,6 +1,6 @@
 <template>
   <div class="misc">
-   <!--  <video class="mobile-videos" v-on:ended="videoEnd" muted autoplay src="@/assets/videos/frontpage-entertain/lab-mobile.mp4" ref="mobilevid"></video> -->
+    <!--  <video class="mobile-videos" v-on:ended="videoEnd" muted autoplay src="@/assets/videos/frontpage-entertain/lab-mobile.mp4" ref="mobilevid"></video> -->
     <div class="misc-header">
       <h1>Laboratory</h1>
       <router-link class="misc-home-button" to="/">
@@ -109,23 +109,15 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
- .misc{
-   animation: page-opacity 0.6s ease forwards;
- }
-/*  @keyframes page-opacity {
-   0%{
-     opacity: 0;
-   }
-   100%{
-     opacity: 1;
-   }
- } */
+.misc {
+  animation: page-opacity 0.6s ease forwards;
+}
 .misc-header {
   @include create-grid(4, 9.94vh, 12, 7.01vw, 1vh, 1vw);
   margin: 2vh 2vw 9vh 2vw;
   align-items: center;
   h1 {
-    font-family: $font-primary;
+    @include font-primary-and-less-fat;
     font-size: 8.6vw;
     width: 100%;
     color: black;
@@ -179,8 +171,7 @@
   z-index: 100000;
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
-
- .misc-grid {
+  .misc-grid {
     grid-template-columns: repeat(4, 22.54vw);
     grid-template-rows: repeat(45, 11.94vh);
     grid-column-gap: 2vw;
@@ -192,7 +183,9 @@
     }
     .misc-header {
       h1 {
-        font-size: 11.6vw;
+        font-size: 16.6vw;
+        grid-row-start: 2;
+        grid-column-end: 13;
       }
       .misc-description {
         p {
@@ -200,9 +193,12 @@
         }
       }
     }
+    .misc-home-button {
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
   }
 }
-
 </style>
 
 <script>
@@ -248,7 +244,7 @@ export default {
       case_horror_component: "MiscCaseHorrorSVG",
       case_wreck_component: "MiscCaseWreckageSVG"
     };
-  },
+  }
 };
 </script>
 
