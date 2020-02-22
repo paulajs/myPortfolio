@@ -123,6 +123,9 @@ $transition: all 0.1s ease-in;
         grid-column-start: 1;
         grid-column-end: 25;
       }
+      .section-matas{
+        grid-row-start: 5;
+      }
       .section-fristads {
         grid-row-start: 15;
       }

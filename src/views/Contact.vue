@@ -45,10 +45,9 @@
     align-items: center;
     margin-top: -6vh;
     h1 {
-      font-family: $font-primary;
-      font-size: 3.3em;
+      @include font-primary-and-less-fat;
+      font-size: 4em;
       color: black;
-      font-weight: 700;
       justify-self: start;
     }
     .home-button {

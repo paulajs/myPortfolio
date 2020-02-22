@@ -99,8 +99,8 @@ $transition: all 0.1s ease-in;
         @include font-primary-and-fat;
         color: white;
         font-size: 6vw;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: black;
+/*         -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black; */
       }
       .postits {
         grid-column-start: 2;

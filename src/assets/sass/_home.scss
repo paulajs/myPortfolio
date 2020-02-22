@@ -614,6 +614,9 @@ button.menu-button:focus {
 }
 @media (min-aspect-ratio: 18/9) and (max-aspect-ratio: 21/9) {
   .home {
+    .page-logo{
+      width: 60%;
+    }
     .entertain-element {
       .case-videos {
         width: 100%;
