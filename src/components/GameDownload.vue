@@ -98,9 +98,6 @@
 }
 
 #wreck-linux {
-  grid-column-start: 17;
-  grid-column-end: 23;
-  background: $color-pink-light;
   .os-logo {
     @include centerX();
     top: 40%;
@@ -124,27 +121,6 @@
   }
 }
 #space-mac {
-  grid-column-start: 10;
-  grid-column-end: 16;
-  background: $color-green;
-  &:hover {
-    cursor: pointer;
-  }
-  &:hover .space-background {
-    background: linear-gradient(top, $color-pink-light -50%, $color-green 190%);
-    opacity: 0.8;
-    transition: all 0.3s ease;
-  }
-  .space-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    opacity: 1;
-    transition: all 0.3s ease;
-  }
   .top-text {
     background: $color-green-dark;
   }
@@ -152,27 +128,7 @@
     background: $color-pink;
   }
 }
-#space-linux {
-  grid-column-start: 17;
-  grid-column-end: 23;
-  background: $color-pink-light;
-}
-#space-win {
-  grid-column-start: 3;
-  grid-column-end: 9;
-  background: $color-pink;
-  .os-logo {
-    @include centerX();
-    top: 30%;
-    width: 0%;
-    transition: all 0.4s ease;
-  }
-  &:hover .os-logo {
-    width: 24%;
-    top: 70%;
-    transition: all 0.4s ease;
-  }
-}
+
 .space-stars {
   position: absolute;
   height: 62%;

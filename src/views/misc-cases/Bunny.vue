@@ -47,7 +47,9 @@
         alt="game screen shot"
       />
       <div class="button-platform">
-        <ButtonVisitPage />
+        <a href="/games/bunnyPlatformer/index.html" target="_blank">
+          <ButtonVisitPage />
+        </a>
       </div>
 
       <CaseTextSection
@@ -61,7 +63,9 @@
       <img class="runner-img1" src="@/assets/img/bunny/bunnyrunner.jpg" alt="game screen shot" />
       <img class="runner-img2" src="@/assets/img/bunny/bunnyrunner1.jpg" alt="game screen shot" />
       <div class="button-runner">
-        <ButtonVisitPage />
+        <a href="/games/BunnyrunnerUpgrade/index.html" target="_blank">
+          <ButtonVisitPage />
+        </a>
       </div>
       <CaseTextSection
         sectionClass="case-text-section misc-bunny-fall"
@@ -74,7 +78,9 @@
       <img class="fall-img1" src="@/assets/img/bunny/bunnyfall.jpg" alt="game screen shot" />
       <img class="fall-img2" src="@/assets/img/bunny/bunnyfall1.jpg" alt="game screen shot" />
       <div class="button-fall">
-        <ButtonVisitPage />
+        <a href="/gamesBunnyfallUpgrade/index.html" target="_blank">
+          <ButtonVisitPage />
+        </a>
       </div>
     </div>
   </div>
@@ -82,7 +88,7 @@
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 @import "@/assets/sass/_mixins.scss";
-.case-bunny-wrap{
+.case-bunny-wrap {
   animation: page-opacity 0.6s ease forwards;
 }
 .bunny-case {

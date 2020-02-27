@@ -37,30 +37,21 @@
         it is now depricated. The game can be downloaded for windows, mac or linux here, or just watch the video below."
       />
       <video class="kittytoss-video" controls src="@/assets/img/wreckage/kittytoss.mp4"></video>
-      <GameDownload
-        downloadClass="wreck-download"
-        downloadID="wreck-win"
-        operatingSystem="Windows"
-        :logoImg="getWinLogo()"
-      >
-        <component :is="paw_component"></component>
-      </GameDownload>
-      <GameDownload
-        downloadClass="wreck-download"
-        downloadID="wreck-mac"
-        operatingSystem="Mac"
-        :logoImg="getMacLogo()"
-      >
-        <component :is="paw_component"></component>
-      </GameDownload>
-      <GameDownload
-        downloadClass="wreck-download"
-        downloadID="wreck-linux"
-        operatingSystem="Linux"
-        :logoImg="getLinuxLogo()"
-      >
-        <component :is="paw_component"></component>
-      </GameDownload>
+      <a href="/UnityGames3D/wreckage.zip" class="wreck-download" id="wreck-win">
+        <GameDownload downloadClass downloadID operatingSystem="Windows" :logoImg="getWinLogo()">
+          <component :is="paw_component"></component>
+        </GameDownload>
+      </a>
+      <a href="/UnityGames3D/wreckage.zip" class="wreck-download" id="wreck-mac">
+        <GameDownload downloadClass downloadID operatingSystem="Mac" :logoImg="getMacLogo()">
+          <component :is="paw_component"></component>
+        </GameDownload>
+      </a>
+      <a href="/UnityGames3D/wreckage.zip" class="wreck-download" id="wreck-linux">
+        <GameDownload downloadClass downloadID operatingSystem="Linux" :logoImg="getLinuxLogo()">
+          <component :is="paw_component"></component>
+        </GameDownload>
+      </a>
     </div>
   </div>
 </template>
@@ -117,6 +108,111 @@
       cursor: pointer;
     }
   }
+
+  .wreck-download {
+    grid-row-start: 64;
+    grid-row-end: 76;
+    width: 100%;
+    border: 1px solid black;
+    position: relative;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+    }
+
+    .space-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        -45deg,
+        $color-pink-light -70%,
+        $color-green 120%
+      );
+      opacity: 0.6;
+      transition: all 0.2s ease;
+    }
+
+    .top-text {
+      @include header-style(lowercase);
+      background: $color-pink;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      font-size: 1.8vw;
+      padding: 1vh 0;
+      border-bottom: 1px solid black;
+    }
+    .download-choice-text {
+      @include header-style(uppercase);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      font-size: 3vw;
+      text-align: center;
+      background: $color-green-dark;
+      border-top: 1px solid black;
+      z-index: 10;
+    }
+  }
+  #wreck-win {
+    grid-column-start: 3;
+    grid-column-end: 9;
+    background: $color-pink;
+    overflow: hidden;
+    .os-logo {
+      @include centerX();
+      top: 40%;
+      width: 60%;
+      transition: all 0.4s ease;
+      opacity: 0.8;
+    }
+    &:hover .os-logo {
+      animation: logo-anim 0.2s ease-in forwards;
+      animation-delay: 0.48s;
+    }
+  }
+  #wreck-mac {
+    grid-column-start: 10;
+    grid-column-end: 16;
+    background: $color-green;
+    .top-text {
+      background: $color-green-dark;
+    }
+    .download-choice-text {
+      background: $color-pink;
+    }
+    .os-logo {
+      @include centerX();
+      top: 38%;
+      width: 53%;
+      transition: all 0.4s ease;
+      opacity: 0.8;
+    }
+    &:hover .os-logo {
+      animation: logo-anim 0.2s ease-in forwards;
+      animation-delay: 0.48s;
+    }
+  }
+
+  #wreck-linux {
+    grid-column-start: 17;
+    grid-column-end: 23;
+    background: $color-pink-light;
+    .os-logo {
+      @include centerX();
+      top: 40%;
+      width: 46%;
+      transition: all 0.4s ease;
+      opacity: 0.8;
+    }
+    &:hover .os-logo {
+      animation: logo-anim 0.2s ease-in forwards;
+      animation-delay: 0.48s;
+    }
+  }
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .wreck-case {
@@ -171,6 +267,24 @@
       grid-row-end: 60;
       grid-column-start: 2;
       grid-column-end: 24;
+    }
+    #wreck-win {
+      grid-column-start: 2;
+      grid-column-end: 24;
+      grid-row-start: 65;
+      grid-row-end: 78;
+    }
+    #wreck-mac {
+      grid-column-start: 2;
+      grid-column-end: 24;
+      grid-row-start: 80;
+      grid-row-end: 93;
+    }
+    #wreck-linux {
+      grid-column-start: 2;
+      grid-column-end: 24;
+      grid-row-start: 95;
+      grid-row-end: 108;
     }
   }
 }

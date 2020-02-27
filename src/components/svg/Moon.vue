@@ -37,7 +37,7 @@
 #moon {
   position: absolute;
   width: 100%;
-  bottom: 4vw;
+  bottom: 3vw;
   left: 0;
   z-index: 10;
 }

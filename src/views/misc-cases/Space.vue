@@ -70,30 +70,36 @@
         poster="@/assets/videos/space-kitty/spacekitty-poster.jpg"
         src="@/assets/videos/space-kitty/spacekitty.mp4"
       ></video>
-      <GameDownload
-        downloadClass="space-download"
-        downloadID="space-win"
-        operatingSystem="Windows"
-        :logoImg="getWinLogo()"
+      <a
+        href="/UnityGames3D/KittyGift/kittygift/spacekittyinthecityWindows.zip"
+        class="space-download"
+        id="space-win"
+        target="_blank"
       >
-        <component :is="spaceship_component"></component>
-      </GameDownload>
-      <GameDownload
-        downloadClass="space-download"
-        downloadID="space-mac"
-        operatingSystem="Mac"
-        :logoImg="getMacLogo()"
+        <GameDownload downloadClass downloadID operatingSystem="Windows" :logoImg="getWinLogo()">
+          <component :is="spaceship_component"></component>
+        </GameDownload>
+      </a>
+      <a
+        href="/UnityGames3D/KittyGift/kittygift/spacekittyinthecityMac.zip"
+        class="space-download"
+        id="space-mac"
+        target="_blank"
       >
-        <component :is="spaceship_component"></component>
-      </GameDownload>
-      <GameDownload
-        downloadClass="space-download"
-        downloadID="space-linux"
-        operatingSystem="Linux"
-        :logoImg="getLinuxLogo()"
+        <GameDownload downloadClass downloadID operatingSystem="Mac" :logoImg="getMacLogo()">
+          <component :is="spaceship_component"></component>
+        </GameDownload>
+      </a>
+      <a
+        href="/UnityGames3D/KittyGift/kittygift/spacekittyinthecityLinux.zip"
+        class="space-download"
+        id="space-linux"
+        target="_blank"
       >
-        <component :is="spaceship_component"></component>
-      </GameDownload>
+        <GameDownload downloadClass downloadID operatingSystem="Linux" :logoImg="getLinuxLogo()">
+          <component :is="spaceship_component"></component>
+        </GameDownload>
+      </a>
     </div>
   </div>
 </template>
@@ -155,6 +161,122 @@
   .result-img4 {
     @include place-in-grid(39, 46, 13, 24);
   }
+  .space-download {
+    grid-row-start: 71;
+    grid-row-end: 83;
+    width: 100%;
+    border: 1px solid black;
+    position: relative;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover .space-background {
+      background: linear-gradient(
+        -45deg,
+        $color-pink-light -70%,
+        $color-green 120%
+      );
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+    .os-logo {
+      @include centerX();
+      top: 30%;
+      width: 0%;
+      transition: all 0.4s ease;
+    }
+    &:hover .os-logo {
+      top: 70%;
+      width: 20%;
+      transition: all 0.4s ease;
+    }
+    .space-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+    .top-text {
+      @include header-style(lowercase);
+      background: $color-pink;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      font-size: 1.8vw;
+      padding: 1vh 0;
+      border-bottom: 1px solid black;
+    }
+    .download-choice-text {
+      @include header-style(uppercase);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      font-size: 3vw;
+      text-align: center;
+      background: $color-green-dark;
+      border-top: 1px solid black;
+      z-index: 10;
+    }
+  }
+  #space-win {
+    grid-column-start: 3;
+    grid-column-end: 9;
+    background: $color-pink;
+    .os-logo {
+      @include centerX();
+      top: 30%;
+      width: 0%;
+      transition: all 0.4s ease;
+    }
+    &:hover .os-logo {
+      width: 24%;
+      top: 70%;
+      transition: all 0.4s ease;
+    }
+  }
+  #space-mac {
+    grid-column-start: 10;
+    grid-column-end: 16;
+    background: $color-green;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover .space-background {
+      background: linear-gradient(
+        top,
+        $color-pink-light -50%,
+        $color-green 190%
+      );
+      opacity: 0.8;
+      transition: all 0.3s ease;
+    }
+    .space-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 1;
+      transition: all 0.3s ease;
+    }
+    .top-text {
+      background: $color-green-dark;
+    }
+    .download-choice-text {
+      background: $color-pink;
+    }
+  }
+  #space-linux {
+    grid-column-start: 17;
+    grid-column-end: 23;
+    background: $color-pink-light;
+  }
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .space-case {
@@ -197,6 +319,24 @@
       grid-row-end: 75;
       grid-column-start: 2;
       grid-column-end: 24;
+    }
+    #space-win {
+      grid-column-start: 2;
+      grid-column-end: 24;
+      grid-row-start: 80;
+      grid-row-end: 93;
+    }
+    #space-mac {
+      grid-column-start: 2;
+      grid-column-end: 24;
+      grid-row-start: 95;
+      grid-row-end: 108;
+    }
+    #space-linux {
+      grid-column-start: 2;
+      grid-column-end: 24;
+      grid-row-start: 110;
+      grid-row-end: 123;
     }
   }
 }

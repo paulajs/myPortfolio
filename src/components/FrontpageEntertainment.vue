@@ -1,6 +1,6 @@
 <template>
   <div :class="{'entertain-element': true, 'show-border':isVideoShown}">
-    <img class="page-logo" alt="page logo" src="../assets/img/SVG/logo-new.svg" v-show="!isVideoShown" />
+    <img class="page-logo" alt="page logo" src="../assets/img/SVG/logo-new1.svg" v-show="!isVideoShown" />
     <div v-show="!isVideoShown" id="container">
       <p class="pointsDisplay"></p>
       <canvas id="bubbles-canvas"></canvas>
@@ -603,7 +603,7 @@ a {
 }
 
 .page-logo {
-  width: 70%;
+  width: 67%;
   position: absolute;
   top: 50%;
   left: 50%;

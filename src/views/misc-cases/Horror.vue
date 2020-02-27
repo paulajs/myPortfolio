@@ -75,30 +75,35 @@
         poster="../../assets/videos/horror/horror2.jpg"
         src="../../assets/videos/horror/horror.mp4"
       ></video>
-      <GameDownload
-        downloadClass="horror-download"
-        downloadID="horror-win"
-        operatingSystem="Windows"
-        :logoImg="getWinLogo()"
+      <a
+        href="/UnityGames3D/HorrorGift/horrorgift/horrorWindows.zip"
+        class="horror-download"
+        id="horror-win"
+        target="_blank"
       >
-        <component :is="moon_component"></component>
-      </GameDownload>
-      <GameDownload
-        downloadClass="horror-download"
-        downloadID="horror-mac"
-        operatingSystem="Mac"
-        :logoImg="getMacLogo()"
+        <GameDownload downloadClass downloadID operatingSystem="Windows" :logoImg="getWinLogo()">
+          <component :is="moon_component"></component>
+        </GameDownload>
+      </a>
+      <a
+        href="/UnityGames3D/HorrorGift/horrorgift/horrorMac.zip"
+        class="horror-download"
+        id="horror-mac"
+        target="_blank"
       >
-        <component :is="moon_component"></component>
-      </GameDownload>
-      <GameDownload
-        downloadClass="horror-download"
-        downloadID="horror-linux"
-        operatingSystem="Linux"
-        :logoImg="getLinuxLogo()"
+        <GameDownload downloadClass downloadID operatingSystem="Mac" :logoImg="getMacLogo()">
+          <component :is="moon_component"></component>
+        </GameDownload>
+      </a>
+      <a
+        href="/UnityGames3D/HorrorGift/horrorgift/horrorLinux.zip"
+        class="horror-download"
+        id="horror-linux"
       >
-        <component :is="moon_component"></component>
-      </GameDownload>
+        <GameDownload downloadClass downloadID operatingSystem="Linux" :logoImg="getLinuxLogo()">
+          <component :is="moon_component"></component>
+        </GameDownload>
+      </a>
     </div>
   </div>
 </template>
@@ -160,6 +165,109 @@
   .result-img4 {
     @include place-in-grid(38, 45, 13, 24);
   }
+  .horror-download {
+    grid-row-start: 70;
+    grid-row-end: 82;
+    width: 100%;
+    border: 1px solid black;
+    position: relative;
+    text-decoration: none;
+    &:hover {
+      cursor: pointer;
+    }
+    .os-logo {
+      @include centerX();
+      top: 70%;
+      width: 20%;
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+    &:hover .os-logo {
+      opacity: 1;
+      transition: all 0.4s ease;
+    }
+    &:hover .space-background {
+      opacity: 0.8;
+      transition: all 0.4s ease-out;
+    }
+
+    .space-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        -45deg,
+        $color-pink-light -70%,
+        $color-green 120%
+      );
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    .top-text {
+      @include header-style(lowercase);
+      background: $color-pink;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      font-size: 1.8vw;
+      padding: 1vh 0;
+      border-bottom: 1px solid black;
+    }
+    .download-choice-text {
+      @include header-style(uppercase);
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      font-size: 3vw;
+      text-align: center;
+      background: $color-green-dark;
+      border-top: 1px solid black;
+      z-index: 10;
+    }
+  }
+  #horror-win {
+    grid-column-start: 3;
+    grid-column-end: 9;
+    background: black;
+    &:hover {
+      background: $color-pink;
+      transition: all 0.7s ease;
+    }
+  }
+  #horror-mac {
+    grid-column-start: 10;
+    grid-column-end: 16;
+    background: black;
+    &:hover {
+      background: $color-pink;
+      transition: all 0.7s ease;
+    }
+    .space-background {
+      opacity: 0;
+    }
+    &:hover .space-background {
+      opacity: 0.5;
+      transition: all 0.4s ease-out;
+    }
+  }
+  #horror-linux {
+    grid-column-start: 17;
+    grid-column-end: 23;
+    background: black;
+    &:hover {
+      background: $color-pink;
+      transition: all 0.7s ease;
+    }
+    .space-background {
+      opacity: 0;
+    }
+    &:hover .space-background {
+      opacity: 0.7;
+      transition: all 0.4s ease-out;
+    }
+  }
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .horror-case {
@@ -202,6 +310,24 @@
       grid-row-end: 74;
       grid-column-start: 2;
       grid-column-end: 24;
+    }
+    #horror-win {
+      grid-column-start: 2;
+      grid-column-end: 24;
+      grid-row-start: 79;
+      grid-row-end: 92;
+    }
+    #horror-mac {
+      grid-column-start: 2;
+      grid-column-end: 24;
+      grid-row-start: 94;
+      grid-row-end: 107;
+    }
+    #horror-linux {
+      grid-column-start: 2;
+      grid-column-end: 24;
+      grid-row-start: 109;
+      grid-row-end: 122;
     }
   }
 }

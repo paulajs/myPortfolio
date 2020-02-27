@@ -1,6 +1,8 @@
 <template>
   <div class="cases-result-skansing">
-    <ButtonVisitPage />
+    <a href="https://skansing.dk/" target=”_blank”>
+      <ButtonVisitPage />
+    </a>
     <div class="display-results">
       <h2 class="result-header">Mockups</h2>
     </div>

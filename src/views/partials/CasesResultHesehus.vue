@@ -1,6 +1,8 @@
 <template>
   <div class="cases-result-hesehus">
-    <ButtonVisitPage />
+    <a href="/hesehus/index.html" target=”_blank”>
+      <ButtonVisitPage />
+    </a>
     <div class="display-results">
       <h2 class="result-header">Videos</h2>
       <VideoCaseComponent
