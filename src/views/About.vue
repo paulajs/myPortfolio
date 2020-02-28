@@ -74,14 +74,14 @@
         <div class="skill-subset subset-contact">
           <ul>
             <li>
-              <a href="/">
+              <a href="mailto:paulajoannasobczak@gmail.com">
                 <SoMeIcon>
                   <component :is="icon_mail_component"></component>
                 </SoMeIcon>
               </a>
             </li>
             <li>
-              <a href="/">
+              <a href="https://www.linkedin.com/in/paulajoannasobczak/" target="_blank">
                 <SoMeIcon>
                   <component :is="icon_linked_component"></component>
                 </SoMeIcon>
@@ -271,7 +271,8 @@
       flex-direction: column;
       .skill-section {
         width: 100%;
-        grid-template-rows: repeat(3, 14vh);
+        grid-template-rows: repeat(3, 23vh);
+        grid-template-columns: 35% 65%;
         grid-row-gap: 15%;
         grid-column-gap: 5%;
         margin-bottom: 20vh;
@@ -291,7 +292,7 @@
         .subset-contact {
           ul {
             li {
-              width: 45%;
+              width: 38%;
               a {
                 .icon-some {
                   width: 18vw;

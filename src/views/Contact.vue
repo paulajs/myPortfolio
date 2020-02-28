@@ -7,7 +7,7 @@
       </router-link>
     </div>
     <div class="contact-links">
-      <a href="/" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
+      <a href="https://www.linkedin.com/in/paulajoannasobczak/" target="_blank" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
         <SoMeIcon>
           <component :is="icon_linked_component"></component>
         </SoMeIcon>
@@ -17,7 +17,7 @@
           <component :is="icon_mail_component"></component>
         </SoMeIcon>
       </a>
-      <a href="/" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
+      <a href="https://www.pinterest.dk/paulajoannasobc/" target="_blank" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
         <SoMeIcon>
           <component :is="icon_pin_component"></component>
         </SoMeIcon>

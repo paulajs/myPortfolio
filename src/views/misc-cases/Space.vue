@@ -64,12 +64,17 @@
         The game can be downloaded for windows, mac or linux here,
         or just watch the video below."
       />
-      <video
-        controls
-        class="space-video"
-        poster="@/assets/videos/space-kitty/spacekitty-poster.jpg"
-        src="@/assets/videos/space-kitty/spacekitty.mp4"
-      ></video>
+      <div class="video-wrapper">
+        <PlayButton v-bind:isVisible="isVisible" />
+        <video
+          controls
+          class="space-video"
+          poster="@/assets/videos/space-kitty/spacekitty-poster.jpg"
+          src="@/assets/videos/space-kitty/spacekitty.mp4"
+          v-on:click="isVideoPlaying"
+        ></video>
+      </div>
+
       <a
         href="/UnityGames3D/KittyGift/kittygift/spacekittyinthecityWindows.zip"
         class="space-download"
@@ -122,15 +127,25 @@
   grid-row-start: 51;
   grid-column-start: 1;
 }
-.space-video {
-  width: 100%;
-  @include place-in-grid(55, 63, 5, 21);
-  border: 2px solid black;
-  &:hover {
-    box-shadow: 26px 28px 14px #b6b6b6;
-    cursor: pointer;
+.video-wrapper {
+  @include place-in-grid(55, 67, 5, 21);
+  position: relative;
+  .play-button {
+    position: absolute;
+    width: 9vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .space-video {
+    width: 100%;
+    &:hover {
+      box-shadow: 26px 28px 14px #b6b6b6;
+      cursor: pointer;
+    }
   }
 }
+
 .space-case {
   @include create-grid(85, 4.94vh, 24, 3.125vw, 1vh, 1vw);
   margin: 2vh 1vw;
@@ -314,12 +329,13 @@
     .misc-space-try {
       grid-row-start: 65;
     }
-    .space-video {
+    .video-wrapper {
       grid-row-start: 72;
       grid-row-end: 75;
       grid-column-start: 2;
       grid-column-end: 24;
     }
+
     #space-win {
       grid-column-start: 2;
       grid-column-end: 24;
@@ -345,6 +361,7 @@
 import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
 import GameDownload from "@/components/GameDownload.vue";
+import PlayButton from "@/components/svg/PlayButton.vue";
 
 import SpaceShip from "@/components/svg/SpaceShip.vue";
 
@@ -354,21 +371,30 @@ const linuxLogo = require("@/assets/img/space-kitty/linux.svg");
 
 export default {
   name: "SpaceKitty",
+  data() {
+    return {
+      spaceship_component: "SpaceShip",
+      isVisible: false
+    };
+  },
   components: {
     MiscCaseHeader,
     CaseTextSection,
     GameDownload,
-    SpaceShip
+    SpaceShip,
+    PlayButton
   },
   methods: {
     getWinLogo: () => winLogo,
     getMacLogo: () => macLogo,
-    getLinuxLogo: () => linuxLogo
-  },
-  data() {
-    return {
-      spaceship_component: "SpaceShip"
-    };
+    getLinuxLogo: () => linuxLogo,
+    isVideoPlaying(e) {
+      if (e.target.paused) {
+        this.isVisible = true;
+      } else {
+        this.isVisible = false;
+      }
+    }
   }
 };
 </script>

@@ -158,6 +158,7 @@ import VideoCaseComponent from "@/components/VideoCaseComponent.vue";
 import ButtonVisitPage from "@/components/ButtonVisitPage.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
 
+
 const matasVideo = require("@/assets/videos/hesehus/Matas1.mp4");
 const matasPoster = require("@/assets/videos/hesehus/Matas1.png");
 const fristadsVideo = require("@/assets/videos/hesehus/Fristads-kansas1.mp4");

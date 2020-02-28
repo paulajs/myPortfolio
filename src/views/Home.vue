@@ -89,7 +89,7 @@
       v-bind:onMouseOut="hideVideo"
     />
     <div class="menu menu-some" data-case="some">
-      <a href="/" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
+      <a href="https://www.linkedin.com/in/paulajoannasobczak/" target="_blank" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
         <SoMeIcon>
           <component :is="icon_linked_component"></component>
         </SoMeIcon>
@@ -99,7 +99,7 @@
           <component :is="icon_mail_component"></component>
         </SoMeIcon>
       </a>
-      <a href="https://www.pinterest.dk/paulajoannasobc/" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
+      <a href="https://www.pinterest.dk/paulajoannasobc/" target="_blank" @mouseover="mouseOverSoMe" @mouseout="onMouseOutSoMe">
         <SoMeIcon>
           <component :is="icon_pin_component"></component>
         </SoMeIcon>
@@ -228,7 +228,7 @@ export default {
 
         this.$refs.mobilecasesmenu.style.border = "none";
         /* this.$refs.mobilecasesmenu.style.background="transparent"; */
-        this.$refs.mobilecasesmenu.classList.remove("submenu-active");
+        /* this.$refs.mobilecasesmenu.classList.remove("submenu-active"); */
 
         this.$refs.submenulist.classList.add("hide-submenulist");
         this.$refs.submenulist.classList.remove("show-submenulist");
@@ -241,7 +241,7 @@ export default {
 
         this.$refs.mobilecasesmenu.style.border = "1px solid black";
         /* this.$refs.mobilecasesmenu.style.background="#ff00ff"; */
-        this.$refs.mobilecasesmenu.classList.add("submenu-active");
+        /* this.$refs.mobilecasesmenu.classList.add("submenu-active"); */
 
         this.$refs.submenulist.classList.add("show-submenulist");
         this.$refs.submenulist.classList.remove("hide-submenulist");

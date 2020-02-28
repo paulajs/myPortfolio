@@ -36,7 +36,15 @@
         sectionText="When the game first was made, the unity web player was part of the browser,
         it is now depricated. The game can be downloaded for windows, mac or linux here, or just watch the video below."
       />
-      <video class="kittytoss-video" controls src="@/assets/img/wreckage/kittytoss.mp4"></video>
+      <div class="video-wrapper">
+        <PlayButton v-bind:isVisible="isVisible" />
+        <video
+          class="kittytoss-video"
+          controls
+          src="@/assets/img/wreckage/kittytoss.mp4"
+          v-on:click="isVideoPlaying"
+        ></video>
+      </div>
       <a href="/UnityGames3D/wreckage.zip" class="wreck-download" id="wreck-win">
         <GameDownload downloadClass downloadID operatingSystem="Windows" :logoImg="getWinLogo()">
           <component :is="paw_component"></component>
@@ -100,12 +108,22 @@
     grid-row-start: 42;
     grid-column-start: 1;
   }
-  .kittytoss-video {
-    width: 100%;
-    @include place-in-grid(46, 54, 5, 21);
-    &:hover {
-      box-shadow: 26px 28px 14px #b6b6b6;
-      cursor: pointer;
+  .video-wrapper {
+    @include place-in-grid(46, 58, 5, 21);
+    position: relative;
+    .play-button {
+      position: absolute;
+      width: 9vw;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .kittytoss-video {
+      width: 100%;
+      &:hover {
+        box-shadow: 26px 28px 14px #b6b6b6;
+        cursor: pointer;
+      }
     }
   }
 
@@ -262,12 +280,13 @@
     .misc-wreck-try {
       grid-row-start: 51;
     }
-    .kittytoss-video {
+    .video-wrapper {
       grid-row-start: 57;
       grid-row-end: 60;
       grid-column-start: 2;
       grid-column-end: 24;
     }
+
     #wreck-win {
       grid-column-start: 2;
       grid-column-end: 24;
@@ -293,6 +312,7 @@
 import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
 import GameDownload from "@/components/GameDownload.vue";
+import PlayButton from "@/components/svg/PlayButton.vue";
 
 const winLogo = require("@/assets/img/space-kitty/win.svg");
 const macLogo = require("@/assets/img/space-kitty/mac.svg");
@@ -305,17 +325,26 @@ export default {
   methods: {
     getWinLogo: () => winLogo,
     getMacLogo: () => macLogo,
-    getLinuxLogo: () => linuxLogo
+    getLinuxLogo: () => linuxLogo,
+    isVideoPlaying(e) {
+      if (e.target.paused) {
+        this.isVisible = true;
+      } else {
+        this.isVisible = false;
+      }
+    }
   },
   components: {
     MiscCaseHeader,
     CaseTextSection,
     GameDownload,
-    Paw
+    Paw,
+    PlayButton
   },
   data() {
     return {
-      paw_component: "Paw"
+      paw_component: "Paw",
+      isVisible: false
     };
   }
 };

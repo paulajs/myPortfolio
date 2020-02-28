@@ -69,12 +69,17 @@
         was part of the browser, it is now depricated. The game can be
         downloaded for windows, mac or linux here, or just watch the video below."
       />
-      <video
-        controls
-        class="horror-video"
-        poster="../../assets/videos/horror/horror2.jpg"
-        src="../../assets/videos/horror/horror.mp4"
-      ></video>
+      <div class="video-wrapper">
+        <PlayButton v-bind:isVisible="isVisible" />
+        <video
+          controls
+          class="horror-video"
+          poster="../../assets/videos/horror/horror2.jpg"
+          src="../../assets/videos/horror/horror.mp4"
+          v-on:click="isVideoPlaying"
+        ></video>
+      </div>
+
       <a
         href="/UnityGames3D/HorrorGift/horrorgift/horrorWindows.zip"
         class="horror-download"
@@ -131,13 +136,22 @@
     grid-row-start: 50;
     grid-column-start: 1;
   }
-  .horror-video {
-    width: 100%;
-    @include place-in-grid(54, 62, 5, 21);
-    border: 2px solid black;
-    &:hover {
-      box-shadow: 26px 28px 14px #b6b6b6;
-      cursor: pointer;
+  .video-wrapper {
+    @include place-in-grid(54, 66, 5, 21);
+    position: relative;
+    .play-button {
+      position: absolute;
+      width: 9vw;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .horror-video {
+      width: 100%;
+      &:hover {
+        box-shadow: 26px 28px 14px #b6b6b6;
+        cursor: pointer;
+      }
     }
   }
 
@@ -305,7 +319,7 @@
     .misc-horror-try {
       grid-row-start: 64;
     }
-    .horror-video {
+    .video-wrapper {
       grid-row-start: 71;
       grid-row-end: 74;
       grid-column-start: 2;
@@ -336,6 +350,7 @@
 import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
 import GameDownload from "@/components/GameDownload.vue";
+import PlayButton from "@/components/svg/PlayButton.vue";
 
 import Moon from "@/components/svg/Moon.vue";
 
@@ -349,16 +364,25 @@ export default {
     MiscCaseHeader,
     CaseTextSection,
     GameDownload,
-    Moon
+    Moon,
+    PlayButton
   },
   methods: {
     getWinLogo: () => winLogo,
     getMacLogo: () => macLogo,
-    getLinuxLogo: () => linuxLogo
+    getLinuxLogo: () => linuxLogo,
+    isVideoPlaying(e) {
+      if (e.target.paused) {
+        this.isVisible = true;
+      } else {
+        this.isVisible = false;
+      }
+    }
   },
   data() {
     return {
-      moon_component: "Moon"
+      moon_component: "Moon",
+      isVisible: false
     };
   }
 };

@@ -25,12 +25,14 @@
         textClass="adams-text-concept"
         sectionText="From observations at the store and netnography,
         a handfull of styles/types (of people that shop at Dr Adams)
-        were identified, og illustrated by a character called Mini Me’s.
-        These would be put on keychains, on patches, stickers and other,
-        and the target group should identify with the characters enough
-        to make them part of their Instagram posts, when posting their new outfit.
-        The store could use them for different purposes, among other for putting
-        outfits together for the types, as gifts for customers, and social media campains. "
+        were identified, og illustrated by characters called Mini Me’s.
+        These would be mascots of the types, to put on keychains, patches, stickers and more.
+        The target group should identify with the characters enough
+        to make them part of their style by using the patches, sticker and more and
+        ultimately make them part of thier Instagram posts, when posting their outfits.
+        The store could use them for different purposes, like putting
+        outfits together for the types, as gifts for customers along with theit handwritten note,
+        and social media campains. "
       />
       <CaseTextSection
         sectionClass="case-text-section misc-adams-early"
