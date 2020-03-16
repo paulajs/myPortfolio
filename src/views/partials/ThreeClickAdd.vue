@@ -13,16 +13,15 @@
   grid-row-start: 33;
   grid-row-end: 43;
   position: relative;
-  h2{
+  h2 {
     @include header-style(uppercase);
     position: absolute;
-   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 12vw;
-  z-index: -20;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12vw;
+    z-index: -20;
     /* animation: pulse 0.3s ease-in infinite; */
-
   }
   canvas {
     border: 2px solid black;
@@ -30,15 +29,15 @@
     width: 100%;
   }
 }
-@keyframes pulse{
-  0%{
-    transform:  translate(-50%, -50%) scale(1);
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
   }
-  50%{
-    transform:  translate(-50%, -50%) scale(1.01);
+  50% {
+    transform: translate(-50%, -50%) scale(1.01);
   }
-  100%{
-    transform:  translate(-50%, -50%) scale(1);
+  100% {
+    transform: translate(-50%, -50%) scale(1);
   }
 }
 </style>
@@ -62,7 +61,7 @@ export default {
       scene: new THREE.Scene(),
       camera: null,
       renderer: null,
-      colorArray: [0xff90ff,0xff00ff, 0x00ffc8, 0x00cf78],
+      colorArray: [0xff90ff, 0xff00ff, 0x00ffc8, 0x00cf78],
       isAnimating: false
     };
   },
@@ -72,8 +71,10 @@ export default {
     });
     this.canvasRect = this.$refs.canvas.getBoundingClientRect();
     this.aspectRatio = this.canvasRect.width / this.canvasRect.height;
-    this.createScene();
-    this.animate();
+    window.setTimeout(() => {
+      this.createScene();
+      this.animate();
+    }, 100);
   },
   methods: {
     createScene() {
@@ -84,7 +85,7 @@ export default {
         20000
       );
       this.renderer.setSize(this.canvasRect.width, this.canvasRect.height);
-      this.renderer.setClearColor( 0xffffff, 0 )
+      this.renderer.setClearColor(0xffffff, 0);
       //this.scene.background = new THREE.Color(0xffffff);
       this.scene.fog = new THREE.Fog(0xffffff, 0.1, 7250);
       this.camera.position.z = 0;
@@ -114,17 +115,17 @@ export default {
     },
     onMouseDown(event) {
       this.canvasRect = this.$refs.canvas.getBoundingClientRect();
-       const x = event.clientX - this.canvasRect.left;
+      const x = event.clientX - this.canvasRect.left;
       const y = event.clientY - this.canvasRect.top;
 
-
-
-        const canvasX =
+      const canvasX =
         (-this.canvasRect.width + x * 2) * (this.aspectRatio * 1.25);
       const canvasY =
         (this.canvasRect.height - y * 2) * (this.aspectRatio * 1.25);
 
-      const cubeColor = this.colorArray[Math.floor(this.colorArray.length*Math.random())];
+      const cubeColor = this.colorArray[
+        Math.floor(this.colorArray.length * Math.random())
+      ];
       //const cubeColor = 0xffffff * Math.random();
       const cubeSize = this.canvasRect.width / 6;
       const canvasZ = -(this.canvasRect.width * 3);

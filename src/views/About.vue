@@ -8,17 +8,18 @@
         <h1 data-text="About me">About me</h1>
       </div>
       <p class="about-text">
-        Hello my name is Paula,
-        <em>I am a web developer and designer</em>, with
-        interests in all creative outlets on the web. I like the interplay of the visual and the technical.
-        I like to learn, eat pasta, play Borderlands, watching American Horror Story,
-        and adore everything with 4 legs and fur, and
-        <em>I am currently looking for new opportunities.</em>
-        Below are some the technoligies and tools that I am familiar with.
+        Hello my name is Paula and I am currently looking for new opportunities.
+        I am a web developer and designer, and I can help you with your programming, graphics and animations.
+        Below are some the technologies and tools that I can use to contribute value to you.
       </p>
     </div>
     <div class="about-skills">
-      <div class="skill-section">
+      <div
+        class="skill-section"
+        data-aos="fade-up"
+        data-aos-duration="300"
+        data-aos-easing="ease-out"
+      >
         <h3>Web</h3>
         <h4 class="skill-header header-js">Javascript</h4>
         <div class="skill-subset subset-js">
@@ -26,7 +27,7 @@
             <li>Vue.js</li>
             <li>React.js</li>
             <li>ES6</li>
-            <li>Typescript</li>
+            <li>Wordpress</li>
           </ul>
         </div>
         <h4 class="skill-header header-css">CSS</h4>
@@ -39,7 +40,13 @@
           </ul>
         </div>
       </div>
-      <div class="skill-section">
+      <div
+        class="skill-section"
+        data-aos="fade-down"
+        data-aos-duration="300"
+        data-aos-easing="ease-out"
+        data-aos-delay="150"
+      >
         <h3>Design</h3>
         <h4 class="skill-header header-adobe">Adobe</h4>
         <div class="skill-subset subset-adobe">
@@ -60,7 +67,13 @@
           </ul>
         </div>
       </div>
-      <div class="skill-section">
+      <div
+        class="skill-section"
+        data-aos="fade-up"
+        data-aos-duration="300"
+        data-aos-easing="ease-out"
+        data-aos-delay="250"
+      >
         <h3>Other</h3>
         <h4 class="skill-header header-3d">3D/games</h4>
         <div class="skill-subset subset-misc">
@@ -76,14 +89,26 @@
             <li>
               <a href="mailto:paulajoannasobczak@gmail.com">
                 <SoMeIcon>
-                  <component :is="icon_mail_component"></component>
+                  <component
+                    :is="icon_mail_component"
+                    data-aos="zoom-in"
+                    data-aos-duration="300"
+                    data-aos-easing="ease-out-sine"
+                    data-aos-delay="600"
+                  ></component>
                 </SoMeIcon>
               </a>
             </li>
             <li>
               <a href="https://www.linkedin.com/in/paulajoannasobczak/" target="_blank">
                 <SoMeIcon>
-                  <component :is="icon_linked_component"></component>
+                  <component
+                    :is="icon_linked_component"
+                    data-aos="zoom-in"
+                    data-aos-duration="300"
+                    data-aos-easing="ease-out-sine"
+                    data-aos-delay="600"
+                  ></component>
                 </SoMeIcon>
               </a>
             </li>
@@ -110,7 +135,7 @@
     transform: translate(-9px, 1px);
   }
   .about-header {
-    @include place-in-grid(1, 7, 2, 23);
+    @include place-in-grid(1, 10, 2, 23);
     display: flex;
     justify-content: center;
     .about-background {
@@ -144,7 +169,7 @@
     flex-direction: row;
     .skill-section {
       width: 33.333%;
-      @include create-grid(3, 25.333%, 2, 50%, 6%, 0);
+      @include create-grid(3, 25.333%, 2, 50%, 9%, 0);
       h3 {
         grid-row-start: 1;
         grid-column-start: 2;
@@ -231,6 +256,7 @@
           list-style: none;
           font-family: $font-secundary;
           margin-left: 4%;
+           font-size: 14px;
           li {
             padding: 2% 0;
           }
@@ -241,7 +267,7 @@
 }
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .about {
-    grid-template-rows: repeat(44, 4.94vh);
+    grid-template-rows: repeat(62, 4.94vh);
 
     .about-header {
       grid-row-start: 5;
@@ -301,6 +327,18 @@
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .about {
+    .about-skills {
+      .skill-section {
+        h3 {
+          align-self: start;
+          font-size: 2.9em;
         }
       }
     }

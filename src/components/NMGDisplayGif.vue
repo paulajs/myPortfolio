@@ -1,5 +1,5 @@
 <template>
-  <div :id="displayID" class="displayImgWrap">
+  <div :id="displayID" class="displayImgWrap" :data-aos="animData" data-aos-easing="ease-out">
     <img
       :class="imgClass"
       :src="displayImgSrc"
@@ -21,6 +21,7 @@ export default {
     imgClass: String,
     displayImgSrc: String,
     displayImgAlt: String,
+    animData: String
   }
 }
 </script>

@@ -12,9 +12,9 @@
       />
       <Slider :images="sliderImages" sliderID="slider-insp-skansing" />
       <div class="mobile-insp-img">
-        <img src="@/assets/img/cyberpunk1.jpg" alt />
-        <img src="@/assets/img/mr-robot.jpg" alt />
-        <img src="@/assets/img/hacker1.jpg" alt />
+        <img src="@/assets/img/cyberpunk1.jpg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+        <img src="@/assets/img/mr-robot.jpg" data-aos="fade-left" data-aos-easing="ease-out" alt />
+        <img src="@/assets/img/hacker1.jpg" data-aos="fade-up" data-aos-easing="ease-out" alt />
       </div>
       <CaseTextSection
         sectionClass="case-text-section experimentation-skansing"
@@ -25,9 +25,9 @@
       />
       <Slider :images="sliderTwoImages" sliderID="slider-exp-skansing" />
       <div class="mobile-exp-img">
-        <img src="@/assets/img/SVG/skansing-exp-color-mob.svg" alt />
-        <img src="@/assets/img/SVG/skansing-icons-mob1.svg" alt />
-        <img src="@/assets/img/SVG/skansing-logos-mob.svg" alt />
+        <img src="@/assets/img/SVG/skansing-exp-color-mob.svg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+        <img src="@/assets/img/SVG/skansing-icons-mob1.svg" data-aos="fade-left" data-aos-easing="ease-out" alt />
+        <img src="@/assets/img/SVG/skansing-logos-mob.svg" data-aos="fade-up" data-aos-easing="ease-out" alt />
       </div>
       <CaseTextSection
         sectionClass="case-text-section styletiles-skansing"
@@ -36,8 +36,8 @@
         textClass="styletiles-text-skansing"
         sectionText="Final version of the visual identity that is going to be applied to the webpage."
       />
-      <img src="@/assets/img/skansing-style.jpg" class="skansing-style-img" alt />
-      <img src="@/assets/img/skansing-style-mob.jpg" class="skansing-style-img-mob" alt />
+      <img src="@/assets/img/skansing-style.jpg" class="skansing-style-img" data-aos="fade-down" data-aos-easing="ease-out" alt />
+      <img src="@/assets/img/skansing-style-mob.jpg" class="skansing-style-img-mob" data-aos="fade-down" data-aos-easing="ease-out" alt />
     </div>
   </div>
 </template>
@@ -97,7 +97,7 @@
       font-size: 19vw;
     }
     .process-wrapper {
-      grid-template-rows: repeat(146, 4.94vh);
+      grid-template-rows: repeat(176, 4.94vh);
       .mobile-insp-img {
         grid-row-start: 7;
         grid-column-start: 1;

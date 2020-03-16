@@ -27,8 +27,9 @@
       <div class="animation-wrapper">
         <div class="walk-animation"></div>
       </div>
-      <img class="css-codesnip" src="@/assets/img/cssAnim/code-snip.jpg" alt />
+      <img class="css-codesnip" src="@/assets/img/cssAnim/code-snip.jpg" data-aos="fade-up" data-aos-easing="ease-out" alt />
     </div>
+    <Footer nextText="Go Home" prevText="Previous case" linkToNext="/home" linkToPrev="/horror"/>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -36,6 +37,7 @@
 @import "@/assets/sass/_mixins.scss";
 .case-cssanim-wrap{
   animation: page-opacity 0.6s ease forwards;
+  overflow-x: hidden;
 }
 .case-cssanim {
   @include create-grid(41, 4.94vh, 24, 3.125vw, 1vh, 1vw);
@@ -122,11 +124,13 @@
 <script>
 import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
+import Footer from "@/components/Footer.vue";
 export default {
   name: "CSSAnim",
   components: {
     MiscCaseHeader,
-    CaseTextSection
+    CaseTextSection,
+    Footer
   }
 };
 </script>

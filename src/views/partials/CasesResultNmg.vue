@@ -4,10 +4,10 @@
       <div class="nmg-design-obj">
         <h2>Design objectives</h2>
         <div class="postits">
-          <img src="@/assets/img/SVG/postit1.svg" alt />
-          <img src="@/assets/img/SVG/postit2.svg" alt />
-          <img src="@/assets/img/SVG/postit3.svg" alt />
-          <img src="@/assets/img/SVG/postit4.svg" alt />
+          <img src="@/assets/img/SVG/postit1.svg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+          <img src="@/assets/img/SVG/postit2.svg" data-aos="fade-up" data-aos-easing="ease-out" alt />
+          <img  src="@/assets/img/SVG/postit3.svg" data-aos="fade-down" data-aos-easing="ease-out" alt />
+          <img  src="@/assets/img/SVG/postit4.svg" data-aos="fade-left" data-aos-easing="ease-out" alt />
         </div>
       </div>
       <h2 class="result-header">Results</h2>
@@ -32,9 +32,9 @@
         sectionText="Example of the visual identity on a marmelade label."
       />
       <div class="nmg-visual-label">
-        <img src="@/assets/img/EThindbær.png" alt />
-        <img src="@/assets/img/ETkvæde.png" alt />
-        <img src="@/assets/img/EThyldebær.png" alt />
+        <img src="@/assets/img/EThindbær.png" data-aos="fade-right" data-aos-easing="ease-out" alt />
+        <img src="@/assets/img/ETkvæde.png" data-aos="fade-down" data-aos-easing="ease-out" alt />
+        <img  src="@/assets/img/EThyldebær.png" data-aos="fade-left" data-aos-easing="ease-out" alt />
       </div>
 
       <CaseTextSection
@@ -45,9 +45,9 @@
         sectionText="Example of a booklet for the marlemade course."
       />
       <div class="nmg-visual-booklet">
-        <img src="@/assets/img/nmg-straw-book-100.jpg" alt />
-        <img src="@/assets/img/nmg-quince-book-100.jpg" alt />
-        <img src="@/assets/img/nmg-hyld-book-100.jpg" alt />
+        <img src="@/assets/img/nmg-straw-book-100.jpg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+        <img src="@/assets/img/nmg-quince-book-100.jpg" data-aos="fade-down" data-aos-easing="ease-out" alt />
+        <img src="@/assets/img/nmg-hyld-book-100.jpg" data-aos="fade-left" data-aos-easing="ease-out" alt />
       </div>
 
       <CaseTextSection
@@ -57,8 +57,8 @@
         textClass="visual-id-text-nmgweb"
         sectionText="Example of the implementation on web."
       />
-      <img class="nmg-visual-web1" src="@/assets/img/SVG/nmg-vi-web1.svg" alt />
-      <img class="nmg-visual-web2" src="@/assets/img/SVG/nmg-vi-web2.svg" alt />
+      <img class="nmg-visual-web1" src="@/assets/img/SVG/nmg-vi-web1.svg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+      <img class="nmg-visual-web2" src="@/assets/img/SVG/nmg-vi-web2.svg" data-aos="fade-left" data-aos-easing="ease-out" alt />
     </div>
   </div>
 </template>
@@ -96,9 +96,10 @@ $transition: all 0.1s ease-in;
       h2 {
         grid-column-start: 2;
         grid-column-end: 24;
+        grid-row-start: 2;
         @include font-primary-and-fat;
         color: white;
-        font-size: 6vw;
+        font-size: 4vw;
 /*         -webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: black; */
       }

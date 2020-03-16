@@ -244,6 +244,9 @@ export default {
       case_horror_component: "MiscCaseHorrorSVG",
       case_wreck_component: "MiscCaseWreckageSVG"
     };
+  },
+  mounted(){
+    document.body.style.overflow = "auto";
   }
 };
 </script>

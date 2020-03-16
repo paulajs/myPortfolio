@@ -5,7 +5,7 @@
     @mouseleave="hideSoMeCursor"
     v-on:touchstart="iconTouchAnim"
   >
-    <div class="icon-cursor" ref="iconcursor"></div>
+     <div class="icon-cursor" ref="iconcursor"></div>
 
     <slot></slot>
   </div>
@@ -63,10 +63,11 @@ export default {
         this.$refs.iconcursor.display = "none";
       } else {
         const cursorAdjust =
-          this.$refs.iconcursor.getBoundingClientRect().width / 2;
+        this.$refs.iconcursor.getBoundingClientRect().width / 2;
         this.$refs.iconcursor.style.display = "block";
-        this.$refs.iconcursor.style.top = `${e.pageY - cursorAdjust}px`;
+        this.$refs.iconcursor.style.top = `${e.pageY - cursorAdjust }px`;
         this.$refs.iconcursor.style.left = `${e.pageX - cursorAdjust}px`;
+        console.log(this.$refs.iconcursor.style.top);
       }
     },
     hideSoMeCursor() {

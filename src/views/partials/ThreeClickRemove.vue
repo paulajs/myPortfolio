@@ -36,7 +36,7 @@ export default {
       scene: new THREE.Scene(),
       camera: null,
       renderer: null,
-      colorArray: [0xff90ff,0xff00ff, 0x00ffc8, 0x00cf78],
+      colorArray: [0xff90ff, 0xff00ff, 0x00ffc8, 0x00cf78],
       isAnimating: false
     };
   },
@@ -46,8 +46,10 @@ export default {
     });
     this.canvasRect = this.$refs.canvasRemove.getBoundingClientRect();
     this.aspectRatio = this.canvasRect.width / this.canvasRect.height;
-    this.createScene();
-    this.animate();
+    window.setTimeout(() => {
+      this.createScene();
+      this.animate();
+    }, 100);
   },
   methods: {
     createScene() {
@@ -83,11 +85,41 @@ export default {
 
       var i = -300;
       while (i < 300) {
-        this.makeCube(cubeSize, i, -100, 0, this.colorArray[Math.floor(this.colorArray.length*Math.random())]);
-        this.makeCube(cubeSize, i, -50, 0, this.colorArray[Math.floor(this.colorArray.length*Math.random())]);
-        this.makeCube(cubeSize, i, 0, 0, this.colorArray[Math.floor(this.colorArray.length*Math.random())]);
-        this.makeCube(cubeSize, i, 50, 0, this.colorArray[Math.floor(this.colorArray.length*Math.random())]);
-        this.makeCube(cubeSize, i, 100, 0, this.colorArray[Math.floor(this.colorArray.length*Math.random())]);
+        this.makeCube(
+          cubeSize,
+          i,
+          -100,
+          0,
+          this.colorArray[Math.floor(this.colorArray.length * Math.random())]
+        );
+        this.makeCube(
+          cubeSize,
+          i,
+          -50,
+          0,
+          this.colorArray[Math.floor(this.colorArray.length * Math.random())]
+        );
+        this.makeCube(
+          cubeSize,
+          i,
+          0,
+          0,
+          this.colorArray[Math.floor(this.colorArray.length * Math.random())]
+        );
+        this.makeCube(
+          cubeSize,
+          i,
+          50,
+          0,
+          this.colorArray[Math.floor(this.colorArray.length * Math.random())]
+        );
+        this.makeCube(
+          cubeSize,
+          i,
+          100,
+          0,
+          this.colorArray[Math.floor(this.colorArray.length * Math.random())]
+        );
         i = i + 50;
       }
     },

@@ -15,8 +15,8 @@
         The game view is top-down. Below are examples of the interior of
         the house and the cats run cycle."
       />
-      <img class="wreck-sprite1" src="@/assets/img/wreckage/kittyrunscreensprite2.png" alt />
-      <img class="wreck-sprite2" src="@/assets/img/wreckage/kittyrunscreensprite.png" alt />
+      <img class="wreck-sprite1" src="@/assets/img/wreckage/kittyrunscreensprite2.png" data-aos="fade-right" data-aos-easing="ease-out" alt />
+      <img class="wreck-sprite2" src="@/assets/img/wreckage/kittyrunscreensprite.png" data-aos="fade-left" data-aos-easing="ease-out" alt />
       <CaseTextSection
         sectionClass="case-text-section misc-wreck-result"
         sectionHeaderClass="case-section-header header-wreck-result"
@@ -24,10 +24,10 @@
         textClass="wreck-text-result"
         sectionText="Snapshot of the game."
       />
-      <img class="wreck-result1" src="@/assets/img/wreckage/kittyrunheader.png" alt />
-      <img class="wreck-result2" src="@/assets/img/wreckage/kittytoss1.jpg" alt />
-      <img class="wreck-result3" src="@/assets/img/wreckage/kittyrunheader2.png" alt />
-      <img class="wreck-result4" src="@/assets/img/wreckage/kittyrunscreen2.png" alt />
+      <img class="wreck-result1" src="@/assets/img/wreckage/kittyrunheader.png" data-aos="fade-right" data-aos-easing="ease-out" alt />
+      <img class="wreck-result2" src="@/assets/img/wreckage/kittytoss1.jpg" data-aos="fade-left" data-aos-easing="ease-out" alt />
+      <img class="wreck-result3" src="@/assets/img/wreckage/kittyrunheader2.png" data-aos="fade-right" data-aos-easing="ease-out" alt />
+      <img class="wreck-result4" src="@/assets/img/wreckage/kittyrunscreen2.png" data-aos="fade-left" data-aos-easing="ease-out" alt />
       <CaseTextSection
         sectionClass="case-text-section misc-wreck-try"
         sectionHeaderClass="case-section-header header-wreck-try"
@@ -61,6 +61,7 @@
         </GameDownload>
       </a>
     </div>
+    <Footer nextText="Next case" prevText="Previous case" linkToNext="/horror" linkToPrev="/ripple"/>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -68,6 +69,7 @@
 @import "@/assets/sass/_mixins.scss";
 .case-wreck-wrap {
   animation: page-opacity 0.6s ease forwards;
+  overflow-x: hidden;
 }
 .wreck-case {
   @include create-grid(85, 4.94vh, 24, 3.125vw, 1vh, 1vw);
@@ -313,6 +315,7 @@ import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
 import GameDownload from "@/components/GameDownload.vue";
 import PlayButton from "@/components/svg/PlayButton.vue";
+import Footer from "@/components/Footer.vue";
 
 const winLogo = require("@/assets/img/space-kitty/win.svg");
 const macLogo = require("@/assets/img/space-kitty/mac.svg");
@@ -339,7 +342,8 @@ export default {
     CaseTextSection,
     GameDownload,
     Paw,
-    PlayButton
+    PlayButton,
+    Footer
   },
   data() {
     return {

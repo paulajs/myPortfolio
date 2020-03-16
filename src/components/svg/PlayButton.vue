@@ -102,7 +102,7 @@
       visibility: hidden;
     }
     .play-button {
-      opacity: 1;
+      opacity: 0.8;
       .st0 {
         fill: #000;
       }

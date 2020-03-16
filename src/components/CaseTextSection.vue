@@ -1,5 +1,5 @@
 <template>
-  <div :class="sectionClass">
+  <div :class="sectionClass" data-aos="fade-up" data-aos-easing="ease-out">
     <div :class="sectionHeaderClass">
       <h5>{{headertext}}</h5>
     </div>

@@ -1,6 +1,6 @@
 <template>
-  <router-link :class="miscCaseClass" :to="routerLink">
-    <div class="wrap">
+  <router-link :class="miscCaseClass" :to="routerLink" data-aos="fade-down" data-aos-duration="400" data-aos-easing="ease-out">
+    <div class="wrap" >
       <div class="misc-background"></div>
       <!--   <img :class="stars" src="../../assets/img/SVG/stars.svg" alt="stars" /> -->
       <img :class="stars" id="starts-desk" src="../../assets/img/SVG/stars.svg" alt="stars" />

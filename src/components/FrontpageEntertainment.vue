@@ -1,9 +1,14 @@
 <template>
   <div :class="{'entertain-element': true, 'show-border':isVideoShown}">
-    <img class="page-logo" alt="page logo" src="../assets/img/SVG/logo-new1.svg" v-show="!isVideoShown" />
+<!--     <img
+      class="page-logo"
+      alt="page logo"
+      src="../assets/img/SVG/logo-new1.svg"
+      v-show="!isVideoShown"
+    /> -->
     <div v-show="!isVideoShown" id="container">
       <p class="pointsDisplay"></p>
-      <canvas id="bubbles-canvas"></canvas>
+      <canvas id="bubbles-canvas" ref="bubblecanvas"></canvas>
       <audio id="bubbleSounds" src></audio>
       <video
         src
@@ -26,6 +31,7 @@ import { makeSphere } from "../functions/factory.js";
 import { getIntersectingBallsObject } from "../functions/factory.js";
 import { mouseMoveSetColor } from "../functions/factory.js";
 import { scaleAnimation } from "../functions/factory.js";
+import { positionAnimation } from "../functions/factory.js";
 import { getIntersects } from "../functions/factory.js";
 import { log } from "three";
 import ShapeOverlays from "@/components/ShapeOverlays.vue";
@@ -67,7 +73,7 @@ export default {
             numBallsMobX: 3,
             numBallsY: 4,
             numBallsMobY: 4,
-            xMin: -320,
+            xMin: -314,
             xMobMin: -77,
             yMin: -102,
             yMobMin: -165,
@@ -134,6 +140,12 @@ export default {
         this.initiateCanvasMobile();
       }
     },
+    showCanvas(){
+      window.setTimeout(()=>{
+        this.$refs.bubblecanvas.style.display = "block"
+      }, 100);
+
+    },
     setSelectors() {
       for (const [key, selector] of Object.entries(this.selectors)) {
         this.elements[key] = document.querySelector(selector);
@@ -156,7 +168,7 @@ export default {
       // give the initial ball animation a bit of time to render.
       setTimeout(() => {
         this.game.isRenderingInitialScene = false;
-      }, 100);
+      }, 3000);
     },
     initiateCanvasMobile: function() {
       this.setSelectors();
@@ -170,16 +182,16 @@ export default {
       // give the initial ball animation a bit of time to render.
       setTimeout(() => {
         this.game.isRenderingInitialScene = false;
-      }, 100);
+      }, 3000);
     },
     createScene: function() {
       this.scene = new THREE.Scene();
-      this.scene.fog = new THREE.FogExp2(0xcccccc, 0.0026);
+      this.scene.fog = new THREE.FogExp2(0xeeeeee, 0.0025);
       this.addRenderer();
       this.addCamera(0, 0, this.config.scene.camera.distance);
-      this.addLight(0xffffff, 50, 200, 200);
-      this.addLight(0xff00ff, 20, 500, -600);
-      this.addLight(0x00ffb6, 300, 300, 50);
+      this.addLight(0xffffff, 0, 0, 1200, 0.5);
+      this.addLight(0xff00ff, -20, 500, 600, 0.6);
+      this.addLight(0x00ffc8, 20, -500, 500, 0.8);
     },
     setCanvasMouseHandlers() {
       this.elements.canvas.addEventListener(
@@ -230,9 +242,10 @@ export default {
       this.camera.position.set(posX, posY, posZ);
       this.scene.add(this.camera);
     },
-    addLight: function(color, posX, posY, posZ) {
+    addLight: function(color, posX, posY, posZ, intensity) {
       const light = new THREE.SpotLight(color);
       light.position.set(posX, posY, posZ);
+      light.intensity = intensity
       this.scene.add(light);
     },
     AddGameBall: function() {
@@ -257,8 +270,8 @@ export default {
             0,
             radius,
             objName,
-            count,
-            this.scene
+            50,
+          //  this.scene
           );
           this.scene.add(ball);
           this.game.balls[ball.id] = ball;
@@ -407,8 +420,8 @@ export default {
         const ball = this.game.currentIntersection[0].object;
         const ballId = ball.id;
         this.game.previousBallId = ball.id;
-          this.onMouseHoverBall(ball);
-       /*  if (previousBallId !== ball.id) {
+        this.onMouseHoverBall(ball);
+        /*  if (previousBallId !== ball.id) {
         } */
       } else {
         this.game.previousBallId = 0;
@@ -510,7 +523,7 @@ export default {
         posX - this.config.scene.displayPoints.offsetX + "px";
       element.style.top = posY - this.config.scene.displayPoints.offsetY + "px";
       element.style.color = "#fff";
-       element.style.webkitTextStroke = "1px #000";
+      element.style.webkitTextStroke = "1px #000";
       element.style.background =
         "url('" + backgrounds[randomNum] + "') no-repeat top left";
 
@@ -578,7 +591,10 @@ export default {
     }
   },
   mounted() {
-    this.init();
+    window.setTimeout(() => {
+      this.init();
+      this.$refs.bubblecanvas.style.display = "block"
+    }, 1000);
   }
 };
 </script>
@@ -618,7 +634,7 @@ a {
     position: "absolute";
     top: 0;
     left: 0;
-     user-select: none;
+    user-select: none;
   }
   .bubbles {
     position: absolute;
@@ -651,6 +667,17 @@ a {
 }
 #bubbles-canvas {
   position: absolute;
+ /*  animation: ballIntroAnim 0.3s ease-in forwards; */
+  display: none;
+ /*  visibility: hidden; */
+}
+@keyframes ballIntroAnim{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
 }
 @keyframes pointsAnim {
   0% {

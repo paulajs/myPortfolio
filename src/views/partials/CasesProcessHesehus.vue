@@ -10,8 +10,8 @@
         sectionText="Moodboard of Hesehus’ visual identity (left) and research of e-commerce fairs (right)."
       />
 
-      <img class="hesehus-indtryk" src="@/assets/img/hesehus-indtryk.jpg" alt />
-      <img class="hesehus-messe" src="@/assets/img/hesehus-messe.jpg" alt />
+      <img class="hesehus-indtryk" data-aos="fade-right" data-aos-easing="ease-out"  src="@/assets/img/hesehus-indtryk.jpg" alt />
+      <img class="hesehus-messe" data-aos="fade-left" data-aos-easing="ease-out"  src="@/assets/img/hesehus-messe.jpg" alt />
       <CaseTextSection
         sectionClass="case-text-section experimentation-hesehus"
         sectionHeaderClass="case-section-header header-experimentation-hesehus"
@@ -21,13 +21,13 @@
         development of graphic universe for the cases."
       />
 
-      <img class="hesehus-boat" src="@/assets/img/SVG/day-ideation.svg" alt />
-      <img class="hesehus-space" src="@/assets/img/SVG/night-ideation.svg" alt />
-      <img class="hesehus-ideation" src="@/assets/img/SVG/ideation-icons.svg" alt />
+      <img class="hesehus-boat" data-aos="fade-left" data-aos-easing="ease-out" src="@/assets/img/SVG/day-ideation.svg" alt />
+      <img class="hesehus-space" data-aos="fade-right" data-aos-easing="ease-out" src="@/assets/img/SVG/night-ideation.svg" alt />
+      <img class="hesehus-ideation" data-aos="fade-up" data-aos-easing="ease-out" src="@/assets/img/SVG/ideation-icons.svg" alt />
 
-      <img class="hesehus-boat-mob" src="@/assets/img/SVG/day-ideation-mob.svg" alt />
-      <img class="hesehus-space-mob" src="@/assets/img/SVG/night-ideation-mob.svg" alt />
-      <img class="hesehus-ideation-mob" src="@/assets/img/SVG/ideation-icons-mob.svg" alt />
+      <img class="hesehus-boat-mob" data-aos="fade-left" data-aos-easing="ease-out" src="@/assets/img/SVG/day-ideation-mob.svg" alt />
+      <img class="hesehus-space-mob" data-aos="fade-right" data-aos-easing="ease-out" src="@/assets/img/SVG/night-ideation-mob.svg" alt />
+      <img class="hesehus-ideation-mob" data-aos="fade-up" data-aos-easing="ease-out" src="@/assets/img/SVG/ideation-icons-mob.svg" alt />
 
       <CaseTextSection
         sectionClass="case-text-section storyboards-hesehus"
@@ -39,21 +39,25 @@
       <img
         class="hesehus-storyboard-inspiration"
         src="@/assets/img/SVG/inspiration-storyboard.svg"
+        data-aos="fade-right" data-aos-easing="ease-out"
         alt
       />
       <img
         class="hesehus-storyboard-inspiration-mob"
         src="@/assets/img/SVG/inspiration-storyboard-mob.svg"
+        data-aos="fade-right" data-aos-easing="ease-out"
         alt
       />
       <img
         class="hesehus-storyboard-fristads-kansas"
         src="@/assets/img/SVG/danoffice-storyboard.svg"
+         data-aos="fade-left" data-aos-easing="ease-out"
         alt
       />
       <img
         class="hesehus-storyboard-fristads-kansas-mob"
         src="@/assets/img/SVG/danoffice-storyboard-mob.svg"
+        data-aos="fade-left" data-aos-easing="ease-out"
         alt
       />
     </div>

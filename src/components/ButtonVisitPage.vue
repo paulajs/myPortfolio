@@ -13,20 +13,23 @@ $transition: all 0.1s ease-in;
   width: 320px;
   height: 70px;
   margin-bottom: 30vh;
-  border: 2px solid black;
+  border: 1px solid black;
   background: white;
   font-family: $font-secundary;
   font-size: 23px;
   position: relative;
+ /*  animation: intro-button 0.3s ease-out forwards; */
   &::before {
     content: "";
     width: 320px;
     height: 70px;
-    border: 2px solid black;
-    transform: translate(-147px, -9px);
+    border: 1px solid black;
     position: absolute;
+    left: 14px;
+    top: 12px;
     z-index: -1;
     transition: $transition;
+    /*  animation: intro-button 0.3s ease-out forwards; */
   }
   &:hover::before {
     background: white;
@@ -54,6 +57,18 @@ $transition: all 0.1s ease-in;
     animation: rumble 0.3s ease-in infinite;
   }
 }
+
+@keyframes intro-button {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 320px;
+    height: 70px;
+  }
+}
+
 @media screen and (max-device-width: 500px) and (max-device-height: 850px) and (-webkit-min-device-pixel-ratio: 2) {
   .visit-page {
     width: 78vw;
@@ -81,7 +96,6 @@ $transition: all 0.1s ease-in;
     &:before {
       width: 77vw;
       height: 70px;
-      transform: translate(-35vw, -13px);
     }
     &:active {
       background: black;
@@ -116,7 +130,8 @@ $transition: all 0.1s ease-in;
     &::before {
       width: 345px;
       height: 90px;
-      transform: translate(-152px, -13px);
+      left: 16px;
+      top: 14px;
     }
     &:hover p:after {
       left: 92px;

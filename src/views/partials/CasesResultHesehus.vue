@@ -3,37 +3,42 @@
     <a href="/hesehus/index.html" target=”_blank”>
       <ButtonVisitPage />
     </a>
-    <div class="display-results">
+    <div class="display-results" >
       <h2 class="result-header">Videos</h2>
       <VideoCaseComponent
         videoSection="video-section section-matas"
         videoName="Matas Video"
         :videoSrc="getMatasVideo()"
         :videoPoster="getMatasPoster()"
+        animData="fade-right"
       />
       <VideoCaseComponent
         videoSection="video-section section-fristads"
         videoName="Fristads Kansas Video"
         :videoSrc="getFristadsVideo()"
         :videoPoster="getFristadsPoster()"
+        animData="fade-left"
       />
       <VideoCaseComponent
         videoSection="video-section section-inspiration"
         videoName="Inspiration Video"
         :videoSrc="getInspirationVideo()"
         :videoPoster="getInspirationPoster()"
+        animData="fade-right"
       />
       <VideoCaseComponent
         videoSection="video-section section-danoffice"
         videoName="Danoffice Video"
         :videoSrc="getDanofficeVideo()"
         :videoPoster="getDanofficePoster()"
+        animData="fade-left"
       />
       <VideoCaseComponent
         videoSection="video-section section-kunderejse"
         videoName="Customer journey Video"
         :videoSrc="getJourneyVideo()"
         :videoPoster="getJourneyPoster()"
+        animData="fade-right"
       />
 
       <CaseTextSection
@@ -43,7 +48,7 @@
         textClass="hesehus-text-mockup"
         sectionText="Mockup of the app. The prototype of the app is made in React.js."
       />
-      <img class="hesehus-mockup" src="@/assets/img/SVG/hesehus-app-mock.svg" alt />
+      <img class="hesehus-mockup" data-aos="fade-down" data-aos-easing="ease-out" src="@/assets/img/SVG/hesehus-app-mock.svg" alt />
     </div>
   </div>
 </template>

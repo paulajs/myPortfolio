@@ -10,14 +10,14 @@
       <div class="skansing-result-header">
         <h4>Mobile mockup</h4>
       </div>
-      <img class="mobile-mock1" src="@/assets/img/SVG/mobmock1.svg" alt />
-      <img class="mobile-mock2" src="@/assets/img/SVG/mobmock2.svg" alt />
+      <img class="mobile-mock1" src="@/assets/img/SVG/mobmock1.svg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+      <img class="mobile-mock2" src="@/assets/img/SVG/mobmock2.svg" data-aos="fade-left" data-aos-easing="ease-out" alt />
     </div>
     <div class="desktop-mockup1-skansing">
       <div class="skansing-result-header">
         <h4>Desktop mockup version 1</h4>
       </div>
-      <img class="desktop-mock1" src="@/assets/img/SVG/mockupv1.svg" alt />
+      <img class="desktop-mock1" src="@/assets/img/SVG/mockupv1.svg" data-aos="fade-up" data-aos-easing="ease-out" alt />
     </div>
     <video
       @mouseover="eventVideo"
@@ -31,7 +31,7 @@
       <div class="skansing-result-header">
         <h4>Desktop mockup version 2</h4>
       </div>
-      <img class="desktop-mock2" src="@/assets/img/SVG/mockfin.svg" alt />
+      <img class="desktop-mock2" src="@/assets/img/SVG/mockfin.svg" data-aos="fade-up" data-aos-easing="ease-out" alt />
     </div>
   </div>
 </template>

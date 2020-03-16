@@ -39,15 +39,14 @@
     height: 100%;
     width: 100%;
   }
-  @keyframes pop{
-    0%{
+  @keyframes pop {
+    0% {
       transform: scale(0.9);
     }
-    50%{
+    50% {
       transform: scale(1);
-
     }
-    100%{
+    100% {
       transform: scale(0.9);
     }
   }
@@ -85,10 +84,12 @@ export default {
     });
     this.canvasRect = this.$refs.canvasMove.getBoundingClientRect();
     this.aspectRatio = this.canvasRect.width / this.canvasRect.height;
-    this.createScene();
+    window.setTimeout(() => {
+      this.createScene();
+    }, 100);
   },
   watch: {
-    textVisible: function(){
+    textVisible: function() {
       this.$refs.text1.style.display = "none";
       this.$refs.text2.style.display = "none";
     }
@@ -132,8 +133,7 @@ export default {
       this.scene.add(cube);
     },
     onMouseDown() {
-
-        this.textVisible = false;
+      this.textVisible = false;
 
       this.canvasRect = this.$refs.canvasMove.getBoundingClientRect();
       const x = event.clientX - this.canvasRect.left;

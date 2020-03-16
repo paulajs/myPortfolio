@@ -38,6 +38,18 @@ $gradient: linear-gradient(#ff90ff, #00ffc8);
   }
 }
 
+@keyframes menu-buttonAnim {
+  0% {
+    opacity: 0;
+  }
+  70%{
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes rumble-menu{
   0% {
     margin-top: 0;
@@ -74,6 +86,11 @@ $gradient: linear-gradient(#ff90ff, #00ffc8);
   100%{
     opacity: 1;
   }
+}
+
+@mixin menu-button-mixin{
+  animation: menu-buttonAnim 0.8s ease-in forwards;
+  animation-delay: 0.3s;
 }
 
 

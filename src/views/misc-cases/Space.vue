@@ -19,13 +19,15 @@
         class="process-img1"
         src="@/assets/img/space-kitty/spacekittyscreenshot3.png"
         alt="game screen shot"
+        data-aos="fade-right" data-aos-easing="ease-out"
       />
-      <img class="process-img2" src="@/assets/img/space-kitty/spaceship.png" alt="game screen shot" />
-      <img class="process-img3" src="@/assets/img/space-kitty/rat.png" alt="game screen shot" />
+      <img class="process-img2" src="@/assets/img/space-kitty/spaceship.png" data-aos="fade-left" data-aos-easing="ease-out" alt="game screen shot" />
+      <img class="process-img3" src="@/assets/img/space-kitty/rat.png" data-aos="fade-right" data-aos-easing="ease-out" alt="game screen shot" />
       <img
         class="process-img4"
         src="@/assets/img/space-kitty/spacekittyscreenshot2.jpg"
         alt="game screen shot"
+        data-aos="fade-left" data-aos-easing="ease-out"
       />
       <CaseTextSection
         sectionClass="case-text-section misc-space-result"
@@ -38,21 +40,25 @@
         class="result-img1"
         src="@/assets/img/space-kitty/spacekittyscreenshot5.jpg"
         alt="game screen shot"
+        data-aos="fade-right" data-aos-easing="ease-out"
       />
       <img
         class="result-img2"
         src="@/assets/img/space-kitty/spacekittyscreenshot4.jpg"
         alt="game screen shot"
+        data-aos="fade-left" data-aos-easing="ease-out"
       />
       <img
         class="result-img3"
         src="@/assets/img/space-kitty/spacekittyscreenshot.jpg"
         alt="game screen shot"
+        data-aos="fade-right" data-aos-easing="ease-out"
       />
       <img
         class="result-img4"
         src="@/assets/img/space-kitty/spacekittyinthecity1.jpg"
         alt="game screen shot"
+        data-aos="fade-left" data-aos-easing="ease-out"
       />
       <CaseTextSection
         sectionClass="case-text-section misc-space-try"
@@ -81,7 +87,7 @@
         id="space-win"
         target="_blank"
       >
-        <GameDownload downloadClass downloadID operatingSystem="Windows" :logoImg="getWinLogo()">
+        <GameDownload downloadClass downloadID operatingSystem="Windows" :logoImg="getWinLogo()" >
           <component :is="spaceship_component"></component>
         </GameDownload>
       </a>
@@ -106,6 +112,7 @@
         </GameDownload>
       </a>
     </div>
+    <Footer nextText="Next case" prevText="Previous case" linkToNext="/three" linkToPrev="/audio"/>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -113,6 +120,7 @@
 @import "@/assets/sass/_mixins.scss";
 .case-space-wrap {
   animation: page-opacity 0.6s ease forwards;
+  overflow-x: hidden;
 }
 
 .misc-space-process {
@@ -362,8 +370,8 @@ import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
 import GameDownload from "@/components/GameDownload.vue";
 import PlayButton from "@/components/svg/PlayButton.vue";
-
 import SpaceShip from "@/components/svg/SpaceShip.vue";
+import Footer from "@/components/Footer.vue";
 
 const winLogo = require("@/assets/img/space-kitty/win.svg");
 const macLogo = require("@/assets/img/space-kitty/mac.svg");
@@ -382,7 +390,8 @@ export default {
     CaseTextSection,
     GameDownload,
     SpaceShip,
-    PlayButton
+    PlayButton,
+    Footer
   },
   methods: {
     getWinLogo: () => winLogo,

@@ -16,8 +16,8 @@
         while their online presence is rather light and colorfull.
         They use a lot of illustration in their online marketing and social media."
       />
-      <img class="adams-offline" src="@/assets/img/dr-adams/offline.jpg" alt />
-      <img class="adams-online" src="@/assets/img/dr-adams/online1-grafik.jpg" alt />
+      <img class="adams-offline" src="@/assets/img/dr-adams/offline.jpg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+      <img class="adams-online" src="@/assets/img/dr-adams/online1-grafik.jpg" data-aos="fade-left" data-aos-easing="ease-out" alt />
       <CaseTextSection
         sectionClass="case-text-section misc-adams-concept"
         sectionHeaderClass="case-section-header header-adams-concept"
@@ -42,9 +42,9 @@
         sectionText="The first types made after initial observation at the store. They represent the excentric man,
         the stylish lady, and the teenage boy. "
       />
-      <img class="img-olderman" src="@/assets/img/dr-adams/SVG/older-man.svg" alt />
-      <img class="img-poshlady" src="@/assets/img/dr-adams/SVG/posh-lady.svg" alt />
-      <img class="img-youngboy" src="@/assets/img/dr-adams/SVG/young-boy.svg" alt />
+      <img class="img-olderman" src="@/assets/img/dr-adams/SVG/older-man.svg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+      <img class="img-poshlady" src="@/assets/img/dr-adams/SVG/posh-lady.svg" data-aos="fade-up" data-aos-easing="ease-out" alt />
+      <img class="img-youngboy" src="@/assets/img/dr-adams/SVG/young-boy.svg" data-aos="fade-left" data-aos-easing="ease-out" alt />
       <CaseTextSection
         sectionClass="case-text-section misc-adams-final"
         sectionHeaderClass="case-section-header header-adams-final"
@@ -52,19 +52,19 @@
         textClass="adams-text-final"
         sectionText="The final Mini Me’s made from user research and netnography."
       />
-      <p class="stylishlady">The stylish lady</p>
-      <p class="stylishman">The stylish man</p>
-      <p class="exgirl">The excentric girl</p>
-      <img class="img-gry" src="@/assets/img/dr-adams/SVG/gry.svg" alt />
-      <img class="img-soren" src="@/assets/img/dr-adams/SVG/soren.svg" alt />
-      <img class="img-katrine" src="@/assets/img/dr-adams/SVG/katrine.svg" alt />
+      <p class="stylishlady" data-aos="fade-right" data-aos-easing="ease-out">The stylish lady</p>
+      <p class="stylishman" data-aos="fade-up" data-aos-easing="ease-out">The stylish man</p>
+      <p class="exgirl" data-aos="fade-left" data-aos-easing="ease-out">The excentric girl</p>
+      <img data-aos="fade-right" data-aos-easing="ease-out" class="img-gry" src="@/assets/img/dr-adams/SVG/gry.svg" alt />
+      <img data-aos="fade-up" data-aos-easing="ease-out" class="img-soren" src="@/assets/img/dr-adams/SVG/soren.svg" alt />
+      <img data-aos="fade-left" data-aos-easing="ease-out" class="img-katrine" src="@/assets/img/dr-adams/SVG/katrine.svg" alt />
 
-      <p class="teenboy">The teenage boy</p>
-      <p class="teengirl">The sporty and querky girl</p>
-      <p class="oldman">The excentric older man</p>
-      <img class="img-william" src="@/assets/img/dr-adams/SVG/william.svg" alt />
-      <img class="img-emile" src="@/assets/img/dr-adams/SVG/emile.svg" alt />
-      <img class="img-bjarne" src="@/assets/img/dr-adams/SVG/bjarne.svg" alt />
+      <p class="teenboy" data-aos="fade-right" data-aos-easing="ease-out">The teenage boy</p>
+      <p class="teengirl" data-aos="fade-up" data-aos-easing="ease-out">The sporty and querky girl</p>
+      <p class="oldman" data-aos="fade-left" data-aos-easing="ease-out">The excentric older man</p>
+      <img data-aos="fade-right" data-aos-easing="ease-out" class="img-william" src="@/assets/img/dr-adams/SVG/william.svg" alt />
+      <img data-aos="fade-up" data-aos-easing="ease-out" class="img-emile" src="@/assets/img/dr-adams/SVG/emile.svg" alt />
+      <img data-aos="fade-left" data-aos-easing="ease-out" class="img-bjarne" src="@/assets/img/dr-adams/SVG/bjarne.svg" alt />
       <CaseTextSection
         sectionClass="case-text-section misc-adams-logo"
         sectionHeaderClass="case-section-header header-adams-logo"
@@ -72,8 +72,8 @@
         textClass="adams-text-logo"
         sectionText="Dr Adams logo was made in an illustrated version aswell to match the concept."
       />
-      <img class="logo-white" src="@/assets/img/dr-adams/SVG/logo-white.svg" alt />
-      <img class="logo-black" src="@/assets/img/dr-adams/SVG/logo-black.svg" alt />
+      <img class="logo-white" src="@/assets/img/dr-adams/SVG/logo-white.svg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+      <img class="logo-black" src="@/assets/img/dr-adams/SVG/logo-black.svg" data-aos="fade-left" data-aos-easing="ease-out" alt />
       <CaseTextSection
         sectionClass="case-text-section misc-adams-logofinal"
         sectionHeaderClass="case-section-header header-adams-logofinal"
@@ -81,9 +81,10 @@
         textClass="adams-text-logofinal"
         sectionText
       />
-      <img class="logofinal-white" src="@/assets/img/dr-adams/SVG/logo-final-white.svg" alt />
-      <img class="logofinal-black" src="@/assets/img/dr-adams/SVG/logo-final-black.svg" alt />
+      <img class="logofinal-white" src="@/assets/img/dr-adams/SVG/logo-final-white.svg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+      <img class="logofinal-black" src="@/assets/img/dr-adams/SVG/logo-final-black.svg" data-aos="fade-left" data-aos-easing="ease-out" alt />
     </div>
+    <Footer nextText="Next case" prevText="Previous case" linkToNext="/ripple" linkToPrev="/bunny"/>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -91,6 +92,7 @@
 @import "@/assets/sass/_mixins.scss";
 .case-dradam-wrap{
   animation: page-opacity 0.6s ease forwards;
+  overflow-x: hidden;
 }
 .case-adams {
   @include create-grid(125, 4.94vh, 24, 3.125vw, 1vh, 1vw);
@@ -376,15 +378,23 @@
     }
   }
 }
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+ p.adams-text-early{
+   grid-column-end: 10;
+ }
+}
 </style>
 <script>
 import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
+import Footer from "@/components/Footer.vue";
+
 export default {
   name: "DrAdams",
   components: {
     MiscCaseHeader,
-    CaseTextSection
+    CaseTextSection,
+    Footer
   },
   methods: {}
 };

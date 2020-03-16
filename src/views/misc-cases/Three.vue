@@ -16,7 +16,7 @@
         animations with Three.js. Several smaller animation can be chained into a larger one."
       />
       <ThreeAnim />
-      <img class="anim-snippet1" src="@/assets/img/three/tween-anim.jpg" alt="code snippet" />
+      <img class="anim-snippet1" src="@/assets/img/three/tween-anim.jpg" data-aos="fade-up" data-aos-easing="ease-out" alt="code snippet" />
       <p
         class="snippet-text"
         id="anim-snip-text"
@@ -39,7 +39,7 @@
         sectionText="Click event with Three.js. Click on empty canvas to move cube to that position."
       />
       <ThreeClickMove />
-      <img class="click-snippet" src="@/assets/img/three/clickadd.jpg" alt />
+      <img class="click-snippet" src="@/assets/img/three/clickadd.jpg" data-aos="fade-up" data-aos-easing="ease-out" alt />
       <h2 class="three-header three-ray">Raycaster</h2>
       <CaseTextSection
         sectionClass="case-text-section misc-three-remove"
@@ -58,18 +58,19 @@
         sectionText="Mouse over event with raycaster and animation. Use mouse to hover over balls"
       />
       <ThreeMouseOver />
-      <img class="ray-snippet" src="@/assets/img/three/raycast.jpg" alt />
+      <img class="ray-snippet" src="@/assets/img/three/raycast.jpg" data-aos="fade-up" data-aos-easing="ease-out" alt />
       <h2 class="three-header three-drag">Drag</h2>
       <CaseTextSection
         sectionClass="case-text-section misc-three-drag"
         sectionHeaderClass="case-section-header header-drag-three"
         headertext="Mouse drag event"
         textClass="drag-text-three"
-        sectionText="Mouse drag with Three.js, click and drag the cube."
+        sectionText="Mouse drag with Three.js, click and drag the cube. Only works on desktop."
       />
       <ThreeDrag />
-      <img class="drag-snippet" src="@/assets/img/three/drag.jpg" alt />
+      <img class="drag-snippet" src="@/assets/img/three/drag.jpg" data-aos="fade-up" data-aos-easing="ease-out" alt />
     </div>
+    <Footer nextText="Next case" prevText="Previous case" linkToNext="/bunny" linkToPrev="/space"/>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -77,6 +78,7 @@
 @import "@/assets/sass/_mixins.scss";
 .case-three-wrap{
   animation: page-opacity 0.6s ease forwards;
+  overflow-x: hidden;
 }
 .case-three {
   @include create-grid(165, 4.94vh, 24, 3.125vw, 1vh, 1vw);
@@ -296,6 +298,7 @@ import ThreeClickMove from "@/views/partials/ThreeClickMove.vue";
 import ThreeClickRemove from "@/views/partials/ThreeClickRemove.vue";
 import ThreeMouseOver from "@/views/partials/ThreeMouseOver.vue";
 import ThreeDrag from "@/views/partials/ThreeDrag.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "CaseThree",
@@ -307,7 +310,8 @@ export default {
     ThreeClickMove,
     ThreeClickRemove,
     ThreeMouseOver,
-    ThreeDrag
+    ThreeDrag,
+    Footer
   }
 };
 </script>

@@ -13,9 +13,9 @@
       />
       <Slider :images="sliderImages" sliderID="slider-insp-nmg" />
       <div class="mobile-insp-img">
-        <img src="@/assets/img/nmg-premium.jpg" alt />
-        <img src="@/assets/img/nmg-retro.jpg" alt />
-        <img src="@/assets/img/mood-nmg-100.jpg" alt />
+        <img src="@/assets/img/nmg-premium.jpg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+        <img src="@/assets/img/nmg-retro.jpg" data-aos="fade-left" data-aos-easing="ease-out" alt />
+        <img src="@/assets/img/mood-nmg-100.jpg" data-aos="fade-up" data-aos-easing="ease-out" alt />
       </div>
       <CaseTextSection
         sectionClass="case-text-section experimentation-nmg"
@@ -27,13 +27,13 @@
         Tinted colors are used to represent the sweetness of the marmelade, and a graphic
         of splatter is used to represent dropped jam."
       />
-      <img class="nmg-exp1" src="@/assets/img/exp1-100.jpg" alt />
-      <img class="nmg-exp2" src="@/assets/img/exp2-100.jpg" alt />
-      <img class="nmg-exp3" src="@/assets/img/exp3-100.jpg" alt />
+      <img class="nmg-exp1" src="@/assets/img/exp1-100.jpg" data-aos="fade-right" data-aos-easing="ease-out" alt />
+      <img class="nmg-exp2" src="@/assets/img/exp2-100.jpg" data-aos="fade-left" data-aos-easing="ease-out" alt />
+      <img class="nmg-exp3" src="@/assets/img/exp3-100.jpg" data-aos="fade-up" data-aos-easing="ease-out" alt />
 
-      <img class="mob-nmg-exp1 mob-exp-img" src="@/assets/img/nmg-mob-ex1-100.jpg" alt />
-      <img class="mob-nmg-exp2 mob-exp-img" src="@/assets/img/nmg-mob-ex2-100.jpg" alt />
-      <img class="mob-nmg-exp3 mob-exp-img" src="@/assets/img/nmg-mob-ex3-100.jpg" alt />
+      <img class="mob-nmg-exp1 mob-exp-img" data-aos="fade-right" data-aos-easing="ease-out" src="@/assets/img/nmg-mob-ex1-100.jpg" alt />
+      <img class="mob-nmg-exp2 mob-exp-img" data-aos="fade-left" data-aos-easing="ease-out"  src="@/assets/img/nmg-mob-ex2-100.jpg" alt />
+      <img class="mob-nmg-exp3 mob-exp-img" data-aos="fade-up" data-aos-easing="ease-out" src="@/assets/img/nmg-mob-ex3-100.jpg" alt />
 
       <CaseTextSection
         sectionClass="case-text-section styletiles-nmg"
@@ -42,8 +42,8 @@
         textClass="styletiles-text-nmg"
         sectionText="The final version of the visual identity, that is going to be applied to the course materials."
       />
-      <img class="nmg-styletiles" src="@/assets/img/NMG-styletiles.jpg" alt />
-      <img class="nmg-styletiles-mob" src="@/assets/img/NMG-mob-styletiles.jpg" alt />
+      <img class="nmg-styletiles" src="@/assets/img/NMG-styletiles.jpg" data-aos="fade-up" data-aos-easing="ease-out" alt />
+      <img class="nmg-styletiles-mob" src="@/assets/img/NMG-mob-styletiles.jpg" data-aos="fade-up" data-aos-easing="ease-out" alt />
     </div>
   </div>
 </template>
@@ -133,7 +133,7 @@
       margin-top: 7vh;
     }
     .process-wrapper {
-      grid-template-rows: repeat(165, 4.94vh);
+      grid-template-rows: repeat(199, 4.94vh);
       .mobile-insp-img {
         display: flex;
         flex-direction: column;

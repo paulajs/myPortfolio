@@ -8,24 +8,28 @@
         imgClass ="resultDisplay"
         :displayImgSrc="getStrawberryJamGif()"
         displayImgAlt="strawberry jam"
+        animData = "fade-right"
       />
        <NMGDisplayGif
         displayID ="strawberryfolder"
         imgClass ="resultDisplay"
         :displayImgSrc="getStrawberryFolderGif()"
         displayImgAlt="strawberry folder"
+        animData = "fade-left"
       />
        <NMGDisplayGif
         displayID ="quincejam"
         imgClass ="resultDisplay"
         :displayImgSrc="getQuinceJamGif()"
         displayImgAlt="quince jam"
+        animData= "fade-right"
       />
       <NMGDisplayGif
         displayID ="quincefolder"
         imgClass ="resultDisplay"
         :displayImgSrc="getQuinceFolderGif()"
         displayImgAlt="quince folder"
+        animData = "fade-left"
       />
 
       <NMGDisplayGif
@@ -33,6 +37,7 @@
         imgClass ="resultDisplay"
         :displayImgSrc="getElderJamGif()"
         displayImgAlt="elder jam"
+        animData = "fade-right"
       />
 
        <NMGDisplayGif
@@ -40,6 +45,7 @@
         imgClass ="resultDisplay"
         :displayImgSrc="getElderFolderGif()"
         displayImgAlt="elder folder"
+        animData = "fade-left"
       />
 
     </div>

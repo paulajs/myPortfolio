@@ -10,26 +10,30 @@
         but a freelance hacker in a hoodie, the pop culture inspiration feels suitable."
     />
     <CasesResultSkansing/>
-    <CasesProcessSkansing />
+   <CasesProcessSkansing />
+    <Footer nextText="Go to lab" prevText="Previous case" linkToNext="/lab" linkToPrev="/norremadegaard"/>
   </div>
 </template>
 <style lang="scss" scoped>
 @import "@/assets/sass/_global.scss";
 .case-skansing{
   animation: page-opacity 0.6s ease forwards;
+  overflow-x: hidden;
 }
 </style>
 <script>
 import CasesAboveTheFold from "@/views/partials/CasesAboveTheFold.vue";
 import CasesResultSkansing from "@/views/partials/CasesResultSkansing.vue";
 import CasesProcessSkansing from "@/views/partials/CasesProcessSkansing.vue"
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "Skansing",
   components: {
     CasesAboveTheFold,
     CasesResultSkansing,
-    CasesProcessSkansing
+    CasesProcessSkansing,
+    Footer
   }
 };
 </script>

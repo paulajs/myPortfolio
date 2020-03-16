@@ -11,13 +11,29 @@
     </button>
     <ul class="cases-sub-menu" ref="casesmenu">
       <div class="sub-menu-cursor" ref="subcursor"></div>
-      <li @mouseover="onMouseOver" @mouseout="onMouseOut" @mousemove="subCasesCursorShow" @mouseleave="subCasesCursorHide">
-        <router-link  data-case="hesehus" to="/hesehus">Hesehus</router-link>
+      <li
+        @mouseover="onMouseOver"
+        @mouseout="onMouseOut"
+        @mousemove="subCasesCursorShow"
+        @mouseleave="subCasesCursorHide"
+        data-aos="fade-left"
+      >
+        <router-link data-case="hesehus" to="/hesehus">Hesehus</router-link>
       </li>
-      <li @mouseover="onMouseOver" @mouseout="onMouseOut" @mousemove="subCasesCursorShow" @mouseleave="subCasesCursorHide">
+      <li
+        @mouseover="onMouseOver"
+        @mouseout="onMouseOut"
+        @mousemove="subCasesCursorShow"
+        @mouseleave="subCasesCursorHide"
+      >
         <router-link data-case="nmg" to="/norremadegaard">Nørremadegaard</router-link>
       </li>
-      <li @mouseover="onMouseOver" @mouseout="onMouseOut" @mousemove="subCasesCursorShow" @mouseleave="subCasesCursorHide">
+      <li
+        @mouseover="onMouseOver"
+        @mouseout="onMouseOut"
+        @mousemove="subCasesCursorShow"
+        @mouseleave="subCasesCursorHide"
+      >
         <router-link data-case="skansingit" to="/skansing">Skansing IT</router-link>
       </li>
     </ul>
@@ -71,14 +87,13 @@
   text-decoration: none;
   color: black;
   cursor: pointer;
-  &:hover{
+  &:hover {
     color: #afafaf;
   }
 }
 .cases-sub-menu li {
   writing-mode: vertical-lr;
   animation: casesAnim 0.2s ease-in forwards;
-
 }
 @keyframes casesAnim {
   0% {
@@ -155,7 +170,7 @@ export default {
   },
   props: {
     onMouseOver: Function,
-    onMouseOut: Function,
+    onMouseOut: Function
   },
   methods: {
     toggleCaseMenu: function(e) {
@@ -172,9 +187,11 @@ export default {
       this.$children[0].$refs.cursor.style.zIndex = 42000;
       this.$children[0].$refs.cursor.style.top = `${e.pageY - 35}px`;
       this.$children[0].$refs.cursor.style.left = `${e.pageX - 35}px`;
+      document.body.style.overflow = "hidden";
     },
     hideCursor() {
       this.$children[0].$refs.cursor.style.display = "none";
+      document.body.style.overflow = "initial";
     },
     addClickAnimCursor() {
       this.$children[0].$refs.cursor.classList.add("expand");
@@ -182,13 +199,13 @@ export default {
         this.$children[0].$refs.cursor.classList.remove("expand");
       }, 500);
     },
-    subCasesCursorShow(e){
-      this.$refs.subcursor.style.display ="block";
+    subCasesCursorShow(e) {
+      this.$refs.subcursor.style.display = "block";
       this.$refs.subcursor.style.top = `${e.pageY - 20}px`;
       this.$refs.subcursor.style.left = `${e.pageX - 25}px`;
     },
-    subCasesCursorHide(){
-      this.$refs.subcursor.style.display ="none";
+    subCasesCursorHide() {
+      this.$refs.subcursor.style.display = "none";
     }
   }
 };

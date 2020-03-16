@@ -17,9 +17,9 @@
   }
 }
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
-.canvas-drag-wrapper {
-  grid-row-start: 138;
-}
+  .canvas-drag-wrapper {
+    grid-row-start: 138;
+  }
 }
 </style>
 <script>
@@ -32,7 +32,7 @@ DragControls.install({ THREE: THREE });
 const rendererFactory = config =>
   new THREE.WebGLRenderer({
     antialias: true,
-     alpha: true,
+    alpha: true,
     ...config
   });
 
@@ -46,7 +46,7 @@ export default {
       camera: null,
       renderer: null,
       toDrag: [],
-      colorArray: [0xff90ff,0xff00ff, 0x00ffc8, 0x00cf78],
+      colorArray: [0xff90ff, 0xff00ff, 0x00ffc8, 0x00cf78],
       isAnimating: false
     };
   },
@@ -56,8 +56,10 @@ export default {
     });
     this.canvasRect = this.$refs.canvasDrag.getBoundingClientRect();
     this.aspectRatio = this.canvasRect.width / this.canvasRect.height;
-    this.createScene();
-    this.animate();
+    window.setTimeout(() => {
+      this.createScene();
+      this.animate();
+    }, 100);
   },
   methods: {
     createScene() {

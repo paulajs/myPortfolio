@@ -17,6 +17,7 @@
         <h2 class="canvas-click-text" ref="canvastext">Click!</h2>
       </div>
     </div>
+    <Footer nextText="Next case" prevText="Previous case" linkToNext="/wreckagecat" linkToPrev="/dr-adams"/>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -61,6 +62,7 @@
 <script>
 import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
+import Footer from "@/components/Footer.vue";
 import {
   Container,
   Loader,
@@ -88,7 +90,8 @@ export default {
   name: "RippleCase",
   components: {
     MiscCaseHeader,
-    CaseTextSection
+    CaseTextSection,
+    Footer
   },
   data() {
     return {

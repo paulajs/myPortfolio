@@ -20,31 +20,37 @@
         class="platform-img1"
         src="@/assets/img/bunny/bunny-platform1.jpg"
         alt="game screen shot"
+        data-aos="fade-right" data-aos-easing="ease-out"
       />
       <img
         class="platform-img2"
         src="@/assets/img/bunny/bunny-platform2.jpg"
         alt="game screen shot"
+        data-aos="fade-left" data-aos-easing="ease-out"
       />
       <img
         class="platform-img3"
         src="@/assets/img/bunny/bunny-platform9.jpg"
         alt="game screen shot"
+        data-aos="fade-right" data-aos-easing="ease-out"
       />
       <img
         class="platform-img4"
         src="@/assets/img/bunny/bunny-platform8.jpg"
         alt="game screen shot"
+        data-aos="fade-left" data-aos-easing="ease-out"
       />
       <img
         class="platform-img5"
         src="@/assets/img/bunny/bunny-platform3.jpg"
         alt="game screen shot"
+        data-aos="fade-right" data-aos-easing="ease-out"
       />
       <img
         class="platform-img6"
         src="@/assets/img/bunny/bunny-platform6.jpg"
         alt="game screen shot"
+        data-aos="fade-left" data-aos-easing="ease-out"
       />
       <div class="button-platform">
         <a href="/games/bunnyPlatformer/index.html" target="_blank">
@@ -60,8 +66,8 @@
         sectionText="The second game is a runner game.
         The bunny has to avoid the dice and collect the card suits. "
       />
-      <img class="runner-img1" src="@/assets/img/bunny/bunnyrunner.jpg" alt="game screen shot" />
-      <img class="runner-img2" src="@/assets/img/bunny/bunnyrunner1.jpg" alt="game screen shot" />
+      <img class="runner-img1" src="@/assets/img/bunny/bunnyrunner.jpg" data-aos="fade-right" data-aos-easing="ease-out" alt="game screen shot" />
+      <img class="runner-img2" src="@/assets/img/bunny/bunnyrunner1.jpg" data-aos="fade-left" data-aos-easing="ease-out" alt="game screen shot" />
       <div class="button-runner">
         <a href="/games/BunnyrunnerUpgrade/index.html" target="_blank">
           <ButtonVisitPage />
@@ -75,14 +81,15 @@
         sectionText="The last game made is similar to the runner,
         but vertical instead. The bunny has to avoid the insects and collect the card suits.  "
       />
-      <img class="fall-img1" src="@/assets/img/bunny/bunnyfall.jpg" alt="game screen shot" />
-      <img class="fall-img2" src="@/assets/img/bunny/bunnyfall1.jpg" alt="game screen shot" />
+      <img class="fall-img1" src="@/assets/img/bunny/bunnyfall.jpg" data-aos="fade-right" data-aos-easing="ease-out" alt="game screen shot" />
+      <img class="fall-img2" src="@/assets/img/bunny/bunnyfall1.jpg" data-aos="fade-left" data-aos-easing="ease-out" alt="game screen shot" />
       <div class="button-fall">
-        <a href="/gamesBunnyfallUpgrade/index.html" target="_blank">
+        <a href="/games/BunnyfallUpgrade/index.html" target="_blank">
           <ButtonVisitPage />
         </a>
       </div>
     </div>
+    <Footer nextText="Next case" prevText="Previous case" linkToNext="/dr-adams" linkToPrev="/three"/>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -90,6 +97,7 @@
 @import "@/assets/sass/_mixins.scss";
 .case-bunny-wrap {
   animation: page-opacity 0.6s ease forwards;
+  overflow-x: hidden;
 }
 .bunny-case {
   @include create-grid(77, 4.94vh, 24, 3.125vw, 1vh, 1vw);
@@ -216,12 +224,15 @@
 import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
 import ButtonVisitPage from "@/components/ButtonVisitPage.vue";
+import Footer from "@/components/Footer.vue";
+
 export default {
   name: "BunnyGames",
   components: {
     MiscCaseHeader,
     CaseTextSection,
-    ButtonVisitPage
+    ButtonVisitPage,
+    Footer
   }
 };
 </script>

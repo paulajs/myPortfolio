@@ -10,19 +10,19 @@
       <div class="background"></div>
       <div class="audio-postit-wrapper postit1">
         <h2>Context</h2>
-        <img src="@/assets/img/audio/postit1.svg" alt />
+        <img src="@/assets/img/audio/postit1.svg" data-aos="fade-right" data-aos-easing="ease-out" alt />
       </div>
       <div class="audio-postit-wrapper postit2">
         <h2>Source</h2>
-        <img src="@/assets/img/audio/postit2.svg" alt />
+        <img src="@/assets/img/audio/postit2.svg" data-aos="fade-up" data-aos-easing="ease-out" alt />
       </div>
       <div class="audio-postit-wrapper postit3">
         <h2>Analyser</h2>
-        <img src="@/assets/img/audio/postit3.svg" alt />
+        <img src="@/assets/img/audio/postit3.svg" data-aos="fade-down" data-aos-easing="ease-out" alt />
       </div>
       <div class="audio-postit-wrapper postit4">
         <h2>Fbc Array</h2>
-        <img src="@/assets/img/audio/postit4.svg" alt />
+        <img src="@/assets/img/audio/postit4.svg" data-aos="fade-left" data-aos-easing="ease-out" alt />
       </div>
     </div>
 
@@ -36,7 +36,7 @@
         to produce graphics to the frequencies of the audio. In this case producings simple bars.
         Below is also an example of the code."
       />
-      <img class="bars-snippet" src="@/assets/img/audio/bars.jpg" alt />
+      <img class="bars-snippet" src="@/assets/img/audio/bars.jpg" data-aos="fade-up" data-aos-easing="ease-out" alt />
       <AudioSectionBars />
       <CaseTextSection
         sectionClass="case-text-section misc-audio-circle"
@@ -55,12 +55,13 @@
         sectionText
       />
       <AudioSectionImg />
-      <div class="thanks-to">
+      <div class="thanks-to" data-aos="fade-up" data-aos-easing="ease-out">
         All the samples used in this project are from Looperman.com. Thanks to
         Nightingale, Path0gen, Fanto8BC, davidf0502, Rasputin, Danke, ksdq, ProdbyBarnabas,
         restartg, PRRJLY for providing samples.
       </div>
     </div>
+     <Footer nextText="Next case" prevText="Go to lab" linkToNext="/space" linkToPrev="/lab"/>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -68,6 +69,7 @@
 @import "@/assets/sass/_mixins.scss";
 .case-audio-wrap{
   animation: page-opacity 0.6s ease forwards;
+  overflow-x: hidden;
 }
 .case-audio {
   @include create-grid(78, 4.94vh, 24, 3.125vw, 1vh, 1vw);
@@ -195,6 +197,7 @@ import AudioSectionBars from "@/views/partials/AudioSectionBars.vue";
 import AudioSectionCircle from "@/views/partials/AudioSectionCircle.vue";
 /* import AudioSectionBubbles from "@/views/partials/AudioSectionBubbles.vue"; */
 import AudioSectionImg from "@/views/partials/AudioSectionImg.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "AudioCase",
@@ -204,7 +207,8 @@ export default {
     AudioSectionBars,
     AudioSectionCircle,
     /* AudioSectionBubbles, */
-    AudioSectionImg
+    AudioSectionImg,
+    Footer
   }
 };
 </script>

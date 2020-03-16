@@ -82,7 +82,7 @@
       </div>
     </div>
     <div class="frontpage-label top">Portfolio</div>
-    <img class="mobile-logo" src="@/assets/img/SVG/logo-new.svg" alt />
+    <!-- <img class="mobile-logo" src="@/assets/img/SVG/logo-new.svg" alt /> -->
     <SubMenuCursor
       v-bind:onMouseClick="showSplat"
       v-bind:onMouseOver="mouseOver"
@@ -117,6 +117,7 @@
       v-bind:isVideoShown="isVideoShown"
       v-bind:onGameEnd="showGameEndedVideo"
     />
+    <Logo/>
     <div :class="{'entertain-element': true, 'show-border':isVideoShown}">
       <video
         v-show="isVideoShown"
@@ -142,6 +143,8 @@ import MyCursor from "@/components/MyCursor.vue";
 import SoMeMail from "@/components/svg/SoMeMail.vue";
 import SoMeInsta from "@/components/svg/SoMeInsta.vue";
 import SoMePin from "@/components/svg/SoMePin.vue";
+import Logo from "@/components/svg/Logo.vue";
+import VueAnimate from "vue-animate-scroll";
 const caseVideoHesehus = require("@/assets/videos/frontpage-entertain/hesehus1.mp4");
 const caseVideoNMG = require("@/assets/videos/frontpage-entertain/nmg1.mp4");
 const caseVideoSkansing = require("@/assets/videos/frontpage-entertain/skansingit1.mp4");
@@ -163,7 +166,8 @@ export default {
     SoMeInsta,
     SoMeIcon,
     MyCursor,
-    SoMePin
+    SoMePin,
+    Logo
   },
   data() {
     return {
@@ -261,6 +265,8 @@ export default {
     },
     mouseOverMain(e) {
       this.switchVideo = e.target.dataset.case;
+      document.body.style.overflow = "hidden";
+
       this.switchVideoFunction();
       this.showVideo();
     },
@@ -280,6 +286,7 @@ export default {
     },
     hideVideo() {
       this.isVideoShown = false;
+      document.body.style.overflow = "auto";
     },
     showSplat() {
       this.isSplatShown = true;

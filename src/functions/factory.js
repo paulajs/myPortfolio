@@ -1,32 +1,58 @@
 import * as THREE from "three";
 import * as TWEEN from "tween";
 
-export function makeSphere(color, posX, posY, posZ, radius, name, delay = 0) {
-  var geometry = new THREE.SphereGeometry(radius, 16, 16);
+export function makeSphere(color, posX, posY, posZ, radius, name, delay) {
+  /* var geometry = new THREE.SphereGeometry(radius, 16, 16); */
+  var geometry = new THREE.SphereBufferGeometry(radius, 16, 16);
   var material = new THREE.MeshPhongMaterial({
     color: color,
     transparent: true,
-    opacity: 0.8
+    opacity: 0
   });
   var mesh = new THREE.Mesh(geometry, material);
-  mesh.position.x = posX;
+   mesh.position.x = Math.random() > 0.4 ? posX*Math.random(): -posX*Math.random();
+  mesh.position.y = Math.random() > 0.4 ? posY*Math.random(): -posY*Math.random();
+  mesh.position.z = Math.random() > 0.4 ? posZ*Math.random(): -posZ*Math.random();
+/*   mesh.position.x = posX;
   mesh.position.y = posY;
-  mesh.position.z = posZ;
+  mesh.position.z = posZ; */
   mesh.name = name;
-  mesh.scale.set(0.1, 0.1, 0.1);
+  mesh.scale.set(1, 1, 1);
   mesh.geometry.computeBoundingBox();
-  new TWEEN.Tween(mesh.scale)
+  var timingA = 0;
+  var timingB = 0;
+  if(window.innerWidth < 736){
+    timingA = 100;
+    timingB = 200;
+  }
+  else{
+    timingA = 400;
+    timingB = 600;
+  }
+  //const initialPosition = new THREE.Vector3( Math.random()*500, Math.random()*500, Math.random()*500 );
+  var animationA = new TWEEN.Tween(mesh.position)
     .to(
       {
-        x: 1,
-        y: 1,
-        z: 1
+        x: posX,
+        y: posY,
+        z: posZ
       },
-      0
+      timingA
     )
     .delay(delay)
-    .easing(TWEEN.Easing.Elastic.Out)
+    .easing(TWEEN.Easing.Quadratic.InOut)
     .start();
+    var animationB = new TWEEN.Tween(mesh.material)
+    .to(
+      {
+        opacity: 0.85
+      },
+      timingB
+    )
+    .delay(delay)
+    .start();
+
+    animationA.chain(animationB);
 
   return mesh
 }
@@ -83,5 +109,23 @@ export function  mouseMoveSetColor (objectMaterial, colorArray) {
       time
     )
     .easing(TWEEN.Easing.Elastic.Out)
+    .start();
+}
+
+export function positionAnimation(object, initialPosition, time) {
+  const pox_x = object.position.x;
+  const pox_y = object.position.y;
+  const pox_z = object.position.z;
+  new TWEEN.Tween(initialPosition)
+    .to(
+      {
+        x: pox_x,
+        y: pox_y,
+        z: pox_z
+      },
+      time
+    )
+    .easing(TWEEN.Easing.Elastic.Out)
+    .delay(300)
     .start();
 }

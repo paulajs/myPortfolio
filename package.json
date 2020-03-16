@@ -8,6 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "animejs": "^3.1.0",
+    "aos": "^3.0.0-beta.6",
     "core-js": "^2.6.5",
     "drag-controls": "^1.0.4",
     "pixi.js": "^5.2.0",
@@ -22,6 +24,7 @@
     "tween": "^0.9.0",
     "tween.js": "^16.6.0",
     "vue": "^2.6.10",
+    "vue-animate-scroll": "^0.1.5",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },
@@ -33,7 +36,7 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.13.1",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
   }

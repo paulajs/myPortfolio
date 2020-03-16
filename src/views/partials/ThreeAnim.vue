@@ -157,7 +157,10 @@ export default {
     }
   },
   mounted() {
-    this.createScene();
+    window.setTimeout(()=>{
+      this.createScene();
+    }, 100);
+
   }
 };
 </script>

@@ -17,21 +17,24 @@
         The inspiration for the world came from an old render made in Blender 3D,
         and has a vintage/horror feel to it."
       />
-      <img class="process-img1" src="../../assets/img/horror/horror.png" alt="game screen shot" />
+      <img class="process-img1" src="../../assets/img/horror/horror.png" alt="game screen shot" data-aos="fade-right" data-aos-easing="ease-out" />
       <img
         class="process-img2"
         src="../../assets/img/horror/horrorvintagescreen7.png"
         alt="game screen shot"
+        data-aos="fade-left" data-aos-easing="ease-out"
       />
       <img
         class="process-img3"
         src="../../assets/img/horror/horrorvintagescreen6.png"
         alt="game screen shot"
+        data-aos="fade-right" data-aos-easing="ease-out"
       />
       <img
         class="process-img4"
         src="../../assets/img/horror/horrorvintagescreen5.png"
         alt="game screen shot"
+        data-aos="fade-left" data-aos-easing="ease-out"
       />
       <CaseTextSection
         sectionClass="case-text-section misc-horror-result"
@@ -44,21 +47,25 @@
         class="result-img1"
         src="../../assets/img/horror/horrorvintagescreen4.jpg"
         alt="game screen shot"
+        data-aos="fade-right" data-aos-easing="ease-out"
       />
       <img
         class="result-img2"
         src="../../assets/img/horror/horrorvintagescreen3.jpg"
         alt="game screen shot"
+        data-aos="fade-left" data-aos-easing="ease-out"
       />
       <img
         class="result-img3"
         src="../../assets/img/horror/horrorvintagescreen1.jpg"
         alt="game screen shot"
+        data-aos="fade-right" data-aos-easing="ease-out"
       />
       <img
         class="result-img4"
         src="../../assets/img/horror/horrorvintagescreen2.jpg"
         alt="game screen shot"
+        data-aos="fade-left" data-aos-easing="ease-out"
       />
       <CaseTextSection
         sectionClass="case-text-section misc-horror-try"
@@ -110,6 +117,7 @@
         </GameDownload>
       </a>
     </div>
+    <Footer nextText="Next case" prevText="Previous case" linkToNext="/css-anim" linkToPrev="/wreckagecat"/>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -117,6 +125,7 @@
 @import "@/assets/sass/_mixins.scss";
 .case-horror-wrap {
   animation: page-opacity 0.6s ease forwards;
+  overflow-x: hidden;
 }
 .horror-case {
   @include create-grid(85, 4.94vh, 24, 3.125vw, 1vh, 1vw);
@@ -351,7 +360,7 @@ import MiscCaseHeader from "@/views/partials/MiscCaseHeader.vue";
 import CaseTextSection from "@/components/CaseTextSection.vue";
 import GameDownload from "@/components/GameDownload.vue";
 import PlayButton from "@/components/svg/PlayButton.vue";
-
+import Footer from "@/components/Footer.vue";
 import Moon from "@/components/svg/Moon.vue";
 
 const winLogo = require("@/assets/img/space-kitty/win.svg");
@@ -365,7 +374,8 @@ export default {
     CaseTextSection,
     GameDownload,
     Moon,
-    PlayButton
+    PlayButton,
+    Footer
   },
   methods: {
     getWinLogo: () => winLogo,

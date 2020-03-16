@@ -1,8 +1,14 @@
 <template>
   <div :class="menuClass">
-    <MyCursor cursorRef="cursor"/>
+    <MyCursor cursorRef="cursor" />
     <router-link v-bind:to="linkTo">
-      <button class="menu-button" @mousemove="showCursor" @mouseleave="hideCursor" @mouseover="onMouseOver" @mouseout="onMouseOut">
+      <button
+        class="menu-button"
+        @mousemove="showCursor"
+        @mouseleave="hideCursor"
+        @mouseover="onMouseOver"
+        @mouseout="onMouseOut"
+      >
         <p :data-case="buttonText">{{buttonText}}</p>
       </button>
     </router-link>
@@ -12,6 +18,8 @@
 @import "../assets/sass/_global.scss";
 .menu-button {
   cursor: none;
+  opacity: 0;
+  @include menu-button-mixin;
 }
 button:hover p {
   color: transparent;
@@ -23,8 +31,8 @@ button:hover p:before {
   position: absolute;
   z-index: -50;
   color: transparent;
-   -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: $color-green;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: $color-green;
   pointer-events: none;
   left: 1.2%;
   top: 1.2%;

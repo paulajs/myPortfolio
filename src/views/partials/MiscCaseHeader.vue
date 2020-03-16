@@ -1,10 +1,10 @@
 <template>
   <div class="misc-header">
-    <h1>{{caseTitle}}</h1>
+    <h1 data-aos="fade-right" data-aos-easing="ease-out">{{caseTitle}}</h1>
     <router-link class="case-home-button" to="/lab">
       <HomeButton buttonText="Back" />
     </router-link>
-    <h2>{{caseText}}</h2>
+    <h2 data-aos="fade-down" data-aos-easing="ease-out">{{caseText}}</h2>
   </div>
 </template>
 <style lang="scss" scoped>

@@ -10,7 +10,7 @@
         <p class="nav-slider-button-text" data-text="Next">Next</p>
       </button>
     </div>
-    <div class="image-container">
+    <div class="image-container" data-aos="fade-down" data-aos-easing="ease-out">
       <img
         v-for="(image, key) in images"
         v-bind:key="image.id"

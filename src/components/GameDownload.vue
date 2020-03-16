@@ -392,7 +392,8 @@ export default {
     downloadID: String,
     downloadClass: String,
     operatingSystem: String,
-    logoImg: String
+    logoImg: String,
+    animData: String
   }
 };
 </script>

@@ -3,7 +3,7 @@
     <div class="video-section-header">
       <h4>{{videoName}}</h4>
     </div>
-    <div class="video-wrapper">
+    <div class="video-wrapper" :data-aos="animData" data-aos-easing="ease-out">
       <PlayButton v-bind:isVisible="isVisible" />
       <video controls muted :src="videoSrc" :poster="videoPoster" v-on:click="isVideoPlaying"></video>
     </div>
@@ -36,7 +36,6 @@
     grid-row-end: 17;
     grid-column-start: 4;
     grid-column-end: 22;
-    border: 2px solid black;
     position: relative;
     .play-button {
       position: absolute;
@@ -48,6 +47,7 @@
     video {
       width: 100%;
       background: black;
+      border: 2px solid black;
       &:focus {
         outline: 0;
       }
@@ -84,6 +84,8 @@
   .video-section{
     .video-wrapper{
       grid-row-end: 7;
+      grid-column-start: 2;
+      grid-column-end: 24;
     }
   }
 }
@@ -112,7 +114,8 @@ export default {
     videoName: String,
     videoSrc: String,
     videoPoster: String,
-    videoSection: String
+    videoSection: String,
+    animData: String
   },
   components: {
     PlayButton

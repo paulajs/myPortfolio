@@ -5,15 +5,15 @@
       <HomeButton buttonText="Home" />
     </router-link>
     <h2>{{description}}</h2>
-    <div class="info-box info-about">
+    <div class="info-box info-about" data-aos="fade-up" data-aos-duration="300" data-aos-easing="ease-out">
       <h3>About</h3>
       <p>{{aboutText}}</p>
     </div>
-    <div class="info-box info-challange">
+    <div class="info-box info-challange" data-aos="fade-down" data-aos-duration="300" data-aos-easing="ease-out" data-aos-delay="150">
       <h3>Challange</h3>
       <p>{{challangeText}}</p>
     </div>
-    <div class="info-box info-thoughts">
+    <div class="info-box info-thoughts" data-aos="fade-up" data-aos-duration="300" data-aos-easing="ease-out" data-aos-delay="250">
       <h3>Thoughts</h3>
       <p>{{thoughtsText}}</p>
     </div>
