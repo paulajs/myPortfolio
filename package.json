@@ -13,7 +13,7 @@
     "core-js": "^2.6.5",
     "drag-controls": "^1.0.4",
     "pixi.js": "^5.2.0",
-    "three": "^0.109.0",
+    "three": "^0.137.0",
     "three-canvas-renderer": "^2.0.0",
     "three-gltf-loader": "^1.109.0",
     "three-legacyjsonloader": "^1.0.6",
